@@ -1,0 +1,637 @@
+drug,label,organization,gene,data_source
+oxymetazoline,Actionable PGx,FDA,BCHE,drug_label
+oxymetazoline,Actionable PGx,FDA,CYB5R3,drug_label
+oxymetazoline,Actionable PGx,FDA,G6PD,drug_label
+tetracaine,Actionable PGx,FDA,BCHE,drug_label
+tetracaine,Actionable PGx,FDA,CYB5R3,drug_label
+tetracaine,Actionable PGx,FDA,G6PD,drug_label
+brivaracetam,Actionable PGx,FDA,CYP2C19,drug_label
+neratinib,Informative PGx,FDA,ESR1,drug_label
+neratinib,Informative PGx,FDA,ESR2,drug_label
+neratinib,Informative PGx,FDA,PGR,drug_label
+daclatasvir,Informative PGx,FDA,IFNL3,drug_label
+evolocumab,Informative PGx,FDA,LDLR,drug_label
+Parathyroid Hormones And Analogues,Informative PGx,FDA,CASR,drug_label
+metoclopramide,Actionable PGx,FDA,CYB5R1,drug_label
+metoclopramide,Actionable PGx,FDA,CYB5R2,drug_label
+metoclopramide,Actionable PGx,FDA,CYB5R3,drug_label
+metoclopramide,Actionable PGx,FDA,CYB5R4,drug_label
+metoclopramide,Actionable PGx,FDA,G6PD,drug_label
+alirocumab,Informative PGx,FDA,LDLR,drug_label
+ondansetron,Informative PGx,FDA,CYP2D6,drug_label
+tolazamide,Actionable PGx,FDA,G6PD,drug_label
+goserelin,Informative PGx,FDA,ESR1,drug_label
+goserelin,Informative PGx,FDA,ESR2,drug_label
+goserelin,Informative PGx,FDA,PGR,drug_label
+darifenacin,Actionable PGx,FDA,CYP2D6,drug_label
+simeprevir,Informative PGx,FDA,IFNL3,drug_label
+fesoterodine,Actionable PGx,FDA,CYP2D6,drug_label
+glipizide,Actionable PGx,FDA,G6PD,drug_label
+ponatinib,Testing required,FDA,ABL1,drug_label
+ponatinib,Testing required,FDA,BCR,drug_label
+bosutinib,Testing required,FDA,ABL1,drug_label
+bosutinib,Testing required,FDA,BCR,drug_label
+efavirenz,Actionable PGx,FDA,CYP2B6,drug_label
+glimepiride,Actionable PGx,FDA,G6PD,drug_label
+afutuzumab,Informative PGx,FDA,MS4A1,drug_label
+ibritumomab,Informative PGx,FDA,MS4A1,drug_label
+lomitapide,Informative PGx,FDA,LDLR,drug_label
+escitalopram,Actionable PGx,FDA,CYP2C19,drug_label
+duloxetine,Actionable PGx,FDA,CYP2D6,drug_label
+donepezil,Actionable PGx,FDA,CYP2D6,drug_label
+lenalidomide,Testing required,FDA,,drug_label
+telaprevir,Actionable PGx,FDA,IFNL3,drug_label
+dextromethorphan,Testing recommended,FDA,CYP2D6,drug_label
+quinidine,Testing recommended,FDA,CYP2D6,drug_label
+succimer,Informative PGx,FDA,G6PD,drug_label
+methylene blue,Actionable PGx,FDA,G6PD,drug_label
+dexlansoprazole,Actionable PGx,FDA,CYP2C19,drug_label
+trametinib,Testing required,FDA,BRAF,drug_label
+vemurafenib,Testing required,FDA,BRAF,drug_label
+citalopram,Actionable PGx,FDA,CYP2C19,drug_label
+amitriptyline,Actionable PGx,FDA,CYP2D6,drug_label
+hydralazine,Informative PGx,FDA,NAT2,drug_label
+isosorbide dinitrate,Informative PGx,FDA,NAT2,drug_label
+rabeprazole,Actionable PGx,FDA,CYP2C19,drug_label
+clomipramine,Actionable PGx,FDA,CYP2D6,drug_label
+thioguanine,Testing recommended,FDA,NUDT15,drug_label
+thioguanine,Testing recommended,FDA,TPMT,drug_label
+fluoxetine,Actionable PGx,FDA,CYP2D6,drug_label
+olanzapine,Actionable PGx,FDA,CYP2D6,drug_label
+pravastatin,Informative PGx,FDA,APOE,drug_label
+sulfadiazine,Actionable PGx,FDA,G6PD,drug_label
+glibenclamide,Actionable PGx,FDA,G6PD,drug_label
+propafenone,Actionable PGx,FDA,CYP2D6,drug_label
+mycophenolic acid,Actionable PGx,FDA,HPRT1,drug_label
+tramadol,Actionable PGx,FDA,CYP2D6,drug_label
+trimipramine,Actionable PGx,FDA,CYP2D6,drug_label
+venlafaxine,Actionable PGx,FDA,CYP2D6,drug_label
+trastuzumab,Testing required,FDA,ERBB2,drug_label
+esomeprazole,Actionable PGx,FDA,CYP2C19,drug_label
+irinotecan,Actionable PGx,FDA,UGT1A1,drug_label
+risperidone,Informative PGx,FDA,CYP2D6,drug_label
+rasburicase,Informative PGx,FDA,CYB5R1,drug_label
+rasburicase,Informative PGx,FDA,CYB5R2,drug_label
+rasburicase,Informative PGx,FDA,CYB5R3,drug_label
+rasburicase,Informative PGx,FDA,CYB5R4,drug_label
+regorafenib,Informative PGx,FDA,EGFR,drug_label
+regorafenib,Informative PGx,FDA,KRAS,drug_label
+regorafenib,Informative PGx,FDA,VEGFA,drug_label
+pembrolizumab,Informative PGx,FDA,BRAF,drug_label
+belimumab,Informative PGx,FDA,TNFSF13B,drug_label
+dabrafenib,Actionable PGx,FDA,G6PD,drug_label
+ofatumumab,Informative PGx,FDA,MS4A1,drug_label
+anastrozole,Testing required,FDA,ESR1,drug_label
+anastrozole,Testing required,FDA,ESR2,drug_label
+anastrozole,Testing required,FDA,PGR,drug_label
+pravastatin,Informative PGx,FDA,LDLR,drug_label
+sodium phenylbutyrate,Testing required,FDA,ASS1,drug_label
+sodium phenylbutyrate,Testing required,FDA,CPS1,drug_label
+sodium phenylbutyrate,Testing required,FDA,OTC,drug_label
+atorvastatin,Informative PGx,FDA,LDLR,drug_label
+brentuximab vedotin,Informative PGx,FDA,ALK,drug_label
+diazepam,Actionable PGx,FDA,CYP2C19,drug_label
+carbamazepine,Testing required,FDA,HLA-B,drug_label
+clopidogrel,Actionable PGx,FDA,CYP2C19,drug_label
+chloroquine,Actionable PGx,FDA,G6PD,drug_label
+erlotinib,Testing required,FDA,EGFR,drug_label
+gefitinib,Testing required,FDA,EGFR,drug_label
+trastuzumab emtansine,Testing required,FDA,ERBB2,drug_label
+rosuvastatin,Actionable PGx,FDA,SLCO1B1,drug_label
+dasatinib,Testing required,FDA,ABL1,drug_label
+dasatinib,Testing required,FDA,BCR,drug_label
+azathioprine,Testing recommended,FDA,NUDT15,drug_label
+azathioprine,Testing recommended,FDA,TPMT,drug_label
+imatinib,Testing required,FDA,ABL1,drug_label
+imatinib,Testing required,FDA,BCR,drug_label
+imatinib,Testing required,FDA,FIP1L1,drug_label
+imatinib,Testing required,FDA,KIT,drug_label
+imatinib,Testing required,FDA,PDGFRA,drug_label
+imatinib,Testing required,FDA,PDGFRB,drug_label
+lapatinib,Testing required,FDA,ERBB2,drug_label
+lapatinib,Testing required,FDA,ESR1,drug_label
+lapatinib,Testing required,FDA,ESR2,drug_label
+lapatinib,Testing required,FDA,PGR,drug_label
+fulvestrant,Testing required,FDA,ESR1,drug_label
+fulvestrant,Testing required,FDA,ESR2,drug_label
+fulvestrant,Testing required,FDA,PGR,drug_label
+sodium benzoate,Testing required,FDA,ARG1,drug_label
+sodium benzoate,Testing required,FDA,ASL,drug_label
+sodium benzoate,Testing required,FDA,ASS1,drug_label
+sodium benzoate,Testing required,FDA,CPS1,drug_label
+sodium benzoate,Testing required,FDA,NAGS,drug_label
+sodium benzoate,Testing required,FDA,OTC,drug_label
+sodium phenylacetate,Testing required,FDA,ARG1,drug_label
+sodium phenylacetate,Testing required,FDA,ASL,drug_label
+sodium phenylacetate,Testing required,FDA,ASS1,drug_label
+sodium phenylacetate,Testing required,FDA,CPS1,drug_label
+sodium phenylacetate,Testing required,FDA,NAGS,drug_label
+sodium phenylacetate,Testing required,FDA,OTC,drug_label
+busulfan,Actionable PGx,FDA,ABL1,drug_label
+busulfan,Actionable PGx,FDA,BCR,drug_label
+indacaterol,Informative PGx,FDA,UGT1A1,drug_label
+maraviroc,Informative PGx,FDA,CCR5,drug_label
+tositumomab,Informative PGx,FDA,MS4A1,drug_label
+quinidine,Informative PGx,FDA,CYP2D6,drug_label
+drospirenone,Informative PGx,FDA,CYP2C19,drug_label
+ethinyl estradiol,Informative PGx,FDA,CYP2C19,drug_label
+terbinafine,Informative PGx,FDA,CYP2D6,drug_label
+tiotropium,Informative PGx,FDA,CYP2D6,drug_label
+fluoxetine,Informative PGx,FDA,CYP2D6,drug_label
+ticagrelor,Informative PGx,FDA,CYP2C19,drug_label
+cisplatin,Informative PGx,FDA,TPMT,drug_label
+boceprevir,Informative PGx,FDA,IFNL3,drug_label
+modafinil,Actionable PGx,FDA,CYP2D6,drug_label
+norfloxacin,Actionable PGx,FDA,G6PD,drug_label
+afatinib,Testing required,FDA,EGFR,drug_label
+capecitabine,Actionable PGx,FDA,DPYD,drug_label
+aripiprazole,Actionable PGx,FDA,CYP2D6,drug_label
+peginterferon alfa-2b,Actionable PGx,FDA,IFNL3,drug_label
+carglumic acid,Testing required,FDA,NAGS,drug_label
+desipramine,Actionable PGx,FDA,CYP2D6,drug_label
+clobazam,Actionable PGx,FDA,CYP2C19,drug_label
+clozapine,Actionable PGx,FDA,CYP2D6,drug_label
+iloperidone,Actionable PGx,FDA,CYP2D6,drug_label
+denileukin diftitox,Testing required,FDA,IL2RA,drug_label
+imipramine,Actionable PGx,FDA,CYP2D6,drug_label
+ivacaftor,Testing required,FDA,CFTR,drug_label
+pimozide,Testing required,FDA,CYP2D6,drug_label
+nalidixic acid,Actionable PGx,FDA,G6PD,drug_label
+nefazodone,Informative PGx,FDA,CYP2D6,drug_label
+pertuzumab,Testing required,FDA,ERBB2,drug_label
+tetrabenazine,Testing required,FDA,CYP2D6,drug_label
+primaquine,Testing required,FDA,G6PD,drug_label
+thioridazine,Actionable PGx,FDA,CYP2D6,drug_label
+carvedilol,Actionable PGx,FDA,CYP2D6,drug_label
+valproic acid,Actionable PGx,FDA,OTC,drug_label
+abacavir,Testing required,FDA,HLA-B,drug_label
+atomoxetine,Actionable PGx,FDA,CYP2D6,drug_label
+isoniazid,Informative PGx,FDA,NAT2,drug_label
+pyrazinamide,Informative PGx,FDA,NAT2,drug_label
+rifampin,Informative PGx,FDA,NAT2,drug_label
+tolterodine,Actionable PGx,FDA,CYP2D6,drug_label
+carisoprodol,Actionable PGx,FDA,CYP2C19,drug_label
+fluvoxamine,Actionable PGx,FDA,CYP2D6,drug_label
+galantamine,Informative PGx,FDA,CYP2D6,drug_label
+nortriptyline,Actionable PGx,FDA,CYP2D6,drug_label
+paroxetine,Informative PGx,FDA,CYP2D6,drug_label
+propranolol,Informative PGx,FDA,CYP2D6,drug_label
+protriptyline,Actionable PGx,FDA,CYP2D6,drug_label
+metoprolol,Informative PGx,FDA,CYP2D6,drug_label
+celecoxib,Actionable PGx,FDA,CYP2C9,drug_label
+nelfinavir,Informative PGx,FDA,CYP2C19,drug_label
+nelfinavir,Informative PGx,FDA,CYP3A,drug_label
+erythromycin ethylsuccinate,Actionable PGx,FDA,G6PD,drug_label
+sulfisoxazole acetyl,Actionable PGx,FDA,G6PD,drug_label
+lansoprazole,Informative PGx,FDA,CYP2C19,drug_label
+nitrofurantoin,Actionable PGx,FDA,G6PD,drug_label
+probenecid,Actionable PGx,FDA,G6PD,drug_label
+codeine,Actionable PGx,FDA,CYP2D6,drug_label
+pantoprazole,Actionable PGx,FDA,CYP2C19,drug_label
+moviprep,Actionable PGx,FDA,G6PD,drug_label
+perphenazine,Actionable PGx,FDA,CYP2D6,drug_label
+pegloticase,Testing required,FDA,G6PD,drug_label
+omeprazole,Actionable PGx,FDA,CYP2C19,drug_label
+flurbiprofen,Actionable PGx,FDA,CYP2C9,drug_label
+mipomersen,Informative PGx,FDA,LDLR,drug_label
+exemestane,Testing required,FDA,ESR1,drug_label
+exemestane,Testing required,FDA,ESR2,drug_label
+exemestane,Testing required,FDA,PGR,drug_label
+valbenazine,Actionable PGx,FDA,CYP2D6,drug_label
+gilteritinib,Testing required,FDA,FLT3,drug_label
+raltegravir,Informative PGx,FDA,UGT1A1,drug_label
+succinylcholine,Actionable PGx,FDA,BCHE,drug_label
+succinylcholine,Actionable PGx,FDA,CACNA1S,drug_label
+succinylcholine,Actionable PGx,FDA,RYR1,drug_label
+mafenide,Actionable PGx,FDA,G6PD,drug_label
+homoharringtonine,Informative PGx,FDA,ABL1,drug_label
+homoharringtonine,Informative PGx,FDA,BCR,drug_label
+rituximab,Informative PGx,FDA,MS4A1,drug_label
+pazopanib,Actionable PGx,FDA,HLA-B,drug_label
+pazopanib,Actionable PGx,FDA,UGT1A1,drug_label
+sofosbuvir,Informative PGx,FDA,IFNL3,drug_label
+elosulfase alfa,Testing required,FDA,GALNS,drug_label
+rasburicase,Testing required,FDA,G6PD,drug_label
+lapatinib,Actionable PGx,FDA,HLA-DQA1,drug_label
+lapatinib,Actionable PGx,FDA,HLA-DRB1,drug_label
+carbamazepine,Actionable PGx,FDA,HLA-A,drug_label
+raloxifene,Informative PGx,FDA,ESR1,drug_label
+raloxifene,Informative PGx,FDA,ESR2,drug_label
+flutamide,Actionable PGx,FDA,G6PD,drug_label
+lorlatinib,Informative PGx,FDA,ROS1,drug_label
+ivosidenib,Testing required,FDA,IDH1,drug_label
+lorlatinib,Testing required,FDA,ALK,drug_label
+amphetamine,Informative PGx,FDA,CYP2D6,drug_label
+ixabepilone,Informative PGx,FDA,ERBB2,drug_label
+ixabepilone,Informative PGx,FDA,ESR1,drug_label
+ixabepilone,Informative PGx,FDA,ESR2,drug_label
+ixabepilone,Informative PGx,FDA,PGR,drug_label
+lusutrombopag,Actionable PGx,FDA,F2,drug_label
+lusutrombopag,Actionable PGx,FDA,F5,drug_label
+lusutrombopag,Actionable PGx,FDA,PROC,drug_label
+lusutrombopag,Actionable PGx,FDA,PROS1,drug_label
+lusutrombopag,Actionable PGx,FDA,SERPINC1,drug_label
+mepivacaine,Actionable PGx,FDA,CYB5R3,drug_label
+mepivacaine,Actionable PGx,FDA,G6PD,drug_label
+tamoxifen,Actionable PGx,FDA,CYP2D6,drug_label
+rivaroxaban,Informative PGx,FDA,F5,drug_label
+tolbutamide,Actionable PGx,FDA,G6PD,drug_label
+nivolumab,Informative PGx,FDA,BRAF,drug_label
+eribulin,Informative PGx,FDA,ERBB2,drug_label
+eribulin,Informative PGx,FDA,ESR1,drug_label
+eribulin,Informative PGx,FDA,ESR2,drug_label
+eribulin,Informative PGx,FDA,PGR,drug_label
+toremifene,Testing required,FDA,ESR1,drug_label
+toremifene,Testing required,FDA,ESR2,drug_label
+cabozantinib,Informative PGx,FDA,RET,drug_label
+vemurafenib,Informative PGx,FDA,HRAS,drug_label
+vemurafenib,Informative PGx,FDA,KRAS,drug_label
+vemurafenib,Informative PGx,FDA,NRAS,drug_label
+valproic acid,Testing required,FDA,POLG,drug_label
+metoclopramide,Actionable PGx,FDA,CYP2D6,drug_label
+dinutuximab,Informative PGx,FDA,MYCN,drug_label
+larotrectinib sulfate,Testing required,FDA,NTRK1,drug_label
+larotrectinib sulfate,Testing required,FDA,NTRK2,drug_label
+larotrectinib sulfate,Testing required,FDA,NTRK3,drug_label
+lidocaine,Actionable PGx,FDA,CYB5R3,drug_label
+lidocaine,Actionable PGx,FDA,G6PD,drug_label
+tetracaine,Actionable PGx,FDA,CYB5R3,drug_label
+tetracaine,Actionable PGx,FDA,G6PD,drug_label
+palonosetron,Informative PGx,FDA,CYP2D6,drug_label
+elagolix,Actionable PGx,FDA,SLCO1B1,drug_label
+belinostat,Actionable PGx,FDA,UGT1A1,drug_label
+palbociclib,Testing required,FDA,ERBB2,drug_label
+palbociclib,Testing required,FDA,ESR1,drug_label
+palbociclib,Testing required,FDA,ESR2,drug_label
+amoxapine,Actionable PGx,FDA,CYP2D6,drug_label
+lacosamide,Informative PGx,FDA,CYP2C19,drug_label
+alectinib,Testing required,FDA,ALK,drug_label
+talazoparib,Testing required,FDA,ERBB2,drug_label
+dolutegravir,Actionable PGx,FDA,UGT1A1,drug_label
+vincristine,Testing required,FDA,ABL1,drug_label
+vincristine,Testing required,FDA,BCR,drug_label
+ropivacaine,Actionable PGx,FDA,CYB5R3,drug_label
+ropivacaine,Actionable PGx,FDA,G6PD,drug_label
+talazoparib,Testing required,FDA,BRCA1,drug_label
+talazoparib,Testing required,FDA,BRCA2,drug_label
+olaratumab,Informative PGx,FDA,PDGFRA,drug_label
+elbasvir,Informative PGx,FDA,IFNL3,drug_label
+grazoprevir,Informative PGx,FDA,IFNL3,drug_label
+dacomitinib,Testing required,FDA,EGFR,drug_label
+niraparib,Testing required,FDA,BRCA1,drug_label
+niraparib,Testing required,FDA,BRCA2,drug_label
+cariprazine,Informative PGx,FDA,CYP2D6,drug_label
+mirabegron,Actionable PGx,FDA,CYP2D6,drug_label
+isosorbide mononitrate,Informative PGx,FDA,CYB5R1,drug_label
+isosorbide mononitrate,Informative PGx,FDA,CYB5R2,drug_label
+isosorbide mononitrate,Informative PGx,FDA,CYB5R3,drug_label
+isosorbide mononitrate,Informative PGx,FDA,CYB5R4,drug_label
+formoterol,Informative PGx,FDA,CYP2C19,drug_label
+formoterol,Informative PGx,FDA,CYP2D6,drug_label
+trametinib,Informative PGx,FDA,G6PD,drug_label
+fosphenytoin,Actionable PGx,FDA,HLA-B,drug_label
+avatrombopag,Informative PGx,FDA,CYP2C9,drug_label
+gefitinib,Actionable PGx,FDA,CYP2D6,drug_label
+tamsulosin,Actionable PGx,FDA,CYP2D6,drug_label
+primaquine,Actionable PGx,FDA,CYB5R1,drug_label
+primaquine,Actionable PGx,FDA,CYB5R2,drug_label
+primaquine,Actionable PGx,FDA,CYB5R3,drug_label
+primaquine,Actionable PGx,FDA,CYB5R4,drug_label
+blinatumomab,Informative PGx,FDA,ABL1,drug_label
+blinatumomab,Informative PGx,FDA,BCR,drug_label
+inotersen,Informative PGx,FDA,TTR,drug_label
+tafenoquine,Testing required,FDA,G6PD,drug_label
+olaparib,Informative PGx,FDA,ESR1,drug_label
+olaparib,Informative PGx,FDA,ESR2,drug_label
+olaparib,Informative PGx,FDA,PGR,drug_label
+olaparib,Informative PGx,FDA,PPP2R2A,drug_label
+meclizine,Actionable PGx,FDA,CYP2D6,drug_label
+dasabuvir,Informative PGx,FDA,IFNL3,drug_label
+ombitasvir,Informative PGx,FDA,IFNL3,drug_label
+paritaprevir,Informative PGx,FDA,IFNL3,drug_label
+ritonavir,Informative PGx,FDA,IFNL3,drug_label
+sofosbuvir,Informative PGx,FDA,IFNL3,drug_label
+velpatasvir,Informative PGx,FDA,IFNL3,drug_label
+voxilaprevir,Informative PGx,FDA,IFNL3,drug_label
+lesinurad,Actionable PGx,FDA,CYP2C9,drug_label
+neratinib,Testing required,FDA,ERBB2,drug_label
+pembrolizumab,Testing required,FDA,ALK,drug_label
+pembrolizumab,Testing required,FDA,CD274,drug_label
+pembrolizumab,Testing required,FDA,EGFR,drug_label
+inotuzumab ozogamicin,Informative PGx,FDA,ABL1,drug_label
+inotuzumab ozogamicin,Informative PGx,FDA,BCR,drug_label
+ipilimumab,Informative PGx,FDA,HLA-A,drug_label
+tipiracil,Informative PGx,FDA,ERBB2,drug_label
+tipiracil,Informative PGx,FDA,KRAS,drug_label
+trifluridine,Informative PGx,FDA,ERBB2,drug_label
+trifluridine,Informative PGx,FDA,KRAS,drug_label
+mivacurium chloride,Actionable PGx,FDA,BCHE,drug_label
+nusinersen,Informative PGx,FDA,SMN2,drug_label
+midostaurin,Testing required,FDA,FLT3,drug_label
+hydroxychloroquine,Actionable PGx,FDA,G6PD,drug_label
+amifampridine,Actionable PGx,FDA,NAT2,drug_label
+trastuzumab,Actionable PGx,FDA,ESR1,drug_label
+trastuzumab,Actionable PGx,FDA,ESR2,drug_label
+trastuzumab,Actionable PGx,FDA,PGR,drug_label
+emapalumab,Informative PGx,FDA,PRF1,drug_label
+emapalumab,Informative PGx,FDA,RAB27A,drug_label
+emapalumab,Informative PGx,FDA,SH2D1A,drug_label
+emapalumab,Informative PGx,FDA,STX11,drug_label
+emapalumab,Informative PGx,FDA,STXBP2,drug_label
+emapalumab,Informative PGx,FDA,UNC13D,drug_label
+emapalumab,Informative PGx,FDA,XIAP,drug_label
+dabrafenib,Informative PGx,FDA,HRAS,drug_label
+dabrafenib,Informative PGx,FDA,KRAS,drug_label
+dabrafenib,Informative PGx,FDA,NRAS,drug_label
+avelumab,Informative PGx,FDA,CD274,drug_label
+durvalumab,Informative PGx,FDA,CD274,drug_label
+cerliponase alfa,Testing required,FDA,TPP1,drug_label
+umeclidinium,Informative PGx,FDA,CYP2D6,drug_label
+sofosbuvir,Informative PGx,FDA,IFNL3,drug_label
+velpatasvir,Informative PGx,FDA,IFNL3,drug_label
+tafamidis,Informative PGx,FDA,TTR,drug_label
+paliperidone,Informative PGx,FDA,CYP2D6,drug_label
+ramucirumab,Informative PGx,FDA,KRAS,drug_label
+eteplirsen,Testing required,FDA,DMD,drug_label
+procainamide,Informative PGx,FDA,NAT2,drug_label
+alpelisib,Testing required,FDA,ERBB2,drug_label
+alpelisib,Testing required,FDA,ESR1,drug_label
+alpelisib,Testing required,FDA,ESR2,drug_label
+alpelisib,Testing required,FDA,PIK3CA,drug_label
+duvelisib,Informative PGx,FDA,,drug_label
+migalastat,Testing required,FDA,GLA,drug_label
+erdafitinib,Actionable PGx,FDA,CYP2C9,drug_label
+ombitasvir,Informative PGx,FDA,IFNL3,drug_label
+paritaprevir,Informative PGx,FDA,IFNL3,drug_label
+ritonavir,Informative PGx,FDA,IFNL3,drug_label
+ustekinumab,Informative PGx,FDA,IL12A,drug_label
+ustekinumab,Informative PGx,FDA,IL12B,drug_label
+ustekinumab,Informative PGx,FDA,IL23A,drug_label
+desvenlafaxine,Informative PGx,FDA,CYP2D6,drug_label
+enasidenib,Testing required,FDA,IDH2,drug_label
+pertuzumab,Actionable PGx,FDA,ESR1,drug_label
+pertuzumab,Actionable PGx,FDA,ESR2,drug_label
+pertuzumab,Actionable PGx,FDA,PGR,drug_label
+binimetinib,Informative PGx,FDA,UGT1A1,drug_label
+binimetinib,Testing required,FDA,BRAF,drug_label
+lofexidine,Actionable PGx,FDA,CYP2D6,drug_label
+ivacaftor,Testing required,FDA,CFTR,drug_label
+tezacaftor,Testing required,FDA,CFTR,drug_label
+nilotinib,Actionable PGx,FDA,UGT1A1,drug_label
+ivacaftor,Testing required,FDA,CFTR,drug_label
+lumacaftor,Testing required,FDA,CFTR,drug_label
+ledipasvir,Informative PGx,FDA,IFNL3,drug_label
+sofosbuvir,Informative PGx,FDA,IFNL3,drug_label
+isosorbide dinitrate,Informative PGx,FDA,CYB5R1,drug_label
+isosorbide dinitrate,Informative PGx,FDA,CYB5R2,drug_label
+isosorbide dinitrate,Informative PGx,FDA,CYB5R3,drug_label
+isosorbide dinitrate,Informative PGx,FDA,CYB5R4,drug_label
+amifampridine phosphate,Actionable PGx,FDA,NAT2,drug_label
+eliglustat,Testing required,FDA,CYP2D6,drug_label
+arformoterol,Informative PGx,FDA,CYP2D6,drug_label
+arformoterol,Informative PGx,FDA,UGT1A1,drug_label
+desflurane,Actionable PGx,FDA,CACNA1S,drug_label
+desflurane,Actionable PGx,FDA,RYR1,drug_label
+sevoflurane,Actionable PGx,FDA,CACNA1S,drug_label
+sevoflurane,Actionable PGx,FDA,RYR1,drug_label
+meloxicam,Actionable PGx,FDA,CYP2C9,drug_label
+pitolisant,Actionable PGx,FDA,CYP2D6,drug_label
+enflurane,Actionable PGx,FDA,CACNA1S,drug_label
+enflurane,Actionable PGx,FDA,RYR1,drug_label
+voxelotor,Informative PGx,FDA,HBB,drug_label
+luspatercept-aamt,Informative PGx,FDA,HBB,drug_label
+enfortumab vedotin,Informative PGx,FDA,NECTIN4,drug_label
+crizanlizumab-tmca,Informative PGx,FDA,,drug_label
+upadacitinib,Informative PGx,FDA,CYP2D6,drug_label
+elexacaftor,Testing required,FDA,CFTR,drug_label
+tezacaftor,Testing required,FDA,CFTR,drug_label
+ivacaftor,Testing required,FDA,CFTR,drug_label
+fam-trastuzumab deruxtecan-nxki,Testing required,FDA,ERBB2,drug_label
+golodirsen,Testing required,FDA,DMD,drug_label
+lenvatinib,Testing required,FDA,,drug_label
+vortioxetine,Actionable PGx,FDA,CYP2D6,drug_label
+estradiol,Actionable PGx,FDA,PROC,drug_label
+estradiol,Actionable PGx,FDA,PROS1,drug_label
+estradiol,Actionable PGx,FDA,SERPINC1,drug_label
+progesterone,Actionable PGx,FDA,PROC,drug_label
+progesterone,Actionable PGx,FDA,PROS1,drug_label
+progesterone,Actionable PGx,FDA,SERPINC1,drug_label
+entrectinib,Testing required,FDA,NTRK1,drug_label
+entrectinib,Testing required,FDA,NTRK2,drug_label
+entrectinib,Testing required,FDA,NTRK3,drug_label
+entrectinib,Testing required,FDA,ROS1,drug_label
+fluorouracil,Actionable PGx,FDA,DPYD,drug_label
+brigatinib,Testing required,FDA,ALK,drug_label
+ceritinib,Testing required,FDA,ALK,drug_label
+chlorpropamide,Actionable PGx,FDA,G6PD,drug_label
+cobimetinib,Testing required,FDA,BRAF,drug_label
+dabrafenib,Testing required,FDA,BRAF,drug_label
+divalproex sodium,Testing required,FDA,POLG,drug_label
+encorafenib,Testing required,FDA,BRAF,drug_label
+osimertinib,Testing required,FDA,EGFR,drug_label
+velaglucerase alfa,Testing required,FDA,GBA,drug_label
+aripiprazole lauroxil,Actionable PGx,FDA,CYP2D6,drug_label
+abemaciclib,Testing required,FDA,ERBB2,drug_label
+abemaciclib,Testing required,FDA,ESR1,drug_label
+abemaciclib,Testing required,FDA,ESR2,drug_label
+abemaciclib,Testing required,FDA,PGR,drug_label
+cevimeline,Actionable PGx,FDA,CYP2D6,drug_label
+oxcarbazepine,Testing recommended,FDA,HLA-B,drug_label
+nebivolol,Informative PGx,FDA,CYP2D6,drug_label
+piroxicam,Actionable PGx,FDA,CYP2C9,drug_label
+dronabinol,Actionable PGx,FDA,CYP2C9,drug_label
+siponimod,Testing required,FDA,CYP2C9,drug_label
+bupropion,Informative PGx,FDA,CYP2D6,drug_label
+alglucosidase alfa,Testing required,FDA,GAA,drug_label
+brentuximab vedotin,Testing required,FDA,TNFRSF8,drug_label
+citalopram,Informative PGx,FDA,CYP2D6,drug_label
+escitalopram,Informative PGx,FDA,CYP2D6,drug_label
+avapritinib,Testing required,FDA,PDGFRA,drug_label
+capmatinib,Testing required,FDA,MET,drug_label
+gemtuzumab ozogamicin,Testing required,FDA,CD33,drug_label
+ibrutinib,Testing required,FDA,,drug_label
+ibrutinib,Informative PGx,FDA,MYD88,drug_label
+inebilizumab-cdon,Testing required,FDA,AQP4,drug_label
+isatuximab-irfc,Informative PGx,FDA,,drug_label
+sacituzumab govitecan-hziy,Actionable PGx,FDA,UGT1A1,drug_label
+selpercatinib,Testing required,FDA,RET,drug_label
+tucatinib,Testing required,FDA,ERBB2,drug_label
+oliceridine,Actionable PGx,FDA,CYP2D6,drug_label
+rimegepant,Informative PGx,FDA,CYP2C9,drug_label
+dotatate lutenium lu-177,Testing required,FDA,SSTR1,drug_label
+dotatate lutenium lu-177,Testing required,FDA,SSTR2,drug_label
+dotatate lutenium lu-177,Testing required,FDA,SSTR3,drug_label
+dotatate lutenium lu-177,Testing required,FDA,SSTR4,drug_label
+dotatate lutenium lu-177,Testing required,FDA,SSTR5,drug_label
+eculizumab,Testing required,FDA,AQP4,drug_label
+eculizumab,Testing required,FDA,CHRNA1,drug_label
+eculizumab,Testing required,FDA,CHRNA3,drug_label
+eculizumab,Testing required,FDA,CHRNA4,drug_label
+eculizumab,Testing required,FDA,CHRNA5,drug_label
+eculizumab,Testing required,FDA,CHRNA6,drug_label
+eculizumab,Testing required,FDA,CHRNA7,drug_label
+eculizumab,Testing required,FDA,CHRNB1,drug_label
+eculizumab,Testing required,FDA,CHRNE,drug_label
+brexpiprazole,Actionable PGx,FDA,CYP2D6,drug_label
+deutetrabenazine,Actionable PGx,FDA,CYP2D6,drug_label
+voriconazole,Actionable PGx,FDA,CYP2C19,drug_label
+atorvastatin,Informative PGx,FDA,SLCO1B1,drug_label
+simvastatin,Informative PGx,FDA,SLCO1B1,drug_label
+allopurinol,Testing recommended,FDA,HLA-B,drug_label
+gamma hydroxybutyric acid,Actionable PGx,FDA,ALDH5A1,drug_label
+tacrolimus,Informative PGx,FDA,CYP3A,drug_label
+anakinra,Testing required,FDA,NLRP3,drug_label
+lumasiran,Testing required,FDA,AGXT,drug_label
+margetuximab,Testing required,FDA,ERBB2,drug_label
+metreleptin,Testing required,FDA,LEP,drug_label
+pralsetinib,Testing required,FDA,RET,drug_label
+viltolarsen,Testing required,FDA,DMD,drug_label
+risdiplam,Testing required,FDA,SMN1,drug_label
+risdiplam,Testing required,FDA,SMN2,drug_label
+"synthetic conjugated estrogens, A",Actionable PGx,FDA,PROC,drug_label
+"synthetic conjugated estrogens, A",Actionable PGx,FDA,PROS1,drug_label
+"synthetic conjugated estrogens, A",Actionable PGx,FDA,SERPINC1,drug_label
+flibanserin,Actionable PGx,FDA,CYP2C19,drug_label
+flibanserin,Actionable PGx,FDA,CYP2C9,drug_label
+flibanserin,Actionable PGx,FDA,CYP2D6,drug_label
+sodium nitrite,Actionable PGx,FDA,CYB5R3,drug_label
+sodium nitrite,Actionable PGx,FDA,G6PD,drug_label
+lidocaine,Actionable PGx,FDA,CYB5R3,drug_label
+lidocaine,Actionable PGx,FDA,G6PD,drug_label
+prilocaine,Actionable PGx,FDA,CYB5R3,drug_label
+prilocaine,Actionable PGx,FDA,G6PD,drug_label
+warfarin,Actionable PGx,FDA,CYP2C9,drug_label
+warfarin,Actionable PGx,FDA,PROC,drug_label
+warfarin,Actionable PGx,FDA,PROS1,drug_label
+warfarin,Actionable PGx,FDA,VKORC1,drug_label
+tamoxifen,Testing required,FDA,ESR1,drug_label
+tamoxifen,Testing required,FDA,ESR2,drug_label
+tamoxifen,Testing required,FDA,PGR,drug_label
+phenytoin,Actionable PGx,FDA,CYP2C19,drug_label
+phenytoin,Actionable PGx,FDA,CYP2C9,drug_label
+phenytoin,Actionable PGx,FDA,HLA-B,drug_label
+letrozole,Testing required,FDA,ESR1,drug_label
+letrozole,Testing required,FDA,ESR2,drug_label
+letrozole,Testing required,FDA,PGR,drug_label
+panitumumab,Testing required,FDA,EGFR,drug_label
+panitumumab,Testing required,FDA,KRAS,drug_label
+panitumumab,Testing required,FDA,NRAS,drug_label
+mercaptopurine,Testing recommended,FDA,NUDT15,drug_label
+mercaptopurine,Testing recommended,FDA,TPMT,drug_label
+tretinoin,Testing required,FDA,PML,drug_label
+tretinoin,Testing required,FDA,RARA,drug_label
+cetuximab,Testing required,FDA,EGFR,drug_label
+cetuximab,Testing required,FDA,KRAS,drug_label
+cetuximab,Testing required,FDA,NRAS,drug_label
+nilotinib,Testing required,FDA,ABL1,drug_label
+nilotinib,Testing required,FDA,BCR,drug_label
+dapsone,Actionable PGx,FDA,CYB5R3,drug_label
+dapsone,Actionable PGx,FDA,G6PD,drug_label
+arsenic trioxide,Testing required,FDA,PML,drug_label
+arsenic trioxide,Testing required,FDA,RARA,drug_label
+crizotinib,Testing required,FDA,ALK,drug_label
+crizotinib,Testing required,FDA,ROS1,drug_label
+sulfamethoxazole,Actionable PGx,FDA,G6PD,drug_label
+sulfamethoxazole,Actionable PGx,FDA,NAT2,drug_label
+trimethoprim,Actionable PGx,FDA,G6PD,drug_label
+trimethoprim,Actionable PGx,FDA,NAT2,drug_label
+doxepin,Actionable PGx,FDA,CYP2C19,drug_label
+doxepin,Actionable PGx,FDA,CYP2D6,drug_label
+eltrombopag,Actionable PGx,FDA,F5,drug_label
+eltrombopag,Actionable PGx,FDA,SERPINC1,drug_label
+everolimus,Testing required,FDA,ERBB2,drug_label
+everolimus,Testing required,FDA,ESR1,drug_label
+everolimus,Testing required,FDA,ESR2,drug_label
+prasugrel,Informative PGx,FDA,CYP2B6,drug_label
+prasugrel,Informative PGx,FDA,CYP2C19,drug_label
+prasugrel,Informative PGx,FDA,CYP2C9,drug_label
+prasugrel,Informative PGx,FDA,CYP3A5,drug_label
+sulfasalazine,Actionable PGx,FDA,G6PD,drug_label
+sulfasalazine,Actionable PGx,FDA,NAT2,drug_label
+olaparib,Testing required,FDA,BRCA1,drug_label
+olaparib,Testing required,FDA,BRCA2,drug_label
+olaparib,Testing required,FDA,ERBB2,drug_label
+avatrombopag,Actionable PGx,FDA,F2,drug_label
+avatrombopag,Actionable PGx,FDA,F5,drug_label
+avatrombopag,Actionable PGx,FDA,PROC,drug_label
+avatrombopag,Actionable PGx,FDA,PROS1,drug_label
+avatrombopag,Actionable PGx,FDA,SERPINC1,drug_label
+chloroprocaine,Actionable PGx,FDA,CYB5R3,drug_label
+chloroprocaine,Actionable PGx,FDA,G6PD,drug_label
+docetaxel,Informative PGx,FDA,ESR1,drug_label
+docetaxel,Informative PGx,FDA,ESR2,drug_label
+docetaxel,Informative PGx,FDA,PGR,drug_label
+rucaparib,Informative PGx,FDA,CYP1A2,drug_label
+rucaparib,Informative PGx,FDA,CYP2D6,drug_label
+trametinib,Informative PGx,FDA,HRAS,drug_label
+trametinib,Informative PGx,FDA,KRAS,drug_label
+trametinib,Informative PGx,FDA,NRAS,drug_label
+midostaurin,Informative PGx,FDA,KIT,drug_label
+midostaurin,Informative PGx,FDA,NPM1,drug_label
+articaine,Actionable PGx,FDA,CYB5R3,drug_label
+articaine,Actionable PGx,FDA,G6PD,drug_label
+epinephrine,Actionable PGx,FDA,CYB5R3,drug_label
+epinephrine,Actionable PGx,FDA,G6PD,drug_label
+ceftriaxone,Actionable PGx,FDA,CYB5R3,drug_label
+ceftriaxone,Actionable PGx,FDA,G6PD,drug_label
+rucaparib,Testing required,FDA,BRCA1,drug_label
+rucaparib,Testing required,FDA,BRCA2,drug_label
+venetoclax,Informative PGx,FDA,FLT3,drug_label
+venetoclax,Informative PGx,FDA,IDH1,drug_label
+venetoclax,Informative PGx,FDA,IDH2,drug_label
+venetoclax,Informative PGx,FDA,NPM1,drug_label
+venetoclax,Informative PGx,FDA,TP53,drug_label
+ramucirumab,Testing required,FDA,ALK,drug_label
+ramucirumab,Testing required,FDA,EGFR,drug_label
+tamoxifen,Informative PGx,FDA,F2,drug_label
+tamoxifen,Informative PGx,FDA,F5,drug_label
+ospemifene,Informative PGx,FDA,CYP2B6,drug_label
+ospemifene,Informative PGx,FDA,CYP2C9,drug_label
+cholic acid,Testing required,FDA,AKR1D1,drug_label
+cholic acid,Testing required,FDA,AMACR,drug_label
+cholic acid,Testing required,FDA,CYP27A1,drug_label
+cholic acid,Testing required,FDA,CYP7A1,drug_label
+cholic acid,Testing required,FDA,DHCR7,drug_label
+cholic acid,Testing required,FDA,HSD3B7,drug_label
+atezolizumab,Testing required,FDA,ALK,drug_label
+atezolizumab,Testing required,FDA,BRAF,drug_label
+atezolizumab,Testing required,FDA,CD274,drug_label
+atezolizumab,Testing required,FDA,EGFR,drug_label
+givosiran,Informative PGx,FDA,CPOX,drug_label
+givosiran,Informative PGx,FDA,HMBS,drug_label
+givosiran,Informative PGx,FDA,PPOX,drug_label
+ipilimumab,Testing required,FDA,ALK,drug_label
+ipilimumab,Testing required,FDA,CD274,drug_label
+ipilimumab,Testing required,FDA,EGFR,drug_label
+nivolumab,Testing required,FDA,ALK,drug_label
+nivolumab,Testing required,FDA,CD274,drug_label
+nivolumab,Testing required,FDA,EGFR,drug_label
+erdafitinib,Testing required,FDA,FGFR2,drug_label
+erdafitinib,Testing required,FDA,FGFR3,drug_label
+isoflurane,Actionable PGx,FDA,CACNA1S,drug_label
+isoflurane,Actionable PGx,FDA,RYR1,drug_label
+quinine,Actionable PGx,FDA,CYP2D6,drug_label
+quinine,Actionable PGx,FDA,G6PD,drug_label
+ribociclib,Testing required,FDA,ERBB2,drug_label
+ribociclib,Testing required,FDA,ESR1,drug_label
+ribociclib,Testing required,FDA,ESR2,drug_label
+ribociclib,Testing required,FDA,PGR,drug_label
+encorafenib,Actionable PGx,FDA,HRAS,drug_label
+encorafenib,Actionable PGx,FDA,KRAS,drug_label
+encorafenib,Actionable PGx,FDA,NRAS,drug_label
+lonafarnib,Testing required,FDA,LMNA,drug_label
+lonafarnib,Testing required,FDA,ZMPSTE24,drug_label
+margetuximab,Informative PGx,FDA,FCGR2A,drug_label
+margetuximab,Informative PGx,FDA,FCGR2B,drug_label
+margetuximab,Informative PGx,FDA,FCGR3A,drug_label
+satralizumab,Informative PGx,FDA,AQP4,drug_label
+satralizumab,Informative PGx,FDA,IL6R,drug_label
+bupivacaine,Actionable PGx,FDA,CYB5R3,drug_label
+bupivacaine,Actionable PGx,FDA,G6PD,drug_label
+setmelanotide,Testing required,FDA,LEPR,drug_label
+setmelanotide,Testing required,FDA,PCSK1,drug_label
+setmelanotide,Testing required,FDA,POMC,drug_label
+acetaminophen,Actionable PGx,FDA,CYP2D6,drug_label
+caffeine,Actionable PGx,FDA,CYP2D6,drug_label
+dihydrocodeine,Actionable PGx,FDA,CYP2D6,drug_label
+sotorasib,Testing required,FDA,KRAS,drug_label

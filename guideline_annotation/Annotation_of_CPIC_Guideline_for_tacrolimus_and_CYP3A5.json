@@ -1,0 +1,722 @@
+{
+  "citations" : [ {
+    "@id" : "https://pharmgkb.org/literature/15087045",
+    "@context" : "https://api.pharmgkb.org/jsonld/literature.jsonld",
+    "id" : 15087045,
+    "resourceId" : "25801146",
+    "title" : "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guidelines for CYP3A5 Genotype and Tacrolimus Dosing.",
+    "_sameAs" : "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4481158",
+    "authors" : [ "Birdwell K A", "Decker B", "Barbarino J M", "Peterson J F", "Stein C M", "Sadee W", "Wang D", "Vinks A A", "He Y", "Swen J J", "Leeder J S", "van Schaik Rhn", "Thummel K E", "Klein T E", "Caudle K E", "MacPhee I A M" ],
+    "crossReferences" : [ {
+      "@id" : "https://pharmgkb.org/crossReference/pmc/PMC4481158",
+      "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+      "id" : 1449295555,
+      "resource" : "PubMed Central",
+      "resourceId" : "PMC4481158",
+      "_url" : "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4481158",
+      "version" : 0
+    }, {
+      "@id" : "https://pharmgkb.org/crossReference/pubMed/25801146",
+      "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+      "id" : 1449295554,
+      "resource" : "PubMed",
+      "resourceId" : "25801146",
+      "_url" : "https://www.ncbi.nlm.nih.gov/pubmed/25801146",
+      "version" : 0
+    }, {
+      "@id" : "https://pharmgkb.org/crossReference/doi/10.1002/cpt.113",
+      "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+      "id" : 1449295556,
+      "resource" : "DOI",
+      "resourceId" : "10.1002/cpt.113",
+      "_url" : "http://dx.doi.org/10.1002%2Fcpt.113",
+      "version" : 0
+    } ],
+    "hasKeyword" : true,
+    "journal" : "Clinical pharmacology and therapeutics",
+    "meshDiseases" : [ "PA133888799", "PA166123007" ],
+    "meshTerms" : [ "Cytochrome P-450 CYP3A", "Genetic Testing", "Genotype", "Hematopoietic Stem Cell Transplantation", "Humans", "Immunosuppressive Agents", "Organ Transplantation", "Tacrolimus" ],
+    "month" : 7,
+    "nonHuman" : false,
+    "objCls" : "Literature",
+    "page" : "19-24",
+    "pediatric" : false,
+    "pgkbPublication" : true,
+    "pubDate" : "2015-07-01T00:00:00-07:00",
+    "summary" : "Tacrolimus is the mainstay immunosuppressant drug used after solid organ and hematopoietic stem cell transplantation. Individuals who express CYP3A5 (extensive and intermediate metabolizers) generally have decreased dose-adjusted trough concentrations of tacrolimus as compared with those who are CYP3A5 nonexpressers (poor metabolizers), possibly delaying achievement of target blood concentrations. We summarize evidence from the published literature supporting this association and provide dosing recommendations for tacrolimus based on CYP3A5 genotype when known (updates at www.pharmgkb.org).",
+    "type" : "Article",
+    "version" : 5,
+    "volume" : "98",
+    "year" : 2015
+  } ],
+  "guideline" : {
+    "@id" : "https://pharmgkb.org/guidelineAnnotation/PA166124619",
+    "@context" : "https://api.pharmgkb.org/jsonld/guidelineAnnotation.jsonld",
+    "objCls" : "Guideline Annotation",
+    "id" : "PA166124619",
+    "name" : "Annotation of CPIC Guideline for tacrolimus and CYP3A5",
+    "cancerGenome" : false,
+    "crossReferences" : [ {
+      "@id" : "https://pharmgkb.org/crossReference/url/https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/",
+      "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+      "id" : 1447983514,
+      "name" : "CPIC® Guideline for Tacrolimus and CYP3A5 – CPIC",
+      "resource" : "URL",
+      "resourceId" : "https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/",
+      "_url" : "https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/",
+      "version" : 1
+    } ],
+    "descriptiveVideoId" : "OGP4_sQsnBE",
+    "guidelineGenes" : [ {
+      "id" : 1449560765,
+      "alleles" : [ {
+        "id" : 1449560766,
+        "_label" : "*1",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1445558335",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1445558335,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "Normal function",
+          "termId" : "haplotypeTags:1445558335",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128213",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128213",
+          "symbol" : "CYP3A5*1",
+          "name" : "*1",
+          "version" : 6
+        },
+        "version" : 2
+      }, {
+        "id" : 1449560767,
+        "_label" : "*2",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1448589712",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1448589712,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "Unknown function",
+          "termId" : "haplotypeTags:1448589712",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128218",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128218",
+          "symbol" : "CYP3A5*2",
+          "name" : "*2",
+          "version" : 6
+        },
+        "version" : 2
+      }, {
+        "id" : 1449560768,
+        "_label" : "*3",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1445558515",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1445558515,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "No function",
+          "termId" : "haplotypeTags:1445558515",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128219",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128219",
+          "symbol" : "CYP3A5*3",
+          "name" : "*3",
+          "version" : 7
+        },
+        "version" : 2
+      }, {
+        "id" : 1449560769,
+        "_label" : "*4",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1448589712",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1448589712,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "Unknown function",
+          "termId" : "haplotypeTags:1448589712",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128231",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128231",
+          "symbol" : "CYP3A5*4",
+          "name" : "*4",
+          "version" : 6
+        },
+        "version" : 2
+      }, {
+        "id" : 1449560770,
+        "_label" : "*5",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1448589712",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1448589712,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "Unknown function",
+          "termId" : "haplotypeTags:1448589712",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128232",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128232",
+          "symbol" : "CYP3A5*5",
+          "name" : "*5",
+          "version" : 6
+        },
+        "version" : 2
+      }, {
+        "id" : 1449560771,
+        "_label" : "*6",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1445558515",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1445558515,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "No function",
+          "termId" : "haplotypeTags:1445558515",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128233",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128233",
+          "symbol" : "CYP3A5*6",
+          "name" : "*6",
+          "version" : 6
+        },
+        "version" : 2
+      }, {
+        "id" : 1449560772,
+        "_label" : "*7",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1445558515",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1445558515,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "No function",
+          "termId" : "haplotypeTags:1445558515",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128234",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128234",
+          "symbol" : "CYP3A5*7",
+          "name" : "*7",
+          "version" : 7
+        },
+        "version" : 2
+      }, {
+        "id" : 1449560773,
+        "_label" : "*8",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1448589712",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1448589712,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "Unknown function",
+          "termId" : "haplotypeTags:1448589712",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128235",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128235",
+          "symbol" : "CYP3A5*8",
+          "name" : "*8",
+          "version" : 6
+        },
+        "version" : 2
+      }, {
+        "id" : 1449560774,
+        "_label" : "*9",
+        "function" : {
+          "@id" : "https://pharmgkb.org/ontologyTerm/alleleFunction/haplotypeTags:1448589712",
+          "@context" : "https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld",
+          "id" : 1448589712,
+          "parents" : [ ],
+          "resource" : "Allele Function",
+          "term" : "Unknown function",
+          "termId" : "haplotypeTags:1448589712",
+          "version" : 1
+        },
+        "haplotype" : {
+          "@id" : "https://pharmgkb.org/haplotype/PA166128236",
+          "@context" : "https://api.pharmgkb.org/jsonld/haplotype.jsonld",
+          "objCls" : "Haplotype",
+          "id" : "PA166128236",
+          "symbol" : "CYP3A5*9",
+          "name" : "*9",
+          "version" : 6
+        },
+        "version" : 2
+      } ],
+      "gene" : {
+        "@id" : "https://pharmgkb.org/gene/PA131",
+        "@context" : "https://api.pharmgkb.org/jsonld/gene.jsonld",
+        "objCls" : "Gene",
+        "id" : "PA131",
+        "symbol" : "CYP3A5",
+        "name" : "cytochrome P450 family 3 subfamily A member 5",
+        "alleleFile" : "CYP3A5_allele_definition_table.xlsx",
+        "altNames" : {
+          "synonym" : [ "cytochrome P450, family 3, subfamily A, polypeptide 5" ],
+          "symbol" : [ "CP35", "P450PCN3", "PCN3" ]
+        },
+        "buildVersion" : "GRCh38.p7",
+        "cbStart" : "q22.1",
+        "cbStop" : "q22.1",
+        "chr" : {
+          "@id" : "https://pharmgkb.org/chromosome/PA534",
+          "@context" : "https://api.pharmgkb.org/jsonld/chromosome.jsonld",
+          "objCls" : "Chromosome",
+          "id" : "PA534",
+          "name" : "chr7",
+          "version" : 3
+        },
+        "chrStartPosB37" : 99245813,
+        "chrStartPosB38" : 99648189,
+        "chrStopPosB37" : 99277636,
+        "chrStopPosB38" : 99680026,
+        "cpicGene" : true,
+        "crossReferences" : [ {
+          "@id" : "https://pharmgkb.org/crossReference/alfred/LO024680U",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 608118129,
+          "resource" : "ALFRED",
+          "resourceId" : "LO024680U",
+          "_url" : "http://alfred.med.yale.edu/alfred/recordinfop.asp?UNID=LO024680U",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/ctd/1577",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 553242074,
+          "resource" : "Comparative Toxicogenomics Database",
+          "resourceId" : "1577",
+          "_url" : "http://ctdbase.org/detail.go?type=gene&acc=1577",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/ensembl/ENSG00000106258",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 132256051,
+          "resource" : "Ensembl",
+          "resourceId" : "ENSG00000106258",
+          "_url" : "http://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000106258",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/genAtlas/CYP3A5",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 73395,
+          "resource" : "GenAtlas",
+          "resourceId" : "CYP3A5",
+          "_url" : "http://genatlas.medecine.univ-paris5.fr/fiche.php?symbol=CYP3A5",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/geneCard/CYP3A5",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 88323,
+          "resource" : "GeneCard",
+          "resourceId" : "CYP3A5",
+          "_url" : "http://www.genecards.org/cgi-bin/carddisp.pl?gene=CYP3A5",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0004497",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 34580,
+          "resource" : "GO",
+          "resourceId" : "GO:0004497",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0004497",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0005506",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 34969,
+          "resource" : "GO",
+          "resourceId" : "GO:0005506",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0005506",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0005624",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 34644,
+          "resource" : "GO",
+          "resourceId" : "GO:0005624",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0005624",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0005783",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 34654,
+          "resource" : "GO",
+          "resourceId" : "GO:0005783",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0005783",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0005792",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 35016,
+          "resource" : "GO",
+          "resourceId" : "GO:0005792",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0005792",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0006118",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 35063,
+          "resource" : "GO",
+          "resourceId" : "GO:0006118",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0006118",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0006805",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 35602,
+          "resource" : "GO",
+          "resourceId" : "GO:0006805",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0006805",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0008202",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 35217,
+          "resource" : "GO",
+          "resourceId" : "GO:0008202",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0008202",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0016020",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 34795,
+          "resource" : "GO",
+          "resourceId" : "GO:0016020",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0016020",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0019825",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 62329726,
+          "resource" : "GO",
+          "resourceId" : "GO:0019825",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0019825",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0020037",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 77774616,
+          "resource" : "GO",
+          "resourceId" : "GO:0020037",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0020037",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0046872",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 746292,
+          "resource" : "GO",
+          "resourceId" : "GO:0046872",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0046872",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/go/GO:0050381",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 62329724,
+          "resource" : "GO",
+          "resourceId" : "GO:0050381",
+          "_url" : "http://amigo.geneontology.org/amigo/term/GO%3A0050381",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/hgnc/HGNC:2638",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 608118122,
+          "resource" : "HGNC",
+          "resourceId" : "HGNC:2638",
+          "_url" : "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC%3A2638",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/HumanCycGene/HS02875",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 608118130,
+          "resource" : "HumanCyc Gene",
+          "resourceId" : "HS02875",
+          "_url" : "http://biocyc.org/HUMAN/NEW-IMAGE?object=HS02875",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/modBase/P20815",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 560881433,
+          "resource" : "ModBase",
+          "resourceId" : "P20815",
+          "_url" : "http://salilab.org/modbase/search?modelflag=longest&databaseID=P20815",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/mutDb/CYP3A5",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 455933,
+          "resource" : "MutDB",
+          "resourceId" : "CYP3A5",
+          "_url" : "http://www.mutdb.org/genes/search?_method=POST&data%5BSearch%5D%5Bidentifier%5D=CYP3A5",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/entrezGene/1577",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 10763,
+          "resource" : "NCBI Gene",
+          "resourceId" : "1577",
+          "_url" : "https://www.ncbi.nlm.nih.gov/gene/1577",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/omim/145500",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 559638111,
+          "resource" : "OMIM",
+          "resourceId" : "145500",
+          "_url" : "http://omim.org/entry/145500",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/omim/605325",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 7563,
+          "resource" : "OMIM",
+          "resourceId" : "605325",
+          "_url" : "http://omim.org/entry/605325",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/pharmVarGene/CYP3A5",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 1451280336,
+          "resource" : "PharmVar Gene",
+          "resourceId" : "CYP3A5",
+          "_url" : "https://www.pharmvar.org/gene/CYP3A5",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqDna/NG_000004",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 123171479,
+          "resource" : "RefSeq DNA",
+          "resourceId" : "NG_000004",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NG_000004",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqDna/NG_007938",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 560539624,
+          "resource" : "RefSeq DNA",
+          "resourceId" : "NG_007938",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NG_007938",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqDna/NT_007933",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 36721,
+          "resource" : "RefSeq DNA",
+          "resourceId" : "NT_007933",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NT_007933",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqDna/NT_079595",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 62329325,
+          "resource" : "RefSeq DNA",
+          "resourceId" : "NT_079595",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NT_079595",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqProtein/NP_000768",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 37904,
+          "resource" : "RefSeq Protein",
+          "resourceId" : "NP_000768",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NP_000768",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqProtein/NP_001177413",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 978632736,
+          "resource" : "RefSeq Protein",
+          "resourceId" : "NP_001177413",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NP_001177413",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqRna/NM_000777",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 46979,
+          "resource" : "RefSeq RNA",
+          "resourceId" : "NM_000777",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NM_000777",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqRna/NM_001190484",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 978632735,
+          "resource" : "RefSeq RNA",
+          "resourceId" : "NM_001190484",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NM_001190484",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqRna/NR_033807",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 978632737,
+          "resource" : "RefSeq RNA",
+          "resourceId" : "NR_033807",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NR_033807",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqRna/NR_033808",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 608118125,
+          "resource" : "RefSeq RNA",
+          "resourceId" : "NR_033808",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NR_033808",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqRna/NR_033809",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 608118124,
+          "resource" : "RefSeq RNA",
+          "resourceId" : "NR_033809",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NR_033809",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqRna/NR_033810",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 608118127,
+          "resource" : "RefSeq RNA",
+          "resourceId" : "NR_033810",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NR_033810",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqRna/NR_033811",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 608118128,
+          "resource" : "RefSeq RNA",
+          "resourceId" : "NR_033811",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NR_033811",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/refSeqRna/NR_033812",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 608118126,
+          "resource" : "RefSeq RNA",
+          "resourceId" : "NR_033812",
+          "_url" : "https://www.ncbi.nlm.nih.gov/nuccore/NR_033812",
+          "version" : 0
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/ucscGenomeBrowser/NM_000777",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 122296,
+          "resource" : "UCSC Genome Browser",
+          "resourceId" : "NM_000777",
+          "_url" : "http://genome.ucsc.edu/cgi-bin/hgTracks?Submit=Submit&position=NM_000777",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/uniProtKb/P20815",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 62329705,
+          "name" : "CP3A5_HUMAN",
+          "resource" : "UniProtKB",
+          "resourceId" : "P20815",
+          "_url" : "http://www.uniprot.org/uniprot/P20815",
+          "version" : 1
+        }, {
+          "@id" : "https://pharmgkb.org/crossReference/url/http://www.imm.ki.se/CYPalleles/cyp3a5.htm",
+          "@context" : "https://api.pharmgkb.org/jsonld/crossReference.jsonld",
+          "id" : 93,
+          "resource" : "URL",
+          "resourceId" : "http://www.imm.ki.se/CYPalleles/cyp3a5.htm",
+          "_url" : "http://www.imm.ki.se/CYPalleles/cyp3a5.htm",
+          "version" : 1
+        } ],
+        "hideHaplotypes" : false,
+        "pharmVarGene" : true,
+        "strand" : "minus",
+        "terms" : [ {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0004497","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560498878,"_url":"http://amigo.geneontology.org/amigo/term/GO:0004497","resource":"Gene Ontology","term":"monooxygenase activity","termId":"GO:0004497"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0005783","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560500134,"_url":"http://amigo.geneontology.org/amigo/term/GO:0005783","resource":"Gene Ontology","term":"endoplasmic reticulum","termId":"GO:0005783"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0005789","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560500141,"_url":"http://amigo.geneontology.org/amigo/term/GO:0005789","resource":"Gene Ontology","term":"endoplasmic reticulum membrane","termId":"GO:0005789"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0005792","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560500144,"_url":"http://amigo.geneontology.org/amigo/term/GO:0005792","resource":"Gene Ontology","term":"microsome","termId":"GO:0005792"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0008202","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560501294,"_url":"http://amigo.geneontology.org/amigo/term/GO:0008202","resource":"Gene Ontology","term":"steroid metabolic process","termId":"GO:0008202"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0009055","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560503412,"_url":"http://amigo.geneontology.org/amigo/term/GO:0009055","resource":"Gene Ontology","term":"electron carrier activity","termId":"GO:0009055"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0009822","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560504180,"_url":"http://amigo.geneontology.org/amigo/term/GO:0009822","resource":"Gene Ontology","term":"alkaloid catabolic process","termId":"GO:0009822"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0016020","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560499972,"_url":"http://amigo.geneontology.org/amigo/term/GO:0016020","resource":"Gene Ontology","term":"membrane","termId":"GO:0016020"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0016491","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560495264,"_url":"http://amigo.geneontology.org/amigo/term/GO:0016491","resource":"Gene Ontology","term":"oxidoreductase activity","termId":"GO:0016491"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0019825","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560509226,"_url":"http://amigo.geneontology.org/amigo/term/GO:0019825","resource":"Gene Ontology","term":"oxygen binding","termId":"GO:0019825"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0020037","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560509358,"_url":"http://amigo.geneontology.org/amigo/term/GO:0020037","resource":"Gene Ontology","term":"heme binding","termId":"GO:0020037"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0042737","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560515689,"_url":"http://amigo.geneontology.org/amigo/term/GO:0042737","resource":"Gene Ontology","term":"drug catabolic process","termId":"GO:0042737"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0046872","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560495445,"_url":"http://amigo.geneontology.org/amigo/term/GO:0046872","resource":"Gene Ontology","term":"metal ion binding","termId":"GO:0046872"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0055114","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560509993,"_url":"http://amigo.geneontology.org/amigo/term/GO:0055114","resource":"Gene Ontology","term":"oxidation reduction","termId":"GO:0055114"}, {"@id":"https://pharmgkb.org/ontologyTerm/GO/GO:0070330","@context":"https://api.pharmgkb.org/jsonld/ontologyTerm.jsonld","id":560523003,"_url":"http://amigo.geneontology.org/amigo/term/GO:0070330","resource":"Gene Ontology","term":"aromatase activity","termId":"GO:0070330"} ],
+        "version" : 7960
+      },
+      "version" : 2
+    } ],
+    "history" : [ {
+      "id" : 1445556716,
+      "date" : "2015-08-11T00:00:00-07:00",
+      "type" : "Approve",
+      "version" : 1
+    }, {
+      "id" : 1450043032,
+      "date" : "2018-11-20T09:59:29.307-08:00",
+      "description" : "Added link to guideline video",
+      "type" : "Update",
+      "version" : 0
+    }, {
+      "id" : 1451115280,
+      "date" : "2020-04-21T15:06:37.299-07:00",
+      "description" : "Updated link to CYP3A5 gene information tables",
+      "type" : "Update",
+      "version" : 0
+    }, {
+      "id" : 1451461960,
+      "date" : "2021-06-16T18:42:48.570-07:00",
+      "description" : "Added text from guideline regarding pediatrics",
+      "type" : "Update",
+      "version" : 0
+    } ],
+    "literature" : [ {"@id":"https://pharmgkb.org/literature/15087045","@context":"https://api.pharmgkb.org/jsonld/literature.jsonld","id":15087045,"resourceId":"25801146","title":"Clinical Pharmacogenetics Implementation Consortium (CPIC) Guidelines for CYP3A5 Genotype and Tacrolimus Dosing.","_sameAs":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4481158","crossReferences":[{"@id":"https://pharmgkb.org/crossReference/pmc/PMC4481158","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1449295555,"resource":"PubMed Central","resourceId":"PMC4481158","_url":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4481158"},{"@id":"https://pharmgkb.org/crossReference/pubMed/25801146","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1449295554,"resource":"PubMed","resourceId":"25801146","_url":"https://www.ncbi.nlm.nih.gov/pubmed/25801146"},{"@id":"https://pharmgkb.org/crossReference/doi/10.1002/cpt.113","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1449295556,"resource":"DOI","resourceId":"10.1002/cpt.113","_url":"http://dx.doi.org/10.1002%2Fcpt.113"}],"objCls":"Literature","type":"Article"}, {"@id":"https://pharmgkb.org/literature/15100924","@context":"https://api.pharmgkb.org/jsonld/literature.jsonld","id":15100924,"resourceId":"https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/","title":"CPIC® Guideline for Tacrolimus and CYP3A5 – CPIC","_sameAs":"https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/","crossReferences":[{"@id":"https://pharmgkb.org/crossReference/url/https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1447983514,"resource":"URL","resourceId":"https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/","_url":"https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/"}],"objCls":"Literature","type":"Web Page"} ],
+    "pediatric" : true,
+    "recommendation" : true,
+    "relatedAlleles" : [ ],
+    "relatedChemicals" : [ {
+      "@id" : "https://pharmgkb.org/chemical/PA451578",
+      "@context" : "https://api.pharmgkb.org/jsonld/chemical.jsonld",
+      "objCls" : "Chemical",
+      "id" : "PA451578",
+      "name" : "tacrolimus",
+      "version" : 23
+    } ],
+    "relatedGenes" : [ {
+      "@id" : "https://pharmgkb.org/gene/PA131",
+      "@context" : "https://api.pharmgkb.org/jsonld/gene.jsonld",
+      "objCls" : "Gene",
+      "id" : "PA131",
+      "symbol" : "CYP3A5",
+      "name" : "cytochrome P450 family 3 subfamily A member 5",
+      "version" : 7960
+    } ],
+    "source" : "Clinical Pharmacogenetics Implementation Consortium",
+    "summaryMarkdown" : {
+      "id" : 1447982329,
+      "html" : "<p>The CPIC dosing guideline for tacrolimus recommends increasing the starting dose by 1.5 to 2 times the recommended starting dose in patients who are CYP3A5 intermediate or extensive metabolizers, though total starting dose should not exceed 0.3 mg/kg/day. Therapeutic drug monitoring should also be used to guide dose adjustments.</p>\n",
+      "version" : 0
+    },
+    "terms" : [ ],
+    "textMarkdown" : {
+      "id" : 1451433665,
+      "html" : "<p>This annotation is based on the <a rel=\"noopener noreferrer\" href=\"https://cpicpgx.org/guidelines/guideline-for-tacrolimus-and-cyp3a5/\" target=\"_blank\">CPIC&reg; guideline for tacrolimus and CYP3A5</a>.</p>\n<h3 id=\"july-2015\">July 2015</h3>\n<p><em>Advanced online publication March 2015</em></p>\n<ul>\n<li>\n<p>Guidelines regarding the use of pharmacogenomic tests in dosing of tacrolimus have been published in Clinical Pharmacology and Therapeutics by the Clinical Pharmacogenetics Implementation Consortium <a rel=\"noopener noreferrer\" href=\"https://cpicpgx.org\" target=\"_blank\">(CPIC)</a>.</p>\n</li>\n<li>\n<p>These guidelines are applicable to:</p>\n<ul>\n<li>Patients undergoing kidney, heart, lung, or hematopoietic stem cell transplant.</li>\n<li>Patients undergoing liver transplant where the donor and recipient <em>CYP3A5</em> genotypes are identical.</li>\n<li>Children: &quot;...for children and adolescents with at least one CYP3A5*1 allele, a 1.5 to 2-fold increase in dose followed by TDM as recommended for adults seems appropriate.&quot;</li>\n</ul>\n</li>\n<li>\n<p>Excerpts from the 2015 tacrolimus dosing guidelines:</p>\n<ul>\n<li>&quot;Blood concentrations of tacrolimus are strongly influenced by <em>CYP3A5</em> genotype, with substantial evidence linking <em>CYP3A5</em> genotype with phenotypic variability...In kidney, heart and lung transplant patients, over 50 studies have found that individuals with the <em>CYP3A5*1/*1</em> or <em>CYP3A5*1/*3</em> genotype have significantly lower dose-adjusted trough concentrations of tacrolimus as compared to those with the <em>CYP3A5*3/*3</em> genotype...&quot;</li>\n<li>&quot;Those recipients with an extensive or intermediate metabolizer phenotype will generally require an increased dose of tacrolimus to achieve therapeutic drug concentrations. We recommend a dose 1.5 - 2 times higher than standard dosing, but not to exceed 0.3 mg/kg/day, followed by [therapeutic drug monitoring] given the risk of arterial vasoconstriction, hypertension and nephrotoxicity that can occur with supratherapeutic tacrolimus concentrations.&quot;</li>\n</ul>\n</li>\n<li>\n<p>Download and read:</p>\n<ul>\n<li><a rel=\"noopener noreferrer\" href=\"https://files.cpicpgx.org/data/guideline/publication/tacrolimus/2015/25801146.pdf\" target=\"_blank\">Clinical Pharmacogenetics Implementation Consortium (CPIC) Guidelines for <em>CYP3A5</em> genotypes and Tacrolimus Dosing</a></li>\n<li><a rel=\"noopener noreferrer\" href=\"https://files.cpicpgx.org/data/guideline/publication/tacrolimus/2015/25801146-supplement.pdf\" target=\"_blank\">2015 Supplement</a></li>\n<li><a href=\"https://www.pharmgkb.org/page/cyp3a5RefMaterials\">CYP3A5 Gene-Specific Information Tables</a></li>\n</ul>\n</li>\n</ul>\n<h3 id=\"table-1-dosing-recommendations-for-tacrolimus-based-on-cyp3a5-phenotype\">Table 1: Dosing recommendations for tacrolimus based on CYP3A5 phenotype:</h3>\n<p><em>Adapted from Tables 1 and 2 of the 2015 guideline manuscript.</em></p>\n<table class=\"table\">\n<thead>\n<tr>\n<th>Likely phenotype <sup>a</sup></th>\n<th>Genotypes</th>\n<th>Examples of diplotypes <sup>b</sup></th>\n<th>Implications for tacrolimus pharmacologic measures</th>\n<th>Therapeutic Recommendations <sup>c</sup></th>\n<th>Classification of recommendations <sup>e</sup></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Extensive metabolizer (CYP3A5 expresser)</td>\n<td>An individual carrying two functional alleles</td>\n<td>*1/*1</td>\n<td>Lower dose-adjusted trough concentrations of tacrolimus and decreased chance of achieving target tacrolimus concentrations</td>\n<td>Increase starting dose 1.5 to 2 times recommended starting dose <sup>d</sup>. Total starting dose should not exceed 0.3mg/kg/day. Use therapeutic drug monitoring to guide dose adjustments</td>\n<td>Strong</td>\n</tr>\n<tr>\n<td>Intermediate metabolizer (CYP3A5 expresser)</td>\n<td>An individual carrying one functional allele and one non-functional allele</td>\n<td>*1/*3, *1/*6, *1/*7</td>\n<td>Lower dose-adjusted trough concentrations of tacrolimus and decreased chance of achieving target tacrolimus concentrations</td>\n<td>Increase starting dose 1.5 to 2 times recommended starting dose <sup>d</sup>. Total starting dose should not exceed 0.3mg/kg/day. Use therapeutic drug monitoring to guide dose adjustments</td>\n<td>Strong</td>\n</tr>\n<tr>\n<td>Poor metabolizer (CYP3A5 non-expresser)</td>\n<td>An individual carrying two non-functional alleles</td>\n<td>*3/*3, *6/*6, *7/*7, *3/*6, *3/*7, *6/*7</td>\n<td>Higher (“normal”) dose-adjusted trough concentrations of tacrolimus and increased chance of achieving target tacrolimus concentrations</td>\n<td>Initiate therapy with standard recommended dose. Use therapeutic drug monitoring to guide dose adjustments</td>\n<td>Strong</td>\n</tr>\n</tbody>\n</table>\n<p><sup>a</sup> Typically with other CYP enzymes, an extensive metabolizer would be classified as a “normal” metabolizer, and therefore, the drug dose would not change based on the patient’s genotype. However, in the case of CYP3A5 and tacrolimus, a CYP3A5 expresser (i.e. CYP3A5 extensive metabolizer or intermediate metabolizer) would require a higher recommended starting dose and the CYP3A5 non-expresser (i.e. poor metabolizer) would require the standard recommended starting dose.</p>\n<p><sup>b</sup> Additional rare variants such as <em>CYP3A5*2, *8</em>, and <em>*9</em> may be found which are of unknown functional significance. However, if a copy of <em>*1</em> is present, expected phenotype would be intermediate metabolizer.</p>\n<p><sup>c</sup> This recommendation includes the use of tacrolimus in kidney, heart, lung and hematopoietic stem cell transplant patients, and liver transplant patients where the donor and recipient genotypes are identical.</p>\n<p><sup>d</sup> Further dose adjustments or selection of alternative therapy may be necessary due to other clinical factors (e.g., medication interactions, or hepatic function)</p>\n<p><sup>e</sup> Rating scheme is described in 2015 Supplement.</p>\n",
+      "version" : 0
+    },
+    "userId" : "whaleyr",
+    "version" : 35
+  }
+}

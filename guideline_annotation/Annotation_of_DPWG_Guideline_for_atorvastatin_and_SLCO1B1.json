@@ -1,0 +1,86 @@
+{
+  "guideline" : {
+    "@id" : "https://pharmgkb.org/guidelineAnnotation/PA166182843",
+    "@context" : "https://api.pharmgkb.org/jsonld/guidelineAnnotation.jsonld",
+    "objCls" : "Guideline Annotation",
+    "id" : "PA166182843",
+    "name" : "Annotation of DPWG Guideline for atorvastatin and SLCO1B1",
+    "cancerGenome" : false,
+    "crossReferences" : [ ],
+    "guidelineGenes" : [ ],
+    "history" : [ {
+      "id" : 1450415243,
+      "date" : "2019-05-27T00:00:00-07:00",
+      "description" : "Annotation current with November 2018 DPWG Guideline release",
+      "type" : "Create",
+      "version" : 0
+    }, {
+      "id" : 1450820770,
+      "date" : "2019-10-06T21:39:33.327-07:00",
+      "description" : "No changes based on August 2019 guideline",
+      "type" : "Update",
+      "version" : 0
+    }, {
+      "id" : 1450962620,
+      "date" : "2020-02-10T09:46:49.659-08:00",
+      "description" : "Fixed links to 2018 guideline pdfs.",
+      "type" : "Update",
+      "version" : 0
+    }, {
+      "id" : 1451257940,
+      "date" : "2020-08-31T17:59:15.027-07:00",
+      "description" : "updated wording to reflect August 2020 update",
+      "type" : "Update",
+      "version" : 0
+    }, {
+      "id" : 1451471600,
+      "date" : "2021-07-16T13:53:38.363-07:00",
+      "description" : "fixed typo for 521 T>C in the table",
+      "type" : "Update",
+      "version" : 0
+    } ],
+    "literature" : [ {"@id":"https://pharmgkb.org/literature/15103288","@context":"https://api.pharmgkb.org/jsonld/literature.jsonld","id":15103288,"resourceId":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2019.pdf","title":"Dutch Pharmacogenetics Working Group Guidelines August 2019","_sameAs":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2019.pdf","crossReferences":[{"@id":"https://pharmgkb.org/crossReference/url/https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2019.pdf","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1450815695,"resource":"URL","resourceId":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2019.pdf","_url":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2019.pdf"}],"objCls":"Literature","type":"Web Page"}, {"@id":"https://pharmgkb.org/literature/15113882","@context":"https://api.pharmgkb.org/jsonld/literature.jsonld","id":15113882,"resourceId":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2020.pdf","title":"Dutch Pharmacogenetics Working Group Guidelines August 2020","_sameAs":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2020.pdf","crossReferences":[{"@id":"https://pharmgkb.org/crossReference/url/https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2020.pdf","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1451257580,"resource":"URL","resourceId":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2020.pdf","_url":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-august-2020.pdf"}],"objCls":"Literature","type":"Web Page"}, {"@id":"https://pharmgkb.org/literature/15102465","@context":"https://api.pharmgkb.org/jsonld/literature.jsonld","id":15102465,"resourceId":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-november-2018.pdf","title":"Dutch Pharmacogenetics Working Group Guidelines November 2018","_sameAs":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-november-2018.pdf","crossReferences":[{"@id":"https://pharmgkb.org/crossReference/url/https://www.knmp.nl/downloads/pharmacogenetic-recommendations-november-2018.pdf","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1450415575,"resource":"URL","resourceId":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-november-2018.pdf","_url":"https://www.knmp.nl/downloads/pharmacogenetic-recommendations-november-2018.pdf"}],"objCls":"Literature","type":"Web Page"} ],
+    "pediatric" : false,
+    "recommendation" : true,
+    "relatedAlleles" : [ {
+      "@id" : "https://pharmgkb.org/variant/PA166154579",
+      "@context" : "https://api.pharmgkb.org/jsonld/variant.jsonld",
+      "objCls" : "Variant",
+      "id" : "PA166154579",
+      "symbol" : "rs4149056",
+      "name" : "rs4149056",
+      "version" : 5
+    } ],
+    "relatedChemicals" : [ {
+      "@id" : "https://pharmgkb.org/chemical/PA448500",
+      "@context" : "https://api.pharmgkb.org/jsonld/chemical.jsonld",
+      "objCls" : "Chemical",
+      "id" : "PA448500",
+      "name" : "atorvastatin",
+      "version" : 19
+    } ],
+    "relatedGenes" : [ {
+      "@id" : "https://pharmgkb.org/gene/PA134865839",
+      "@context" : "https://api.pharmgkb.org/jsonld/gene.jsonld",
+      "objCls" : "Gene",
+      "id" : "PA134865839",
+      "symbol" : "SLCO1B1",
+      "name" : "solute carrier organic anion transporter family member 1B1",
+      "version" : 46
+    } ],
+    "source" : "Dutch Pharmacogenetics Working Group",
+    "summaryMarkdown" : {
+      "id" : 1450415241,
+      "html" : "<p>Choose an alternative for patients with the SLCO1B1 521 CC or TC (rs4149056) genotype and with ADDITIONAL SIGNIFICANT RISK FACTORS for statin-induced myopathy. For patients without additional significant risk factors for statin-induced myopathy, advise the patients to contact their doctor in the event of muscle symptoms.</p>\n",
+      "version" : 0
+    },
+    "terms" : [ ],
+    "textMarkdown" : {
+      "id" : 1450415242,
+      "html" : "<h3 id=\"august-2020-guideline-update\">August 2020 Guideline update</h3>\n<p>The Royal Dutch Pharmacists Association - Pharmacogenetics Working Group has evaluated therapeutic dose recommendations for atorvastatin based on SLCO1B1 genotype.  They recommend choosing an alternative for patients with the SLCO1B1 521 CC or TC (rs4149056) genotype and with ADDITIONAL SIGNIFICANT RISK FACTORS for statin-induced myopathy. For patients without additional significant risk factors for statin-induced myopathy, they advise contacting their doctor in the event of muscle symptoms.</p>\n<p><em>Wording in table taken from <a download=\"DPWG_August_2020.pdf\" href=\"https://api.pharmgkb.org/v1/download/file/attachment/DPWG_August_2020.pdf\">Dutch guidelines August 2020 update</a></em></p>\n<table class=\"table\">\n<thead>\n<tr>\n<th>Allele/Genotype/Phenotype</th>\n<th>Drug</th>\n<th>Description</th>\n<th>Recommendation</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><em>SLCO1B1</em> 521 CC</td>\n<td>atorvastatin</td>\n<td>The risk of myopathy may be increased. The gene variation may lead to reduced atorvastatin transport to the liver, which may increase the atorvastatin plasma concentration.</td>\n<td>- Patient has ADDITIONAL SIGNIFICANT RISK FACTORS for statin-induced myopathy:<br/>1. Choose an alternative.<br/>Do not select simvastatin, as this is also affected by the SLCO1B1 gene variation. Rosuvastatin and pravastatin are influenced to a similar extent by SLCO1B1 polymorphisms, but are not influenced by CYP3A4 inhibitors such as amiodarone, verapamil and diltiazem. Fluvastatin is not influenced significantly by SLCO1B1 gene variation or CYP3A4 inhibitors.<br/>2. If an alternative is not an option: advise the patient to contact their doctor in the event of muscle symptoms.<br/>- Patient has NO additional significant risk factors for statin-induced myopathy:<br/>1. Advise the patient to contact their doctor in the event of muscle symptoms.</td>\n</tr>\n<tr>\n<td><em>SLCO1B1</em> 521 TC</td>\n<td>atorvastatin</td>\n<td>The risk of myopathy can be elevated. The gene variation may lead to reduced atorvastatin transport to the liver, which may increase atorvastatin plasma concentrations.</td>\n<td>- Patient has ADDITIONAL SIGNIFICANT RISK FACTORS for statin-induced myopathy:<br/>1. Choose an alternative.<br/>Rosuvastatin and pravastatin are influenced to a similar extent by the SLCO1B1 gene variation, but are not influenced by CYP3A4 inhibitors such as amiodarone, verapamil and diltiazem. Fluvastatin is not influenced significantly by the SLCO1B1 gene variation or CYP3A4 inhibitors.<br/>2. If an alternative is not an option: advise the patient to contact their doctor in the event of muscle symptoms.<br/>- Patient has NO additional significant risk factors for statin-induced myopathy:<br/>1. Advise the patient to contact their doctor in the event of muscle symptoms.</td>\n</tr>\n</tbody>\n</table>\n<p><a rel=\"noopener noreferrer\" href=\"https://www.g-standaard.nl/risicoanalyse/B0004058.PDF\" target=\"_blank\">Read for more information about this recommendation</a>, <a rel=\"noopener noreferrer\" href=\"https://www.knmp.nl/producten/gebruiksrecht-g-standaard/medicatiebewaking-g-standaard/background-information-pharmacogenetics\" target=\"_blank\">Read about gene information from DPWG</a></p>\n<h3 id=\"november-2018-guideline\">November 2018 Guideline</h3>\n<p>The Royal Dutch Pharmacists Association - Pharmacogenetics Working Group has evaluated therapeutic dose recommendations for atorvastatin based on SLCO1B1 genotype.  They recommend choosing an alternative for patients with the SLCO1B1 521 CC or TC (rs4149056) genotype and with ADDITIONAL SIGNIFICANT RISK FACTORS for statin-induced myopathy. For patients without additional significant risk factors for statin-induced myopathy, they advise contacting their doctor in the event of muscle symptoms.</p>\n<p><em>Wording in table taken from <a download=\"DPWG_November_2018.pdf\" href=\"https://api.pharmgkb.org/v1/download/file/attachment/DPWG_November_2018.pdf\">Dutch guidelines November 2018 update</a></em></p>\n<table class=\"table\">\n<thead>\n<tr>\n<th>Allele/Genotype/Phenotype</th>\n<th>Drug</th>\n<th>Description</th>\n<th>Recommendation</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>521 CC</td>\n<td>atorvastatin</td>\n<td>The genetic polymorphism may lead to reduced atorvastatin transport to the liver. This may increase atorvastatin plasma concentrations and therefore the risk of myopathy.</td>\n<td>- Patient has ADDITIONAL SIGNIFICANT RISK FACTORS for statin-induced myopathy:<br/>1. Choose an alternative. Rosuvastatin and pravastatin are influenced to a similar extent by SLCO1B1 polymorphisms but are not influenced by CYP3A4 inhibitors such as amiodarone, verapamil and diltiazem. Fluvastatin is not influenced by SLCO1B1 polymorphisms or CYP3A4 inhibitors.<br/>2. If an alternative is not an option: advise the patient to contact their doctor in the event of muscle symptoms.<br/>- Patient has NO additional significant risk factors for statin-induced myopathy:<br/>1. Advise the patient to contact their doctor in the event of muscle symptoms.</td>\n</tr>\n<tr>\n<td>521 TC</td>\n<td>atorvastatin</td>\n<td>The genetic polymorphism may lead to reduced atorvastatin transport to the liver. This may increase atorvastatin plasma concentrations and therefore the risk of myopathy.</td>\n<td>- Patient has ADDITIONAL SIGNIFICANT RISK FACTORS for statin-induced myopathy:<br/>1. Choose an alternative. Rosuvastatin and pravastatin are influenced to a similar extent by SLCO1B1 polymorphisms but are not influenced by CYP3A4 inhibitors such as amiodarone, verapamil and diltiazem. Fluvastatin is not influenced by SLCO1B1 polymorphisms or CYP3A4 inhibitors.<br/>2. If an alternative is not an option: advise the patient to contact their doctor in the event of muscle symptoms.<br/>- Patient has NO additional significant risk factors for statin-induced myopathy:<br/>1. Advise the patient to contact their doctor in the event of muscle symptoms.</td>\n</tr>\n</tbody>\n</table>\n<p><a rel=\"noopener noreferrer\" href=\"https://www.g-standaard.nl/risicoanalyse/B0004058.PDF\" target=\"_blank\">Read for more information about this recommendation</a>, <a rel=\"noopener noreferrer\" href=\"https://www.knmp.nl/producten/gebruiksrecht-g-standaard/medicatiebewaking-g-standaard/background-information-pharmacogenetics\" target=\"_blank\">Read about gene information from DPWG</a></p>\n",
+      "version" : 4
+    },
+    "userId" : "lgong",
+    "version" : 4
+  }
+}

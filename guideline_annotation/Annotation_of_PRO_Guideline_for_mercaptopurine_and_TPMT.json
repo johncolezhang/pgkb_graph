@@ -1,0 +1,56 @@
+{
+  "guideline" : {
+    "@id" : "https://pharmgkb.org/guidelineAnnotation/PA166202761",
+    "@context" : "https://api.pharmgkb.org/jsonld/guidelineAnnotation.jsonld",
+    "objCls" : "Guideline Annotation",
+    "id" : "PA166202761",
+    "name" : "Annotation of PRO Guideline for mercaptopurine and TPMT",
+    "cancerGenome" : false,
+    "crossReferences" : [ ],
+    "descriptiveVideoId" : "",
+    "guidelineGenes" : [ ],
+    "history" : [ {
+      "id" : 1451136661,
+      "date" : "2020-05-13T00:00:00-07:00",
+      "description" : "Approving to live",
+      "type" : "Note",
+      "version" : 0
+    } ],
+    "literature" : [ {"@id":"https://pharmgkb.org/literature/15109202","@context":"https://api.pharmgkb.org/jsonld/literature.jsonld","id":15109202,"resourceId":"28262261","title":"Pharmacogenetics of anti-cancer drugs: State of the art and implementation - recommendations of the French National Network of Pharmacogenetics.","_sameAs":"https://www.ncbi.nlm.nih.gov/pubmed/28262261","crossReferences":[{"@id":"https://pharmgkb.org/crossReference/pubMed/28262261","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1451127600,"resource":"PubMed","resourceId":"28262261","_url":"https://www.ncbi.nlm.nih.gov/pubmed/28262261"},{"@id":"https://pharmgkb.org/crossReference/doi/10.1016/j.therap.2017.01.005","@context":"https://api.pharmgkb.org/jsonld/crossReference.jsonld","id":1451127601,"resource":"DOI","resourceId":"10.1016/j.therap.2017.01.005","_url":"http://dx.doi.org/10.1016%2Fj.therap.2017.01.005"}],"objCls":"Literature","type":"Article"} ],
+    "pediatric" : false,
+    "recommendation" : true,
+    "relatedAlleles" : [ ],
+    "relatedChemicals" : [ {
+      "@id" : "https://pharmgkb.org/chemical/PA450379",
+      "@context" : "https://api.pharmgkb.org/jsonld/chemical.jsonld",
+      "objCls" : "Chemical",
+      "id" : "PA450379",
+      "name" : "mercaptopurine",
+      "version" : 29
+    } ],
+    "relatedGenes" : [ {
+      "@id" : "https://pharmgkb.org/gene/PA356",
+      "@context" : "https://api.pharmgkb.org/jsonld/gene.jsonld",
+      "objCls" : "Gene",
+      "id" : "PA356",
+      "symbol" : "TPMT",
+      "name" : "thiopurine S-methyltransferase",
+      "version" : 7543
+    } ],
+    "source" : "Professional Society",
+    "summaryMarkdown" : {
+      "id" : 1451129420,
+      "html" : "<p>The French National Network of Pharmacogenetics (Réseau national de pharmacogénétique (RNPGx)) recommends testing for TPMT.</p>\n",
+      "version" : 0
+    },
+    "summaryVideoId" : "",
+    "terms" : [ ],
+    "textMarkdown" : {
+      "id" : 1451129421,
+      "html" : "<p>The French National Network of Pharmacogenetics (RNPGx) publication about the state of the art and clinical implementation — recommendations from the French National Network of Pharmacogenetics for anti-cancer drugs states:</p>\n<blockquote class=\"blockquote\">\n<p>According to the level of evidence classification of\nthe RNPGx recommendations for pharmacogenetic testing\n(essential, advisable, potentially useful), the level of evidence for TPMT genotyping and/or phenotyping in oncology\nis essential.</p>\n</blockquote>\n",
+      "version" : 0
+    },
+    "userId" : "cfthorn",
+    "version" : 0
+  }
+}
