@@ -35,8 +35,7 @@ class variantMappingUtil:
         self.variant_location_matched_synonym_dict = defaultdict(list)
         self.variant_NG_synonym_dict = defaultdict(list)
         self.variant_NC_synonym_dict = defaultdict(list)
-        self.variant_rs_synonym_dict = defaultdict(list
-                                              )
+        self.variant_rs_synonym_dict = defaultdict(list)
         for index, row in df_variants.iterrows():
             variant = row["Variant Name"]
             gene = row["Gene Symbols"]
