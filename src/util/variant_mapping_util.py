@@ -119,12 +119,12 @@ class variantMappingUtil:
 
         ############################# handle diplotype ######################
         diplotype_folder = "D:\\pgkb_graph\\diplotype"
-        diplotype_genes = ["CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5",
-                           "DPYD", "NUDT15", "SLCO1B1", "TPMT", "UGT1A1"]
+        self.diplotype_genes = ["CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5",
+                                "DPYD", "NUDT15", "SLCO1B1", "TPMT", "UGT1A1"]
 
-        diplotype_path_dict = {g: "" for g in diplotype_genes}
+        diplotype_path_dict = {g: "" for g in self.diplotype_genes}
         for path in os.listdir(diplotype_folder):
-            for gene in diplotype_genes:
+            for gene in self.diplotype_genes:
                 if "{}_Diplotype".format(gene) in path:
                     diplotype_path_dict[gene] = os.path.join(diplotype_folder, path)
 
@@ -139,13 +139,13 @@ class variantMappingUtil:
         ############################# handle frequency #####################
         frequency_folder = "D:\\pgkb_graph\\frequency"
 
-        frequency_genes = ["CACNA1S", "CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5", "CYP4F2",
-                           "DPYD", "HLA-A", "HLA-B", "MT-RNR1", "NUDT15", "RYR1", "SLCO1B1", "TPMT",
-                           "UGT1A1", "VKORC1"]
+        self.frequency_genes = ["CACNA1S", "CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5", "CYP4F2",
+                                "DPYD", "HLA-A", "HLA-B", "MT-RNR1", "NUDT15", "RYR1", "SLCO1B1", "TPMT",
+                                "UGT1A1", "VKORC1"]
 
-        frequency_path_dict = {g: "" for g in frequency_genes}
+        frequency_path_dict = {g: "" for g in self.frequency_genes}
         for path in os.listdir(frequency_folder):
-            for gene in frequency_genes:
+            for gene in self.frequency_genes:
                 if "{}_frequency_table".format(gene) in path:
                     frequency_path_dict[gene] = os.path.join(frequency_folder, path)
 
@@ -157,13 +157,13 @@ class variantMappingUtil:
         ############################### handle functionality #################
         functionality_folder = "D:\\pgkb_graph\\functionality"
 
-        functionality_genes = ["CACNA1S", "CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5",
-                               "DPYD", "MT-RNR1", "NUDT15", "RYR1", "SLCO1B1", "TPMT",
-                               "UGT1A1"]
+        self.functionality_genes = ["CACNA1S", "CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5",
+                                    "DPYD", "MT-RNR1", "NUDT15", "RYR1", "SLCO1B1", "TPMT",
+                                    "UGT1A1"]
 
-        functionality_path_dict = {g: "" for g in functionality_genes}
+        functionality_path_dict = {g: "" for g in self.functionality_genes}
         for path in os.listdir(functionality_folder):
-            for gene in functionality_genes:
+            for gene in self.functionality_genes:
                 if "{}_allele_functionality".format(gene) in path:
                     functionality_path_dict[gene] = os.path.join(functionality_folder, path)
 
@@ -212,7 +212,8 @@ class variantMappingUtil:
                     if allele_column != "":
                         allele = row[allele_column]
                     else:
-                        continue
+                        allele_column = list(df_functionality.columns)[0]
+                        allele = row[allele_column]
 
                     function_status = row[function_status_column] if function_status_column != "" else ""
                     activity_score = row[activity_score_column] if activity_score_column != "" else ""
@@ -299,8 +300,8 @@ class variantMappingUtil:
                     else:
                         continue
 
-                    phenotype = row[phenotype_column] if phenotype_column != "" else ""
-                    ehr_notation = row[ehr_notation_column] if ehr_notation_column != "" else ""
+                    phenotype = row[phenotype_column].strip() if phenotype_column != "" else ""
+                    ehr_notation = row[ehr_notation_column].strip() if ehr_notation_column != "" else ""
                     score = row[score_column] if score_column != "" else ""
 
                     if "{}{}{}".format(phenotype, ehr_notation, score) != "":
@@ -328,10 +329,10 @@ class variantMappingUtil:
                         score_column = column
 
                 for index, row in df_consult.iterrows():
-                    phenotype = row[phenotype_column]
+                    phenotype = row[phenotype_column].strip()
 
-                    consultation = row[consultation_column] if consultation_column != "" else ""
-                    ehr_notation = row[ehr_notation_column] if ehr_notation_column != "" else ""
+                    consultation = row[consultation_column].strip() if consultation_column != "" else ""
+                    ehr_notation = row[ehr_notation_column].strip() if ehr_notation_column != "" else ""
                     score = row[score_column] if score_column != "" else ""
 
                     if "{}{}{}".format(consultation, ehr_notation, score) != "":
@@ -353,12 +354,7 @@ class variantMappingUtil:
 
     # input haplotype, return mapping dict
     def haplotype_mapping(self, haplotype):
-        if "*" in haplotype:
-            gene = haplotype.split("*")[0]
-            h_type = "*" + haplotype.split("*")[1]
-        else:
-            gene = haplotype.split(" ")[0]
-            h_type = " ".join(haplotype.split(" ")[1:])
+        gene, h_type = self.get_gene_h_type(haplotype)
 
         if gene not in self.genes:
             return {}
@@ -427,7 +423,7 @@ class variantMappingUtil:
 
         return mapping_dict
 
-    def generate_diplotype_relation(self):
+    def generate_diplotype_relation(self, output_path):
         gene_list = []
         diplotype_list = []
         variant_1_list = []
@@ -451,10 +447,11 @@ class variantMappingUtil:
                 diplotype_list.append(diplotype)
                 variant_1_list.append(variant_1)
                 variant_2_list.append(variant_2)
-                phenotype_list.append(result["phenotype"])
-                ehr_notation_list.append(result["ehr_notation"])
+                phenotype_list.append(result["phenotype"].strip())
+                ehr_notation_list.append(result["ehr_notation"].strip())
                 activity_score_list.append(result["score"])
-                consultation_list.append(self.gene_phenotype_dict[gene].get(result["phenotype"], ""))
+                consultation_list.append(self.gene_phenotype_dict[gene].get(result["phenotype"].strip(),
+                                                                            {}).get("consultation", ""))
 
         return pd.DataFrame({
             "gene": gene_list,
@@ -465,19 +462,89 @@ class variantMappingUtil:
             "ehr_notation": ehr_notation_list,
             "activity_score": activity_score_list,
             "consultation": consultation_list
-        })
+        }).to_csv(output_path, index=False)
 
     def haplotype_frequency_mapping(self, haplotype):
-        pass
+        gene, h_type = self.get_gene_h_type(haplotype)
+        if gene not in self.gene_freq_dict.keys():
+            return {}
+
+        haplotype_freq_dict = {}
+        for x in self.gene_freq_dict[gene].keys():
+            if "allele" in x.lower():
+                haplotype_freq_dict = self.gene_freq_dict[gene][x]
+
+        if h_type in haplotype_freq_dict.keys():
+            haplotype_freq_dict = haplotype_freq_dict[h_type]
+        else:
+            haplotype_freq_dict = {}
+
+        haplotype_freq_dict = dict(list(map(lambda x: (x[0], str(x[1])), haplotype_freq_dict.items())))
+        return haplotype_freq_dict
 
     def diplotype_frequency_mapping(self, diplotype):
-        pass
+        d_list = diplotype.split(" ")
+        gene = d_list[0]
+        d_type = "".join(d_list[1:])
+
+        if gene not in self.gene_freq_dict.keys():
+            return {}
+
+        diplotype_freq_dict = {}
+        for x in self.gene_freq_dict[gene].keys():
+            if "diplotype" in x.lower():
+                diplotype_freq_dict = self.gene_freq_dict[gene][x]
+
+        if d_type in diplotype_freq_dict.keys():
+            diplotype_freq_dict = diplotype_freq_dict[d_type]
+        else:
+            diplotype_freq_dict = {}
+
+        diplotype_freq_dict = dict(list(map(lambda x: (x[0], str(x[1])), diplotype_freq_dict.items())))
+        return diplotype_freq_dict
 
     def phenotype_frequency_mapping(self, phenotype):
-        pass
+        p_list = phenotype.split(" ")
+        gene = p_list[0]
+        pheno = " ".join(p_list[1:])
 
-    def haplotype_functionality_mapping(self, haplotyp):
-        pass
+        if gene not in self.gene_freq_dict.keys():
+            return {}
+
+        phenotype_freq_dict = {}
+        for x in self.gene_freq_dict[gene].keys():
+            if "phenotype" in x.lower():
+                phenotype_freq_dict = self.gene_freq_dict[gene][x]
+
+        if pheno in phenotype_freq_dict.keys():
+            phenotype_freq_dict = phenotype_freq_dict[pheno]
+        else:
+            phenotype_freq_dict = {}
+
+        phenotype_freq_dict = dict(list(map(lambda x: (x[0], str(x[1])), phenotype_freq_dict.items())))
+        return phenotype_freq_dict
+
+    def haplotype_functionality_mapping(self, haplotype):
+        gene, h_type = self.get_gene_h_type(haplotype)
+
+        if gene not in self.gene_functionality_dict.keys():
+            return {}
+
+        if h_type not in self.gene_functionality_dict[gene].keys():
+            return {}
+        else:
+            return self.gene_functionality_dict[gene][h_type]
+
+    @staticmethod
+    def get_gene_h_type(haplotype):
+        if "*" in haplotype:
+            gene = haplotype.split("*")[0]
+            h_type = "*" + haplotype.split("*")[1]
+        else:
+            gene = haplotype.split(" ")[0]
+            h_type = " ".join(haplotype.split(" ")[1:])
+
+        return gene, h_type
 
 
 def test_haplotype():
@@ -495,5 +562,11 @@ def test_haplotype():
     print(v_mapping.rsID_mapping("rs62296959"))
     print(v_mapping.rsID_mapping("rs1001179"))
 
+
+def generate_diplotype():
+    v_mapping = variantMappingUtil()
+    v_mapping.generate_diplotype_relation(output_path="../../processed/diplotype_annotation.csv")
+
 if __name__ == "__main__":
-    test_haplotype()
+    # test_haplotype()
+    generate_diplotype()
