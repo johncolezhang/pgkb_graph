@@ -27,6 +27,7 @@ class variantMappingUtil:
         df_variants = df_variants[["Variant ID", "Variant Name", "Gene Symbols",
                                    "Location", "Synonyms"]]
 
+        self.data_change_dict = defaultdict(dict)
         self.variant_gene_dict = defaultdict(list)
         self.gene_variant_dict = defaultdict(list)
         self.variant_synonym_dict = defaultdict(list)
@@ -65,57 +66,73 @@ class variantMappingUtil:
                         self.variant_rs_synonym_dict[variant].append(s)
 
         ############################### handle haplotype ###############################
-        clinical_genes = [
-            'TPMT', 'NAT2', 'G6PD', 'CYP3A5', 'CYP2A6', 'CYP3A4', 'CYP2C19',
-            'UGT1A1', 'CYP2D6', 'NUDT15', 'CYP2B6', 'CYP2C9'
-        ]  # and 'HLA-B', 'HLA-A'
-
-        guideline_genes = [
-            'CACNA1S', 'CFTR', 'CYP2C9', 'CYP2B6', 'CYP2D6', 'SLCO1B1',
-            'UGT1A1', 'DPYD', 'NUDT15', 'MT-RNR1', 'CYP3A5', 'TPMT',
-            'RYR1', 'CYP2C19', 'G6PD', 'IFNL3'
-        ]  # and 'HLA-B', 'HLA-A'
-
-        self.genes = set(clinical_genes + guideline_genes)
-
-        haplotype_folder = 'D:\\pgkb_graph\\haplotype'
-        haplotype_path_dict = {g: "" for g in self.genes}
-        for path in os.listdir(haplotype_folder):
-            for gene in self.genes:
-                if "{}_haplotypes".format(gene) in path:
-                    haplotype_path_dict[gene] = os.path.join(haplotype_folder, path)
+        # clinical_genes = [
+        #     'TPMT', 'NAT2', 'G6PD', 'CYP3A5', 'CYP2A6', 'CYP3A4', 'CYP2C19',
+        #     'UGT1A1', 'CYP2D6', 'NUDT15', 'CYP2B6', 'CYP2C9'
+        # ]  # and 'HLA-B', 'HLA-A'
+        #
+        # guideline_genes = [
+        #     'CACNA1S', 'CFTR', 'CYP2C9', 'CYP2B6', 'CYP2D6', 'SLCO1B1',
+        #     'UGT1A1', 'DPYD', 'NUDT15', 'MT-RNR1', 'CYP3A5', 'TPMT',
+        #     'RYR1', 'CYP2C19', 'G6PD', 'IFNL3'
+        # ]  # and 'HLA-B', 'HLA-A'
+        #
+        self.genes = []
+        #
+        # haplotype_folder = 'D:\\pgkb_graph\\haplotype'
+        # haplotype_path_dict = {g: "" for g in self.genes}
+        # for path in os.listdir(haplotype_folder):
+        #     for gene in self.genes:
+        #         if "{}_haplotypes".format(gene) in path:
+        #             haplotype_path_dict[gene] = os.path.join(haplotype_folder, path)
 
         self.gene_df_T_dict = {}
-        for gene, path in haplotype_path_dict.items():
-            df_tmp = pd.read_excel(
-                path,
-                engine="openpyxl",
-                sheet_name="modified"
-            ).fillna("")
-            df_tmp_T = self.df_T_convert(df_tmp)
-            self.gene_df_T_dict[gene] = df_tmp_T
+        self.standard_haplotype_dict = {}
+        # for gene, path in haplotype_path_dict.items():
+        #     df_tmp = pd.read_excel(
+        #         path,
+        #         engine="openpyxl",
+        #         sheet_name="modified",
+        #         dtype=str
+        #     ).fillna("")
+        #     df_tmp_T = self.df_T_convert(df_tmp)
+        #     self.gene_df_T_dict[gene] = df_tmp_T
 
-        self.standard_haplotype_dict = {
-            "CACNA1S": "Reference",
-            "CFTR": "standard",
-            "CYP2A6": "*1A",
-            "CYP2B6": "*1",
-            "CYP2C19": "*38",
-            "CYP2C9": "*1",
-            "CYP2D6": "*1",
-            "CYP3A4": "*1",
-            "CYP3A5": "*1",
-            "DPYD": "Reference",
-            "G6PD": "B (wildtype)",
-            "IFNL3": "",
-            "MT-RNR1": "Reference",
-            "NAT2": "*4",
-            "NUDT15": "*1",
-            "RYR1": "Reference",
-            "SLCO1B1": "*1A",
-            "TPMT": "*1",
-            "UGT1A1": "*1",
-        }
+        # self.standard_haplotype_dict = {
+        #     "CACNA1S": "Reference",
+        #     "CFTR": "standard",
+        #     "CYP2A6": "*1A",
+        #     "CYP2B6": "*1",
+        #     "CYP2C19": "*38",
+        #     "CYP2C9": "*1",
+        #     "CYP2D6": "*1",
+        #     "CYP3A4": "*1",
+        #     "CYP3A5": "*1",
+        #     "DPYD": "Reference",
+        #     "G6PD": "B (wildtype)",
+        #     "IFNL3": "",
+        #     "MT-RNR1": "Reference",
+        #     "NAT2": "*4",
+        #     "NUDT15": "*1",
+        #     "RYR1": "Reference",
+        #     "SLCO1B1": "*1A",
+        #     "TPMT": "*1",
+        #     "UGT1A1": "*1",
+        # }
+
+        ############################# handle allele definition ##############
+        allele_definition_folder = "D:\\pgkb_graph\\allele_definition"
+        allele_definition_path_dict = {}
+        for path in os.listdir(allele_definition_folder):
+            gene = path.split("_")[0]
+            allele_definition_path_dict[gene] = os.path.join(allele_definition_folder, path)
+
+        self.allele_definition_dict = {}
+        for key, value in sorted(allele_definition_path_dict.items(), key=lambda x: x[0]):
+            # generate gene_T dict and standard type dict
+            self.parse_allele_definition(key, value)
+            self.data_change_dict[key]["allele_definition"] = self.parse_latest_update_date(value)
+            self.genes.append(key)
 
         ############################# handle diplotype ######################
         diplotype_folder = "D:\\pgkb_graph\\diplotype"
@@ -135,6 +152,7 @@ class variantMappingUtil:
             diplo_dict, pheno_dict = self.parse_diplotype(value)
             self.gene_diplotype_dict[key] = diplo_dict
             self.gene_phenotype_dict[key] = pheno_dict
+            self.data_change_dict[key]["diplotype"] = self.parse_latest_update_date(value)
 
         ############################# handle frequency #####################
         frequency_folder = "D:\\pgkb_graph\\frequency"
@@ -153,6 +171,7 @@ class variantMappingUtil:
         for key, value in sorted(frequency_path_dict.items(), key=lambda x: x[0]):
             freq_dict = self.parse_frequency(value)
             self.gene_freq_dict[key] = freq_dict
+            self.data_change_dict[key]["frequency"] = self.parse_latest_update_date(value)
 
         ############################### handle functionality #################
         functionality_folder = "D:\\pgkb_graph\\functionality"
@@ -171,16 +190,75 @@ class variantMappingUtil:
         for key, value in sorted(functionality_path_dict.items(), key=lambda x: x[0]):
             func_dict = self.parse_functionality(value)
             self.gene_functionality_dict[key] = func_dict
+            self.data_change_dict[key]["functionality"] = self.parse_latest_update_date(value)
 
     @staticmethod
-    def parse_functionality(path):
+    def check_first_row(xl_object, sheet_name):
+        dd = list(pd.read_excel(xl_object, sheet_name=sheet_name, nrows=1).fillna("").columns)
+        # only read first row
+        first_row = list(pd.read_excel(xl_object, sheet_name=sheet_name, nrows=1).fillna("").columns)
+        count = 0
+        for x in first_row:
+            if "unnamed" in str(x).lower():
+                count += 1
+
+            if count >= 2:
+                return True
+        return False
+
+    @staticmethod
+    def parse_latest_update_date(path):
+        xl = pd.ExcelFile(path)
+        for sheet in xl.sheet_names:
+            if "change" in sheet.lower():
+                df_change = pd.read_excel(xl, sheet_name=sheet, dtype=str).fillna("")
+
+                for col in df_change.columns:
+                    if "date" in col.lower():
+                        return list(df_change[col].values)[-1]
+        return ""
+
+
+    def parse_allele_definition(self, gene, path):
+        xl = pd.ExcelFile(path)
+
+        for sheet in xl.sheet_names:
+            if "allele" in sheet.lower():
+                if self.check_first_row(xl, sheet):
+                    df_definition = pd.read_excel(xl, sheet_name=sheet, skiprows=1, dtype=str).fillna("")
+                else:
+                    df_definition = pd.read_excel(xl, sheet_name=sheet, dtype=str).fillna("")
+
+                df_T = self.df_T_convert(df_definition)
+                self.gene_df_T_dict[gene] = df_T
+
+                # find reference type
+                reference_flag = False
+                meet_rsid_flag = False
+                for col in df_T.columns:
+                    if col != "rsID" and not meet_rsid_flag:
+                        continue
+                    else:
+                        meet_rsid_flag = True
+
+                    if reference_flag and meet_rsid_flag:
+                        self.standard_haplotype_dict[gene] = col
+                        break
+                    if "".join(list(df_T[col].values)) == "" and meet_rsid_flag:
+                        reference_flag = True
+
+
+    def parse_functionality(self, path):
         xl = pd.ExcelFile(path)
         allele_function_dict = {}
 
         for sheet in xl.sheet_names:
             if "function" in sheet.lower():
                 ### read and handle functionalities
-                df_functionality = pd.read_excel(xl, sheet_name=sheet, skiprows=1).fillna("")
+                if self.check_first_row(xl, sheet):
+                    df_functionality = pd.read_excel(xl, sheet_name=sheet, skiprows=1, dtype=str).fillna("")
+                else:
+                    df_functionality = pd.read_excel(xl, sheet_name=sheet, dtype=str).fillna("")
                 allele_column = ""
                 function_status_column = ""
                 activity_score_column = ""
@@ -228,7 +306,7 @@ class variantMappingUtil:
                         allele_function_dict[allele] = {
                             "function_status": function_status,
                             "activity_score": activity_score,
-                            "pmid": pmid,
+                            "pmid": pmid.strip(),
                             "evidence": evidence,
                             "finding": finding,
                             "nucleotide": nucleotide,
@@ -236,15 +314,18 @@ class variantMappingUtil:
                         }
         return allele_function_dict
 
-    @staticmethod
-    def parse_frequency(path):
+
+    def parse_frequency(self, path):
         xl = pd.ExcelFile(path)
 
         frequency_df_dict = {}
         for sheet in xl.sheet_names:
             if "frequency" in sheet.lower():
-                # skip first row
-                frequency_df_dict[sheet] = pd.read_excel(xl, sheet_name=sheet, skiprows=1).fillna("")
+                if self.check_first_row(xl, sheet):
+                    # skip first row
+                    frequency_df_dict[sheet] = pd.read_excel(xl, sheet_name=sheet, skiprows=1, dtype=str).fillna("")
+                else:
+                    frequency_df_dict[sheet] = pd.read_excel(xl, sheet_name=sheet, dtype=str).fillna("")
 
         frequency_dict = {}
         for frequency_name, df in frequency_df_dict.items():
@@ -270,7 +351,7 @@ class variantMappingUtil:
         for sheet in xl.sheet_names:
             if "diplotype" in sheet.lower():
                 ### read and handle diplotype
-                df_diplotype = pd.read_excel(xl, sheet_name=sheet).fillna("")
+                df_diplotype = pd.read_excel(xl, sheet_name=sheet, dtype=str).fillna("")
                 diplotype_column = ""
                 phenotype_column = ""
                 ehr_notation_column = ""
@@ -313,7 +394,7 @@ class variantMappingUtil:
 
             elif "consult note" in sheet.lower():
                 ### read and handle consult note
-                df_consult = pd.read_excel(xl, sheet_name=sheet).fillna("")
+                df_consult = pd.read_excel(xl, sheet_name=sheet, dtype=str).fillna("")
                 phenotype_column = ""
                 ehr_notation_column = ""
                 consultation_column = ""
@@ -379,21 +460,24 @@ class variantMappingUtil:
             mapping_dict["rsID"] = rsID_mapping_list
 
         for column in self.gene_df_T_dict[gene].columns:
-            if "nucleotide" in column.lower():
+            if "nucleotide" in column.lower() or "NM_" in column:
                 nucleotide_list = self.gene_df_T_dict[gene][column]
                 filter_nucleotide_list = list(
                     filter(lambda x: x[1] != "" and x[0] != "", zip(nucleotide_list, h_type_list)))
                 if len(filter_nucleotide_list) != 0:
                     nucleotide_mapping_list = [x[0].strip() for x in filter_nucleotide_list]
-                    mapping_dict["nucleotide"] = nucleotide_mapping_list
+                    mapping_dict["nucleotide"] = "{}; {}".format(column, nucleotide_mapping_list)
+                    continue
 
             if "NG" in column and "position" in column.lower():
                 NG_position_list = self.gene_df_T_dict[gene][column]
                 filter_NG_position_list = list(
                     filter(lambda x: x[1] != "" and x[0] != "", zip(NG_position_list, h_type_list)))
                 if len(filter_NG_position_list) != 0:
+                    # one type may contain multi position, so list to store
                     NG_position_mapping_list = [x[0].strip() for x in filter_NG_position_list]
                     mapping_dict["NG"] = "{}; {}".format(column, NG_position_mapping_list)
+                    continue
 
             if "NC" in column and "position" in column.lower():
                 NC_position_list = self.gene_df_T_dict[gene][column]
@@ -402,6 +486,7 @@ class variantMappingUtil:
                 if len(filter_NC_position_list) != 0:
                     NC_position_mapping_list = [x[0].strip() for x in filter_NC_position_list]
                     mapping_dict["NC"] = "{}; {}".format(column, NC_position_mapping_list)
+                    continue
 
             if "protein" in column.lower():
                 protein_list = self.gene_df_T_dict[gene][column]
@@ -409,6 +494,7 @@ class variantMappingUtil:
                 if len(filter_protein_list) != 0:
                     protein_mapping_list = [x[0].strip() for x in filter_protein_list]
                     mapping_dict["protein"] = "{}; {}".format(column, protein_mapping_list)
+                    continue
 
         return mapping_dict
 
@@ -549,10 +635,12 @@ class variantMappingUtil:
 
 def test_haplotype():
     v_mapping = variantMappingUtil()
+    print("############### haplotype info mapping #############")
     print(v_mapping.haplotype_mapping("NUDT15*16"))
     print(v_mapping.haplotype_mapping("TPMT*2"))
     print(v_mapping.haplotype_mapping("TPMT*21"))
     print(v_mapping.haplotype_mapping("CYP2B6*17"))
+    # should be no result
     print(v_mapping.haplotype_mapping("CYP3A4*1D"))
     print(v_mapping.haplotype_mapping("G6PD Mediterranean, Dallas, Panama‚ Sassari, Cagliari, Birmingham"))
     print(v_mapping.rsID_mapping("rs6600880"))
@@ -561,6 +649,25 @@ def test_haplotype():
     print(v_mapping.rsID_mapping("rs11931604"))
     print(v_mapping.rsID_mapping("rs62296959"))
     print(v_mapping.rsID_mapping("rs1001179"))
+    print(v_mapping.haplotype_mapping("DPYD c.62G>A"))
+    print("################# haplotype frequency mapping ###########")
+    print(v_mapping.haplotype_frequency_mapping("CYP2B6*17"))
+    print(v_mapping.haplotype_frequency_mapping("DPYD c.62G>A"))
+    print(v_mapping.haplotype_frequency_mapping("CYP2D6*3"))
+    print("################# haplotype functionality mapping ###########")
+    print(v_mapping.haplotype_functionality_mapping("CYP2B6*17"))
+    print(v_mapping.haplotype_functionality_mapping("DPYD c.62G>A"))
+    print(v_mapping.haplotype_functionality_mapping("CYP2D6*3"))
+    print(v_mapping.haplotype_functionality_mapping("TPMT*2"))
+
+def test_diplotype():
+    v_mapping = variantMappingUtil()
+    print("################ diplotype info mapping ###################")
+    print(v_mapping.diplotype_frequency_mapping("CYP2B6 *1/*4"))
+    print(v_mapping.diplotype_frequency_mapping("CYP2C9 *1/*2"))
+    print(v_mapping.diplotype_frequency_mapping("CYP2D6 *1/*10"))
+    # should no result
+    print(v_mapping.diplotype_frequency_mapping("CYP2B6 *1/*50"))
 
 
 def generate_diplotype():
@@ -568,5 +675,6 @@ def generate_diplotype():
     v_mapping.generate_diplotype_relation(output_path="../../processed/diplotype_annotation.csv")
 
 if __name__ == "__main__":
-    # test_haplotype()
-    generate_diplotype()
+    test_haplotype()
+    # generate_diplotype()
+    test_diplotype()
