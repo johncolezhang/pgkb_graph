@@ -525,13 +525,19 @@ class variantMappingUtil:
         if d_type not in self.gene_diplotype_dict[gene].keys():
             return {}
 
+        try:
+            update_date = self.data_change_dict[gene]["diplotype"]
+        except:
+            update_date = ""
+
         return {
             "phenotype": self.gene_diplotype_dict[gene][d_type]["phenotype"].strip(),
             "ehr_notation": self.gene_diplotype_dict[gene][d_type]["ehr_notation"].strip(),
             "activity_score": self.gene_diplotype_dict[gene][d_type]["score"],
             "consultation": self.gene_phenotype_dict[gene].get(
                 self.gene_diplotype_dict[gene][d_type]["phenotype"].strip(),
-                {}).get("consultation", "")
+                {}).get("consultation", ""),
+            "update_date": update_date
         }
 
     def generate_diplotype_relation(self, output_path):
@@ -575,6 +581,7 @@ class variantMappingUtil:
             "consultation": consultation_list
         }).to_csv(output_path, index=False)
 
+
     def haplotype_frequency_mapping(self, haplotype):
         gene, h_type = self.get_gene_h_type(haplotype)
         if gene not in self.gene_freq_dict.keys():
@@ -598,6 +605,7 @@ class variantMappingUtil:
         haplotype_freq_dict["update_date"] = update_date
 
         return haplotype_freq_dict
+
 
     def diplotype_frequency_mapping(self, diplotype):
         d_list = diplotype.split(" ")
@@ -624,6 +632,7 @@ class variantMappingUtil:
             update_date = ""
         diplotype_freq_dict["update_date"] = update_date
         return diplotype_freq_dict
+
 
     def phenotype_frequency_mapping(self, phenotype):
         p_list = phenotype.split(" ")
