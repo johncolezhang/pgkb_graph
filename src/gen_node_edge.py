@@ -660,7 +660,8 @@ def handle_research_csv():
                 "phenotype": dip_mapping_dict.get("phenotype", ""),
                 "ehr_notation": dip_mapping_dict.get("ehr_notation", ""),
                 "activity_score": dip_mapping_dict.get("activity_score", ""),
-                "consultation": dip_mapping_dict.get("consultation", "")
+                "consultation": dip_mapping_dict.get("consultation", ""),
+                "frequency": str(dip_mapping_dict.get("frequency", ""))
             }
         }
         node_list.append(diplotype_node)
