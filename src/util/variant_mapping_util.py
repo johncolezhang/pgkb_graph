@@ -19,6 +19,7 @@ class variantMappingUtil:
                                              list(df_gene["Chromosome"].values)))
 
         ############################### handle rsID ####################################
+        # TODO file creation date is from variants folder
         df_variants = pd.read_csv(
             'D:\\pgkb_graph\\variants\\variants.tsv',
             sep='\t',
@@ -495,6 +496,11 @@ class variantMappingUtil:
                     protein_mapping_list = [x[0].strip() for x in filter_protein_list]
                     mapping_dict["protein"] = "{}; {}".format(column, protein_mapping_list)
                     continue
+        try:
+            update_date = self.data_change_dict[gene]["allele_definition"]
+        except:
+            update_date = ""
+        mapping_dict["update_date"] = update_date
 
         return mapping_dict
 
@@ -508,6 +514,25 @@ class variantMappingUtil:
             mapping_dict["rsID"] = self.variant_rs_synonym_dict[rsID]
 
         return mapping_dict
+
+    def diplotype_mapping(self, diplotype):
+        d_list = diplotype.split(" ")
+        gene = d_list[0]
+        d_type = "".join(d_list[1:])
+
+        if gene not in self.gene_diplotype_dict.keys():
+            return {}
+        if d_type not in self.gene_diplotype_dict[gene].keys():
+            return {}
+
+        return {
+            "phenotype": self.gene_diplotype_dict[gene][d_type]["phenotype"].strip(),
+            "ehr_notation": self.gene_diplotype_dict[gene][d_type]["ehr_notation"].strip(),
+            "activity_score": self.gene_diplotype_dict[gene][d_type]["score"],
+            "consultation": self.gene_phenotype_dict[gene].get(
+                self.gene_diplotype_dict[gene][d_type]["phenotype"].strip(),
+                {}).get("consultation", "")
+        }
 
     def generate_diplotype_relation(self, output_path):
         gene_list = []
@@ -566,6 +591,12 @@ class variantMappingUtil:
             haplotype_freq_dict = {}
 
         haplotype_freq_dict = dict(list(map(lambda x: (x[0], str(x[1])), haplotype_freq_dict.items())))
+        try:
+            update_date = self.data_change_dict[gene]["frequency"]
+        except:
+            update_date = ""
+        haplotype_freq_dict["update_date"] = update_date
+
         return haplotype_freq_dict
 
     def diplotype_frequency_mapping(self, diplotype):
@@ -587,6 +618,11 @@ class variantMappingUtil:
             diplotype_freq_dict = {}
 
         diplotype_freq_dict = dict(list(map(lambda x: (x[0], str(x[1])), diplotype_freq_dict.items())))
+        try:
+            update_date = self.data_change_dict[gene]["frequency"]
+        except:
+            update_date = ""
+        diplotype_freq_dict["update_date"] = update_date
         return diplotype_freq_dict
 
     def phenotype_frequency_mapping(self, phenotype):
@@ -619,7 +655,14 @@ class variantMappingUtil:
         if h_type not in self.gene_functionality_dict[gene].keys():
             return {}
         else:
-            return self.gene_functionality_dict[gene][h_type]
+            try:
+                update_date = self.data_change_dict[gene]["frequency"]
+            except:
+                update_date = ""
+
+            func_dict = self.gene_functionality_dict[gene][h_type]
+            func_dict["update_date"] = update_date
+            return func_dict
 
     @staticmethod
     def get_gene_h_type(haplotype):
@@ -669,6 +712,8 @@ def test_diplotype():
     # should no result
     print(v_mapping.diplotype_frequency_mapping("CYP2B6 *1/*50"))
 
+    print(v_mapping.gene_diplotype_dict["CYP2B6"]["*1/*4"])
+
 
 def generate_diplotype():
     v_mapping = variantMappingUtil()
@@ -677,4 +722,4 @@ def generate_diplotype():
 if __name__ == "__main__":
     test_haplotype()
     # generate_diplotype()
-    test_diplotype()
+    # test_diplotype()

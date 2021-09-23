@@ -1,0 +1,1275 @@
+drug,label,organization,name,update_date,gene,data_source
+brexpiprazole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for brexpiprazole and CYP2D6,,CYP2D6,drug_label
+capecitabine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for capecitabine and DPYD,,DPYD,drug_label
+carbamazepine,Testing required,Swissmedic,Annotation of Swissmedic Label for carbamazepine and HLA-B,,HLA-B,drug_label
+carbasalate calcium,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for carbasalate calcium and G6PD,,G6PD,drug_label
+ciprofloxacin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for ciprofloxacin and G6PD,,G6PD,drug_label
+clomipramine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clomipramine and CYP2D6,,CYP2D6,drug_label
+codeine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for codeine and CYP2D6,,CYP2D6,drug_label
+dexlansoprazole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for dexlansoprazole and CYP2C19,,CYP2C19,drug_label
+dextromethorphan,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for dextromethorphan and CYP2D6,,CYP2D6,drug_label
+dolutegravir,Testing required,Swissmedic,Annotation of Swissmedic Label for dolutegravir / abacavir / lamivudine and HLA-B,,HLA-B,drug_label
+abacavir,Testing required,Swissmedic,Annotation of Swissmedic Label for dolutegravir / abacavir / lamivudine and HLA-B,,HLA-B,drug_label
+lamivudine,Testing required,Swissmedic,Annotation of Swissmedic Label for dolutegravir / abacavir / lamivudine and HLA-B,,HLA-B,drug_label
+duloxetine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for duloxetine and CYP2D6,,CYP2D6,drug_label
+flucytosine,Testing recommended,Swissmedic,Annotation of Swissmedic Label for flucytosine and DPYD,,DPYD,drug_label
+amlodipine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for amlodipine / atorvastatin / perindopril arginine and G6PD, SLCO1B1",,G6PD,drug_label
+amlodipine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for amlodipine / atorvastatin / perindopril arginine and G6PD, SLCO1B1",,SLCO1B1,drug_label
+atorvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for amlodipine / atorvastatin / perindopril arginine and G6PD, SLCO1B1",,G6PD,drug_label
+atorvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for amlodipine / atorvastatin / perindopril arginine and G6PD, SLCO1B1",,SLCO1B1,drug_label
+perindopril arginine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for amlodipine / atorvastatin / perindopril arginine and G6PD, SLCO1B1",,G6PD,drug_label
+perindopril arginine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for amlodipine / atorvastatin / perindopril arginine and G6PD, SLCO1B1",,SLCO1B1,drug_label
+fluorouracil,Testing required,Swissmedic,Annotation of Swissmedic Label for fluorouracil and DPYD,,DPYD,drug_label
+fluoxetine,Informative PGx,Swissmedic,Annotation of Swissmedic Label for fluoxetine and CYP2D6,,CYP2D6,drug_label
+hydroxychloroquine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for hydroxychloroquine and G6PD,,G6PD,drug_label
+moclobemide,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for moclobemide and CYP2C19,,CYP2C19,drug_label
+nebivolol,Informative PGx,Swissmedic,Annotation of Swissmedic Label for nebivolol and CYP2D6,,CYP2D6,drug_label
+ofloxacin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for ofloxacin and G6PD,,G6PD,drug_label
+oxcarbazepine,Testing required,Swissmedic,Annotation of Swissmedic Label for oxcarbazepine and HLA-B,,HLA-B,drug_label
+palonosetron,Informative PGx,Swissmedic,Annotation of Swissmedic Label for palonosetron and CYP2D6,,CYP2D6,drug_label
+pazopanib,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for pazopanib and HLA-B,,HLA-B,drug_label
+propafenone,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for propafenone and CYP2D6,,CYP2D6,drug_label
+quinine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for quinine and G6PD,,G6PD,drug_label
+rasburicase,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for rasburicase and G6PD,,G6PD,drug_label
+losartan,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for losartan and CYP2C9, CYP3A4",,CYP2C9,drug_label
+losartan,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for losartan and CYP2C9, CYP3A4",,CYP3A4,drug_label
+sulfamethoxazole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for sulfamethoxazole / trimethoprim and G6PD,,G6PD,drug_label
+trimethoprim,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for sulfamethoxazole / trimethoprim and G6PD,,G6PD,drug_label
+thioguanine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for thioguanine and TPMT,,TPMT,drug_label
+oxymetazoline,Actionable PGx,FDA,"Annotation of FDA Label for oxymetazoline and tetracaine and BCHE, CYB5R3, G6PD",2019-10-24,BCHE,drug_label
+oxymetazoline,Actionable PGx,FDA,"Annotation of FDA Label for oxymetazoline and tetracaine and BCHE, CYB5R3, G6PD",2019-10-24,CYB5R3,drug_label
+oxymetazoline,Actionable PGx,FDA,"Annotation of FDA Label for oxymetazoline and tetracaine and BCHE, CYB5R3, G6PD",2019-10-24,G6PD,drug_label
+tetracaine,Actionable PGx,FDA,"Annotation of FDA Label for oxymetazoline and tetracaine and BCHE, CYB5R3, G6PD",2019-10-24,BCHE,drug_label
+tetracaine,Actionable PGx,FDA,"Annotation of FDA Label for oxymetazoline and tetracaine and BCHE, CYB5R3, G6PD",2019-10-24,CYB5R3,drug_label
+tetracaine,Actionable PGx,FDA,"Annotation of FDA Label for oxymetazoline and tetracaine and BCHE, CYB5R3, G6PD",2019-10-24,G6PD,drug_label
+carglumic acid,Testing required,HCSC,Annotation of HCSC Label for carglumic acid and NAGS,,NAGS,drug_label
+ceritinib,Testing required,HCSC,Annotation of HCSC Label for ceritinib and ALK,,ALK,drug_label
+brivaracetam,Actionable PGx,FDA,Annotation of FDA Label for brivaracetam and CYP2C19,2017-11-09,CYP2C19,drug_label
+ponatinib,Testing required,HCSC,"Annotation of HCSC Label for ponatinib and ABI1, BCR",,ABI1,drug_label
+ponatinib,Testing required,HCSC,"Annotation of HCSC Label for ponatinib and ABI1, BCR",,BCR,drug_label
+neratinib,Informative PGx,FDA,"Annotation of FDA Label for neratinib and ESR1, ESR2, PGR",,ESR1,drug_label
+neratinib,Informative PGx,FDA,"Annotation of FDA Label for neratinib and ESR1, ESR2, PGR",,ESR2,drug_label
+neratinib,Informative PGx,FDA,"Annotation of FDA Label for neratinib and ESR1, ESR2, PGR",,PGR,drug_label
+daclatasvir,Informative PGx,FDA,Annotation of FDA Label for daclatasvir and IFNL3,,IFNL3,drug_label
+evolocumab,Informative PGx,FDA,Annotation of FDA Label for evolocumab and LDLR,2017-11-08,LDLR,drug_label
+Parathyroid Hormones And Analogues,Informative PGx,FDA,Annotation of FDA Label for Parathyroid Hormones And Analogues and CASR,,CASR,drug_label
+vemurafenib,Testing required,EMA,Annotation of EMA Label for vemurafenib and BRAF,2013-12-05,BRAF,drug_label
+metoclopramide,Actionable PGx,FDA,"Annotation of FDA Label for metoclopramide and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",2019-10-17,CYB5R1,drug_label
+metoclopramide,Actionable PGx,FDA,"Annotation of FDA Label for metoclopramide and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",2019-10-17,CYB5R2,drug_label
+metoclopramide,Actionable PGx,FDA,"Annotation of FDA Label for metoclopramide and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",2019-10-17,CYB5R3,drug_label
+metoclopramide,Actionable PGx,FDA,"Annotation of FDA Label for metoclopramide and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",2019-10-17,CYB5R4,drug_label
+metoclopramide,Actionable PGx,FDA,"Annotation of FDA Label for metoclopramide and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",2019-10-17,G6PD,drug_label
+alirocumab,Informative PGx,FDA,Annotation of FDA Label for alirocumab and LDLR,2017-11-08,LDLR,drug_label
+ondansetron,Informative PGx,FDA,Annotation of FDA Label for ondansetron and CYP2D6,,CYP2D6,drug_label
+amifampridine phosphate,Actionable PGx,EMA,Annotation of EMA Label for amifampridine phosphate and NAT2,,NAT2,drug_label
+encorafenib,Testing required,EMA,Annotation of EMA Label for encorafenib and BRAF,,BRAF,drug_label
+irinotecan,Actionable PGx,EMA,Annotation of EMA Label for irinotecan and UGT1A1,,UGT1A1,drug_label
+lesinurad,Actionable PGx,EMA,Annotation of EMA Label for lesinurad and CYP2C9,,CYP2C9,drug_label
+tolazamide,Actionable PGx,FDA,Annotation of FDA Label for tolazamide and G6PD,,G6PD,drug_label
+Opium derivatives,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for Opium derivatives and expectorants and CYP2D6,,CYP2D6,drug_label
+expectorants,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for Opium derivatives and expectorants and CYP2D6,,CYP2D6,drug_label
+goserelin,Informative PGx,FDA,"Annotation of FDA Label for goserelin and ESR1, ESR2, PGR",2019-05-16,ESR1,drug_label
+goserelin,Informative PGx,FDA,"Annotation of FDA Label for goserelin and ESR1, ESR2, PGR",2019-05-16,ESR2,drug_label
+goserelin,Informative PGx,FDA,"Annotation of FDA Label for goserelin and ESR1, ESR2, PGR",2019-05-16,PGR,drug_label
+bisoprolol fumarate,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for bisoprolol fumarate / perindopril arginine and G6PD,,G6PD,drug_label
+perindopril arginine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for bisoprolol fumarate / perindopril arginine and G6PD,,G6PD,drug_label
+chloroquine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for chloroquine and G6PD,,G6PD,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19,drug_label
+daclatasvir,Informative PGx,Swissmedic,Annotation of Swissmedic Label for daclatasvir and IFNL3,,IFNL3,drug_label
+dasabuvir,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for dasabuvir and IFNL3,,IFNL3,drug_label
+efavirenz,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for efavirenz and CYP2B6,,CYP2B6,drug_label
+escitalopram,Informative PGx,Swissmedic,Annotation of Swissmedic Label for escitalopram and CYP2D6,,CYP2D6,drug_label
+ezetimibe,Testing recommended,Swissmedic,Annotation of Swissmedic Label for ezetimibe / simvastatin and SLCO1B1,,SLCO1B1,drug_label
+simvastatin,Testing recommended,Swissmedic,Annotation of Swissmedic Label for ezetimibe / simvastatin and SLCO1B1,,SLCO1B1,drug_label
+fesoterodine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for fesoterodine and CYP2D6,,CYP2D6,drug_label
+fluorouracil,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for fluorouracil and TYMS,,TYMS,drug_label
+gefitinib,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for gefitinib and CYP2D6,,CYP2D6,drug_label
+gliclazide,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for gliclazide and G6PD,,G6PD,drug_label
+ibrutinib,Informative PGx,Swissmedic,Annotation of Swissmedic Label for ibrutinib and CYP2D6,,CYP2D6,drug_label
+lamivudine,Testing required,Swissmedic,Annotation of Swissmedic Label for lamivudine / abacavir and HLA-B,2020-06-18,HLA-B,drug_label
+abacavir,Testing required,Swissmedic,Annotation of Swissmedic Label for lamivudine / abacavir and HLA-B,2020-06-18,HLA-B,drug_label
+azathioprine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for azathioprine and NUDT15, TPMT",,NUDT15,drug_label
+azathioprine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for azathioprine and NUDT15, TPMT",,TPMT,drug_label
+ezetimibe,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ezetimibe / rosuvastatin and ABCG2, SLCO1B1",,ABCG2,drug_label
+ezetimibe,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ezetimibe / rosuvastatin and ABCG2, SLCO1B1",,SLCO1B1,drug_label
+rosuvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ezetimibe / rosuvastatin and ABCG2, SLCO1B1",,ABCG2,drug_label
+rosuvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ezetimibe / rosuvastatin and ABCG2, SLCO1B1",,SLCO1B1,drug_label
+lapatinib,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for lapatinib and HLA-DQA1, HLA-DRB1",,HLA-DQA1,drug_label
+lapatinib,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for lapatinib and HLA-DQA1, HLA-DRB1",,HLA-DRB1,drug_label
+metabutethamine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for metabutethamine and G6PD,,G6PD,drug_label
+nitrofurantoin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for nitrofurantoin and G6PD,,G6PD,drug_label
+ondansetron,Informative PGx,Swissmedic,Annotation of Swissmedic Label for ondansetron and CYP2D6,,CYP2D6,drug_label
+oxycodone,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for oxycodone and CYP2D6,,CYP2D6,drug_label
+paliperidone,Informative PGx,Swissmedic,Annotation of Swissmedic Label for paliperidone and CYP2D6,,CYP2D6,drug_label
+perindopril,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for perindopril and G6PD,,G6PD,drug_label
+pitavastatin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for pitavastatin and SLCO1B1,,SLCO1B1,drug_label
+rabeprazole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for rabeprazole and CYP2C19,,CYP2C19,drug_label
+risperidone,Informative PGx,Swissmedic,Annotation of Swissmedic Label for risperidone and CYP2D6,,CYP2D6,drug_label
+simvastatin,Testing recommended,Swissmedic,Annotation of Swissmedic Label for simvastatin and SLCO1B1,,SLCO1B1,drug_label
+sulfadiazine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for sulfadiazine and G6PD,,G6PD,drug_label
+tamoxifen,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for tamoxifen and CYP2D6,,CYP2D6,drug_label
+sulfasalazine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for sulfasalazine and G6PD,,G6PD,drug_label
+tolperisone,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for tolperisone and CYP2D6,,CYP2D6,drug_label
+tetrabenazine,Testing required,Swissmedic,Annotation of Swissmedic Label for tetrabenazine and CYP2D6,,CYP2D6,drug_label
+umeclidinium,Informative PGx,Swissmedic,Annotation of Swissmedic Label for umeclidinium / vilanterol and CYP2D6,,CYP2D6,drug_label
+vilanterol,Informative PGx,Swissmedic,Annotation of Swissmedic Label for umeclidinium / vilanterol and CYP2D6,,CYP2D6,drug_label
+vortioxetine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for vortioxetine and CYP2D6,,CYP2D6,drug_label
+letermovir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for letermovir and SLCO1B1, UGT1A1",,SLCO1B1,drug_label
+letermovir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for letermovir and SLCO1B1, UGT1A1",,UGT1A1,drug_label
+darifenacin,Actionable PGx,FDA,Annotation of FDA Label for darifenacin and CYP2D6,2017-03-15,CYP2D6,drug_label
+simeprevir,Informative PGx,FDA,Annotation of FDA Label for simeprevir and IFNL3,2014-07-14,IFNL3,drug_label
+afatinib,Testing required,EMA,Annotation of EMA Label for afatinib and EGFR,2014-05-02,EGFR,drug_label
+fesoterodine,Actionable PGx,EMA,Annotation of EMA Label for fesoterodine and CYP2D6,2014-08-07,CYP2D6,drug_label
+fesoterodine,Actionable PGx,FDA,Annotation of FDA Label for fesoterodine and CYP2D6,2017-03-15,CYP2D6,drug_label
+glipizide,Actionable PGx,FDA,Annotation of FDA Label for glipizide and G6PD,2013-12-17,G6PD,drug_label
+ponatinib,Testing required,FDA,"Annotation of FDA Label for ponatinib and ABL1, BCR",2019-04-19,ABL1,drug_label
+ponatinib,Testing required,FDA,"Annotation of FDA Label for ponatinib and ABL1, BCR",2019-04-19,BCR,drug_label
+bosutinib,Testing required,FDA,"Annotation of FDA Label for bosutinib and ABL1, BCR",2019-10-21,ABL1,drug_label
+bosutinib,Testing required,FDA,"Annotation of FDA Label for bosutinib and ABL1, BCR",2019-10-21,BCR,drug_label
+efavirenz,Actionable PGx,FDA,Annotation of FDA Label for efavirenz and CYP2B6,,CYP2B6,drug_label
+glimepiride,Actionable PGx,FDA,Annotation of FDA Label for glimepiride and G6PD,2013-12-17,G6PD,drug_label
+afutuzumab,Informative PGx,FDA,Annotation of FDA Label for afutuzumab and MS4A1,2017-12-07,MS4A1,drug_label
+ibritumomab,Informative PGx,FDA,Annotation of FDA Label for ibritumomab and MS4A1,2013-12-17,MS4A1,drug_label
+lomitapide,Informative PGx,FDA,Annotation of FDA Label for lomitapide and LDLR,2017-11-08,LDLR,drug_label
+escitalopram,Actionable PGx,FDA,Annotation of FDA Label for escitalopram and CYP2C19,2020-09-22,CYP2C19,drug_label
+duloxetine,Actionable PGx,FDA,Annotation of FDA Label for duloxetine and CYP2D6,,CYP2D6,drug_label
+donepezil,Actionable PGx,FDA,Annotation of FDA Label for donepezil and CYP2D6,,CYP2D6,drug_label
+ranolazine,Actionable PGx,EMA,Annotation of EMA Label for ranolazine and CYP2D6,,CYP2D6,drug_label
+pazopanib,Actionable PGx,EMA,Annotation of EMA Label for pazopanib and HLA-B,2014-06-05,HLA-B,drug_label
+darifenacin,Actionable PGx,EMA,Annotation of EMA Label for darifenacin and CYP2D6,2014-08-07,CYP2D6,drug_label
+ponatinib,Testing required,EMA,"Annotation of EMA Label for ponatinib and ABL1, BCR",2014-06-13,ABL1,drug_label
+ponatinib,Testing required,EMA,"Annotation of EMA Label for ponatinib and ABL1, BCR",2014-06-13,BCR,drug_label
+velaglucerase alfa,Testing required,EMA,Annotation of EMA Label for velaglucerase alfa and GBA,2014-08-06,GBA,drug_label
+panitumumab,Testing required,EMA,"Annotation of EMA Label for panitumumab and KRAS, NRAS",2013-10-27,KRAS,drug_label
+panitumumab,Testing required,EMA,"Annotation of EMA Label for panitumumab and KRAS, NRAS",2013-10-27,NRAS,drug_label
+ofatumumab,Informative PGx,EMA,Annotation of EMA Label for ofatumumab and MS4A1,2019-12-04,MS4A1,drug_label
+propranolol,Informative PGx,EMA,Annotation of EMA Label for propranolol and CYP2D6,2014-06-26,CYP2D6,drug_label
+trastuzumab emtansine,Testing required,EMA,Annotation of EMA Label for trastuzumab emtansine and ERBB2,2014-07-10,ERBB2,drug_label
+lenalidomide,Testing required,FDA,Annotation of FDA Label for lenalidomide,2017-11-08,,drug_label
+erlotinib,Testing required,EMA,Annotation of EMA Label for erlotinib and EGFR,2013-10-25,EGFR,drug_label
+clopidogrel,Actionable PGx,EMA,Annotation of EMA Label for clopidogrel and CYP2C19,2013-10-25,CYP2C19,drug_label
+telaprevir,Actionable PGx,FDA,Annotation of FDA Label for telaprevir and IFNL3,2013-10-25,IFNL3,drug_label
+dextromethorphan,Testing recommended,FDA,Annotation of FDA Label for dextromethorphan / quinidine and CYP2D6,2013-10-25,CYP2D6,drug_label
+quinidine,Testing recommended,FDA,Annotation of FDA Label for dextromethorphan / quinidine and CYP2D6,2013-10-25,CYP2D6,drug_label
+rabeprazole,Actionable PGx,HCSC,Annotation of HCSC Label for rabeprazole and CYP2C19,,CYP2C19,drug_label
+atorvastatin,Informative PGx,HCSC,Annotation of HCSC Label for atorvastatin and LDLR,2017-11-08,LDLR,drug_label
+succimer,Informative PGx,FDA,Annotation of FDA Label for succimer and G6PD,2014-01-15,G6PD,drug_label
+methylene blue,Actionable PGx,FDA,Annotation of FDA Label for methylene blue and G6PD,2013-12-17,G6PD,drug_label
+dexlansoprazole,Actionable PGx,FDA,Annotation of FDA Label for dexlansoprazole and CYP2C19,2013-10-25,CYP2C19,drug_label
+trametinib,Testing required,FDA,Annotation of FDA Label for trametinib and BRAF,2017-11-09,BRAF,drug_label
+vemurafenib,Testing required,FDA,Annotation of FDA Label for vemurafenib and BRAF,2017-11-10,BRAF,drug_label
+citalopram,Actionable PGx,FDA,Annotation of FDA Label for citalopram and CYP2C19,2020-09-22,CYP2C19,drug_label
+amitriptyline,Actionable PGx,FDA,Annotation of FDA Label for amitriptyline and CYP2D6,2013-12-16,CYP2D6,drug_label
+hydralazine,Informative PGx,FDA,Annotation of FDA Label for hydralazine / isosorbide dinitrate and NAT2,2019-10-14,NAT2,drug_label
+isosorbide dinitrate,Informative PGx,FDA,Annotation of FDA Label for hydralazine / isosorbide dinitrate and NAT2,2019-10-14,NAT2,drug_label
+rabeprazole,Actionable PGx,FDA,Annotation of FDA Label for rabeprazole and CYP2C19,2019-10-10,CYP2C19,drug_label
+clomipramine,Actionable PGx,FDA,Annotation of FDA Label for clomipramine and CYP2D6,2013-10-25,CYP2D6,drug_label
+bosutinib,Testing required,EMA,"Annotation of EMA Label for bosutinib and ABL1, BCR",2014-03-31,ABL1,drug_label
+bosutinib,Testing required,EMA,"Annotation of EMA Label for bosutinib and ABL1, BCR",2014-03-31,BCR,drug_label
+thioguanine,Testing recommended,FDA,"Annotation of FDA Label for thioguanine and NUDT15, TPMT",2013-10-25,NUDT15,drug_label
+thioguanine,Testing recommended,FDA,"Annotation of FDA Label for thioguanine and NUDT15, TPMT",2013-10-25,TPMT,drug_label
+bosutinib,Testing required,HCSC,"Annotation of HCSC Label for bosutinib and ABL1, BCR",,ABL1,drug_label
+bosutinib,Testing required,HCSC,"Annotation of HCSC Label for bosutinib and ABL1, BCR",,BCR,drug_label
+primaquine,Actionable PGx,HCSC,"Annotation of HCSC Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",,CYB5R1,drug_label
+primaquine,Actionable PGx,HCSC,"Annotation of HCSC Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",,CYB5R2,drug_label
+primaquine,Actionable PGx,HCSC,"Annotation of HCSC Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",,CYB5R3,drug_label
+primaquine,Actionable PGx,HCSC,"Annotation of HCSC Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",,CYB5R4,drug_label
+primaquine,Actionable PGx,HCSC,"Annotation of HCSC Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4, G6PD",,G6PD,drug_label
+fluoxetine,Actionable PGx,FDA,Annotation of FDA Label for fluoxetine / olanzapine and CYP2D6,2013-12-17,CYP2D6,drug_label
+olanzapine,Actionable PGx,FDA,Annotation of FDA Label for fluoxetine / olanzapine and CYP2D6,2013-12-17,CYP2D6,drug_label
+pravastatin,Informative PGx,FDA,Annotation of FDA Label for pravastatin and APOE,2019-04-22,APOE,drug_label
+sulfadiazine,Actionable PGx,FDA,Annotation of FDA Label for sulfadiazine and G6PD,2013-10-25,G6PD,drug_label
+trastuzumab,Testing required,EMA,Annotation of EMA Label for trastuzumab and ERBB2,2013-12-05,ERBB2,drug_label
+glibenclamide,Actionable PGx,FDA,Annotation of FDA Label for glibenclamide and G6PD,2013-12-17,G6PD,drug_label
+propafenone,Actionable PGx,FDA,Annotation of FDA Label for propafenone and CYP2D6,2013-10-25,CYP2D6,drug_label
+mycophenolic acid,Actionable PGx,FDA,Annotation of FDA Label for mycophenolic acid and HPRT1,2013-10-25,HPRT1,drug_label
+tramadol,Actionable PGx,FDA,Annotation of FDA Label for tramadol and CYP2D6,2017-05-01,CYP2D6,drug_label
+trimipramine,Actionable PGx,FDA,Annotation of FDA Label for trimipramine and CYP2D6,2013-10-25,CYP2D6,drug_label
+venlafaxine,Actionable PGx,FDA,Annotation of FDA Label for venlafaxine and CYP2D6,2013-10-25,CYP2D6,drug_label
+trastuzumab,Testing required,FDA,Annotation of FDA Label for trastuzumab and ERBB2,2017-11-09,ERBB2,drug_label
+esomeprazole,Actionable PGx,FDA,Annotation of FDA Label for esomeprazole and CYP2C19,2013-10-25,CYP2C19,drug_label
+irinotecan,Actionable PGx,FDA,Annotation of FDA Label for irinotecan and UGT1A1,2013-10-25,UGT1A1,drug_label
+risperidone,Informative PGx,FDA,Annotation of FDA Label for risperidone and CYP2D6,2019-10-10,CYP2D6,drug_label
+rasburicase,Informative PGx,FDA,"Annotation of FDA Label for rasburicase and CYB5R1, CYB5R2, CYB5R3, CYB5R4",2016-03-21,CYB5R1,drug_label
+rasburicase,Informative PGx,FDA,"Annotation of FDA Label for rasburicase and CYB5R1, CYB5R2, CYB5R3, CYB5R4",2016-03-21,CYB5R2,drug_label
+rasburicase,Informative PGx,FDA,"Annotation of FDA Label for rasburicase and CYB5R1, CYB5R2, CYB5R3, CYB5R4",2016-03-21,CYB5R3,drug_label
+rasburicase,Informative PGx,FDA,"Annotation of FDA Label for rasburicase and CYB5R1, CYB5R2, CYB5R3, CYB5R4",2016-03-21,CYB5R4,drug_label
+atomoxetine,Actionable PGx,HCSC,Annotation of HCSC Label for atomoxetine and CYP2D6,,CYP2D6,drug_label
+rasburicase,Testing recommended,HCSC,Annotation of HCSC Label for rasburicase and G6PD,,G6PD,drug_label
+regorafenib,Informative PGx,FDA,"Annotation of FDA Label for regorafenib and EGFR, KRAS, VEGFA",2019-10-08,EGFR,drug_label
+regorafenib,Informative PGx,FDA,"Annotation of FDA Label for regorafenib and EGFR, KRAS, VEGFA",2019-10-08,KRAS,drug_label
+regorafenib,Informative PGx,FDA,"Annotation of FDA Label for regorafenib and EGFR, KRAS, VEGFA",2019-10-08,VEGFA,drug_label
+atazanavir,Informative PGx,HCSC,Annotation of HCSC Label for atazanavir and CYP2C19,,CYP2C19,drug_label
+brigatinib,Testing required,EMA,Annotation of EMA Label for brigatinib and ALK,,ALK,drug_label
+pembrolizumab,Informative PGx,FDA,Annotation of FDA Label for pembrolizumab and BRAF,2019-04-19,BRAF,drug_label
+pegloticase,Testing required,EMA,Annotation of EMA Label for pegloticase and G6PD,2014-06-05,G6PD,drug_label
+nelfinavir,Informative PGx,EMA,Annotation of EMA Label for nelfinavir and CYP3A4,2019-12-04,CYP3A4,drug_label
+belimumab,Informative PGx,FDA,Annotation of FDA Label for belimumab and TNFSF13B,2014-08-06,TNFSF13B,drug_label
+telaprevir,Actionable PGx,EMA,Annotation of EMA Label for telaprevir and IFNL3,2013-10-28,IFNL3,drug_label
+dabrafenib,Actionable PGx,FDA,Annotation of FDA Label for dabrafenib and G6PD,2017-11-09,G6PD,drug_label
+timolol,Informative PGx,EMA,Annotation of EMA Label for timolol and CYP2D6,2019-12-04,CYP2D6,drug_label
+pertuzumab,Testing required,EMA,Annotation of EMA Label for pertuzumab and ERBB2,2014-06-13,ERBB2,drug_label
+vardenafil,Informative PGx,EMA,Annotation of EMA Label for vardenafil,2019-12-04,,drug_label
+v,Testing recommended,EMA,Annotation of EMA Label for vandetanib and RET,2019-12-04,RET,drug_label
+etanib,Testing recommended,EMA,Annotation of EMA Label for vandetanib and RET,2019-12-04,RET,drug_label
+ofatumumab,Informative PGx,FDA,Annotation of FDA Label for ofatumumab and MS4A1,2019-04-18,MS4A1,drug_label
+dabrafenib,Testing required,EMA,Annotation of EMA Label for dabrafenib and BRAF,2014-05-02,BRAF,drug_label
+anastrozole,Testing required,FDA,"Annotation of FDA Label for anastrozole and ESR1, ESR2, PGR",2013-12-16,ESR1,drug_label
+anastrozole,Testing required,FDA,"Annotation of FDA Label for anastrozole and ESR1, ESR2, PGR",2013-12-16,ESR2,drug_label
+anastrozole,Testing required,FDA,"Annotation of FDA Label for anastrozole and ESR1, ESR2, PGR",2013-12-16,PGR,drug_label
+pravastatin,Informative PGx,FDA,Annotation of FDA Label for pravastatin and LDLR,2017-11-08,LDLR,drug_label
+lomitapide,Testing required,EMA,"Annotation of EMA Label for lomitapide and APOB, LDLR, PCSK9",2019-12-04,APOB,drug_label
+lomitapide,Testing required,EMA,"Annotation of EMA Label for lomitapide and APOB, LDLR, PCSK9",2019-12-04,LDLR,drug_label
+lomitapide,Testing required,EMA,"Annotation of EMA Label for lomitapide and APOB, LDLR, PCSK9",2019-12-04,PCSK9,drug_label
+voriconazole,Informative PGx,EMA,"Annotation of EMA Label for voriconazole and CYP2C19, CYP2C9, CYP3A4",2019-12-04,CYP2C19,drug_label
+voriconazole,Informative PGx,EMA,"Annotation of EMA Label for voriconazole and CYP2C19, CYP2C9, CYP3A4",2019-12-04,CYP2C9,drug_label
+voriconazole,Informative PGx,EMA,"Annotation of EMA Label for voriconazole and CYP2C19, CYP2C9, CYP3A4",2019-12-04,CYP3A4,drug_label
+sodium phenylbutyrate,Testing required,FDA,"Annotation of FDA Label for sodium phenylbutyrate and ASS1, CPS1, OTC",2013-12-13,ASS1,drug_label
+sodium phenylbutyrate,Testing required,FDA,"Annotation of FDA Label for sodium phenylbutyrate and ASS1, CPS1, OTC",2013-12-13,CPS1,drug_label
+sodium phenylbutyrate,Testing required,FDA,"Annotation of FDA Label for sodium phenylbutyrate and ASS1, CPS1, OTC",2013-12-13,OTC,drug_label
+esomeprazole,Informative PGx,EMA,Annotation of EMA Label for esomeprazole and CYP2C19,2014-05-08,CYP2C19,drug_label
+azathioprine,Actionable PGx,HCSC,Annotation of HCSC Label for azathioprine and TPMT,,TPMT,drug_label
+boceprevir,Informative PGx,HCSC,Annotation of HCSC Label for boceprevir and IFNL3,,IFNL3,drug_label
+capecitabine,Actionable PGx,HCSC,Annotation of HCSC Label for capecitabine and DPYD,,DPYD,drug_label
+carvedilol,Actionable PGx,HCSC,Annotation of HCSC Label for carvedilol and CYP2D6,,CYP2D6,drug_label
+celecoxib,Actionable PGx,HCSC,Annotation of HCSC Label for celecoxib and CYP2C9,,CYP2C9,drug_label
+chlorpropamide,Actionable PGx,HCSC,Annotation of HCSC Label for chlorpropamide and G6PD,,G6PD,drug_label
+citalopram,Actionable PGx,HCSC,Annotation of HCSC Label for citalopram and CYP2C19,,CYP2C19,drug_label
+pertuzumab,Testing required,HCSC,Annotation of HCSC Label for pertuzumab and ERBB2,,ERBB2,drug_label
+phenytoin,Testing recommended,HCSC,Annotation of HCSC Label for phenytoin and HLA-B,,HLA-B,drug_label
+propafenone,Actionable PGx,HCSC,Annotation of HCSC Label for propafenone and CYP2D6,,CYP2D6,drug_label
+quinine,Actionable PGx,HCSC,Annotation of HCSC Label for quinine and G6PD,,G6PD,drug_label
+prasugrel,Informative PGx,EMA,"Annotation of EMA Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",2013-10-27,CYP2B6,drug_label
+prasugrel,Informative PGx,EMA,"Annotation of EMA Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",2013-10-27,CYP2C19,drug_label
+prasugrel,Informative PGx,EMA,"Annotation of EMA Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",2013-10-27,CYP2C9,drug_label
+prasugrel,Informative PGx,EMA,"Annotation of EMA Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",2013-10-27,CYP3A5,drug_label
+rituximab,Testing required,EMA,Annotation of EMA Label for rituximab and MS4A1,2019-12-04,MS4A1,drug_label
+risperidone,Informative PGx,HCSC,Annotation of HCSC Label for risperidone and CYP2D6,,CYP2D6,drug_label
+rosuvastatin,Actionable PGx,HCSC,Annotation of HCSC Label for rosuvastatin and LDLR,,LDLR,drug_label
+atorvastatin,Informative PGx,FDA,Annotation of FDA Label for atorvastatin and LDLR,2017-11-08,LDLR,drug_label
+brentuximab vedotin,Informative PGx,FDA,Annotation of FDA Label for brentuximab vedotin and ALK,2013-10-25,ALK,drug_label
+indacaterol,Informative PGx,EMA,Annotation of EMA Label for indacaterol and ADRB2,2019-12-04,ADRB2,drug_label
+diazepam,Actionable PGx,FDA,Annotation of FDA Label for diazepam and CYP2C19,2013-10-25,CYP2C19,drug_label
+carbamazepine,Testing required,FDA,Annotation of FDA Label for carbamazepine and HLA-B,2016-03-21,HLA-B,drug_label
+clopidogrel,Actionable PGx,FDA,Annotation of FDA Label for clopidogrel and CYP2C19,2016-10-03,CYP2C19,drug_label
+chloroquine,Actionable PGx,FDA,Annotation of FDA Label for chloroquine and G6PD,2020-03-23,G6PD,drug_label
+erlotinib,Testing required,FDA,Annotation of FDA Label for erlotinib and EGFR,2013-10-25,EGFR,drug_label
+gefitinib,Testing required,FDA,Annotation of FDA Label for gefitinib and EGFR,2017-11-09,EGFR,drug_label
+trastuzumab emtansine,Testing required,FDA,Annotation of FDA Label for trastuzumab emtansine and ERBB2,2019-10-18,ERBB2,drug_label
+rosuvastatin,Actionable PGx,FDA,Annotation of FDA Label for rosuvastatin and SLCO1B1,2017-03-15,SLCO1B1,drug_label
+dasatinib,Testing required,FDA,"Annotation of FDA Label for dasatinib and ABL1, BCR",2019-10-10,ABL1,drug_label
+dasatinib,Testing required,FDA,"Annotation of FDA Label for dasatinib and ABL1, BCR",2019-10-10,BCR,drug_label
+azathioprine,Testing recommended,FDA,"Annotation of FDA Label for azathioprine and NUDT15, TPMT",2020-10-15,NUDT15,drug_label
+azathioprine,Testing recommended,FDA,"Annotation of FDA Label for azathioprine and NUDT15, TPMT",2020-10-15,TPMT,drug_label
+imatinib,Testing required,FDA,"Annotation of FDA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,ABL1,drug_label
+imatinib,Testing required,FDA,"Annotation of FDA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,BCR,drug_label
+imatinib,Testing required,FDA,"Annotation of FDA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,FIP1L1,drug_label
+imatinib,Testing required,FDA,"Annotation of FDA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,KIT,drug_label
+imatinib,Testing required,FDA,"Annotation of FDA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,PDGFRA,drug_label
+imatinib,Testing required,FDA,"Annotation of FDA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,PDGFRB,drug_label
+lapatinib,Testing required,FDA,"Annotation of FDA Label for lapatinib and ERBB2, ESR1, ESR2, PGR",2016-03-21,ERBB2,drug_label
+lapatinib,Testing required,FDA,"Annotation of FDA Label for lapatinib and ERBB2, ESR1, ESR2, PGR",2016-03-21,ESR1,drug_label
+lapatinib,Testing required,FDA,"Annotation of FDA Label for lapatinib and ERBB2, ESR1, ESR2, PGR",2016-03-21,ESR2,drug_label
+lapatinib,Testing required,FDA,"Annotation of FDA Label for lapatinib and ERBB2, ESR1, ESR2, PGR",2016-03-21,PGR,drug_label
+fulvestrant,Testing required,FDA,"Annotation of FDA Label for fulvestrant and ESR1, ESR2, PGR",2013-10-25,ESR1,drug_label
+fulvestrant,Testing required,FDA,"Annotation of FDA Label for fulvestrant and ESR1, ESR2, PGR",2013-10-25,ESR2,drug_label
+fulvestrant,Testing required,FDA,"Annotation of FDA Label for fulvestrant and ESR1, ESR2, PGR",2013-10-25,PGR,drug_label
+sodium benzoate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,ARG1,drug_label
+sodium benzoate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,ASL,drug_label
+sodium benzoate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,ASS1,drug_label
+sodium benzoate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,CPS1,drug_label
+sodium benzoate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,NAGS,drug_label
+sodium benzoate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,OTC,drug_label
+sodium phenylacetate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,ARG1,drug_label
+sodium phenylacetate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,ASL,drug_label
+sodium phenylacetate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,ASS1,drug_label
+sodium phenylacetate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,CPS1,drug_label
+sodium phenylacetate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,NAGS,drug_label
+sodium phenylacetate,Testing required,FDA,"Annotation of FDA Label for sodium benzoate / sodium phenylacetate and ARG1, ASL, ASS1, CPS1, NAGS, OTC",2017-03-14,OTC,drug_label
+busulfan,Actionable PGx,FDA,"Annotation of FDA Label for busulfan and ABL1, BCR",2019-05-10,ABL1,drug_label
+busulfan,Actionable PGx,FDA,"Annotation of FDA Label for busulfan and ABL1, BCR",2019-05-10,BCR,drug_label
+indacaterol,Informative PGx,FDA,Annotation of FDA Label for indacaterol and UGT1A1,2013-10-25,UGT1A1,drug_label
+maraviroc,Informative PGx,FDA,Annotation of FDA Label for maraviroc and CCR5,2013-10-25,CCR5,drug_label
+tositumomab,Informative PGx,FDA,Annotation of FDA Label for tositumomab and MS4A1,2017-03-14,MS4A1,drug_label
+quinidine,Informative PGx,FDA,Annotation of FDA Label for quinidine and CYP2D6,2013-10-25,CYP2D6,drug_label
+drospirenone,Informative PGx,FDA,Annotation of FDA Label for drospirenone / ethinyl estradiol and CYP2C19,2014-07-14,CYP2C19,drug_label
+ethinyl estradiol,Informative PGx,FDA,Annotation of FDA Label for drospirenone / ethinyl estradiol and CYP2C19,2014-07-14,CYP2C19,drug_label
+terbinafine,Informative PGx,FDA,Annotation of FDA Label for terbinafine and CYP2D6,2013-10-25,CYP2D6,drug_label
+tiotropium,Informative PGx,FDA,Annotation of FDA Label for tiotropium and CYP2D6,2013-10-25,CYP2D6,drug_label
+fluoxetine,Informative PGx,FDA,Annotation of FDA Label for fluoxetine and CYP2D6,2013-10-25,CYP2D6,drug_label
+ticagrelor,Informative PGx,FDA,Annotation of FDA Label for ticagrelor and CYP2C19,2017-03-16,CYP2C19,drug_label
+cisplatin,Informative PGx,FDA,Annotation of FDA Label for cisplatin and TPMT,2013-10-25,TPMT,drug_label
+boceprevir,Informative PGx,FDA,Annotation of FDA Label for boceprevir and IFNL3,2013-10-25,IFNL3,drug_label
+modafinil,Actionable PGx,FDA,Annotation of FDA Label for modafinil and CYP2D6,2013-10-25,CYP2D6,drug_label
+boceprevir,Actionable PGx,EMA,Annotation of EMA Label for boceprevir and IFNL3,2013-10-25,IFNL3,drug_label
+desloratadine,Informative PGx,EMA,Annotation of EMA Label for desloratadine,2019-12-04,,drug_label
+norfloxacin,Actionable PGx,FDA,Annotation of FDA Label for norfloxacin and G6PD,2019-04-14,G6PD,drug_label
+cabazitaxel,Informative PGx,EMA,Annotation of EMA Label for cabazitaxel and CYP3A4,2019-12-04,CYP3A4,drug_label
+afatinib,Testing required,FDA,Annotation of FDA Label for afatinib and EGFR,2019-04-11,EGFR,drug_label
+capecitabine,Actionable PGx,FDA,Annotation of FDA Label for capecitabine and DPYD,2019-05-10,DPYD,drug_label
+aripiprazole,Actionable PGx,FDA,Annotation of FDA Label for aripiprazole and CYP2D6,2019-05-09,CYP2D6,drug_label
+peginterferon alfa-2b,Actionable PGx,FDA,Annotation of FDA Label for peginterferon alfa-2b and IFNL3,2019-04-19,IFNL3,drug_label
+carglumic acid,Testing required,FDA,Annotation of FDA Label for carglumic acid and NAGS,2019-10-10,NAGS,drug_label
+desipramine,Actionable PGx,FDA,Annotation of FDA Label for desipramine and CYP2D6,2013-10-25,CYP2D6,drug_label
+clobazam,Actionable PGx,FDA,Annotation of FDA Label for clobazam and CYP2C19,2019-04-23,CYP2C19,drug_label
+clozapine,Actionable PGx,FDA,Annotation of FDA Label for clozapine and CYP2D6,2013-10-25,CYP2D6,drug_label
+iloperidone,Actionable PGx,FDA,Annotation of FDA Label for iloperidone and CYP2D6,2013-10-25,CYP2D6,drug_label
+denileukin diftitox,Testing required,FDA,Annotation of FDA Label for denileukin diftitox and IL2RA,2019-04-30,IL2RA,drug_label
+imipramine,Actionable PGx,FDA,Annotation of FDA Label for imipramine and CYP2D6,2013-10-25,CYP2D6,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,CFTR,drug_label
+pimozide,Testing required,FDA,Annotation of FDA Label for pimozide and CYP2D6,2019-04-19,CYP2D6,drug_label
+nalidixic acid,Actionable PGx,FDA,Annotation of FDA Label for nalidixic acid and G6PD,2013-12-18,G6PD,drug_label
+nefazodone,Informative PGx,FDA,Annotation of FDA Label for nefazodone and CYP2D6,2013-10-25,CYP2D6,drug_label
+pertuzumab,Testing required,FDA,Annotation of FDA Label for pertuzumab and ERBB2,2019-10-10,ERBB2,drug_label
+tetrabenazine,Testing required,FDA,Annotation of FDA Label for tetrabenazine and CYP2D6,2013-10-25,CYP2D6,drug_label
+primaquine,Testing required,FDA,Annotation of FDA Label for primaquine and G6PD,2017-11-09,G6PD,drug_label
+thioridazine,Actionable PGx,FDA,Annotation of FDA Label for thioridazine and CYP2D6,2013-10-25,CYP2D6,drug_label
+carvedilol,Actionable PGx,FDA,Annotation of FDA Label for carvedilol and CYP2D6,2013-10-25,CYP2D6,drug_label
+valproic acid,Actionable PGx,FDA,Annotation of FDA Label for valproic acid and OTC,2019-10-10,OTC,drug_label
+abacavir,Testing required,FDA,Annotation of FDA Label for abacavir and HLA-B,2019-05-08,HLA-B,drug_label
+atomoxetine,Actionable PGx,FDA,Annotation of FDA Label for atomoxetine and CYP2D6,2019-05-09,CYP2D6,drug_label
+isoniazid,Informative PGx,FDA,Annotation of FDA Label for isoniazid / pyrazinamide / rifampin and NAT2,2019-10-15,NAT2,drug_label
+pyrazinamide,Informative PGx,FDA,Annotation of FDA Label for isoniazid / pyrazinamide / rifampin and NAT2,2019-10-15,NAT2,drug_label
+rifampin,Informative PGx,FDA,Annotation of FDA Label for isoniazid / pyrazinamide / rifampin and NAT2,2019-10-15,NAT2,drug_label
+tolterodine,Actionable PGx,FDA,Annotation of FDA Label for tolterodine and CYP2D6,2013-10-25,CYP2D6,drug_label
+carisoprodol,Actionable PGx,FDA,Annotation of FDA Label for carisoprodol and CYP2C19,2013-10-25,CYP2C19,drug_label
+fluvoxamine,Actionable PGx,FDA,Annotation of FDA Label for fluvoxamine and CYP2D6,2013-10-25,CYP2D6,drug_label
+galantamine,Informative PGx,FDA,Annotation of FDA Label for galantamine and CYP2D6,2013-10-25,CYP2D6,drug_label
+nortriptyline,Actionable PGx,FDA,Annotation of FDA Label for nortriptyline and CYP2D6,2013-10-25,CYP2D6,drug_label
+paroxetine,Informative PGx,FDA,Annotation of FDA Label for paroxetine and CYP2D6,2013-10-25,CYP2D6,drug_label
+propranolol,Informative PGx,FDA,Annotation of FDA Label for propranolol and CYP2D6,2013-10-25,CYP2D6,drug_label
+protriptyline,Actionable PGx,FDA,Annotation of FDA Label for protriptyline and CYP2D6,2013-10-25,CYP2D6,drug_label
+metoprolol,Informative PGx,FDA,Annotation of FDA Label for metoprolol and CYP2D6,2013-10-25,CYP2D6,drug_label
+celecoxib,Actionable PGx,FDA,Annotation of FDA Label for celecoxib and CYP2C9,2021-02-05,CYP2C9,drug_label
+nelfinavir,Informative PGx,FDA,"Annotation of FDA Label for nelfinavir and CYP2C19, CYP3A",2013-10-25,CYP2C19,drug_label
+nelfinavir,Informative PGx,FDA,"Annotation of FDA Label for nelfinavir and CYP2C19, CYP3A",2013-10-25,CYP3A,drug_label
+rasburicase,Actionable PGx,EMA,Annotation of EMA Label for rasburicase and G6PD,2013-10-27,G6PD,drug_label
+erythromycin ethylsuccinate,Actionable PGx,FDA,Annotation of FDA Label for erythromycin ethylsuccinate / sulfisoxazole acetyl and G6PD,2017-03-17,G6PD,drug_label
+sulfisoxazole acetyl,Actionable PGx,FDA,Annotation of FDA Label for erythromycin ethylsuccinate / sulfisoxazole acetyl and G6PD,2017-03-17,G6PD,drug_label
+abacavir,Testing required,EMA,Annotation of EMA Label for abacavir and HLA-B,2013-10-15,HLA-B,drug_label
+lansoprazole,Informative PGx,FDA,Annotation of FDA Label for lansoprazole and CYP2C19,2013-10-25,CYP2C19,drug_label
+aripiprazole,Actionable PGx,EMA,Annotation of EMA Label for aripiprazole and CYP2D6,2019-12-04,CYP2D6,drug_label
+nitrofurantoin,Actionable PGx,FDA,Annotation of FDA Label for nitrofurantoin and G6PD,2013-12-18,G6PD,drug_label
+brentuximab vedotin,Testing required,EMA,Annotation of EMA Label for brentuximab vedotin and TNFRSF8,2013-10-25,TNFRSF8,drug_label
+capecitabine,Testing recommended,EMA,Annotation of EMA Label for capecitabine and DPYD,2013-10-25,DPYD,drug_label
+probenecid,Actionable PGx,FDA,Annotation of FDA Label for probenecid and G6PD,2013-10-25,G6PD,drug_label
+lenalidomide,Informative PGx,EMA,Annotation of EMA Label for lenalidomide,2019-12-04,,drug_label
+ivacaftor,Testing required,EMA,Annotation of EMA Label for ivacaftor and CFTR,2013-10-27,CFTR,drug_label
+gefitinib,Testing required,EMA,Annotation of EMA Label for gefitinib and EGFR,2013-10-25,EGFR,drug_label
+codeine,Actionable PGx,FDA,Annotation of FDA Label for codeine and CYP2D6,2020-09-18,CYP2D6,drug_label
+pantoprazole,Actionable PGx,FDA,Annotation of FDA Label for pantoprazole and CYP2C19,2013-10-25,CYP2C19,drug_label
+moviprep,Actionable PGx,FDA,Annotation of FDA Label for moviprep and G6PD,2013-12-18,G6PD,drug_label
+perphenazine,Actionable PGx,FDA,Annotation of FDA Label for perphenazine and CYP2D6,2013-10-25,CYP2D6,drug_label
+pegloticase,Testing required,FDA,Annotation of FDA Label for pegloticase and G6PD,2017-03-16,G6PD,drug_label
+omeprazole,Actionable PGx,FDA,Annotation of FDA Label for omeprazole and CYP2C19,2017-03-16,CYP2C19,drug_label
+flurbiprofen,Actionable PGx,FDA,Annotation of FDA Label for flurbiprofen and CYP2C9,2013-10-25,CYP2C9,drug_label
+cetuximab,Testing required,EMA,"Annotation of EMA Label for cetuximab and EGFR, KRAS, NRAS",2013-10-25,EGFR,drug_label
+cetuximab,Testing required,EMA,"Annotation of EMA Label for cetuximab and EGFR, KRAS, NRAS",2013-10-25,KRAS,drug_label
+cetuximab,Testing required,EMA,"Annotation of EMA Label for cetuximab and EGFR, KRAS, NRAS",2013-10-25,NRAS,drug_label
+mipomersen,Informative PGx,FDA,Annotation of FDA Label for mipomersen and LDLR,2017-11-08,LDLR,drug_label
+exemestane,Testing required,FDA,"Annotation of FDA Label for exemestane and ESR1, ESR2, PGR",2013-10-25,ESR1,drug_label
+exemestane,Testing required,FDA,"Annotation of FDA Label for exemestane and ESR1, ESR2, PGR",2013-10-25,ESR2,drug_label
+exemestane,Testing required,FDA,"Annotation of FDA Label for exemestane and ESR1, ESR2, PGR",2013-10-25,PGR,drug_label
+valbenazine,Actionable PGx,FDA,Annotation of FDA Label for valbenazine and CYP2D6,,CYP2D6,drug_label
+gilteritinib,Testing required,FDA,Annotation of FDA Label for gilteritinib and FLT3,2019-05-17,FLT3,drug_label
+raltegravir,Informative PGx,FDA,Annotation of FDA Label for raltegravir and UGT1A1,2019-04-23,UGT1A1,drug_label
+belimumab,Informative PGx,EMA,Annotation of EMA Label for belimumab and TNFSF13B,2019-12-04,TNFSF13B,drug_label
+dextromethorphan,Actionable PGx,EMA,Annotation of EMA Label for dextromethorphan / quinidine and CYP2D6,2014-05-02,CYP2D6,drug_label
+quinidine,Actionable PGx,EMA,Annotation of EMA Label for dextromethorphan / quinidine and CYP2D6,2014-05-02,CYP2D6,drug_label
+regorafenib,Actionable PGx,EMA,Annotation of EMA Label for regorafenib and KRAS,2014-06-26,KRAS,drug_label
+sildenafil,Informative PGx,EMA,Annotation of EMA Label for sildenafil,2019-12-04,,drug_label
+succinylcholine,Actionable PGx,FDA,"Annotation of FDA Label for succinylcholine and BCHE, CACNA1S, RYR1",,BCHE,drug_label
+succinylcholine,Actionable PGx,FDA,"Annotation of FDA Label for succinylcholine and BCHE, CACNA1S, RYR1",,CACNA1S,drug_label
+succinylcholine,Actionable PGx,FDA,"Annotation of FDA Label for succinylcholine and BCHE, CACNA1S, RYR1",,RYR1,drug_label
+ticagrelor,Actionable PGx,EMA,Annotation of EMA Label for ticagrelor and CYP2C19,2013-10-29,CYP2C19,drug_label
+mafenide,Actionable PGx,FDA,Annotation of FDA Label for mafenide and G6PD,2013-12-17,G6PD,drug_label
+homoharringtonine,Informative PGx,FDA,"Annotation of FDA Label for homoharringtonine and ABL1, BCR",2013-12-18,ABL1,drug_label
+homoharringtonine,Informative PGx,FDA,"Annotation of FDA Label for homoharringtonine and ABL1, BCR",2013-12-18,BCR,drug_label
+carglumic acid,Testing required,EMA,Annotation of EMA Label for carglumic acid and NAGS,2014-05-02,NAGS,drug_label
+rituximab,Informative PGx,FDA,Annotation of FDA Label for rituximab and MS4A1,2014-01-14,MS4A1,drug_label
+pazopanib,Actionable PGx,FDA,"Annotation of FDA Label for pazopanib and HLA-B, UGT1A1",2019-04-19,HLA-B,drug_label
+pazopanib,Actionable PGx,FDA,"Annotation of FDA Label for pazopanib and HLA-B, UGT1A1",2019-04-19,UGT1A1,drug_label
+ibritumomab,Informative PGx,EMA,Annotation of EMA Label for ibritumomab and MS4A1,2019-12-04,MS4A1,drug_label
+mercaptopurine,Actionable PGx,EMA,"Annotation of EMA Label for mercaptopurine and NUDT15, TPMT",2013-10-27,NUDT15,drug_label
+mercaptopurine,Actionable PGx,EMA,"Annotation of EMA Label for mercaptopurine and NUDT15, TPMT",2013-10-27,TPMT,drug_label
+sofosbuvir,Informative PGx,FDA,Annotation of FDA Label for sofosbuvir and IFNL3,2014-07-14,IFNL3,drug_label
+brivaracetam,Actionable PGx,HCSC,Annotation of HCSC Label for brivaracetam and CYP2C19,,CYP2C19,drug_label
+belimumab,Informative PGx,HCSC,Annotation of HCSC Label for belimumab and TNFSF13B,,TNFSF13B,drug_label
+brentuximab vedotin,Informative PGx,HCSC,Annotation of HCSC Label for brentuximab vedotin and TNFRSF8,,TNFRSF8,drug_label
+elosulfase alfa,Testing required,FDA,Annotation of FDA Label for elosulfase alfa and GALNS,,GALNS,drug_label
+rasburicase,Testing required,FDA,Annotation of FDA Label for rasburicase and G6PD,2016-03-21,G6PD,drug_label
+lapatinib,Actionable PGx,FDA,"Annotation of FDA Label for lapatinib and HLA-DQA1, HLA-DRB1",2020-08-24,HLA-DQA1,drug_label
+lapatinib,Actionable PGx,FDA,"Annotation of FDA Label for lapatinib and HLA-DQA1, HLA-DRB1",2020-08-24,HLA-DRB1,drug_label
+carbamazepine,Actionable PGx,FDA,Annotation of FDA Label for carbamazepine and HLA-A,2016-03-21,HLA-A,drug_label
+raloxifene,Informative PGx,FDA,"Annotation of FDA Label for raloxifene and ESR1, ESR2",,ESR1,drug_label
+raloxifene,Informative PGx,FDA,"Annotation of FDA Label for raloxifene and ESR1, ESR2",,ESR2,drug_label
+osimertinib,Testing required,EMA,Annotation of EMA Label for osimertinib and EGFR,,EGFR,drug_label
+flutamide,Actionable PGx,FDA,Annotation of FDA Label for flutamide and G6PD,2019-05-17,G6PD,drug_label
+lorlatinib,Informative PGx,FDA,Annotation of FDA Label for lorlatinib and ROS1,,ROS1,drug_label
+ivosidenib,Testing required,FDA,Annotation of FDA Label for ivosidenib and IDH1,,IDH1,drug_label
+lorlatinib,Testing required,FDA,Annotation of FDA Label for lorlatinib and ALK,,ALK,drug_label
+amphetamine,Informative PGx,FDA,Annotation of FDA Label for amphetamine and CYP2D6,,CYP2D6,drug_label
+ixabepilone,Informative PGx,FDA,"Annotation of FDA Label for ixabepilone and ERBB2, ESR1, ESR2, PGR",,ERBB2,drug_label
+ixabepilone,Informative PGx,FDA,"Annotation of FDA Label for ixabepilone and ERBB2, ESR1, ESR2, PGR",,ESR1,drug_label
+ixabepilone,Informative PGx,FDA,"Annotation of FDA Label for ixabepilone and ERBB2, ESR1, ESR2, PGR",,ESR2,drug_label
+ixabepilone,Informative PGx,FDA,"Annotation of FDA Label for ixabepilone and ERBB2, ESR1, ESR2, PGR",,PGR,drug_label
+lusutrombopag,Actionable PGx,FDA,"Annotation of FDA Label for lusutrombopag and F2, F5, PROC, PROS1, SERPINC1",,F2,drug_label
+lusutrombopag,Actionable PGx,FDA,"Annotation of FDA Label for lusutrombopag and F2, F5, PROC, PROS1, SERPINC1",,F5,drug_label
+lusutrombopag,Actionable PGx,FDA,"Annotation of FDA Label for lusutrombopag and F2, F5, PROC, PROS1, SERPINC1",,PROC,drug_label
+lusutrombopag,Actionable PGx,FDA,"Annotation of FDA Label for lusutrombopag and F2, F5, PROC, PROS1, SERPINC1",,PROS1,drug_label
+lusutrombopag,Actionable PGx,FDA,"Annotation of FDA Label for lusutrombopag and F2, F5, PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+mepivacaine,Actionable PGx,FDA,"Annotation of FDA Label for mepivacaine and CYB5R3, G6PD",2019-10-24,CYB5R3,drug_label
+mepivacaine,Actionable PGx,FDA,"Annotation of FDA Label for mepivacaine and CYB5R3, G6PD",2019-10-24,G6PD,drug_label
+tamoxifen,Actionable PGx,FDA,Annotation of FDA Label for tamoxifen and CYP2D6,2019-10-09,CYP2D6,drug_label
+cholic acid,Testing required,EMA,"Annotation of EMA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, HSD3B7",2019-12-04,AKR1D1,drug_label
+cholic acid,Testing required,EMA,"Annotation of EMA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, HSD3B7",2019-12-04,AMACR,drug_label
+cholic acid,Testing required,EMA,"Annotation of EMA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, HSD3B7",2019-12-04,CYP27A1,drug_label
+cholic acid,Testing required,EMA,"Annotation of EMA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, HSD3B7",2019-12-04,CYP7A1,drug_label
+cholic acid,Testing required,EMA,"Annotation of EMA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, HSD3B7",2019-12-04,HSD3B7,drug_label
+rivaroxaban,Informative PGx,FDA,Annotation of FDA Label for rivaroxaban and F5,,F5,drug_label
+tolbutamide,Actionable PGx,FDA,Annotation of FDA Label for tolbutamide and G6PD,,G6PD,drug_label
+nivolumab,Informative PGx,FDA,Annotation of FDA Label for nivolumab and BRAF,2020-10-28,BRAF,drug_label
+eribulin,Informative PGx,FDA,"Annotation of FDA Label for eribulin and ERBB2, ESR1, ESR2, PGR",2019-07-03,ERBB2,drug_label
+eribulin,Informative PGx,FDA,"Annotation of FDA Label for eribulin and ERBB2, ESR1, ESR2, PGR",2019-07-03,ESR1,drug_label
+eribulin,Informative PGx,FDA,"Annotation of FDA Label for eribulin and ERBB2, ESR1, ESR2, PGR",2019-07-03,ESR2,drug_label
+eribulin,Informative PGx,FDA,"Annotation of FDA Label for eribulin and ERBB2, ESR1, ESR2, PGR",2019-07-03,PGR,drug_label
+toremifene,Testing required,FDA,"Annotation of FDA Label for toremifene and ESR1, ESR2",,ESR1,drug_label
+toremifene,Testing required,FDA,"Annotation of FDA Label for toremifene and ESR1, ESR2",,ESR2,drug_label
+cabozantinib,Informative PGx,FDA,Annotation of FDA Label for cabozantinib and RET,,RET,drug_label
+vemurafenib,Informative PGx,FDA,"Annotation of FDA Label for vemurafenib and HRAS, KRAS, NRAS",,HRAS,drug_label
+vemurafenib,Informative PGx,FDA,"Annotation of FDA Label for vemurafenib and HRAS, KRAS, NRAS",,KRAS,drug_label
+vemurafenib,Informative PGx,FDA,"Annotation of FDA Label for vemurafenib and HRAS, KRAS, NRAS",,NRAS,drug_label
+valproic acid,Testing required,FDA,Annotation of FDA Label for valproic acid and POLG,2019-10-10,POLG,drug_label
+metoclopramide,Actionable PGx,FDA,Annotation of FDA Label for metoclopramide and CYP2D6,,CYP2D6,drug_label
+dinutuximab,Informative PGx,FDA,Annotation of FDA Label for dinutuximab and MYCN,,MYCN,drug_label
+larotrectinib sulfate,Testing required,FDA,"Annotation of FDA Label for larotrectinib sulfate and NTRK1, NTRK2, NTRK3",,NTRK1,drug_label
+larotrectinib sulfate,Testing required,FDA,"Annotation of FDA Label for larotrectinib sulfate and NTRK1, NTRK2, NTRK3",,NTRK2,drug_label
+larotrectinib sulfate,Testing required,FDA,"Annotation of FDA Label for larotrectinib sulfate and NTRK1, NTRK2, NTRK3",,NTRK3,drug_label
+lidocaine,Actionable PGx,FDA,"Annotation of FDA Label for lidocaine and tetracaine and CYB5R3, G6PD",2019-10-15,CYB5R3,drug_label
+lidocaine,Actionable PGx,FDA,"Annotation of FDA Label for lidocaine and tetracaine and CYB5R3, G6PD",2019-10-15,G6PD,drug_label
+tetracaine,Actionable PGx,FDA,"Annotation of FDA Label for lidocaine and tetracaine and CYB5R3, G6PD",2019-10-15,CYB5R3,drug_label
+tetracaine,Actionable PGx,FDA,"Annotation of FDA Label for lidocaine and tetracaine and CYB5R3, G6PD",2019-10-15,G6PD,drug_label
+palonosetron,Informative PGx,FDA,Annotation of FDA Label for palonosetron and CYP2D6,,CYP2D6,drug_label
+cobimetinib,Testing required,EMA,Annotation of EMA Label for cobimetinib and BRAF,,BRAF,drug_label
+dolutegravir,Actionable PGx,EMA,Annotation of EMA Label for dolutegravir and UGT1A1,,UGT1A1,drug_label
+duloxetine,Actionable PGx,EMA,Annotation of EMA Label for duloxetine and CYP2D6,,CYP2D6,drug_label
+elagolix,Actionable PGx,FDA,Annotation of FDA Label for elagolix and SLCO1B1,,SLCO1B1,drug_label
+belinostat,Actionable PGx,FDA,Annotation of FDA Label for belinostat and UGT1A1,2019-05-09,UGT1A1,drug_label
+palbociclib,Testing required,FDA,"Annotation of FDA Label for palbociclib and ERBB2, ESR1, ESR2",2019-04-18,ERBB2,drug_label
+palbociclib,Testing required,FDA,"Annotation of FDA Label for palbociclib and ERBB2, ESR1, ESR2",2019-04-18,ESR1,drug_label
+palbociclib,Testing required,FDA,"Annotation of FDA Label for palbociclib and ERBB2, ESR1, ESR2",2019-04-18,ESR2,drug_label
+rucaparib,Informative PGx,EMA,"Annotation of EMA Label for rucaparib and CYP1A2, CYP2D6",,CYP1A2,drug_label
+rucaparib,Informative PGx,EMA,"Annotation of EMA Label for rucaparib and CYP1A2, CYP2D6",,CYP2D6,drug_label
+sodium nitrite,Actionable PGx,HCSC,Annotation of HCSC Label for sodium nitrite and G6PD,,G6PD,drug_label
+amoxapine,Actionable PGx,FDA,Annotation of FDA Label for amoxapine and CYP2D6,,CYP2D6,drug_label
+mefloquine,Informative PGx,Swissmedic,Annotation of Swissmedic Label for mefloquine and G6PD,,G6PD,drug_label
+acenocoumarol,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for acenocoumarol and CYP2C9,,CYP2C9,drug_label
+nilotinib,Actionable PGx,HCSC,Annotation of HCSC Label for nilotinib and UGT1A1,,UGT1A1,drug_label
+lacosamide,Informative PGx,FDA,Annotation of FDA Label for lacosamide and CYP2C19,,CYP2C19,drug_label
+alectinib,Testing required,FDA,Annotation of FDA Label for alectinib and ALK,,ALK,drug_label
+talazoparib,Testing required,FDA,Annotation of FDA Label for talazoparib and ERBB2,,ERBB2,drug_label
+voriconazole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for voriconazole and CYP2C19,,CYP2C19,drug_label
+dolutegravir,Actionable PGx,FDA,Annotation of FDA Label for dolutegravir and UGT1A1,,UGT1A1,drug_label
+tamsulosin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for tamsulosin and CYP2D6, CYP3A4",,CYP2D6,drug_label
+tamsulosin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for tamsulosin and CYP2D6, CYP3A4",,CYP3A4,drug_label
+vincristine,Testing required,FDA,"Annotation of FDA Label for vincristine and ABL1, BCR",,ABL1,drug_label
+vincristine,Testing required,FDA,"Annotation of FDA Label for vincristine and ABL1, BCR",,BCR,drug_label
+ropivacaine,Actionable PGx,FDA,"Annotation of FDA Label for ropivacaine and CYB5R3, G6PD",2019-10-17,CYB5R3,drug_label
+ropivacaine,Actionable PGx,FDA,"Annotation of FDA Label for ropivacaine and CYB5R3, G6PD",2019-10-17,G6PD,drug_label
+talazoparib,Testing required,FDA,"Annotation of FDA Label for talazoparib and BRCA1, BRCA2",,BRCA1,drug_label
+talazoparib,Testing required,FDA,"Annotation of FDA Label for talazoparib and BRCA1, BRCA2",,BRCA2,drug_label
+maraviroc,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for maraviroc and CYP3A5,,CYP3A5,drug_label
+olaratumab,Informative PGx,FDA,Annotation of FDA Label for olaratumab and PDGFRA,2019-04-18,PDGFRA,drug_label
+elbasvir,Informative PGx,FDA,Annotation of FDA Label for elbasvir / grazoprevir and IFNL3,,IFNL3,drug_label
+grazoprevir,Informative PGx,FDA,Annotation of FDA Label for elbasvir / grazoprevir and IFNL3,,IFNL3,drug_label
+dacomitinib,Testing required,FDA,Annotation of FDA Label for dacomitinib and EGFR,,EGFR,drug_label
+niraparib,Testing required,FDA,"Annotation of FDA Label for niraparib and BRCA1, BRCA2",2020-10-13,BRCA1,drug_label
+niraparib,Testing required,FDA,"Annotation of FDA Label for niraparib and BRCA1, BRCA2",2020-10-13,BRCA2,drug_label
+erlotinib,Actionable PGx,EMA,Annotation of EMA Label for erlotinib and UGT1A1,,UGT1A1,drug_label
+mirabegron,Informative PGx,EMA,Annotation of EMA Label for mirabegron and CYP2D6,,CYP2D6,drug_label
+cariprazine,Informative PGx,FDA,Annotation of FDA Label for cariprazine and CYP2D6,,CYP2D6,drug_label
+v,Testing recommended,EMA,Annotation of EMA Label for vandetanib and RET,,RET,drug_label
+etanib,Testing recommended,EMA,Annotation of EMA Label for vandetanib and RET,,RET,drug_label
+umeclidinium,Informative PGx,EMA,Annotation of EMA Label for umeclidinium and CYP2D6,,CYP2D6,drug_label
+abacavir,Testing required,Swissmedic,Annotation of Swissmedic Label for abacavir and HLA-B,,HLA-B,drug_label
+mirabegron,Actionable PGx,FDA,Annotation of FDA Label for mirabegron and CYP2D6,,CYP2D6,drug_label
+olaparib,Testing required,EMA,"Annotation of EMA Label for olaparib and BRCA1, BRCA2, ERBB2",,BRCA1,drug_label
+olaparib,Testing required,EMA,"Annotation of EMA Label for olaparib and BRCA1, BRCA2, ERBB2",,BRCA2,drug_label
+olaparib,Testing required,EMA,"Annotation of EMA Label for olaparib and BRCA1, BRCA2, ERBB2",,ERBB2,drug_label
+isosorbide mononitrate,Informative PGx,FDA,"Annotation of FDA Label for isosorbide mononitrate and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R1,drug_label
+isosorbide mononitrate,Informative PGx,FDA,"Annotation of FDA Label for isosorbide mononitrate and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R2,drug_label
+isosorbide mononitrate,Informative PGx,FDA,"Annotation of FDA Label for isosorbide mononitrate and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R3,drug_label
+isosorbide mononitrate,Informative PGx,FDA,"Annotation of FDA Label for isosorbide mononitrate and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R4,drug_label
+formoterol,Informative PGx,FDA,"Annotation of FDA Label for formoterol and CYP2C19, CYP2D6",,CYP2C19,drug_label
+formoterol,Informative PGx,FDA,"Annotation of FDA Label for formoterol and CYP2C19, CYP2D6",,CYP2D6,drug_label
+trametinib,Informative PGx,FDA,Annotation of FDA Label for trametinib and G6PD,,G6PD,drug_label
+binimetinib,Testing required,EMA,Annotation of EMA Label for binimetinib and BRAF,,BRAF,drug_label
+brivaracetam,Actionable PGx,EMA,Annotation of EMA Label for brivaracetam and CYP2C19,,CYP2C19,drug_label
+cerliponase alfa,Testing required,EMA,Annotation of EMA Label for cerliponase alfa and TPP1,,TPP1,drug_label
+dacomitinib,Testing required,EMA,Annotation of EMA Label for dacomitinib and EGFR,,EGFR,drug_label
+ivacaftor,Testing required,EMA,Annotation of EMA Label for ivacaftor / lumacaftor and CFTR,,CFTR,drug_label
+lumacaftor,Testing required,EMA,Annotation of EMA Label for ivacaftor / lumacaftor and CFTR,,CFTR,drug_label
+ivacaftor,Testing required,EMA,Annotation of EMA Label for ivacaftor / tezacaftor and CFTR,,CFTR,drug_label
+tezacaftor,Testing required,EMA,Annotation of EMA Label for ivacaftor / tezacaftor and CFTR,,CFTR,drug_label
+atazanavir,Actionable PGx,PMDA,Annotation of PMDA Label for atazanavir and CYP2C19,,CYP2C19,drug_label
+fosphenytoin,Actionable PGx,FDA,Annotation of FDA Label for fosphenytoin and HLA-B,2019-05-17,HLA-B,drug_label
+avatrombopag,Informative PGx,FDA,Annotation of FDA Label for avatrombopag and CYP2C9,,CYP2C9,drug_label
+rucaparib,Testing required,EMA,"Annotation of EMA Label for rucaparib and BRCA1, BRCA2",,BRCA1,drug_label
+rucaparib,Testing required,EMA,"Annotation of EMA Label for rucaparib and BRCA1, BRCA2",,BRCA2,drug_label
+gefitinib,Actionable PGx,FDA,Annotation of FDA Label for gefitinib and CYP2D6,,CYP2D6,drug_label
+tamsulosin,Actionable PGx,FDA,Annotation of FDA Label for tamsulosin and CYP2D6,,CYP2D6,drug_label
+allopurinol,Informative PGx,PMDA,Annotation of PMDA Label for allopurinol and HLA-B,,HLA-B,drug_label
+primaquine,Actionable PGx,FDA,"Annotation of FDA Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R1,drug_label
+primaquine,Actionable PGx,FDA,"Annotation of FDA Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R2,drug_label
+primaquine,Actionable PGx,FDA,"Annotation of FDA Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R3,drug_label
+primaquine,Actionable PGx,FDA,"Annotation of FDA Label for primaquine and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R4,drug_label
+blinatumomab,Informative PGx,FDA,"Annotation of FDA Label for blinatumomab and ABL1, BCR",2019-10-18,ABL1,drug_label
+blinatumomab,Informative PGx,FDA,"Annotation of FDA Label for blinatumomab and ABL1, BCR",2019-10-18,BCR,drug_label
+inotersen,Informative PGx,FDA,Annotation of FDA Label for inotersen and TTR,2019-05-16,TTR,drug_label
+lorlatinib,Testing required,EMA,Annotation of EMA Label for lorlatinib and ALK,,ALK,drug_label
+midostaurin,Testing required,EMA,Annotation of EMA Label for midostaurin and FLT3,,FLT3,drug_label
+tafenoquine,Testing required,FDA,Annotation of FDA Label for tafenoquine and G6PD,,G6PD,drug_label
+olaparib,Informative PGx,FDA,"Annotation of FDA Label for olaparib and ESR1, ESR2, PGR, PPP2R2A",2020-10-09,ESR1,drug_label
+olaparib,Informative PGx,FDA,"Annotation of FDA Label for olaparib and ESR1, ESR2, PGR, PPP2R2A",2020-10-09,ESR2,drug_label
+olaparib,Informative PGx,FDA,"Annotation of FDA Label for olaparib and ESR1, ESR2, PGR, PPP2R2A",2020-10-09,PGR,drug_label
+olaparib,Informative PGx,FDA,"Annotation of FDA Label for olaparib and ESR1, ESR2, PGR, PPP2R2A",2020-10-09,PPP2R2A,drug_label
+meclizine,Actionable PGx,FDA,Annotation of FDA Label for meclizine and CYP2D6,2019-10-21,CYP2D6,drug_label
+dasabuvir,Informative PGx,FDA,Annotation of FDA Label for dasabuvir / ombitasvir / paritaprevir / ritonavir and IFNL3,2017-03-15,IFNL3,drug_label
+ombitasvir,Informative PGx,FDA,Annotation of FDA Label for dasabuvir / ombitasvir / paritaprevir / ritonavir and IFNL3,2017-03-15,IFNL3,drug_label
+paritaprevir,Informative PGx,FDA,Annotation of FDA Label for dasabuvir / ombitasvir / paritaprevir / ritonavir and IFNL3,2017-03-15,IFNL3,drug_label
+ritonavir,Informative PGx,FDA,Annotation of FDA Label for dasabuvir / ombitasvir / paritaprevir / ritonavir and IFNL3,2017-03-15,IFNL3,drug_label
+sofosbuvir,Informative PGx,FDA,Annotation of FDA Label for sofosbuvir / velpatasvir / voxilaprevir and IFNL3,,IFNL3,drug_label
+velpatasvir,Informative PGx,FDA,Annotation of FDA Label for sofosbuvir / velpatasvir / voxilaprevir and IFNL3,,IFNL3,drug_label
+voxilaprevir,Informative PGx,FDA,Annotation of FDA Label for sofosbuvir / velpatasvir / voxilaprevir and IFNL3,,IFNL3,drug_label
+aliskiren,Informative PGx,HCSC,Annotation of HCSC Label for aliskiren and ABCB1,,ABCB1,drug_label
+lesinurad,Actionable PGx,FDA,Annotation of FDA Label for lesinurad and CYP2C9,,CYP2C9,drug_label
+neratinib,Testing required,FDA,Annotation of FDA Label for neratinib and ERBB2,,ERBB2,drug_label
+pembrolizumab,Testing required,FDA,"Annotation of FDA Label for pembrolizumab and ALK, CD274, EGFR",2020-10-28,ALK,drug_label
+pembrolizumab,Testing required,FDA,"Annotation of FDA Label for pembrolizumab and ALK, CD274, EGFR",2020-10-28,CD274,drug_label
+pembrolizumab,Testing required,FDA,"Annotation of FDA Label for pembrolizumab and ALK, CD274, EGFR",2020-10-28,EGFR,drug_label
+inotuzumab ozogamicin,Informative PGx,FDA,"Annotation of FDA Label for inotuzumab ozogamicin and ABL1, BCR",,ABL1,drug_label
+inotuzumab ozogamicin,Informative PGx,FDA,"Annotation of FDA Label for inotuzumab ozogamicin and ABL1, BCR",,BCR,drug_label
+amifampridine phosphate,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for amifampridine phosphate and NAT2,,NAT2,drug_label
+ipilimumab,Informative PGx,FDA,Annotation of FDA Label for ipilimumab and HLA-A,2019-05-14,HLA-A,drug_label
+aspirin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for aspirin and G6PD,,G6PD,drug_label
+tipiracil,Informative PGx,FDA,"Annotation of FDA Label for tipiracil / trifluridine and ERBB2, KRAS",2020-12-30,ERBB2,drug_label
+tipiracil,Informative PGx,FDA,"Annotation of FDA Label for tipiracil / trifluridine and ERBB2, KRAS",2020-12-30,KRAS,drug_label
+trifluridine,Informative PGx,FDA,"Annotation of FDA Label for tipiracil / trifluridine and ERBB2, KRAS",2020-12-30,ERBB2,drug_label
+trifluridine,Informative PGx,FDA,"Annotation of FDA Label for tipiracil / trifluridine and ERBB2, KRAS",2020-12-30,KRAS,drug_label
+mivacurium chloride,Actionable PGx,FDA,Annotation of FDA Label for mivacurium chloride and BCHE,,BCHE,drug_label
+venlafaxine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for venlafaxine and CYP2D6,,CYP2D6,drug_label
+afutuzumab,Informative PGx,HCSC,Annotation of HCSC Label for afutuzumab and MS4A1,,MS4A1,drug_label
+tolbutamide,Actionable PGx,HCSC,Annotation of HCSC Label for tolbutamide and G6PD,,G6PD,drug_label
+nusinersen,Informative PGx,FDA,Annotation of FDA Label for nusinersen and SMN2,,SMN2,drug_label
+midostaurin,Testing required,FDA,Annotation of FDA Label for midostaurin and FLT3,2017-11-09,FLT3,drug_label
+hydroxychloroquine,Actionable PGx,FDA,Annotation of FDA Label for hydroxychloroquine and G6PD,2020-03-23,G6PD,drug_label
+pembrolizumab,Testing required,EMA,Annotation of EMA Label for pembrolizumab and CD274,,CD274,drug_label
+amifampridine,Actionable PGx,FDA,Annotation of FDA Label for amifampridine and NAT2,,NAT2,drug_label
+trastuzumab,Actionable PGx,FDA,"Annotation of FDA Label for trastuzumab and ESR1, ESR2, PGR",,ESR1,drug_label
+trastuzumab,Actionable PGx,FDA,"Annotation of FDA Label for trastuzumab and ESR1, ESR2, PGR",,ESR2,drug_label
+trastuzumab,Actionable PGx,FDA,"Annotation of FDA Label for trastuzumab and ESR1, ESR2, PGR",,PGR,drug_label
+emapalumab,Informative PGx,FDA,"Annotation of FDA Label for emapalumab and PRF1, RAB27A, SH2D1A, STX11, STXBP2, UNC13D, XIAP",,PRF1,drug_label
+emapalumab,Informative PGx,FDA,"Annotation of FDA Label for emapalumab and PRF1, RAB27A, SH2D1A, STX11, STXBP2, UNC13D, XIAP",,RAB27A,drug_label
+emapalumab,Informative PGx,FDA,"Annotation of FDA Label for emapalumab and PRF1, RAB27A, SH2D1A, STX11, STXBP2, UNC13D, XIAP",,SH2D1A,drug_label
+emapalumab,Informative PGx,FDA,"Annotation of FDA Label for emapalumab and PRF1, RAB27A, SH2D1A, STX11, STXBP2, UNC13D, XIAP",,STX11,drug_label
+emapalumab,Informative PGx,FDA,"Annotation of FDA Label for emapalumab and PRF1, RAB27A, SH2D1A, STX11, STXBP2, UNC13D, XIAP",,STXBP2,drug_label
+emapalumab,Informative PGx,FDA,"Annotation of FDA Label for emapalumab and PRF1, RAB27A, SH2D1A, STX11, STXBP2, UNC13D, XIAP",,UNC13D,drug_label
+emapalumab,Informative PGx,FDA,"Annotation of FDA Label for emapalumab and PRF1, RAB27A, SH2D1A, STX11, STXBP2, UNC13D, XIAP",,XIAP,drug_label
+dabrafenib,Informative PGx,FDA,"Annotation of FDA Label for dabrafenib and HRAS, KRAS, NRAS",2021-03-16,HRAS,drug_label
+dabrafenib,Informative PGx,FDA,"Annotation of FDA Label for dabrafenib and HRAS, KRAS, NRAS",2021-03-16,KRAS,drug_label
+dabrafenib,Informative PGx,FDA,"Annotation of FDA Label for dabrafenib and HRAS, KRAS, NRAS",2021-03-16,NRAS,drug_label
+avelumab,Informative PGx,FDA,Annotation of FDA Label for avelumab and CD274,2017-11-08,CD274,drug_label
+durvalumab,Informative PGx,FDA,Annotation of FDA Label for durvalumab and CD274,,CD274,drug_label
+cerliponase alfa,Testing required,FDA,Annotation of FDA Label for cerliponase alfa and TPP1,2019-04-25,TPP1,drug_label
+umeclidinium,Informative PGx,FDA,Annotation of FDA Label for umeclidinium and CYP2D6,,CYP2D6,drug_label
+palonosetron,Informative PGx,EMA,Annotation of EMA Label for palonosetron and CYP2D6,,CYP2D6,drug_label
+raltegravir,Informative PGx,EMA,Annotation of EMA Label for raltegravir and UGT1A1,,UGT1A1,drug_label
+sofosbuvir,Informative PGx,FDA,Annotation of FDA Label for sofosbuvir / velpatasvir and IFNL3,,IFNL3,drug_label
+velpatasvir,Informative PGx,FDA,Annotation of FDA Label for sofosbuvir / velpatasvir and IFNL3,,IFNL3,drug_label
+palbociclib,Testing required,EMA,"Annotation of EMA Label for palbociclib and ERBB2, ESR1, ESR2, PGR",,ERBB2,drug_label
+palbociclib,Testing required,EMA,"Annotation of EMA Label for palbociclib and ERBB2, ESR1, ESR2, PGR",,ESR1,drug_label
+palbociclib,Testing required,EMA,"Annotation of EMA Label for palbociclib and ERBB2, ESR1, ESR2, PGR",,ESR2,drug_label
+palbociclib,Testing required,EMA,"Annotation of EMA Label for palbociclib and ERBB2, ESR1, ESR2, PGR",,PGR,drug_label
+allopurinol,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for allopurinol and HLA-B,,HLA-B,drug_label
+migalastat,Testing required,EMA,Annotation of EMA Label for migalastat and GLA,,GLA,drug_label
+tafamidis,Informative PGx,FDA,Annotation of FDA Label for tafamidis and TTR,,TTR,drug_label
+paliperidone,Informative PGx,FDA,Annotation of FDA Label for paliperidone and CYP2D6,,CYP2D6,drug_label
+ramucirumab,Informative PGx,FDA,Annotation of FDA Label for ramucirumab and KRAS,,KRAS,drug_label
+eteplirsen,Testing required,FDA,Annotation of FDA Label for eteplirsen and DMD,,DMD,drug_label
+lapatinib,Actionable PGx,EMA,"Annotation of EMA Label for lapatinib and HLA-DQA1, HLA-DRB1",,HLA-DQA1,drug_label
+lapatinib,Actionable PGx,EMA,"Annotation of EMA Label for lapatinib and HLA-DQA1, HLA-DRB1",,HLA-DRB1,drug_label
+procainamide,Informative PGx,FDA,Annotation of FDA Label for procainamide and NAT2,,NAT2,drug_label
+neratinib,Testing required,EMA,"Annotation of EMA Label for neratinib and ERBB2, ESR1, ESR2, PGR",,ERBB2,drug_label
+neratinib,Testing required,EMA,"Annotation of EMA Label for neratinib and ERBB2, ESR1, ESR2, PGR",,ESR1,drug_label
+neratinib,Testing required,EMA,"Annotation of EMA Label for neratinib and ERBB2, ESR1, ESR2, PGR",,ESR2,drug_label
+neratinib,Testing required,EMA,"Annotation of EMA Label for neratinib and ERBB2, ESR1, ESR2, PGR",,PGR,drug_label
+alpelisib,Testing required,FDA,"Annotation of FDA Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ERBB2,drug_label
+alpelisib,Testing required,FDA,"Annotation of FDA Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ESR1,drug_label
+alpelisib,Testing required,FDA,"Annotation of FDA Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ESR2,drug_label
+alpelisib,Testing required,FDA,"Annotation of FDA Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,PIK3CA,drug_label
+duvelisib,Informative PGx,FDA,Annotation of FDA Label for duvelisib,,,drug_label
+migalastat,Testing required,FDA,Annotation of FDA Label for migalastat and GLA,,GLA,drug_label
+erdafitinib,Actionable PGx,FDA,Annotation of FDA Label for erdafitinib and CYP2C9,2019-10-09,CYP2C9,drug_label
+ombitasvir,Informative PGx,FDA,Annotation of FDA Label for ombitasvir / paritaprevir / ritonavir and IFNL3,2019-04-14,IFNL3,drug_label
+paritaprevir,Informative PGx,FDA,Annotation of FDA Label for ombitasvir / paritaprevir / ritonavir and IFNL3,2019-04-14,IFNL3,drug_label
+ritonavir,Informative PGx,FDA,Annotation of FDA Label for ombitasvir / paritaprevir / ritonavir and IFNL3,2019-04-14,IFNL3,drug_label
+ustekinumab,Informative PGx,FDA,"Annotation of FDA Label for ustekinumab and IL12A, IL12B, IL23A",2020-10-30,IL12A,drug_label
+ustekinumab,Informative PGx,FDA,"Annotation of FDA Label for ustekinumab and IL12A, IL12B, IL23A",2020-10-30,IL12B,drug_label
+ustekinumab,Informative PGx,FDA,"Annotation of FDA Label for ustekinumab and IL12A, IL12B, IL23A",2020-10-30,IL23A,drug_label
+desvenlafaxine,Informative PGx,FDA,Annotation of FDA Label for desvenlafaxine and CYP2D6,,CYP2D6,drug_label
+enasidenib,Testing required,FDA,Annotation of FDA Label for enasidenib and IDH2,,IDH2,drug_label
+pertuzumab,Actionable PGx,FDA,"Annotation of FDA Label for pertuzumab and ESR1, ESR2, PGR",2019-04-19,ESR1,drug_label
+pertuzumab,Actionable PGx,FDA,"Annotation of FDA Label for pertuzumab and ESR1, ESR2, PGR",2019-04-19,ESR2,drug_label
+pertuzumab,Actionable PGx,FDA,"Annotation of FDA Label for pertuzumab and ESR1, ESR2, PGR",2019-04-19,PGR,drug_label
+celecoxib,Actionable PGx,PMDA,Annotation of PMDA Label for celecoxib and CYP2C9,,CYP2C9,drug_label
+codeine,Actionable PGx,PMDA,Annotation of PMDA Label for codeine and CYP2D6,,CYP2D6,drug_label
+dapsone,Actionable PGx,PMDA,Annotation of PMDA Label for dapsone and G6PD,,G6PD,drug_label
+efavirenz,Actionable PGx,PMDA,Annotation of PMDA Label for efavirenz and CYP2B6,,CYP2B6,drug_label
+fesoterodine,Actionable PGx,PMDA,Annotation of PMDA Label for fesoterodine and CYP2D6,,CYP2D6,drug_label
+letrozole,Actionable PGx,PMDA,Annotation of PMDA Label for letrozole and CYP2A6,,CYP2A6,drug_label
+nalidixic acid,Actionable PGx,PMDA,Annotation of PMDA Label for nalidixic acid and G6PD,,G6PD,drug_label
+perphenazine,Actionable PGx,PMDA,Annotation of PMDA Label for perphenazine and CYP2D6,,CYP2D6,drug_label
+rabeprazole,Actionable PGx,PMDA,Annotation of PMDA Label for rabeprazole and CYP2C19,,CYP2C19,drug_label
+sulfadiazine,Actionable PGx,PMDA,Annotation of PMDA Label for sulfadiazine and G6PD,,G6PD,drug_label
+sulfamethoxazole,Actionable PGx,PMDA,Annotation of PMDA Label for sulfamethoxazole / trimethoprim and G6PD,,G6PD,drug_label
+trimethoprim,Actionable PGx,PMDA,Annotation of PMDA Label for sulfamethoxazole / trimethoprim and G6PD,,G6PD,drug_label
+sulfasalazine,Actionable PGx,PMDA,Annotation of PMDA Label for sulfasalazine and G6PD,,G6PD,drug_label
+tetrabenazine,Actionable PGx,PMDA,Annotation of PMDA Label for tetrabenazine and CYP2D6,,CYP2D6,drug_label
+moviprep,Actionable PGx,PMDA,Annotation of PMDA Label for moviprep and G6PD,,G6PD,drug_label
+voriconazole,Actionable PGx,PMDA,Annotation of PMDA Label for voriconazole and CYP2C19,,CYP2C19,drug_label
+eliglustat,Testing required,PMDA,Annotation of PMDA Label for eliglustat and CYP2D6,,CYP2D6,drug_label
+erlotinib,Testing required,PMDA,Annotation of PMDA Label for erlotinib and EGFR,,EGFR,drug_label
+vemurafenib,Testing required,PMDA,Annotation of PMDA Label for vemurafenib and BRAF,,BRAF,drug_label
+isoniazid,Informative PGx,PMDA,Annotation of PMDA Label for isoniazid and NAT2,,NAT2,drug_label
+omeprazole,Informative PGx,PMDA,Annotation of PMDA Label for omeprazole and CYP2C19,,CYP2C19,drug_label
+escitalopram,Actionable PGx,PMDA,"Annotation of PMDA Label for escitalopram and CYP2C19, CYP2D6",,CYP2C19,drug_label
+escitalopram,Actionable PGx,PMDA,"Annotation of PMDA Label for escitalopram and CYP2C19, CYP2D6",,CYP2D6,drug_label
+binimetinib,Informative PGx,FDA,Annotation of FDA Label for binimetinib and UGT1A1,,UGT1A1,drug_label
+binimetinib,Testing required,FDA,Annotation of FDA Label for binimetinib and BRAF,2019-05-09,BRAF,drug_label
+lofexidine,Actionable PGx,FDA,Annotation of FDA Label for lofexidine and CYP2D6,,CYP2D6,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,CFTR,drug_label
+tezacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,CFTR,drug_label
+nilotinib,Actionable PGx,FDA,Annotation of FDA Label for nilotinib and UGT1A1,,UGT1A1,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / lumacaftor and CFTR,2021-02-05,CFTR,drug_label
+lumacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / lumacaftor and CFTR,2021-02-05,CFTR,drug_label
+binimetinib,Informative PGx,EMA,Annotation of EMA Label for binimetinib and UGT1A1,,UGT1A1,drug_label
+elosulfase alfa,Testing required,EMA,Annotation of EMA Label for elosulfase alfa and GALNS,,GALNS,drug_label
+acetaminophen,Testing required,Swissmedic,Annotation of Swissmedic Label for acetaminophen / codeine and CYP2D6,,CYP2D6,drug_label
+codeine,Testing required,Swissmedic,Annotation of Swissmedic Label for acetaminophen / codeine and CYP2D6,,CYP2D6,drug_label
+acetaminophen,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for acetaminophen / codeine and G6PD,,G6PD,drug_label
+codeine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for acetaminophen / codeine and G6PD,,G6PD,drug_label
+aripiprazole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for aripiprazole and CYP2D6,,CYP2D6,drug_label
+carbamazepine,Testing recommended,Swissmedic,Annotation of Swissmedic Label for carbamazepine and HLA-A,,HLA-A,drug_label
+carvedilol,Informative PGx,Swissmedic,Annotation of Swissmedic Label for carvedilol and CYP2D6,,CYP2D6,drug_label
+celecoxib,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for celecoxib and CYP2C9,,CYP2C9,drug_label
+dapoxetine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for dapoxetine and CYP2D6,,CYP2D6,drug_label
+darifenacin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for darifenacin and CYP2D6,,CYP2D6,drug_label
+eletriptan,Informative PGx,Swissmedic,Annotation of Swissmedic Label for eletriptan and CYP2D6,,CYP2D6,drug_label
+escitalopram,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for escitalopram and CYP2C19,,CYP2C19,drug_label
+flucloxacillin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for flucloxacillin and HLA-B,,HLA-B,drug_label
+fluorouracil,Testing recommended,Swissmedic,Annotation of Swissmedic Label for fluorouracil / salicylic acid and DPYD,,DPYD,drug_label
+salicylic acid,Testing recommended,Swissmedic,Annotation of Swissmedic Label for fluorouracil / salicylic acid and DPYD,,DPYD,drug_label
+fluvoxamine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for fluvoxamine and CYP2D6,,CYP2D6,drug_label
+galantamine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for galantamine and CYP2D6,,CYP2D6,drug_label
+glimepiride,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for glimepiride and G6PD,,G6PD,drug_label
+haloperidol,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for haloperidol and CYP2D6,,CYP2D6,drug_label
+indacaterol,Informative PGx,Swissmedic,Annotation of Swissmedic Label for indacaterol and UGT1A1,,UGT1A1,drug_label
+irinotecan,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for irinotecan and UGT1A1,,UGT1A1,drug_label
+lansoprazole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for lansoprazole and CYP2C19,,CYP2C19,drug_label
+lesinurad,Informative PGx,Swissmedic,Annotation of Swissmedic Label for lesinurad and CYP2C9,,CYP2C9,drug_label
+metoprolol,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for metoprolol and CYP2D6,,CYP2D6,drug_label
+mirabegron,Informative PGx,Swissmedic,Annotation of Swissmedic Label for mirabegron and CYP2D6,,CYP2D6,drug_label
+mivacurium chloride,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for mivacurium chloride and BCHE,,BCHE,drug_label
+moxifloxacin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for moxifloxacin and G6PD,,G6PD,drug_label
+nicor,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for nicorandil and G6PD,,G6PD,drug_label
+il,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for nicorandil and G6PD,,G6PD,drug_label
+norfloxacin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for norfloxacin and G6PD,,G6PD,drug_label
+nitroglycerin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for nitroglycerin and G6PD,,G6PD,drug_label
+omeprazole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for omeprazole and CYP2C19,,CYP2C19,drug_label
+pantoprazole,Informative PGx,Swissmedic,Annotation of Swissmedic Label for pantoprazole and CYP2C19,,CYP2C19,drug_label
+citalopram,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for citalopram and CYP2C19, CYP2D6",,CYP2C19,drug_label
+citalopram,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for citalopram and CYP2C19, CYP2D6",,CYP2D6,drug_label
+dolutegravir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for dolutegravir and CYP3A4, CYP3A5, NR1I2, UGT1A1",,CYP3A4,drug_label
+dolutegravir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for dolutegravir and CYP3A4, CYP3A5, NR1I2, UGT1A1",,CYP3A5,drug_label
+dolutegravir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for dolutegravir and CYP3A4, CYP3A5, NR1I2, UGT1A1",,NR1I2,drug_label
+dolutegravir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for dolutegravir and CYP3A4, CYP3A5, NR1I2, UGT1A1",,UGT1A1,drug_label
+alectinib,Testing required,EMA,Annotation of EMA Label for alectinib and ALK,,ALK,drug_label
+atezolizumab,Testing required,EMA,Annotation of EMA Label for atezolizumab and CD274,,CD274,drug_label
+brexpiprazole,Actionable PGx,EMA,Annotation of EMA Label for brexpiprazole and CYP2D6,,CYP2D6,drug_label
+efavirenz,Actionable PGx,EMA,Annotation of EMA Label for efavirenz and CYP2B6,,CYP2B6,drug_label
+gefitinib,Actionable PGx,EMA,Annotation of EMA Label for gefitinib and CYP2D6,,CYP2D6,drug_label
+glibenclamide,Actionable PGx,EMA,Annotation of EMA Label for glibenclamide and G6PD,,G6PD,drug_label
+lacosamide,Informative PGx,EMA,Annotation of EMA Label for lacosamide and CYP2C19,,CYP2C19,drug_label
+lidocaine,Actionable PGx,EMA,Annotation of EMA Label for lidocaine / prilocaine and G6PD,,G6PD,drug_label
+prilocaine,Actionable PGx,EMA,Annotation of EMA Label for lidocaine / prilocaine and G6PD,,G6PD,drug_label
+phenytoin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for phenytoin and CYP2C9, HLA-B",,CYP2C9,drug_label
+phenytoin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for phenytoin and CYP2C9, HLA-B",,HLA-B,drug_label
+piroxicam,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for piroxicam and CYP2C9,,CYP2C9,drug_label
+prilocaine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for prilocaine and G6PD,,G6PD,drug_label
+ranolazine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for ranolazine and CYP2D6,,CYP2D6,drug_label
+vernakalant,Informative PGx,Swissmedic,Annotation of Swissmedic Label for vernakalant and CYP2D6,,CYP2D6,drug_label
+zidovudine,Testing required,Swissmedic,Annotation of Swissmedic Label for zidovudine / lamivudine / abacavir and HLA-B,,HLA-B,drug_label
+lamivudine,Testing required,Swissmedic,Annotation of Swissmedic Label for zidovudine / lamivudine / abacavir and HLA-B,,HLA-B,drug_label
+abacavir,Testing required,Swissmedic,Annotation of Swissmedic Label for zidovudine / lamivudine / abacavir and HLA-B,,HLA-B,drug_label
+vitamin c,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for vitamin c and G6PD,,G6PD,drug_label
+ledipasvir,Informative PGx,FDA,Annotation of FDA Label for ledipasvir / sofosbuvir and IFNL3,,IFNL3,drug_label
+sofosbuvir,Informative PGx,FDA,Annotation of FDA Label for ledipasvir / sofosbuvir and IFNL3,,IFNL3,drug_label
+isosorbide dinitrate,Informative PGx,FDA,"Annotation of FDA Label for isosorbide dinitrate and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R1,drug_label
+isosorbide dinitrate,Informative PGx,FDA,"Annotation of FDA Label for isosorbide dinitrate and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R2,drug_label
+isosorbide dinitrate,Informative PGx,FDA,"Annotation of FDA Label for isosorbide dinitrate and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R3,drug_label
+isosorbide dinitrate,Informative PGx,FDA,"Annotation of FDA Label for isosorbide dinitrate and CYB5R1, CYB5R2, CYB5R3, CYB5R4",,CYB5R4,drug_label
+amifampridine phosphate,Actionable PGx,FDA,Annotation of FDA Label for amifampridine phosphate and NAT2,2019-10-04,NAT2,drug_label
+fampridine,Informative PGx,EMA,Annotation of EMA Label for fampridine and SLC22A2,2019-12-04,SLC22A2,drug_label
+sunitinib,Informative PGx,EMA,Annotation of EMA Label for sunitinib and CYP3A4,2019-12-04,CYP3A4,drug_label
+telithromycin,Informative PGx,EMA,Annotation of EMA Label for telithromycin and CYP3A4,2019-12-04,CYP3A4,drug_label
+atazanavir,Testing recommended,EMA,Annotation of EMA Label for atazanavir and CYP2C19,2014-09-16,CYP2C19,drug_label
+darunavir,Informative PGx,EMA,Annotation of EMA Label for darunavir and CYP3A4,2019-12-04,CYP3A4,drug_label
+dronedarone,Informative PGx,EMA,"Annotation of EMA Label for dronedarone and CYP2D6, CYP3A4",2019-12-04,CYP2D6,drug_label
+dronedarone,Informative PGx,EMA,"Annotation of EMA Label for dronedarone and CYP2D6, CYP3A4",2019-12-04,CYP3A4,drug_label
+eliglustat,Testing required,FDA,Annotation of FDA Label for eliglustat and CYP2D6,,CYP2D6,drug_label
+abacavir,Informative PGx,PMDA,Annotation of PMDA Label for abacavir and HLA-B,,HLA-B,drug_label
+atomoxetine,Actionable PGx,PMDA,Annotation of PMDA Label for atomoxetine and CYP2D6,,CYP2D6,drug_label
+atorvastatin,Informative PGx,PMDA,Annotation of PMDA Label for atorvastatin and LDLR,2017-11-08,LDLR,drug_label
+azathioprine,Actionable PGx,PMDA,Annotation of PMDA Label for azathioprine and TPMT,,TPMT,drug_label
+capecitabine,Actionable PGx,PMDA,Annotation of PMDA Label for capecitabine and DPYD,,DPYD,drug_label
+clopidogrel,Actionable PGx,PMDA,Annotation of PMDA Label for clopidogrel and CYP2C19,,CYP2C19,drug_label
+crizotinib,Testing required,PMDA,Annotation of PMDA Label for crizotinib and ALK,,ALK,drug_label
+eltrombopag,Actionable PGx,PMDA,Annotation of PMDA Label for eltrombopag and SERPINC1,,SERPINC1,drug_label
+fluorouracil,Actionable PGx,PMDA,Annotation of PMDA Label for fluorouracil and DPYD,,DPYD,drug_label
+indacaterol,Actionable PGx,PMDA,Annotation of PMDA Label for indacaterol and UGT1A1,,UGT1A1,drug_label
+irinotecan,Testing recommended,PMDA,Annotation of PMDA Label for irinotecan and UGT1A1,,UGT1A1,drug_label
+lenalidomide,Informative PGx,PMDA,Annotation of PMDA Label for lenalidomide,,,drug_label
+mycophenolic acid,Actionable PGx,PMDA,Annotation of PMDA Label for mycophenolic acid and HPRT1,,HPRT1,drug_label
+panitumumab,Testing required,PMDA,Annotation of PMDA Label for panitumumab and KRAS,,KRAS,drug_label
+rasburicase,Actionable PGx,PMDA,Annotation of PMDA Label for rasburicase and G6PD,,G6PD,drug_label
+tolterodine,Informative PGx,PMDA,Annotation of PMDA Label for tolterodine and CYP2D6,,CYP2D6,drug_label
+trastuzumab,Testing required,PMDA,Annotation of PMDA Label for trastuzumab and ERBB2,,ERBB2,drug_label
+dasatinib,Testing required,PMDA,"Annotation of PMDA Label for dasatinib and ABL1, BCR",,ABL1,drug_label
+dasatinib,Testing required,PMDA,"Annotation of PMDA Label for dasatinib and ABL1, BCR",,BCR,drug_label
+arformoterol,Informative PGx,FDA,"Annotation of FDA Label for arformoterol and CYP2D6, UGT1A1",,CYP2D6,drug_label
+arformoterol,Informative PGx,FDA,"Annotation of FDA Label for arformoterol and CYP2D6, UGT1A1",,UGT1A1,drug_label
+fosamprenavir,Informative PGx,EMA,Annotation of EMA Label for fosamprenavir and CYP3A4,2019-12-04,CYP3A4,drug_label
+tolterodine,Informative PGx,HCSC,Annotation of HCSC Label for tolterodine and CYP2D6,,CYP2D6,drug_label
+trametinib,Testing required,HCSC,Annotation of HCSC Label for trametinib and BRAF,,BRAF,drug_label
+trastuzumab,Testing required,HCSC,Annotation of HCSC Label for trastuzumab and ERBB2,,ERBB2,drug_label
+trastuzumab emtansine,Testing required,HCSC,Annotation of HCSC Label for trastuzumab emtansine and ERBB2,,ERBB2,drug_label
+tretinoin,Testing required,HCSC,"Annotation of HCSC Label for tretinoin and PML, RARA",,PML,drug_label
+tretinoin,Testing required,HCSC,"Annotation of HCSC Label for tretinoin and PML, RARA",,RARA,drug_label
+velaglucerase alfa,Testing required,HCSC,Annotation of HCSC Label for velaglucerase alfa and GBA,,GBA,drug_label
+vemurafenib,Testing required,HCSC,Annotation of HCSC Label for vemurafenib and BRAF,,BRAF,drug_label
+moviprep,Actionable PGx,HCSC,Annotation of HCSC Label for moviprep and G6PD,,G6PD,drug_label
+voriconazole,Actionable PGx,HCSC,Annotation of HCSC Label for voriconazole and CYP2C19,,CYP2C19,drug_label
+vortioxetine,Actionable PGx,HCSC,Annotation of HCSC Label for vortioxetine and CYP2D6,,CYP2D6,drug_label
+vortioxetine,Actionable PGx,EMA,Annotation of EMA Label for vortioxetine and CYP2D6,2014-09-15,CYP2D6,drug_label
+ruxolitinib,Informative PGx,EMA,Annotation of EMA Label for ruxolitinib and CYP3A4,2019-12-04,CYP3A4,drug_label
+warfarin,Actionable PGx,HCSC,"Annotation of HCSC Label for warfarin and CYP2C9, VKORC1",,CYP2C9,drug_label
+warfarin,Actionable PGx,HCSC,"Annotation of HCSC Label for warfarin and CYP2C9, VKORC1",,VKORC1,drug_label
+axitinib,Informative PGx,EMA,"Annotation of EMA Label for axitinib and CYP2C19, UGT1A1",2014-09-12,CYP2C19,drug_label
+axitinib,Informative PGx,EMA,"Annotation of EMA Label for axitinib and CYP2C19, UGT1A1",2014-09-12,UGT1A1,drug_label
+ibrutinib,Testing required,EMA,Annotation of EMA Label for ibrutinib,,,drug_label
+ceritinib,Testing required,EMA,Annotation of EMA Label for ceritinib and ALK,,ALK,drug_label
+efavirenz,Actionable PGx,EMA,Annotation of EMA Label for efavirenz / emtricitabine / tenofovir disoproxil and CYP2B6,2014-09-16,CYP2B6,drug_label
+emtricitabine,Actionable PGx,EMA,Annotation of EMA Label for efavirenz / emtricitabine / tenofovir disoproxil and CYP2B6,2014-09-16,CYP2B6,drug_label
+tenofovir disoproxil,Actionable PGx,EMA,Annotation of EMA Label for efavirenz / emtricitabine / tenofovir disoproxil and CYP2B6,2014-09-16,CYP2B6,drug_label
+desflurane,Actionable PGx,FDA,"Annotation of FDA Label for desflurane and CACNA1S, RYR1",2019-10-14,CACNA1S,drug_label
+desflurane,Actionable PGx,FDA,"Annotation of FDA Label for desflurane and CACNA1S, RYR1",2019-10-14,RYR1,drug_label
+desflurane,Actionable PGx,HCSC,"Annotation of HCSC Label for desflurane and CACNA1S, RYR1",,CACNA1S,drug_label
+desflurane,Actionable PGx,HCSC,"Annotation of HCSC Label for desflurane and CACNA1S, RYR1",,RYR1,drug_label
+sirolimus,Informative PGx,EMA,Annotation of EMA Label for sirolimus and CYP3A4,2019-12-04,CYP3A4,drug_label
+zonisamide,Informative PGx,EMA,Annotation of EMA Label for zonisamide and CYP3A4,2019-12-04,CYP3A4,drug_label
+aliskiren,Informative PGx,EMA,Annotation of EMA Label for aliskiren and ABCB1,2019-12-04,ABCB1,drug_label
+crizotinib,Testing required,HCSC,Annotation of HCSC Label for crizotinib and ALK,,ALK,drug_label
+dabrafenib,Testing required,HCSC,Annotation of HCSC Label for dabrafenib and BRAF,,BRAF,drug_label
+dapsone,Actionable PGx,HCSC,Annotation of HCSC Label for dapsone and G6PD,,G6PD,drug_label
+darifenacin,Actionable PGx,HCSC,Annotation of HCSC Label for darifenacin and CYP2D6,,CYP2D6,drug_label
+abacavir,Testing required,HCSC,Annotation of HCSC Label for abacavir and HLA-B,,HLA-B,drug_label
+afatinib,Testing required,HCSC,Annotation of HCSC Label for afatinib and EGFR,2019-05-08,EGFR,drug_label
+aripiprazole,Actionable PGx,HCSC,Annotation of HCSC Label for aripiprazole and CYP2D6,,CYP2D6,drug_label
+posaconazole,Informative PGx,EMA,Annotation of EMA Label for posaconazole and CYP3A4,2019-12-04,CYP3A4,drug_label
+indinavir,Informative PGx,EMA,Annotation of EMA Label for indinavir and CYP3A4,2019-12-04,CYP3A4,drug_label
+clopidogrel,Actionable PGx,HCSC,Annotation of HCSC Label for clopidogrel and CYP2C19,,CYP2C19,drug_label
+codeine,Actionable PGx,HCSC,Annotation of HCSC Label for codeine and CYP2D6,,CYP2D6,drug_label
+dexlansoprazole,Actionable PGx,HCSC,Annotation of HCSC Label for dexlansoprazole and CYP2C19,,CYP2C19,drug_label
+divalproex sodium,Testing required,HCSC,Annotation of HCSC Label for divalproex sodium and POLG,,POLG,drug_label
+efavirenz,Actionable PGx,HCSC,Annotation of HCSC Label for efavirenz / emtricitabine / tenofovir disoproxil and CYP2B6,,CYP2B6,drug_label
+emtricitabine,Actionable PGx,HCSC,Annotation of HCSC Label for efavirenz / emtricitabine / tenofovir disoproxil and CYP2B6,,CYP2B6,drug_label
+tenofovir disoproxil,Actionable PGx,HCSC,Annotation of HCSC Label for efavirenz / emtricitabine / tenofovir disoproxil and CYP2B6,,CYP2B6,drug_label
+erlotinib,Testing required,HCSC,Annotation of HCSC Label for erlotinib and EGFR,,EGFR,drug_label
+erythromycin ethylsuccinate,Actionable PGx,HCSC,Annotation of HCSC Label for erythromycin ethylsuccinate / sulfisoxazole acetyl and G6PD,,G6PD,drug_label
+sulfisoxazole acetyl,Actionable PGx,HCSC,Annotation of HCSC Label for erythromycin ethylsuccinate / sulfisoxazole acetyl and G6PD,,G6PD,drug_label
+esomeprazole,Informative PGx,HCSC,Annotation of HCSC Label for esomeprazole and CYP2C19,,CYP2C19,drug_label
+fesoterodine,Actionable PGx,HCSC,Annotation of HCSC Label for fesoterodine and CYP2D6,,CYP2D6,drug_label
+fluorouracil,Actionable PGx,HCSC,Annotation of HCSC Label for fluorouracil and DPYD,,DPYD,drug_label
+galantamine,Informative PGx,HCSC,Annotation of HCSC Label for galantamine and CYP2D6,,CYP2D6,drug_label
+gefitinib,Testing required,HCSC,Annotation of HCSC Label for gefitinib and EGFR,,EGFR,drug_label
+glibenclamide,Actionable PGx,HCSC,Annotation of HCSC Label for glibenclamide and G6PD,,G6PD,drug_label
+glimepiride,Actionable PGx,HCSC,Annotation of HCSC Label for glimepiride and G6PD,,G6PD,drug_label
+ibrutinib,Testing required,HCSC,Annotation of HCSC Label for ibrutinib,,,drug_label
+acetaminophen; tramadol,Actionable PGx,HCSC,"Annotation of HCSC Label for acetaminophen, tramadol and CYP2D6",,CYP2D6,drug_label
+anastrozole,Testing required,HCSC,"Annotation of HCSC Label for anastrozole and ESR1, ESR2, PGR",,ESR1,drug_label
+anastrozole,Testing required,HCSC,"Annotation of HCSC Label for anastrozole and ESR1, ESR2, PGR",,ESR2,drug_label
+anastrozole,Testing required,HCSC,"Annotation of HCSC Label for anastrozole and ESR1, ESR2, PGR",,PGR,drug_label
+ivabradine,Informative PGx,EMA,Annotation of EMA Label for ivabradine and CYP3A4,2019-12-04,CYP3A4,drug_label
+isoflurane,Actionable PGx,HCSC,"Annotation of HCSC Label for isoflurane and CACNA1S, RYR1",,CACNA1S,drug_label
+isoflurane,Actionable PGx,HCSC,"Annotation of HCSC Label for isoflurane and CACNA1S, RYR1",,RYR1,drug_label
+simeprevir,Informative PGx,HCSC,Annotation of HCSC Label for simeprevir and IFNL3,,IFNL3,drug_label
+succinylcholine,Actionable PGx,HCSC,Annotation of HCSC Label for succinylcholine and BCHE,,BCHE,drug_label
+sulfadiazine,Actionable PGx,HCSC,Annotation of HCSC Label for sulfadiazine and G6PD,,G6PD,drug_label
+sulfamethoxazole,Actionable PGx,HCSC,Annotation of HCSC Label for sulfamethoxazole / trimethoprim and G6PD,,G6PD,drug_label
+trimethoprim,Actionable PGx,HCSC,Annotation of HCSC Label for sulfamethoxazole / trimethoprim and G6PD,,G6PD,drug_label
+sulfasalazine,Actionable PGx,HCSC,Annotation of HCSC Label for sulfasalazine and G6PD,,G6PD,drug_label
+eliglustat,Testing required,EMA,Annotation of EMA Label for eliglustat and CYP2D6,,CYP2D6,drug_label
+irinotecan,Actionable PGx,HCSC,Annotation of HCSC Label for irinotecan and UGT1A1,,UGT1A1,drug_label
+ivacaftor,Testing required,HCSC,Annotation of HCSC Label for ivacaftor and CFTR,,CFTR,drug_label
+lenalidomide,Informative PGx,HCSC,Annotation of HCSC Label for lenalidomide,,,drug_label
+lomitapide,Informative PGx,HCSC,Annotation of HCSC Label for lomitapide and LDLR,2017-11-08,LDLR,drug_label
+mercaptopurine,Actionable PGx,HCSC,Annotation of HCSC Label for mercaptopurine and TPMT,,TPMT,drug_label
+metoprolol,Actionable PGx,HCSC,Annotation of HCSC Label for metoprolol and CYP2D6,,CYP2D6,drug_label
+mycophenolic acid,Actionable PGx,HCSC,Annotation of HCSC Label for mycophenolic acid and HPRT1,,HPRT1,drug_label
+nitrofurantoin,Actionable PGx,HCSC,Annotation of HCSC Label for nitrofurantoin and G6PD,,G6PD,drug_label
+norfloxacin,Actionable PGx,HCSC,Annotation of HCSC Label for norfloxacin and G6PD,,G6PD,drug_label
+nortriptyline,Actionable PGx,HCSC,Annotation of HCSC Label for nortriptyline and CYP2D6,,CYP2D6,drug_label
+omeprazole,Informative PGx,HCSC,Annotation of HCSC Label for omeprazole and CYP2C19,,CYP2C19,drug_label
+tamoxifen,Testing required,HCSC,"Annotation of HCSC Label for tamoxifen and CYP2D6, ESR1, ESR2",,CYP2D6,drug_label
+tamoxifen,Testing required,HCSC,"Annotation of HCSC Label for tamoxifen and CYP2D6, ESR1, ESR2",,ESR1,drug_label
+tamoxifen,Testing required,HCSC,"Annotation of HCSC Label for tamoxifen and CYP2D6, ESR1, ESR2",,ESR2,drug_label
+trametinib,Testing required,EMA,Annotation of EMA Label for trametinib and BRAF,,BRAF,drug_label
+tipranavir,Informative PGx,EMA,Annotation of EMA Label for tipranavir and CYP3A4,2019-12-04,CYP3A4,drug_label
+tetrabenazine,Actionable PGx,HCSC,Annotation of HCSC Label for tetrabenazine and CYP2D6,,CYP2D6,drug_label
+thioguanine,Actionable PGx,HCSC,Annotation of HCSC Label for thioguanine and TPMT,,TPMT,drug_label
+sevoflurane,Actionable PGx,FDA,"Annotation of FDA Label for sevoflurane and CACNA1S, RYR1",,CACNA1S,drug_label
+sevoflurane,Actionable PGx,FDA,"Annotation of FDA Label for sevoflurane and CACNA1S, RYR1",,RYR1,drug_label
+sevoflurane,Actionable PGx,HCSC,"Annotation of HCSC Label for sevoflurane and CACNA1S, RYR1",,CACNA1S,drug_label
+sevoflurane,Actionable PGx,HCSC,"Annotation of HCSC Label for sevoflurane and CACNA1S, RYR1",,RYR1,drug_label
+meloxicam,Actionable PGx,FDA,Annotation of FDA Label for meloxicam and CYP2C9,2020-02-11,CYP2C9,drug_label
+pitolisant,Actionable PGx,FDA,Annotation of FDA Label for pitolisant and CYP2D6,2020-02-11,CYP2D6,drug_label
+enflurane,Actionable PGx,FDA,"Annotation of FDA Label for enflurane and CACNA1S, RYR1",2020-02-11,CACNA1S,drug_label
+enflurane,Actionable PGx,FDA,"Annotation of FDA Label for enflurane and CACNA1S, RYR1",2020-02-11,RYR1,drug_label
+voxelotor,Informative PGx,FDA,Annotation of FDA Label for voxelotor and HBB,,HBB,drug_label
+luspatercept-aamt,Informative PGx,FDA,Annotation of FDA Label for luspatercept-aamt and HBB,,HBB,drug_label
+enfortumab vedotin,Informative PGx,FDA,Annotation of FDA Label for enfortumab vedotin and NECTIN4,,NECTIN4,drug_label
+crizanlizumab-tmca,Informative PGx,FDA,Annotation of FDA Label for crizanlizumab-tmca,,,drug_label
+upadacitinib,Informative PGx,FDA,Annotation of FDA Label for upadacitinib and CYP2D6,,CYP2D6,drug_label
+elexacaftor,Testing required,FDA,Annotation of FDA Label for elexacaftor / tezacaftor / ivacaftor and CFTR,,CFTR,drug_label
+tezacaftor,Testing required,FDA,Annotation of FDA Label for elexacaftor / tezacaftor / ivacaftor and CFTR,,CFTR,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for elexacaftor / tezacaftor / ivacaftor and CFTR,,CFTR,drug_label
+fam-trastuzumab deruxtecan-nxki,Testing required,FDA,Annotation of FDA Label for fam-trastuzumab deruxtecan-nxki and ERBB2,,ERBB2,drug_label
+golodirsen,Testing required,FDA,Annotation of FDA Label for golodirsen and DMD,,DMD,drug_label
+lenvatinib,Testing required,FDA,Annotation of FDA Label for lenvatinib,,,drug_label
+vortioxetine,Actionable PGx,FDA,Annotation of FDA Label for vortioxetine and CYP2D6,2014-07-16,CYP2D6,drug_label
+estradiol,Actionable PGx,FDA,"Annotation of FDA Label for estradiol / progesterone and PROC, PROS1, SERPINC1",,PROC,drug_label
+estradiol,Actionable PGx,FDA,"Annotation of FDA Label for estradiol / progesterone and PROC, PROS1, SERPINC1",,PROS1,drug_label
+estradiol,Actionable PGx,FDA,"Annotation of FDA Label for estradiol / progesterone and PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+progesterone,Actionable PGx,FDA,"Annotation of FDA Label for estradiol / progesterone and PROC, PROS1, SERPINC1",,PROC,drug_label
+progesterone,Actionable PGx,FDA,"Annotation of FDA Label for estradiol / progesterone and PROC, PROS1, SERPINC1",,PROS1,drug_label
+progesterone,Actionable PGx,FDA,"Annotation of FDA Label for estradiol / progesterone and PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+entrectinib,Testing required,FDA,"Annotation of FDA Label for entrectinib and NTRK1, NTRK2, NTRK3, ROS1",,NTRK1,drug_label
+entrectinib,Testing required,FDA,"Annotation of FDA Label for entrectinib and NTRK1, NTRK2, NTRK3, ROS1",,NTRK2,drug_label
+entrectinib,Testing required,FDA,"Annotation of FDA Label for entrectinib and NTRK1, NTRK2, NTRK3, ROS1",,NTRK3,drug_label
+entrectinib,Testing required,FDA,"Annotation of FDA Label for entrectinib and NTRK1, NTRK2, NTRK3, ROS1",,ROS1,drug_label
+fluorouracil,Actionable PGx,FDA,Annotation of FDA Label for fluorouracil and DPYD,2017-05-04,DPYD,drug_label
+brigatinib,Testing required,FDA,Annotation of FDA Label for brigatinib and ALK,,ALK,drug_label
+ceritinib,Testing required,FDA,Annotation of FDA Label for ceritinib and ALK,2019-10-21,ALK,drug_label
+chlorpropamide,Actionable PGx,FDA,Annotation of FDA Label for chlorpropamide and G6PD,2019-04-16,G6PD,drug_label
+cobimetinib,Testing required,FDA,Annotation of FDA Label for cobimetinib and BRAF,2019-04-25,BRAF,drug_label
+dabrafenib,Testing required,FDA,Annotation of FDA Label for dabrafenib and BRAF,2019-04-29,BRAF,drug_label
+divalproex sodium,Testing required,FDA,Annotation of FDA Label for divalproex sodium and POLG,,POLG,drug_label
+encorafenib,Testing required,FDA,Annotation of FDA Label for encorafenib and BRAF,,BRAF,drug_label
+osimertinib,Testing required,FDA,Annotation of FDA Label for osimertinib and EGFR,2019-04-16,EGFR,drug_label
+velaglucerase alfa,Testing required,FDA,Annotation of FDA Label for velaglucerase alfa and GBA,2014-01-15,GBA,drug_label
+aripiprazole lauroxil,Actionable PGx,FDA,Annotation of FDA Label for aripiprazole lauroxil and CYP2D6,,CYP2D6,drug_label
+abemaciclib,Testing required,FDA,"Annotation of FDA Label for abemaciclib and ERBB2, ESR1, ESR2, PGR",2019-05-08,ERBB2,drug_label
+abemaciclib,Testing required,FDA,"Annotation of FDA Label for abemaciclib and ERBB2, ESR1, ESR2, PGR",2019-05-08,ESR1,drug_label
+abemaciclib,Testing required,FDA,"Annotation of FDA Label for abemaciclib and ERBB2, ESR1, ESR2, PGR",2019-05-08,ESR2,drug_label
+abemaciclib,Testing required,FDA,"Annotation of FDA Label for abemaciclib and ERBB2, ESR1, ESR2, PGR",2019-05-08,PGR,drug_label
+cevimeline,Actionable PGx,FDA,Annotation of FDA Label for cevimeline and CYP2D6,2013-10-25,CYP2D6,drug_label
+oxcarbazepine,Testing recommended,FDA,Annotation of FDA Label for oxcarbazepine and HLA-B,2019-04-16,HLA-B,drug_label
+nebivolol,Informative PGx,FDA,Annotation of FDA Label for nebivolol and CYP2D6,,CYP2D6,drug_label
+piroxicam,Actionable PGx,FDA,Annotation of FDA Label for piroxicam and CYP2C9,2019-04-19,CYP2C9,drug_label
+dronabinol,Actionable PGx,FDA,Annotation of FDA Label for dronabinol and CYP2C9,,CYP2C9,drug_label
+antithrombotic agents,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for antithrombotic agents and G6PD,,G6PD,drug_label
+atomoxetine,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for atomoxetine and CYP2D6,,CYP2D6,drug_label
+glibenclamide,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for glibenclamide and G6PD,,G6PD,drug_label
+"Paracetamol, combinations excl. Psycholeptics (Vicks MediNait Sirup)",Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for Paracetamol, combinations excl. Psycholeptics (Vicks MediNait Sirup) and CYP2D6, G6PD",,CYP2D6,drug_label
+"Paracetamol, combinations excl. Psycholeptics (Vicks MediNait Sirup)",Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for Paracetamol, combinations excl. Psycholeptics (Vicks MediNait Sirup) and CYP2D6, G6PD",,G6PD,drug_label
+sertindole,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for sertindole and CYP2D6,,CYP2D6,drug_label
+umeclidinium,Informative PGx,Swissmedic,Annotation of Swissmedic Label for umeclidinium and CYP2D6,,CYP2D6,drug_label
+zuclopenthixol,Informative PGx,Swissmedic,Annotation of Swissmedic Label for zuclopenthixol and CYP2D6,,CYP2D6,drug_label
+Vitamin B-complex with vitamin C,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for Vitamin B-complex with vitamin C and G6PD,,G6PD,drug_label
+rosuvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for rosuvastatin and ABCG2, SLCO1B1",,ABCG2,drug_label
+rosuvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for rosuvastatin and ABCG2, SLCO1B1",,SLCO1B1,drug_label
+sofosbuvir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for sofosbuvir and IFNL3, IFNL4",,IFNL3,drug_label
+sofosbuvir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for sofosbuvir and IFNL3, IFNL4",,IFNL4,drug_label
+siponimod,Testing required,FDA,Annotation of FDA Label for siponimod and CYP2C9,2020-07-21,CYP2C9,drug_label
+bupropion,Informative PGx,FDA,Annotation of FDA Label for bupropion and CYP2D6,,CYP2D6,drug_label
+alglucosidase alfa,Testing required,FDA,Annotation of FDA Label for alglucosidase alfa and GAA,,GAA,drug_label
+brentuximab vedotin,Testing required,FDA,Annotation of FDA Label for brentuximab vedotin and TNFRSF8,,TNFRSF8,drug_label
+oxcarbazepine,Testing recommended,HCSC,Annotation of HCSC Label for oxcarbazepine and HLA-B,,HLA-B,drug_label
+citalopram,Informative PGx,FDA,Annotation of FDA Label for citalopram and CYP2D6,,CYP2D6,drug_label
+escitalopram,Informative PGx,FDA,Annotation of FDA Label for escitalopram and CYP2D6,,CYP2D6,drug_label
+avapritinib,Testing required,FDA,Annotation of FDA Label for avapritinib and PDGFRA,,PDGFRA,drug_label
+capmatinib,Testing required,FDA,Annotation of FDA Label for capmatinib and MET,,MET,drug_label
+gemtuzumab ozogamicin,Testing required,FDA,Annotation of FDA Label for gemtuzumab ozogamicin and CD33,,CD33,drug_label
+ibrutinib,Testing required,FDA,Annotation of FDA Label for ibrutinib,2020-09-29,,drug_label
+ibrutinib,Informative PGx,FDA,Annotation of FDA Label for ibrutinib and MYD88,,MYD88,drug_label
+inebilizumab-cdon,Testing required,FDA,Annotation of FDA Label for inebilizumab-cdon and AQP4,,AQP4,drug_label
+isatuximab-irfc,Informative PGx,FDA,Annotation of FDA Label for isatuximab-irfc,,,drug_label
+sacituzumab govitecan-hziy,Actionable PGx,FDA,Annotation of FDA Label for sacituzumab govitecan-hziy and UGT1A1,,UGT1A1,drug_label
+selpercatinib,Testing required,FDA,Annotation of FDA Label for selpercatinib and RET,,RET,drug_label
+tucatinib,Testing required,FDA,Annotation of FDA Label for tucatinib and ERBB2,,ERBB2,drug_label
+oliceridine,Actionable PGx,FDA,Annotation of FDA Label for oliceridine and CYP2D6,,CYP2D6,drug_label
+rimegepant,Informative PGx,FDA,Annotation of FDA Label for rimegepant and CYP2C9,,CYP2C9,drug_label
+dotatate lutenium lu-177,Testing required,FDA,"Annotation of FDA Label for dotatate lutenium lu-177 and SSTR1, SSTR2, SSTR3, SSTR4, SSTR5",,SSTR1,drug_label
+dotatate lutenium lu-177,Testing required,FDA,"Annotation of FDA Label for dotatate lutenium lu-177 and SSTR1, SSTR2, SSTR3, SSTR4, SSTR5",,SSTR2,drug_label
+dotatate lutenium lu-177,Testing required,FDA,"Annotation of FDA Label for dotatate lutenium lu-177 and SSTR1, SSTR2, SSTR3, SSTR4, SSTR5",,SSTR3,drug_label
+dotatate lutenium lu-177,Testing required,FDA,"Annotation of FDA Label for dotatate lutenium lu-177 and SSTR1, SSTR2, SSTR3, SSTR4, SSTR5",,SSTR4,drug_label
+dotatate lutenium lu-177,Testing required,FDA,"Annotation of FDA Label for dotatate lutenium lu-177 and SSTR1, SSTR2, SSTR3, SSTR4, SSTR5",,SSTR5,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,AQP4,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,CHRNA1,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,CHRNA3,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,CHRNA4,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,CHRNA5,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,CHRNA6,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,CHRNA7,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,CHRNB1,drug_label
+eculizumab,Testing required,FDA,"Annotation of FDA Label for eculizumab and AQP4, CHRNA1, CHRNA3, CHRNA4, CHRNA5, CHRNA6, CHRNA7, CHRNB1, CHRNE",,CHRNE,drug_label
+alglucosidase alfa,Testing required,EMA,Annotation of EMA Label for alglucosidase alfa and GAA,,GAA,drug_label
+alglucosidase alfa,Testing required,HCSC,Annotation of HCSC Label for alglucosidase alfa and GAA,,GAA,drug_label
+amifampridine phosphate,Actionable PGx,EMA,Annotation of EMA Label for amifampridine phosphate and NAT2,,NAT2,drug_label
+ramucirumab,Testing required,EMA,Annotation of EMA Label for ramucirumab and EGFR,,EGFR,drug_label
+ramucirumab,Informative PGx,EMA,Annotation of EMA Label for ramucirumab and KRAS,,KRAS,drug_label
+amifampridine phosphate,Actionable PGx,HCSC,Annotation of HCSC Label for amifampridine phosphate and NAT2,,NAT2,drug_label
+brexpiprazole,Actionable PGx,FDA,Annotation of FDA Label for brexpiprazole and CYP2D6,2019-05-01,CYP2D6,drug_label
+deutetrabenazine,Actionable PGx,FDA,Annotation of FDA Label for deutetrabenazine and CYP2D6,2019-05-07,CYP2D6,drug_label
+alpelisib,Testing required,EMA,"Annotation of EMA Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ERBB2,drug_label
+alpelisib,Testing required,EMA,"Annotation of EMA Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ESR1,drug_label
+alpelisib,Testing required,EMA,"Annotation of EMA Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ESR2,drug_label
+alpelisib,Testing required,EMA,"Annotation of EMA Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,PIK3CA,drug_label
+voriconazole,Actionable PGx,FDA,Annotation of FDA Label for voriconazole and CYP2C19,2013-10-25,CYP2C19,drug_label
+alpelisib,Testing required,HCSC,"Annotation of HCSC Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ERBB2,drug_label
+alpelisib,Testing required,HCSC,"Annotation of HCSC Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ESR1,drug_label
+alpelisib,Testing required,HCSC,"Annotation of HCSC Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,ESR2,drug_label
+alpelisib,Testing required,HCSC,"Annotation of HCSC Label for alpelisib and ERBB2, ESR1, ESR2, PIK3CA",,PIK3CA,drug_label
+atorvastatin,Informative PGx,FDA,Annotation of FDA Label for atorvastatin and SLCO1B1,,SLCO1B1,drug_label
+simvastatin,Informative PGx,FDA,Annotation of FDA Label for simvastatin and SLCO1B1,,SLCO1B1,drug_label
+allopurinol,Testing recommended,FDA,Annotation of FDA Label for allopurinol and HLA-B,,HLA-B,drug_label
+gamma hydroxybutyric acid,Actionable PGx,FDA,Annotation of FDA Label for gamma hydroxybutyric acid and ALDH5A1,,ALDH5A1,drug_label
+tacrolimus,Informative PGx,FDA,Annotation of FDA Label for tacrolimus and CYP3A,,CYP3A,drug_label
+anakinra,Testing required,FDA,Annotation of FDA Label for anakinra and NLRP3,,NLRP3,drug_label
+lumasiran,Testing required,FDA,Annotation of FDA Label for lumasiran and AGXT,,AGXT,drug_label
+margetuximab,Testing required,FDA,Annotation of FDA Label for margetuximab and ERBB2,,ERBB2,drug_label
+metreleptin,Testing required,FDA,Annotation of FDA Label for metreleptin and LEP,,LEP,drug_label
+pralsetinib,Testing required,FDA,Annotation of FDA Label for pralsetinib and RET,,RET,drug_label
+viltolarsen,Testing required,FDA,Annotation of FDA Label for viltolarsen and DMD,,DMD,drug_label
+risdiplam,Testing required,FDA,"Annotation of FDA Label for risdiplam and SMN1, SMN2",,SMN1,drug_label
+risdiplam,Testing required,FDA,"Annotation of FDA Label for risdiplam and SMN1, SMN2",,SMN2,drug_label
+"synthetic conjugated estrogens, A",Actionable PGx,FDA,"Annotation of FDA Label for synthetic conjugated estrogens, A and PROC, PROS1, SERPINC1",,PROC,drug_label
+"synthetic conjugated estrogens, A",Actionable PGx,FDA,"Annotation of FDA Label for synthetic conjugated estrogens, A and PROC, PROS1, SERPINC1",,PROS1,drug_label
+"synthetic conjugated estrogens, A",Actionable PGx,FDA,"Annotation of FDA Label for synthetic conjugated estrogens, A and PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+brivaracetam,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for brivaracetam and CYP2C19, CYP2C9",,CYP2C19,drug_label
+brivaracetam,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for brivaracetam and CYP2C19, CYP2C9",,CYP2C9,drug_label
+fenofibrate; simvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for fenofibrate, simvastatin and SLCO1B1",,SLCO1B1,drug_label
+ombitasvir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ombitasvir / paritaprevir / ritonavir and IFNL3, IFNL4",,IFNL3,drug_label
+ombitasvir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ombitasvir / paritaprevir / ritonavir and IFNL3, IFNL4",,IFNL4,drug_label
+paritaprevir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ombitasvir / paritaprevir / ritonavir and IFNL3, IFNL4",,IFNL3,drug_label
+paritaprevir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ombitasvir / paritaprevir / ritonavir and IFNL3, IFNL4",,IFNL4,drug_label
+ritonavir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ombitasvir / paritaprevir / ritonavir and IFNL3, IFNL4",,IFNL3,drug_label
+ritonavir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ombitasvir / paritaprevir / ritonavir and IFNL3, IFNL4",,IFNL4,drug_label
+prasugrel,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",,CYP2B6,drug_label
+prasugrel,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",,CYP2C19,drug_label
+prasugrel,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",,CYP2C9,drug_label
+prasugrel,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",,CYP3A5,drug_label
+flibanserin,Actionable PGx,FDA,"Annotation of FDA Label for flibanserin and CYP2C19, CYP2C9, CYP2D6",2017-03-15,CYP2C19,drug_label
+flibanserin,Actionable PGx,FDA,"Annotation of FDA Label for flibanserin and CYP2C19, CYP2C9, CYP2D6",2017-03-15,CYP2C9,drug_label
+flibanserin,Actionable PGx,FDA,"Annotation of FDA Label for flibanserin and CYP2C19, CYP2C9, CYP2D6",2017-03-15,CYP2D6,drug_label
+sodium nitrite,Actionable PGx,FDA,"Annotation of FDA Label for sodium nitrite and CYB5R3, G6PD",2019-10-16,CYB5R3,drug_label
+sodium nitrite,Actionable PGx,FDA,"Annotation of FDA Label for sodium nitrite and CYB5R3, G6PD",2019-10-16,G6PD,drug_label
+lidocaine,Actionable PGx,FDA,"Annotation of FDA Label for lidocaine / prilocaine and CYB5R3, G6PD",2019-10-15,CYB5R3,drug_label
+lidocaine,Actionable PGx,FDA,"Annotation of FDA Label for lidocaine / prilocaine and CYB5R3, G6PD",2019-10-15,G6PD,drug_label
+prilocaine,Actionable PGx,FDA,"Annotation of FDA Label for lidocaine / prilocaine and CYB5R3, G6PD",2019-10-15,CYB5R3,drug_label
+prilocaine,Actionable PGx,FDA,"Annotation of FDA Label for lidocaine / prilocaine and CYB5R3, G6PD",2019-10-15,G6PD,drug_label
+acetaminophen; acetaminophen,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for acetaminophen, acetaminophen / tramadol and G6PD",,G6PD,drug_label
+tramadol,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for acetaminophen, acetaminophen / tramadol and G6PD",,G6PD,drug_label
+glimepiride; pioglitazone,Actionable PGx,EMA,"Annotation of EMA Label for glimepiride, pioglitazone and G6PD",2014-05-09,G6PD,drug_label
+warfarin,Actionable PGx,FDA,"Annotation of FDA Label for warfarin and CYP2C9, PROC, PROS1, VKORC1",2020-10-16,CYP2C9,drug_label
+warfarin,Actionable PGx,FDA,"Annotation of FDA Label for warfarin and CYP2C9, PROC, PROS1, VKORC1",2020-10-16,PROC,drug_label
+warfarin,Actionable PGx,FDA,"Annotation of FDA Label for warfarin and CYP2C9, PROC, PROS1, VKORC1",2020-10-16,PROS1,drug_label
+warfarin,Actionable PGx,FDA,"Annotation of FDA Label for warfarin and CYP2C9, PROC, PROS1, VKORC1",2020-10-16,VKORC1,drug_label
+methylene blue,Actionable PGx,EMA,"Annotation of EMA Label for methylene blue and BLVRB, CYB5R3, G6PD",2013-10-27,BLVRB,drug_label
+methylene blue,Actionable PGx,EMA,"Annotation of EMA Label for methylene blue and BLVRB, CYB5R3, G6PD",2013-10-27,CYB5R3,drug_label
+methylene blue,Actionable PGx,EMA,"Annotation of EMA Label for methylene blue and BLVRB, CYB5R3, G6PD",2013-10-27,G6PD,drug_label
+tamoxifen,Testing required,FDA,"Annotation of FDA Label for tamoxifen and ESR1, ESR2, PGR",2017-11-09,ESR1,drug_label
+tamoxifen,Testing required,FDA,"Annotation of FDA Label for tamoxifen and ESR1, ESR2, PGR",2017-11-09,ESR2,drug_label
+tamoxifen,Testing required,FDA,"Annotation of FDA Label for tamoxifen and ESR1, ESR2, PGR",2017-11-09,PGR,drug_label
+phenytoin,Actionable PGx,FDA,"Annotation of FDA Label for phenytoin and CYP2C19, CYP2C9, HLA-B",2019-04-19,CYP2C19,drug_label
+phenytoin,Actionable PGx,FDA,"Annotation of FDA Label for phenytoin and CYP2C19, CYP2C9, HLA-B",2019-04-19,CYP2C9,drug_label
+phenytoin,Actionable PGx,FDA,"Annotation of FDA Label for phenytoin and CYP2C19, CYP2C9, HLA-B",2019-04-19,HLA-B,drug_label
+eltrombopag,Actionable PGx,EMA,"Annotation of EMA Label for eltrombopag and F5, SERPINC1",2013-10-25,F5,drug_label
+eltrombopag,Actionable PGx,EMA,"Annotation of EMA Label for eltrombopag and F5, SERPINC1",2013-10-25,SERPINC1,drug_label
+crizotinib,Testing required,EMA,"Annotation of EMA Label for crizotinib and ALK, ROS1",2013-10-25,ALK,drug_label
+crizotinib,Testing required,EMA,"Annotation of EMA Label for crizotinib and ALK, ROS1",2013-10-25,ROS1,drug_label
+carbamazepine,Testing recommended,HCSC,"Annotation of HCSC Label for carbamazepine and HLA-A, HLA-B",,HLA-A,drug_label
+carbamazepine,Testing recommended,HCSC,"Annotation of HCSC Label for carbamazepine and HLA-A, HLA-B",,HLA-B,drug_label
+ethinyl estradiol,Actionable PGx,EMA,"Annotation of EMA Label for ethinyl estradiol / norelgestromin and F5, PROC, PROS1, SERPINC1",2014-05-08,F5,drug_label
+ethinyl estradiol,Actionable PGx,EMA,"Annotation of EMA Label for ethinyl estradiol / norelgestromin and F5, PROC, PROS1, SERPINC1",2014-05-08,PROC,drug_label
+ethinyl estradiol,Actionable PGx,EMA,"Annotation of EMA Label for ethinyl estradiol / norelgestromin and F5, PROC, PROS1, SERPINC1",2014-05-08,PROS1,drug_label
+ethinyl estradiol,Actionable PGx,EMA,"Annotation of EMA Label for ethinyl estradiol / norelgestromin and F5, PROC, PROS1, SERPINC1",2014-05-08,SERPINC1,drug_label
+norelgestromin,Actionable PGx,EMA,"Annotation of EMA Label for ethinyl estradiol / norelgestromin and F5, PROC, PROS1, SERPINC1",2014-05-08,F5,drug_label
+norelgestromin,Actionable PGx,EMA,"Annotation of EMA Label for ethinyl estradiol / norelgestromin and F5, PROC, PROS1, SERPINC1",2014-05-08,PROC,drug_label
+norelgestromin,Actionable PGx,EMA,"Annotation of EMA Label for ethinyl estradiol / norelgestromin and F5, PROC, PROS1, SERPINC1",2014-05-08,PROS1,drug_label
+norelgestromin,Actionable PGx,EMA,"Annotation of EMA Label for ethinyl estradiol / norelgestromin and F5, PROC, PROS1, SERPINC1",2014-05-08,SERPINC1,drug_label
+nilotinib,Testing required,EMA,"Annotation of EMA Label for nilotinib and ABL1, BCR",2013-10-27,ABL1,drug_label
+nilotinib,Testing required,EMA,"Annotation of EMA Label for nilotinib and ABL1, BCR",2013-10-27,BCR,drug_label
+arsenic trioxide,Testing required,HCSC,"Annotation of HCSC Label for arsenic trioxide and PML, RARA",,PML,drug_label
+arsenic trioxide,Testing required,HCSC,"Annotation of HCSC Label for arsenic trioxide and PML, RARA",,RARA,drug_label
+cetuximab,Testing required,HCSC,"Annotation of HCSC Label for cetuximab and EGFR, KRAS",,EGFR,drug_label
+cetuximab,Testing required,HCSC,"Annotation of HCSC Label for cetuximab and EGFR, KRAS",,KRAS,drug_label
+panitumumab,Testing required,HCSC,"Annotation of HCSC Label for panitumumab and EGFR, KRAS",,EGFR,drug_label
+panitumumab,Testing required,HCSC,"Annotation of HCSC Label for panitumumab and EGFR, KRAS",,KRAS,drug_label
+letrozole,Testing required,FDA,"Annotation of FDA Label for letrozole and ESR1, ESR2, PGR",2013-10-25,ESR1,drug_label
+letrozole,Testing required,FDA,"Annotation of FDA Label for letrozole and ESR1, ESR2, PGR",2013-10-25,ESR2,drug_label
+letrozole,Testing required,FDA,"Annotation of FDA Label for letrozole and ESR1, ESR2, PGR",2013-10-25,PGR,drug_label
+panitumumab,Testing required,FDA,"Annotation of FDA Label for panitumumab and EGFR, KRAS, NRAS",2019-04-16,EGFR,drug_label
+panitumumab,Testing required,FDA,"Annotation of FDA Label for panitumumab and EGFR, KRAS, NRAS",2019-04-16,KRAS,drug_label
+panitumumab,Testing required,FDA,"Annotation of FDA Label for panitumumab and EGFR, KRAS, NRAS",2019-04-16,NRAS,drug_label
+mercaptopurine,Testing recommended,FDA,"Annotation of FDA Label for mercaptopurine and NUDT15, TPMT",2013-10-25,NUDT15,drug_label
+mercaptopurine,Testing recommended,FDA,"Annotation of FDA Label for mercaptopurine and NUDT15, TPMT",2013-10-25,TPMT,drug_label
+tretinoin,Testing required,FDA,"Annotation of FDA Label for tretinoin and PML, RARA",2020-10-13,PML,drug_label
+tretinoin,Testing required,FDA,"Annotation of FDA Label for tretinoin and PML, RARA",2020-10-13,RARA,drug_label
+arsenic trioxide,Testing required,EMA,"Annotation of EMA Label for arsenic trioxide and PML, RARA",2013-10-25,PML,drug_label
+arsenic trioxide,Testing required,EMA,"Annotation of EMA Label for arsenic trioxide and PML, RARA",2013-10-25,RARA,drug_label
+cetuximab,Testing required,FDA,"Annotation of FDA Label for cetuximab and EGFR, KRAS, NRAS",2019-10-21,EGFR,drug_label
+cetuximab,Testing required,FDA,"Annotation of FDA Label for cetuximab and EGFR, KRAS, NRAS",2019-10-21,KRAS,drug_label
+cetuximab,Testing required,FDA,"Annotation of FDA Label for cetuximab and EGFR, KRAS, NRAS",2019-10-21,NRAS,drug_label
+lapatinib,Testing required,EMA,"Annotation of EMA Label for lapatinib and ERBB2, ESR1, ESR2",2013-10-27,ERBB2,drug_label
+lapatinib,Testing required,EMA,"Annotation of EMA Label for lapatinib and ERBB2, ESR1, ESR2",2013-10-27,ESR1,drug_label
+lapatinib,Testing required,EMA,"Annotation of EMA Label for lapatinib and ERBB2, ESR1, ESR2",2013-10-27,ESR2,drug_label
+nilotinib,Testing required,FDA,"Annotation of FDA Label for nilotinib and ABL1, BCR",2016-03-18,ABL1,drug_label
+nilotinib,Testing required,FDA,"Annotation of FDA Label for nilotinib and ABL1, BCR",2016-03-18,BCR,drug_label
+dapsone,Actionable PGx,FDA,"Annotation of FDA Label for dapsone and CYB5R3, G6PD",2019-10-15,CYB5R3,drug_label
+dapsone,Actionable PGx,FDA,"Annotation of FDA Label for dapsone and CYB5R3, G6PD",2019-10-15,G6PD,drug_label
+arsenic trioxide,Testing required,FDA,"Annotation of FDA Label for arsenic trioxide and PML, RARA",2019-10-18,PML,drug_label
+arsenic trioxide,Testing required,FDA,"Annotation of FDA Label for arsenic trioxide and PML, RARA",2019-10-18,RARA,drug_label
+crizotinib,Testing required,FDA,"Annotation of FDA Label for crizotinib and ALK, ROS1",2019-04-25,ALK,drug_label
+crizotinib,Testing required,FDA,"Annotation of FDA Label for crizotinib and ALK, ROS1",2019-04-25,ROS1,drug_label
+sodium phenylbutyrate,Informative PGx,EMA,"Annotation of EMA Label for sodium phenylbutyrate and ASS1, CPS1, OTC",2013-10-29,ASS1,drug_label
+sodium phenylbutyrate,Informative PGx,EMA,"Annotation of EMA Label for sodium phenylbutyrate and ASS1, CPS1, OTC",2013-10-29,CPS1,drug_label
+sodium phenylbutyrate,Informative PGx,EMA,"Annotation of EMA Label for sodium phenylbutyrate and ASS1, CPS1, OTC",2013-10-29,OTC,drug_label
+sulfamethoxazole,Actionable PGx,FDA,"Annotation of FDA Label for sulfamethoxazole / trimethoprim and G6PD, NAT2",2019-10-10,G6PD,drug_label
+sulfamethoxazole,Actionable PGx,FDA,"Annotation of FDA Label for sulfamethoxazole / trimethoprim and G6PD, NAT2",2019-10-10,NAT2,drug_label
+trimethoprim,Actionable PGx,FDA,"Annotation of FDA Label for sulfamethoxazole / trimethoprim and G6PD, NAT2",2019-10-10,G6PD,drug_label
+trimethoprim,Actionable PGx,FDA,"Annotation of FDA Label for sulfamethoxazole / trimethoprim and G6PD, NAT2",2019-10-10,NAT2,drug_label
+doxepin,Actionable PGx,FDA,"Annotation of FDA Label for doxepin and CYP2C19, CYP2D6",2013-10-25,CYP2C19,drug_label
+doxepin,Actionable PGx,FDA,"Annotation of FDA Label for doxepin and CYP2C19, CYP2D6",2013-10-25,CYP2D6,drug_label
+everolimus,Testing required,EMA,"Annotation of EMA Label for everolimus and ERBB2, ESR1, ESR2",2013-10-25,ERBB2,drug_label
+everolimus,Testing required,EMA,"Annotation of EMA Label for everolimus and ERBB2, ESR1, ESR2",2013-10-25,ESR1,drug_label
+everolimus,Testing required,EMA,"Annotation of EMA Label for everolimus and ERBB2, ESR1, ESR2",2013-10-25,ESR2,drug_label
+eltrombopag,Actionable PGx,FDA,"Annotation of FDA Label for eltrombopag and F5, SERPINC1",2020-10-13,F5,drug_label
+eltrombopag,Actionable PGx,FDA,"Annotation of FDA Label for eltrombopag and F5, SERPINC1",2020-10-13,SERPINC1,drug_label
+everolimus,Testing required,FDA,"Annotation of FDA Label for everolimus and ERBB2, ESR1, ESR2",2019-10-10,ERBB2,drug_label
+everolimus,Testing required,FDA,"Annotation of FDA Label for everolimus and ERBB2, ESR1, ESR2",2019-10-10,ESR1,drug_label
+everolimus,Testing required,FDA,"Annotation of FDA Label for everolimus and ERBB2, ESR1, ESR2",2019-10-10,ESR2,drug_label
+dasatinib,Testing required,EMA,"Annotation of EMA Label for dasatinib and ABL1, BCR",2013-10-25,ABL1,drug_label
+dasatinib,Testing required,EMA,"Annotation of EMA Label for dasatinib and ABL1, BCR",2013-10-25,BCR,drug_label
+olanzapine,Informative PGx,EMA,"Annotation of EMA Label for olanzapine and CYP1A2, CYP2D6",2019-12-04,CYP1A2,drug_label
+olanzapine,Informative PGx,EMA,"Annotation of EMA Label for olanzapine and CYP1A2, CYP2D6",2019-12-04,CYP2D6,drug_label
+prasugrel,Informative PGx,FDA,"Annotation of FDA Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",2013-10-25,CYP2B6,drug_label
+prasugrel,Informative PGx,FDA,"Annotation of FDA Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",2013-10-25,CYP2C19,drug_label
+prasugrel,Informative PGx,FDA,"Annotation of FDA Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",2013-10-25,CYP2C9,drug_label
+prasugrel,Informative PGx,FDA,"Annotation of FDA Label for prasugrel and CYP2B6, CYP2C19, CYP2C9, CYP3A5",2013-10-25,CYP3A5,drug_label
+fulvestrant,Testing required,EMA,"Annotation of EMA Label for fulvestrant and ERBB2, ESR1, ESR2, PGR",2013-10-25,ERBB2,drug_label
+fulvestrant,Testing required,EMA,"Annotation of EMA Label for fulvestrant and ERBB2, ESR1, ESR2, PGR",2013-10-25,ESR1,drug_label
+fulvestrant,Testing required,EMA,"Annotation of EMA Label for fulvestrant and ERBB2, ESR1, ESR2, PGR",2013-10-25,ESR2,drug_label
+fulvestrant,Testing required,EMA,"Annotation of EMA Label for fulvestrant and ERBB2, ESR1, ESR2, PGR",2013-10-25,PGR,drug_label
+imatinib,Testing required,EMA,"Annotation of EMA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,ABL1,drug_label
+imatinib,Testing required,EMA,"Annotation of EMA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,BCR,drug_label
+imatinib,Testing required,EMA,"Annotation of EMA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,FIP1L1,drug_label
+imatinib,Testing required,EMA,"Annotation of EMA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,KIT,drug_label
+imatinib,Testing required,EMA,"Annotation of EMA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,PDGFRA,drug_label
+imatinib,Testing required,EMA,"Annotation of EMA Label for imatinib and ABL1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",2013-10-25,PDGFRB,drug_label
+sulfasalazine,Actionable PGx,FDA,"Annotation of FDA Label for sulfasalazine and G6PD, NAT2",2019-10-24,G6PD,drug_label
+sulfasalazine,Actionable PGx,FDA,"Annotation of FDA Label for sulfasalazine and G6PD, NAT2",2019-10-24,NAT2,drug_label
+toremifene,Actionable PGx,EMA,"Annotation of EMA Label for toremifene and ESR1, ESR2",,ESR1,drug_label
+toremifene,Actionable PGx,EMA,"Annotation of EMA Label for toremifene and ESR1, ESR2",,ESR2,drug_label
+talazoparib,Testing required,EMA,"Annotation of EMA Label for talazoparib and BRCA1, BRCA2, ERBB2",,BRCA1,drug_label
+talazoparib,Testing required,EMA,"Annotation of EMA Label for talazoparib and BRCA1, BRCA2, ERBB2",,BRCA2,drug_label
+talazoparib,Testing required,EMA,"Annotation of EMA Label for talazoparib and BRCA1, BRCA2, ERBB2",,ERBB2,drug_label
+olaparib,Testing required,FDA,"Annotation of FDA Label for olaparib and BRCA1, BRCA2, ERBB2",2020-10-09,BRCA1,drug_label
+olaparib,Testing required,FDA,"Annotation of FDA Label for olaparib and BRCA1, BRCA2, ERBB2",2020-10-09,BRCA2,drug_label
+olaparib,Testing required,FDA,"Annotation of FDA Label for olaparib and BRCA1, BRCA2, ERBB2",2020-10-09,ERBB2,drug_label
+avatrombopag,Actionable PGx,FDA,"Annotation of FDA Label for avatrombopag and F2, F5, PROC, PROS1, SERPINC1",2019-10-24,F2,drug_label
+avatrombopag,Actionable PGx,FDA,"Annotation of FDA Label for avatrombopag and F2, F5, PROC, PROS1, SERPINC1",2019-10-24,F5,drug_label
+avatrombopag,Actionable PGx,FDA,"Annotation of FDA Label for avatrombopag and F2, F5, PROC, PROS1, SERPINC1",2019-10-24,PROC,drug_label
+avatrombopag,Actionable PGx,FDA,"Annotation of FDA Label for avatrombopag and F2, F5, PROC, PROS1, SERPINC1",2019-10-24,PROS1,drug_label
+avatrombopag,Actionable PGx,FDA,"Annotation of FDA Label for avatrombopag and F2, F5, PROC, PROS1, SERPINC1",2019-10-24,SERPINC1,drug_label
+chloroprocaine,Actionable PGx,FDA,"Annotation of FDA Label for chloroprocaine and CYB5R3, G6PD",2019-10-15,CYB5R3,drug_label
+chloroprocaine,Actionable PGx,FDA,"Annotation of FDA Label for chloroprocaine and CYB5R3, G6PD",2019-10-15,G6PD,drug_label
+docetaxel,Informative PGx,FDA,"Annotation of FDA Label for docetaxel and ESR1, ESR2, PGR",,ESR1,drug_label
+docetaxel,Informative PGx,FDA,"Annotation of FDA Label for docetaxel and ESR1, ESR2, PGR",,ESR2,drug_label
+docetaxel,Informative PGx,FDA,"Annotation of FDA Label for docetaxel and ESR1, ESR2, PGR",,PGR,drug_label
+ribociclib,Testing required,EMA,"Annotation of EMA Label for ribociclib and ERBB2, ESR1, ESR2, PGR",,ERBB2,drug_label
+ribociclib,Testing required,EMA,"Annotation of EMA Label for ribociclib and ERBB2, ESR1, ESR2, PGR",,ESR1,drug_label
+ribociclib,Testing required,EMA,"Annotation of EMA Label for ribociclib and ERBB2, ESR1, ESR2, PGR",,ESR2,drug_label
+ribociclib,Testing required,EMA,"Annotation of EMA Label for ribociclib and ERBB2, ESR1, ESR2, PGR",,PGR,drug_label
+rucaparib,Informative PGx,FDA,"Annotation of FDA Label for rucaparib and CYP1A2, CYP2D6",2020-10-28,CYP1A2,drug_label
+rucaparib,Informative PGx,FDA,"Annotation of FDA Label for rucaparib and CYP1A2, CYP2D6",2020-10-28,CYP2D6,drug_label
+trametinib,Informative PGx,FDA,"Annotation of FDA Label for trametinib and HRAS, KRAS, NRAS",,HRAS,drug_label
+trametinib,Informative PGx,FDA,"Annotation of FDA Label for trametinib and HRAS, KRAS, NRAS",,KRAS,drug_label
+trametinib,Informative PGx,FDA,"Annotation of FDA Label for trametinib and HRAS, KRAS, NRAS",,NRAS,drug_label
+midostaurin,Informative PGx,FDA,"Annotation of FDA Label for midostaurin and KIT, NPM1",2021-03-16,KIT,drug_label
+midostaurin,Informative PGx,FDA,"Annotation of FDA Label for midostaurin and KIT, NPM1",2021-03-16,NPM1,drug_label
+articaine,Actionable PGx,FDA,"Annotation of FDA Label for articaine / epinephrine and CYB5R3, G6PD",2019-10-24,CYB5R3,drug_label
+articaine,Actionable PGx,FDA,"Annotation of FDA Label for articaine / epinephrine and CYB5R3, G6PD",2019-10-24,G6PD,drug_label
+epinephrine,Actionable PGx,FDA,"Annotation of FDA Label for articaine / epinephrine and CYB5R3, G6PD",2019-10-24,CYB5R3,drug_label
+epinephrine,Actionable PGx,FDA,"Annotation of FDA Label for articaine / epinephrine and CYB5R3, G6PD",2019-10-24,G6PD,drug_label
+ceftriaxone,Actionable PGx,FDA,"Annotation of FDA Label for ceftriaxone and CYB5R3, G6PD",2019-10-24,CYB5R3,drug_label
+ceftriaxone,Actionable PGx,FDA,"Annotation of FDA Label for ceftriaxone and CYB5R3, G6PD",2019-10-24,G6PD,drug_label
+rucaparib,Testing required,FDA,"Annotation of FDA Label for rucaparib and BRCA1, BRCA2",2020-10-28,BRCA1,drug_label
+rucaparib,Testing required,FDA,"Annotation of FDA Label for rucaparib and BRCA1, BRCA2",2020-10-28,BRCA2,drug_label
+venetoclax,Informative PGx,FDA,"Annotation of FDA Label for venetoclax and FLT3, IDH1, IDH2, NPM1, TP53",2019-10-10,FLT3,drug_label
+venetoclax,Informative PGx,FDA,"Annotation of FDA Label for venetoclax and FLT3, IDH1, IDH2, NPM1, TP53",2019-10-10,IDH1,drug_label
+venetoclax,Informative PGx,FDA,"Annotation of FDA Label for venetoclax and FLT3, IDH1, IDH2, NPM1, TP53",2019-10-10,IDH2,drug_label
+venetoclax,Informative PGx,FDA,"Annotation of FDA Label for venetoclax and FLT3, IDH1, IDH2, NPM1, TP53",2019-10-10,NPM1,drug_label
+venetoclax,Informative PGx,FDA,"Annotation of FDA Label for venetoclax and FLT3, IDH1, IDH2, NPM1, TP53",2019-10-10,TP53,drug_label
+ramucirumab,Testing required,FDA,"Annotation of FDA Label for ramucirumab and ALK, EGFR",2020-10-28,ALK,drug_label
+ramucirumab,Testing required,FDA,"Annotation of FDA Label for ramucirumab and ALK, EGFR",2020-10-28,EGFR,drug_label
+tamoxifen,Informative PGx,FDA,"Annotation of FDA Label for tamoxifen and F2, F5",,F2,drug_label
+tamoxifen,Informative PGx,FDA,"Annotation of FDA Label for tamoxifen and F2, F5",,F5,drug_label
+methylene blue,Actionable PGx,PMDA,"Annotation of PMDA Label for methylene blue and BLVRB, G6PD",,BLVRB,drug_label
+methylene blue,Actionable PGx,PMDA,"Annotation of PMDA Label for methylene blue and BLVRB, G6PD",,G6PD,drug_label
+cetuximab,Testing required,PMDA,"Annotation of PMDA Label for cetuximab and EGFR, KRAS",,EGFR,drug_label
+cetuximab,Testing required,PMDA,"Annotation of PMDA Label for cetuximab and EGFR, KRAS",,KRAS,drug_label
+everolimus,Testing required,PMDA,"Annotation of PMDA Label for everolimus and ERBB2, ESR1, ESR2",,ERBB2,drug_label
+everolimus,Testing required,PMDA,"Annotation of PMDA Label for everolimus and ERBB2, ESR1, ESR2",,ESR1,drug_label
+everolimus,Testing required,PMDA,"Annotation of PMDA Label for everolimus and ERBB2, ESR1, ESR2",,ESR2,drug_label
+abemaciclib,Testing required,EMA,"Annotation of EMA Label for abemaciclib and ERBB2, ESR1, ESR2, PGR",,ERBB2,drug_label
+abemaciclib,Testing required,EMA,"Annotation of EMA Label for abemaciclib and ERBB2, ESR1, ESR2, PGR",,ESR1,drug_label
+abemaciclib,Testing required,EMA,"Annotation of EMA Label for abemaciclib and ERBB2, ESR1, ESR2, PGR",,ESR2,drug_label
+abemaciclib,Testing required,EMA,"Annotation of EMA Label for abemaciclib and ERBB2, ESR1, ESR2, PGR",,PGR,drug_label
+tolterodine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for tolterodine and CYP2D6, CYP3A4",,CYP2D6,drug_label
+tolterodine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for tolterodine and CYP2D6, CYP3A4",,CYP3A4,drug_label
+ospemifene,Informative PGx,FDA,"Annotation of FDA Label for ospemifene and CYP2B6, CYP2C9",,CYP2B6,drug_label
+ospemifene,Informative PGx,FDA,"Annotation of FDA Label for ospemifene and CYP2B6, CYP2C9",,CYP2C9,drug_label
+cholic acid,Testing required,FDA,"Annotation of FDA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, DHCR7, HSD3B7",2019-04-25,AKR1D1,drug_label
+cholic acid,Testing required,FDA,"Annotation of FDA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, DHCR7, HSD3B7",2019-04-25,AMACR,drug_label
+cholic acid,Testing required,FDA,"Annotation of FDA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, DHCR7, HSD3B7",2019-04-25,CYP27A1,drug_label
+cholic acid,Testing required,FDA,"Annotation of FDA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, DHCR7, HSD3B7",2019-04-25,CYP7A1,drug_label
+cholic acid,Testing required,FDA,"Annotation of FDA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, DHCR7, HSD3B7",2019-04-25,DHCR7,drug_label
+cholic acid,Testing required,FDA,"Annotation of FDA Label for cholic acid and AKR1D1, AMACR, CYP27A1, CYP7A1, DHCR7, HSD3B7",2019-04-25,HSD3B7,drug_label
+atezolizumab,Testing required,FDA,"Annotation of FDA Label for atezolizumab and ALK, BRAF, CD274, EGFR",2021-03-29,ALK,drug_label
+atezolizumab,Testing required,FDA,"Annotation of FDA Label for atezolizumab and ALK, BRAF, CD274, EGFR",2021-03-29,BRAF,drug_label
+atezolizumab,Testing required,FDA,"Annotation of FDA Label for atezolizumab and ALK, BRAF, CD274, EGFR",2021-03-29,CD274,drug_label
+atezolizumab,Testing required,FDA,"Annotation of FDA Label for atezolizumab and ALK, BRAF, CD274, EGFR",2021-03-29,EGFR,drug_label
+arsenic trioxide,Testing required,PMDA,"Annotation of PMDA Label for arsenic trioxide and PML, RARA",,PML,drug_label
+arsenic trioxide,Testing required,PMDA,"Annotation of PMDA Label for arsenic trioxide and PML, RARA",,RARA,drug_label
+carbamazepine,Actionable PGx,PMDA,"Annotation of PMDA Label for carbamazepine and HLA-A, HLA-B",,HLA-A,drug_label
+carbamazepine,Actionable PGx,PMDA,"Annotation of PMDA Label for carbamazepine and HLA-A, HLA-B",,HLA-B,drug_label
+fulvestrant,Testing required,PMDA,"Annotation of PMDA Label for fulvestrant and ESR1, ESR2",,ESR1,drug_label
+fulvestrant,Testing required,PMDA,"Annotation of PMDA Label for fulvestrant and ESR1, ESR2",,ESR2,drug_label
+gefitinib,Testing required,PMDA,"Annotation of PMDA Label for gefitinib and CYP2D6, EGFR",,CYP2D6,drug_label
+gefitinib,Testing required,PMDA,"Annotation of PMDA Label for gefitinib and CYP2D6, EGFR",,EGFR,drug_label
+imatinib,Testing required,PMDA,"Annotation of PMDA Label for imatinib and ABL1, BCR",,ABL1,drug_label
+imatinib,Testing required,PMDA,"Annotation of PMDA Label for imatinib and ABL1, BCR",,BCR,drug_label
+lapatinib,Testing required,PMDA,"Annotation of PMDA Label for lapatinib and ERBB2, HLA-DQA1, HLA-DRB1",,ERBB2,drug_label
+lapatinib,Testing required,PMDA,"Annotation of PMDA Label for lapatinib and ERBB2, HLA-DQA1, HLA-DRB1",,HLA-DQA1,drug_label
+lapatinib,Testing required,PMDA,"Annotation of PMDA Label for lapatinib and ERBB2, HLA-DQA1, HLA-DRB1",,HLA-DRB1,drug_label
+tretinoin,Informative PGx,PMDA,"Annotation of PMDA Label for tretinoin and PML, RARA",,PML,drug_label
+tretinoin,Informative PGx,PMDA,"Annotation of PMDA Label for tretinoin and PML, RARA",,RARA,drug_label
+valproic acid,Actionable PGx,PMDA,"Annotation of PMDA Label for valproic acid and CPS1, OTC",,CPS1,drug_label
+valproic acid,Actionable PGx,PMDA,"Annotation of PMDA Label for valproic acid and CPS1, OTC",,OTC,drug_label
+valproic acid,Actionable PGx,HCSC,"Annotation of HCSC Label for valproic acid and OTC, POLG",,OTC,drug_label
+valproic acid,Actionable PGx,HCSC,"Annotation of HCSC Label for valproic acid and OTC, POLG",,POLG,drug_label
+ritonavir,Informative PGx,EMA,"Annotation of EMA Label for ritonavir and CYP2D6, CYP3A4",2019-12-04,CYP2D6,drug_label
+ritonavir,Informative PGx,EMA,"Annotation of EMA Label for ritonavir and CYP2D6, CYP3A4",2019-12-04,CYP3A4,drug_label
+dasatinib,Testing required,HCSC,"Annotation of HCSC Label for dasatinib and ABI1, BCR",,ABI1,drug_label
+dasatinib,Testing required,HCSC,"Annotation of HCSC Label for dasatinib and ABI1, BCR",,BCR,drug_label
+drospirenone,Actionable PGx,HCSC,"Annotation of HCSC Label for drospirenone / ethinyl estradiol and F5, PROC, PROS1, SERPINC1",,F5,drug_label
+drospirenone,Actionable PGx,HCSC,"Annotation of HCSC Label for drospirenone / ethinyl estradiol and F5, PROC, PROS1, SERPINC1",,PROC,drug_label
+drospirenone,Actionable PGx,HCSC,"Annotation of HCSC Label for drospirenone / ethinyl estradiol and F5, PROC, PROS1, SERPINC1",,PROS1,drug_label
+drospirenone,Actionable PGx,HCSC,"Annotation of HCSC Label for drospirenone / ethinyl estradiol and F5, PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for drospirenone / ethinyl estradiol and F5, PROC, PROS1, SERPINC1",,F5,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for drospirenone / ethinyl estradiol and F5, PROC, PROS1, SERPINC1",,PROC,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for drospirenone / ethinyl estradiol and F5, PROC, PROS1, SERPINC1",,PROS1,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for drospirenone / ethinyl estradiol and F5, PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+eltrombopag,Actionable PGx,HCSC,"Annotation of HCSC Label for eltrombopag and F5, SERPINC1",,F5,drug_label
+eltrombopag,Actionable PGx,HCSC,"Annotation of HCSC Label for eltrombopag and F5, SERPINC1",,SERPINC1,drug_label
+everolimus,Testing required,HCSC,"Annotation of HCSC Label for everolimus and ERBB2, ESR1, ESR2",,ERBB2,drug_label
+everolimus,Testing required,HCSC,"Annotation of HCSC Label for everolimus and ERBB2, ESR1, ESR2",,ESR1,drug_label
+everolimus,Testing required,HCSC,"Annotation of HCSC Label for everolimus and ERBB2, ESR1, ESR2",,ESR2,drug_label
+exemestane,Testing required,HCSC,"Annotation of HCSC Label for exemestane and ESR1, ESR2",,ESR1,drug_label
+exemestane,Testing required,HCSC,"Annotation of HCSC Label for exemestane and ESR1, ESR2",,ESR2,drug_label
+sodium phenylbutyrate,Testing required,HCSC,"Annotation of HCSC Label for sodium phenylbutyrate and ASS1, CPS1, OTC",,ASS1,drug_label
+sodium phenylbutyrate,Testing required,HCSC,"Annotation of HCSC Label for sodium phenylbutyrate and ASS1, CPS1, OTC",,CPS1,drug_label
+sodium phenylbutyrate,Testing required,HCSC,"Annotation of HCSC Label for sodium phenylbutyrate and ASS1, CPS1, OTC",,OTC,drug_label
+imatinib,Testing required,HCSC,"Annotation of HCSC Label for imatinib and ABI1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",,ABI1,drug_label
+imatinib,Testing required,HCSC,"Annotation of HCSC Label for imatinib and ABI1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",,BCR,drug_label
+imatinib,Testing required,HCSC,"Annotation of HCSC Label for imatinib and ABI1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",,FIP1L1,drug_label
+imatinib,Testing required,HCSC,"Annotation of HCSC Label for imatinib and ABI1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",,KIT,drug_label
+imatinib,Testing required,HCSC,"Annotation of HCSC Label for imatinib and ABI1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",,PDGFRA,drug_label
+imatinib,Testing required,HCSC,"Annotation of HCSC Label for imatinib and ABI1, BCR, FIP1L1, KIT, PDGFRA, PDGFRB",,PDGFRB,drug_label
+lapatinib,Testing required,HCSC,"Annotation of HCSC Label for lapatinib and ERBB2, HLA-DQA1, HLA-DRB1",,ERBB2,drug_label
+lapatinib,Testing required,HCSC,"Annotation of HCSC Label for lapatinib and ERBB2, HLA-DQA1, HLA-DRB1",,HLA-DQA1,drug_label
+lapatinib,Testing required,HCSC,"Annotation of HCSC Label for lapatinib and ERBB2, HLA-DQA1, HLA-DRB1",,HLA-DRB1,drug_label
+letrozole,Testing required,HCSC,"Annotation of HCSC Label for letrozole and ESR1, ESR2, PGR",,ESR1,drug_label
+letrozole,Testing required,HCSC,"Annotation of HCSC Label for letrozole and ESR1, ESR2, PGR",,ESR2,drug_label
+letrozole,Testing required,HCSC,"Annotation of HCSC Label for letrozole and ESR1, ESR2, PGR",,PGR,drug_label
+nilotinib,Testing required,HCSC,"Annotation of HCSC Label for nilotinib and ABI1, BCR",2016-03-28,ABI1,drug_label
+nilotinib,Testing required,HCSC,"Annotation of HCSC Label for nilotinib and ABI1, BCR",2016-03-28,BCR,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,F2,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,F5,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,MTHFR,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,PROC,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,PROS1,drug_label
+ethinyl estradiol,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+norelgestromin,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,F2,drug_label
+norelgestromin,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,F5,drug_label
+norelgestromin,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,MTHFR,drug_label
+norelgestromin,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,PROC,drug_label
+norelgestromin,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,PROS1,drug_label
+norelgestromin,Actionable PGx,HCSC,"Annotation of HCSC Label for ethinyl estradiol / norelgestromin and F2, F5, MTHFR, PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+givosiran,Informative PGx,FDA,"Annotation of FDA Label for givosiran and CPOX, HMBS, PPOX",,CPOX,drug_label
+givosiran,Informative PGx,FDA,"Annotation of FDA Label for givosiran and CPOX, HMBS, PPOX",,HMBS,drug_label
+givosiran,Informative PGx,FDA,"Annotation of FDA Label for givosiran and CPOX, HMBS, PPOX",,PPOX,drug_label
+ipilimumab,Testing required,FDA,"Annotation of FDA Label for ipilimumab and ALK, CD274, EGFR",2020-10-09,ALK,drug_label
+ipilimumab,Testing required,FDA,"Annotation of FDA Label for ipilimumab and ALK, CD274, EGFR",2020-10-09,CD274,drug_label
+ipilimumab,Testing required,FDA,"Annotation of FDA Label for ipilimumab and ALK, CD274, EGFR",2020-10-09,EGFR,drug_label
+nivolumab,Testing required,FDA,"Annotation of FDA Label for nivolumab and ALK, CD274, EGFR",2020-10-28,ALK,drug_label
+nivolumab,Testing required,FDA,"Annotation of FDA Label for nivolumab and ALK, CD274, EGFR",2020-10-28,CD274,drug_label
+nivolumab,Testing required,FDA,"Annotation of FDA Label for nivolumab and ALK, CD274, EGFR",2020-10-28,EGFR,drug_label
+erdafitinib,Testing required,FDA,"Annotation of FDA Label for erdafitinib and FGFR2, FGFR3",2019-10-09,FGFR2,drug_label
+erdafitinib,Testing required,FDA,"Annotation of FDA Label for erdafitinib and FGFR2, FGFR3",2019-10-09,FGFR3,drug_label
+isoflurane,Actionable PGx,FDA,"Annotation of FDA Label for isoflurane and CACNA1S, RYR1",2019-10-10,CACNA1S,drug_label
+isoflurane,Actionable PGx,FDA,"Annotation of FDA Label for isoflurane and CACNA1S, RYR1",2019-10-10,RYR1,drug_label
+quinine,Actionable PGx,FDA,"Annotation of FDA Label for quinine and CYP2D6, G6PD",2019-10-24,CYP2D6,drug_label
+quinine,Actionable PGx,FDA,"Annotation of FDA Label for quinine and CYP2D6, G6PD",2019-10-24,G6PD,drug_label
+ribociclib,Testing required,FDA,"Annotation of FDA Label for ribociclib and ERBB2, ESR1, ESR2, PGR",,ERBB2,drug_label
+ribociclib,Testing required,FDA,"Annotation of FDA Label for ribociclib and ERBB2, ESR1, ESR2, PGR",,ESR1,drug_label
+ribociclib,Testing required,FDA,"Annotation of FDA Label for ribociclib and ERBB2, ESR1, ESR2, PGR",,ESR2,drug_label
+ribociclib,Testing required,FDA,"Annotation of FDA Label for ribociclib and ERBB2, ESR1, ESR2, PGR",,PGR,drug_label
+encorafenib,Actionable PGx,FDA,"Annotation of FDA Label for encorafenib and HRAS, KRAS, NRAS",,HRAS,drug_label
+encorafenib,Actionable PGx,FDA,"Annotation of FDA Label for encorafenib and HRAS, KRAS, NRAS",,KRAS,drug_label
+encorafenib,Actionable PGx,FDA,"Annotation of FDA Label for encorafenib and HRAS, KRAS, NRAS",,NRAS,drug_label
+mercaptopurine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for mercaptopurine and NUDT15, TPMT",,NUDT15,drug_label
+mercaptopurine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for mercaptopurine and NUDT15, TPMT",,TPMT,drug_label
+lonafarnib,Testing required,FDA,"Annotation of FDA Label for lonafarnib and LMNA, ZMPSTE24",,LMNA,drug_label
+lonafarnib,Testing required,FDA,"Annotation of FDA Label for lonafarnib and LMNA, ZMPSTE24",,ZMPSTE24,drug_label
+margetuximab,Informative PGx,FDA,"Annotation of FDA Label for margetuximab and FCGR2A, FCGR2B, FCGR3A",,FCGR2A,drug_label
+margetuximab,Informative PGx,FDA,"Annotation of FDA Label for margetuximab and FCGR2A, FCGR2B, FCGR3A",,FCGR2B,drug_label
+margetuximab,Informative PGx,FDA,"Annotation of FDA Label for margetuximab and FCGR2A, FCGR2B, FCGR3A",,FCGR3A,drug_label
+satralizumab,Informative PGx,FDA,"Annotation of FDA Label for satralizumab and AQP4, IL6R",,AQP4,drug_label
+satralizumab,Informative PGx,FDA,"Annotation of FDA Label for satralizumab and AQP4, IL6R",,IL6R,drug_label
+bupivacaine,Actionable PGx,FDA,"Annotation of FDA Label for bupivacaine and CYB5R3, G6PD",,CYB5R3,drug_label
+bupivacaine,Actionable PGx,FDA,"Annotation of FDA Label for bupivacaine and CYB5R3, G6PD",,G6PD,drug_label
+setmelanotide,Testing required,FDA,"Annotation of FDA Label for setmelanotide and LEPR, PCSK1, POMC",,LEPR,drug_label
+setmelanotide,Testing required,FDA,"Annotation of FDA Label for setmelanotide and LEPR, PCSK1, POMC",,PCSK1,drug_label
+setmelanotide,Testing required,FDA,"Annotation of FDA Label for setmelanotide and LEPR, PCSK1, POMC",,POMC,drug_label
+avatrombopag,Actionable PGx,EMA,"Annotation of EMA Label for avatrombopag and CYP2C9, F2, F5, PROC, PROS1, SERPINC1",,CYP2C9,drug_label
+avatrombopag,Actionable PGx,EMA,"Annotation of EMA Label for avatrombopag and CYP2C9, F2, F5, PROC, PROS1, SERPINC1",,F2,drug_label
+avatrombopag,Actionable PGx,EMA,"Annotation of EMA Label for avatrombopag and CYP2C9, F2, F5, PROC, PROS1, SERPINC1",,F5,drug_label
+avatrombopag,Actionable PGx,EMA,"Annotation of EMA Label for avatrombopag and CYP2C9, F2, F5, PROC, PROS1, SERPINC1",,PROC,drug_label
+avatrombopag,Actionable PGx,EMA,"Annotation of EMA Label for avatrombopag and CYP2C9, F2, F5, PROC, PROS1, SERPINC1",,PROS1,drug_label
+avatrombopag,Actionable PGx,EMA,"Annotation of EMA Label for avatrombopag and CYP2C9, F2, F5, PROC, PROS1, SERPINC1",,SERPINC1,drug_label
+acetaminophen,Actionable PGx,FDA,Annotation of FDA Label for acetaminophen / caffeine / dihydrocodeine and CYP2D6,,CYP2D6,drug_label
+caffeine,Actionable PGx,FDA,Annotation of FDA Label for acetaminophen / caffeine / dihydrocodeine and CYP2D6,,CYP2D6,drug_label
+dihydrocodeine,Actionable PGx,FDA,Annotation of FDA Label for acetaminophen / caffeine / dihydrocodeine and CYP2D6,,CYP2D6,drug_label
+sotorasib,Testing required,FDA,Annotation of FDA Label for sotorasib and KRAS,,KRAS,drug_label

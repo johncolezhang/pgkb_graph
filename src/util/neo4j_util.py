@@ -26,10 +26,11 @@ class neo4jUtil:
             cypher_statement = cypher_statement + ":" + label
         cypher_statement = cypher_statement + " {" + node_ID + ":\"" + str(node_ID_value) + "\"})" + "\n"
         cypher_statement = cypher_statement + "SET n += {"
+        # add node property
         for key in property_dict.keys():
             property_value = property_dict[key]
-            if property_value == "":
-                continue
+            # if property_value == "":
+            #     continue
             cypher_statement = cypher_statement + key + ":\"" + str(property_value) + "\", "
         cypher_statement = cypher_statement[:-2]
         cypher_statement = cypher_statement + "}\n"
@@ -41,6 +42,7 @@ class neo4jUtil:
         end_node = edge_info['end_node']
         edge = edge_info['edge']
         cypher_statement = "MATCH (s"
+        # match node
         if "label" in start_node.keys():
             label = start_node["label"]
             if type(label) == list:
@@ -68,14 +70,15 @@ class neo4jUtil:
         cypher_statement = cypher_statement[:-3] + "\nMERGE\n(s) -[r:"
         edge_label = edge["label"]
         cypher_statement = cypher_statement + edge_label
+        # add property for edge
         if "property" in edge.keys():
             edge_property = edge["property"]
             if len(edge_property) > 0:
                 cypher_statement = cypher_statement + " {"
                 for key in edge_property.keys():
                     value = edge_property[key]
-                    if value == "":
-                        continue
+                    # if value == "":
+                    #     continue
                     cypher_statement = cypher_statement + key + ":\"" + value + "\","
                 cypher_statement = cypher_statement[:-1] + "}"
         cypher_statement = cypher_statement + "]-> (e)"

@@ -1,0 +1,188 @@
+drug,label,organization,name,update_date,variant,data_source
+carbamazepine,Testing required,Swissmedic,Annotation of Swissmedic Label for carbamazepine and HLA-B,,HLA-B*15:02:01,drug_label
+dolutegravir,Testing required,Swissmedic,Annotation of Swissmedic Label for dolutegravir / abacavir / lamivudine and HLA-B,,HLA-B*57:01,drug_label
+amlodipine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for amlodipine / atorvastatin / perindopril arginine and G6PD, SLCO1B1",,rs4149056,drug_label
+oxcarbazepine,Testing required,Swissmedic,Annotation of Swissmedic Label for oxcarbazepine and HLA-B,,HLA-B*15:02:01,drug_label
+pazopanib,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for pazopanib and HLA-B,,HLA-B*15:02:01,drug_label
+lesinurad,Actionable PGx,EMA,Annotation of EMA Label for lesinurad and CYP2C9,,CYP2C9*1,drug_label
+lesinurad,Actionable PGx,EMA,Annotation of EMA Label for lesinurad and CYP2C9,,CYP2C9*3,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19*1,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19*2,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19*3,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19*4,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19*5,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19*6,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19*7,drug_label
+clopidogrel,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for clopidogrel and CYP2C19,2019-11-05,CYP2C19*8,drug_label
+efavirenz,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for efavirenz and CYP2B6,,CYP2B6*1,drug_label
+efavirenz,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for efavirenz and CYP2B6,,CYP2B6*6,drug_label
+efavirenz,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for efavirenz and CYP2B6,,rs3745274,drug_label
+ezetimibe,Testing recommended,Swissmedic,Annotation of Swissmedic Label for ezetimibe / simvastatin and SLCO1B1,,rs4149056,drug_label
+fluorouracil,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for fluorouracil and TYMS,,rs45445694,drug_label
+lamivudine,Testing required,Swissmedic,Annotation of Swissmedic Label for lamivudine / abacavir and HLA-B,2020-06-18,HLA-B*57:01,drug_label
+ezetimibe,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ezetimibe / rosuvastatin and ABCG2, SLCO1B1",,rs2231142,drug_label
+ezetimibe,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ezetimibe / rosuvastatin and ABCG2, SLCO1B1",,rs4149056,drug_label
+lapatinib,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for lapatinib and HLA-DQA1, HLA-DRB1",,HLA-DQA1*02:01,drug_label
+lapatinib,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for lapatinib and HLA-DQA1, HLA-DRB1",,HLA-DRB1*07:01:01:01,drug_label
+simvastatin,Testing recommended,Swissmedic,Annotation of Swissmedic Label for simvastatin and SLCO1B1,,rs4149056,drug_label
+letermovir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for letermovir and SLCO1B1, UGT1A1",,rs2306283,drug_label
+letermovir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for letermovir and SLCO1B1, UGT1A1",,rs4148323,drug_label
+letermovir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for letermovir and SLCO1B1, UGT1A1",,rs4149032,drug_label
+letermovir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for letermovir and SLCO1B1, UGT1A1",,rs4149056,drug_label
+letermovir,Informative PGx,Swissmedic,"Annotation of Swissmedic Label for letermovir and SLCO1B1, UGT1A1",,UGT1A1*28,drug_label
+simeprevir,Informative PGx,FDA,Annotation of FDA Label for simeprevir and IFNL3,2014-07-14,rs12979860,drug_label
+ponatinib,Testing required,FDA,"Annotation of FDA Label for ponatinib and ABL1, BCR",2019-04-19,rs121913459,drug_label
+efavirenz,Actionable PGx,FDA,Annotation of FDA Label for efavirenz and CYP2B6,,CYP2B6*6,drug_label
+pazopanib,Actionable PGx,EMA,Annotation of EMA Label for pazopanib and HLA-B,2014-06-05,HLA-B*57:01:01,drug_label
+telaprevir,Actionable PGx,FDA,Annotation of FDA Label for telaprevir and IFNL3,2013-10-25,rs12979860,drug_label
+trametinib,Testing required,FDA,Annotation of FDA Label for trametinib and BRAF,2017-11-09,rs113488022,drug_label
+vemurafenib,Testing required,FDA,Annotation of FDA Label for vemurafenib and BRAF,2017-11-10,rs113488022,drug_label
+irinotecan,Actionable PGx,FDA,Annotation of FDA Label for irinotecan and UGT1A1,2013-10-25,UGT1A1*28,drug_label
+pembrolizumab,Informative PGx,FDA,Annotation of FDA Label for pembrolizumab and BRAF,2019-04-19,rs113488022,drug_label
+erlotinib,Testing required,FDA,Annotation of FDA Label for erlotinib and EGFR,2013-10-25,rs121434568,drug_label
+gefitinib,Testing required,FDA,Annotation of FDA Label for gefitinib and EGFR,2017-11-09,rs121434568,drug_label
+rosuvastatin,Actionable PGx,FDA,Annotation of FDA Label for rosuvastatin and SLCO1B1,2017-03-15,rs4149056,drug_label
+boceprevir,Informative PGx,FDA,Annotation of FDA Label for boceprevir and IFNL3,2013-10-25,rs12979860,drug_label
+afatinib,Testing required,FDA,Annotation of FDA Label for afatinib and EGFR,2019-04-11,rs121434568,drug_label
+peginterferon alfa-2b,Actionable PGx,FDA,Annotation of FDA Label for peginterferon alfa-2b and IFNL3,2019-04-19,rs12979860,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs113993958,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs115545701,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs11971167,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs121908752,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs121908753,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs121908755,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs121908757,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs121909013,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs121909020,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs121909041,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs141033578,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs150212784,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs186045772,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs193922525,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs200321110,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs202179988,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs267606723,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs368505753,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs397508256,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs397508288,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs397508387,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs397508442,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs397508513,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs397508537,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs397508761,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs74503330,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs74551128,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs75039782,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs75527207,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs75541969,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs76151804,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs77834169,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs77932196,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs78655421,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs78769542,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs80224560,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor and CFTR,2020-10-07,rs80282562,drug_label
+abacavir,Testing required,FDA,Annotation of FDA Label for abacavir and HLA-B,2019-05-08,HLA-B*57:01:01,drug_label
+celecoxib,Actionable PGx,FDA,Annotation of FDA Label for celecoxib and CYP2C9,2021-02-05,CYP2C9*3,drug_label
+abacavir,Testing required,EMA,Annotation of EMA Label for abacavir and HLA-B,2013-10-15,HLA-B*57:01:01,drug_label
+raltegravir,Informative PGx,FDA,Annotation of FDA Label for raltegravir and UGT1A1,2019-04-23,UGT1A1*28,drug_label
+pazopanib,Actionable PGx,FDA,"Annotation of FDA Label for pazopanib and HLA-B, UGT1A1",2019-04-19,HLA-B*57:01:01,drug_label
+pazopanib,Actionable PGx,FDA,"Annotation of FDA Label for pazopanib and HLA-B, UGT1A1",2019-04-19,UGT1A1*28,drug_label
+mercaptopurine,Actionable PGx,EMA,"Annotation of EMA Label for mercaptopurine and NUDT15, TPMT",2013-10-27,rs116855232,drug_label
+sofosbuvir,Informative PGx,FDA,Annotation of FDA Label for sofosbuvir and IFNL3,2014-07-14,rs12979860,drug_label
+lapatinib,Actionable PGx,FDA,"Annotation of FDA Label for lapatinib and HLA-DQA1, HLA-DRB1",2020-08-24,HLA-DQA1*02:01,drug_label
+lapatinib,Actionable PGx,FDA,"Annotation of FDA Label for lapatinib and HLA-DQA1, HLA-DRB1",2020-08-24,HLA-DRB1*07:01:01:01,drug_label
+nivolumab,Informative PGx,FDA,Annotation of FDA Label for nivolumab and BRAF,2020-10-28,rs113488022,drug_label
+elagolix,Actionable PGx,FDA,Annotation of FDA Label for elagolix and SLCO1B1,,rs4149056,drug_label
+acenocoumarol,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for acenocoumarol and CYP2C9,,CYP2C9*2,drug_label
+acenocoumarol,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for acenocoumarol and CYP2C9,,CYP2C9*3,drug_label
+maraviroc,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for maraviroc and CYP3A5,,CYP3A5*1,drug_label
+dacomitinib,Testing required,FDA,Annotation of FDA Label for dacomitinib and EGFR,,rs121434568,drug_label
+abacavir,Testing required,Swissmedic,Annotation of Swissmedic Label for abacavir and HLA-B,,HLA-B*57:01:01,drug_label
+binimetinib,Testing required,EMA,Annotation of EMA Label for binimetinib and BRAF,,rs113488022,drug_label
+fosphenytoin,Actionable PGx,FDA,Annotation of FDA Label for fosphenytoin and HLA-B,2019-05-17,HLA-B*15:02:01,drug_label
+allopurinol,Informative PGx,PMDA,Annotation of PMDA Label for allopurinol and HLA-B,,HLA-B*58:01,drug_label
+ipilimumab,Informative PGx,FDA,Annotation of FDA Label for ipilimumab and HLA-A,2019-05-14,HLA-A*02:01,drug_label
+sofosbuvir,Informative PGx,FDA,Annotation of FDA Label for sofosbuvir / velpatasvir and IFNL3,,rs12979860,drug_label
+allopurinol,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for allopurinol and HLA-B,,HLA-B*58:01,drug_label
+lapatinib,Actionable PGx,EMA,"Annotation of EMA Label for lapatinib and HLA-DQA1, HLA-DRB1",,HLA-DQA1*02:01,drug_label
+lapatinib,Actionable PGx,EMA,"Annotation of EMA Label for lapatinib and HLA-DQA1, HLA-DRB1",,HLA-DRB1*07:01:01:01,drug_label
+erdafitinib,Actionable PGx,FDA,Annotation of FDA Label for erdafitinib and CYP2C9,2019-10-09,CYP2C9*3,drug_label
+binimetinib,Testing required,FDA,Annotation of FDA Label for binimetinib and BRAF,2019-05-09,rs113488022,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs113993958,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs113993960,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs115545701,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs11971167,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs121908752,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs121908753,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs121909020,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs141033578,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs150212784,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs186045772,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs202179988,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs368505753,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs397508256,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs397508288,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs397508387,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs397508442,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs397508513,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs397508537,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs397508759,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs397508761,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs74551128,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs75039782,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs75541969,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs76151804,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs77834169,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / tezacaftor and CFTR,2021-02-05,rs77932196,drug_label
+ivacaftor,Testing required,FDA,Annotation of FDA Label for ivacaftor / lumacaftor and CFTR,2021-02-05,rs113993960,drug_label
+carbamazepine,Testing recommended,Swissmedic,Annotation of Swissmedic Label for carbamazepine and HLA-A,,HLA-A*31:01:02,drug_label
+celecoxib,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for celecoxib and CYP2C9,,CYP2C9*1,drug_label
+celecoxib,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for celecoxib and CYP2C9,,CYP2C9*3,drug_label
+flucloxacillin,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for flucloxacillin and HLA-B,,HLA-B*57:01,drug_label
+indacaterol,Informative PGx,Swissmedic,Annotation of Swissmedic Label for indacaterol and UGT1A1,,UGT1A1*28,drug_label
+irinotecan,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for irinotecan and UGT1A1,,UGT1A1*28,drug_label
+lesinurad,Informative PGx,Swissmedic,Annotation of Swissmedic Label for lesinurad and CYP2C9,,CYP2C9*1,drug_label
+lesinurad,Informative PGx,Swissmedic,Annotation of Swissmedic Label for lesinurad and CYP2C9,,CYP2C9*3,drug_label
+efavirenz,Actionable PGx,EMA,Annotation of EMA Label for efavirenz and CYP2B6,,CYP2B6*1,drug_label
+efavirenz,Actionable PGx,EMA,Annotation of EMA Label for efavirenz and CYP2B6,,CYP2B6*6,drug_label
+efavirenz,Actionable PGx,EMA,Annotation of EMA Label for efavirenz and CYP2B6,,rs3745274,drug_label
+phenytoin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for phenytoin and CYP2C9, HLA-B",,HLA-B*15:02:01,drug_label
+piroxicam,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for piroxicam and CYP2C9,,CYP2C9*2,drug_label
+piroxicam,Actionable PGx,Swissmedic,Annotation of Swissmedic Label for piroxicam and CYP2C9,,CYP2C9*3,drug_label
+zidovudine,Testing required,Swissmedic,Annotation of Swissmedic Label for zidovudine / lamivudine / abacavir and HLA-B,,HLA-B*57:01,drug_label
+afatinib,Testing required,HCSC,Annotation of HCSC Label for afatinib and EGFR,2019-05-08,rs121434568,drug_label
+meloxicam,Actionable PGx,FDA,Annotation of FDA Label for meloxicam and CYP2C9,2020-02-11,CYP2C9*2,drug_label
+meloxicam,Actionable PGx,FDA,Annotation of FDA Label for meloxicam and CYP2C9,2020-02-11,CYP2C9*3,drug_label
+elexacaftor,Testing required,FDA,Annotation of FDA Label for elexacaftor / tezacaftor / ivacaftor and CFTR,,rs113993960,drug_label
+elexacaftor,Testing required,FDA,Annotation of FDA Label for elexacaftor / tezacaftor / ivacaftor and CFTR,,rs199826652,drug_label
+cobimetinib,Testing required,FDA,Annotation of FDA Label for cobimetinib and BRAF,2019-04-25,rs113488022,drug_label
+dabrafenib,Testing required,FDA,Annotation of FDA Label for dabrafenib and BRAF,2019-04-29,rs113488022,drug_label
+encorafenib,Testing required,FDA,Annotation of FDA Label for encorafenib and BRAF,,rs113488022,drug_label
+osimertinib,Testing required,FDA,Annotation of FDA Label for osimertinib and EGFR,2019-04-16,rs121434568,drug_label
+osimertinib,Testing required,FDA,Annotation of FDA Label for osimertinib and EGFR,2019-04-16,rs121434569,drug_label
+oxcarbazepine,Testing recommended,FDA,Annotation of FDA Label for oxcarbazepine and HLA-B,2019-04-16,HLA-B*15:02:01,drug_label
+rosuvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for rosuvastatin and ABCG2, SLCO1B1",,rs2231142,drug_label
+rosuvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for rosuvastatin and ABCG2, SLCO1B1",,rs4149056,drug_label
+sofosbuvir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for sofosbuvir and IFNL3, IFNL4",,rs12979860,drug_label
+siponimod,Testing required,FDA,Annotation of FDA Label for siponimod and CYP2C9,2020-07-21,CYP2C9*2,drug_label
+siponimod,Testing required,FDA,Annotation of FDA Label for siponimod and CYP2C9,2020-07-21,CYP2C9*3,drug_label
+ibrutinib,Informative PGx,FDA,Annotation of FDA Label for ibrutinib and MYD88,,rs387907272,drug_label
+sacituzumab govitecan-hziy,Actionable PGx,FDA,Annotation of FDA Label for sacituzumab govitecan-hziy and UGT1A1,,UGT1A1*28,drug_label
+allopurinol,Testing recommended,FDA,Annotation of FDA Label for allopurinol and HLA-B,,HLA-B*58:01,drug_label
+pralsetinib,Testing required,FDA,Annotation of FDA Label for pralsetinib and RET,,rs74799832,drug_label
+pralsetinib,Testing required,FDA,Annotation of FDA Label for pralsetinib and RET,,rs77709286,drug_label
+fenofibrate; simvastatin,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for fenofibrate, simvastatin and SLCO1B1",,rs4149056,drug_label
+ombitasvir,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for ombitasvir / paritaprevir / ritonavir and IFNL3, IFNL4",,rs12979860,drug_label
+warfarin,Actionable PGx,FDA,"Annotation of FDA Label for warfarin and CYP2C9, PROC, PROS1, VKORC1",2020-10-16,CYP2C9*1,drug_label
+warfarin,Actionable PGx,FDA,"Annotation of FDA Label for warfarin and CYP2C9, PROC, PROS1, VKORC1",2020-10-16,CYP2C9*2,drug_label
+warfarin,Actionable PGx,FDA,"Annotation of FDA Label for warfarin and CYP2C9, PROC, PROS1, VKORC1",2020-10-16,CYP2C9*3,drug_label
+warfarin,Actionable PGx,FDA,"Annotation of FDA Label for warfarin and CYP2C9, PROC, PROS1, VKORC1",2020-10-16,rs9923231,drug_label
+phenytoin,Actionable PGx,FDA,"Annotation of FDA Label for phenytoin and CYP2C19, CYP2C9, HLA-B",2019-04-19,HLA-B*15:02:01,drug_label
+atezolizumab,Testing required,FDA,"Annotation of FDA Label for atezolizumab and ALK, BRAF, CD274, EGFR",2021-03-29,rs113488022,drug_label
+mercaptopurine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for mercaptopurine and NUDT15, TPMT",,TPMT*2,drug_label
+mercaptopurine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for mercaptopurine and NUDT15, TPMT",,TPMT*3A,drug_label
+mercaptopurine,Actionable PGx,Swissmedic,"Annotation of Swissmedic Label for mercaptopurine and NUDT15, TPMT",,TPMT*3C,drug_label
+avatrombopag,Actionable PGx,EMA,"Annotation of EMA Label for avatrombopag and CYP2C9, F2, F5, PROC, PROS1, SERPINC1",,CYP2C9*2,drug_label
+avatrombopag,Actionable PGx,EMA,"Annotation of EMA Label for avatrombopag and CYP2C9, F2, F5, PROC, PROS1, SERPINC1",,CYP2C9*3,drug_label
+sotorasib,Testing required,FDA,Annotation of FDA Label for sotorasib and KRAS,,rs121913530,drug_label
