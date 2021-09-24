@@ -6,27 +6,40 @@ import os
 import json
 from collections import defaultdict
 import re
+import fnmatch
 
 class variantMappingUtil:
     def __init__(self):
         ############################### handle gene ####################################
         df_gene = pd.read_csv(
-            "D:\\pgkb_graph\\genes\\genes.tsv",
+            "genes/genes.tsv",
             sep='\t',
             error_bad_lines=False
         ).fillna("")[["Symbol", "Chromosome"]]
         self.gene_chromosome_dict = dict(zip(list(df_gene["Symbol"].values),
                                              list(df_gene["Chromosome"].values)))
 
+        # parse gene data update date
+        self.gene_update_date = ""
+        for x in os.listdir("genes"):
+            if "CREATED" in x:
+                self.gene_update_date = x.split("_")[1].split(".")[0]
+
         ############################### handle rsID ####################################
         # TODO file creation date is from variants folder
         df_variants = pd.read_csv(
-            'D:\\pgkb_graph\\variants\\variants.tsv',
+            'variants/variants.tsv',
             sep='\t',
             error_bad_lines=False
         ).fillna("")
         df_variants = df_variants[["Variant ID", "Variant Name", "Gene Symbols",
                                    "Location", "Synonyms"]]
+
+        # parse rsID update date
+        self.rsID_update_date = ""
+        for x in os.listdir("variants"):
+            if "CREATED" in x:
+                self.rsID_update_date = x.split("_")[1].split(".")[0]
 
         self.data_change_dict = defaultdict(dict)
         self.variant_gene_dict = defaultdict(list)
@@ -122,7 +135,7 @@ class variantMappingUtil:
         # }
 
         ############################# handle allele definition ##############
-        allele_definition_folder = "D:\\pgkb_graph\\allele_definition"
+        allele_definition_folder = "allele_definition"
         allele_definition_path_dict = {}
         for path in os.listdir(allele_definition_folder):
             gene = path.split("_")[0]
@@ -136,7 +149,7 @@ class variantMappingUtil:
             self.genes.append(key)
 
         ############################# handle diplotype ######################
-        diplotype_folder = "D:\\pgkb_graph\\diplotype"
+        diplotype_folder = "diplotype"
         self.diplotype_genes = ["CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5",
                                 "DPYD", "NUDT15", "SLCO1B1", "TPMT", "UGT1A1"]
 
@@ -156,7 +169,7 @@ class variantMappingUtil:
             self.data_change_dict[key]["diplotype"] = self.parse_latest_update_date(value)
 
         ############################# handle frequency #####################
-        frequency_folder = "D:\\pgkb_graph\\frequency"
+        frequency_folder = "frequency"
 
         self.frequency_genes = ["CACNA1S", "CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5", "CYP4F2",
                                 "DPYD", "HLA-A", "HLA-B", "MT-RNR1", "NUDT15", "RYR1", "SLCO1B1", "TPMT",
@@ -175,7 +188,7 @@ class variantMappingUtil:
             self.data_change_dict[key]["frequency"] = self.parse_latest_update_date(value)
 
         ############################### handle functionality #################
-        functionality_folder = "D:\\pgkb_graph\\functionality"
+        functionality_folder = "functionality"
 
         self.functionality_genes = ["CACNA1S", "CYP2B6", "CYP2C9", "CYP2C19", "CYP2D6", "CYP3A5",
                                     "DPYD", "MT-RNR1", "NUDT15", "RYR1", "SLCO1B1", "TPMT",
@@ -726,7 +739,7 @@ def test_diplotype():
 
 def generate_diplotype():
     v_mapping = variantMappingUtil()
-    v_mapping.generate_diplotype_relation(output_path="../../processed/diplotype_annotation.csv")
+    v_mapping.generate_diplotype_relation(output_path="processed/diplotype_annotation.csv")
 
 if __name__ == "__main__":
     test_haplotype()

@@ -40,7 +40,7 @@ def handle_clinical_csv():
     edge_list = []
 
     df = pd.read_csv(
-        "../processed/clinical_drug_variant_annotation.csv",
+        "processed/clinical_drug_variant_annotation.csv",
         encoding="utf-8",
         dtype=str
     ).fillna("")
@@ -50,6 +50,7 @@ def handle_clinical_csv():
         variant_type = check_type(row["variant"])
         if variant_type == "rsID":
             mapping_dict = v_mapping.rsID_mapping(row["variant"])
+            mapping_dict["update_date"] = v_mapping.rsID_update_date
             gene_list = v_mapping.variant_gene_dict.get(row["variant"], [])
             chromosome_list = [v_mapping.gene_chromosome_dict.get(x, "") for x in gene_list]
 
@@ -75,7 +76,8 @@ def handle_clinical_csv():
                 "property": {
                     "gene_name": gene_list[i],
                     "display": gene_list[i],
-                    "chromosome": chromosome_list[i]
+                    "chromosome": chromosome_list[i],
+                    "update_date": v_mapping.gene_update_date
                 }
             })
         node_list.extend(gene_node_list)
@@ -98,6 +100,7 @@ def handle_clinical_csv():
                 "protein_change_code": mapping_dict.get("protein", ""),
                 "nucleotide_change_code": mapping_dict.get("nucleotide", ""),
                 "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
+                "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
                 "functionality": str(mapping_dict.get("functionality", ""))
             }
@@ -174,7 +177,7 @@ def handle_variant_drug_label_csv():
     edge_list = []
 
     df = pd.read_csv(
-        "../processed/drug_variant_label.csv",
+        "processed/drug_variant_label.csv",
         encoding="utf-8",
         dtype=str
     ).fillna("")
@@ -184,6 +187,7 @@ def handle_variant_drug_label_csv():
         variant_type = check_type(row["variant"])
         if variant_type == "rsID":
             mapping_dict = v_mapping.rsID_mapping(row["variant"])
+            mapping_dict["update_date"] = v_mapping.rsID_update_date
             gene_list = v_mapping.variant_gene_dict.get(row["variant"], [])
             chromosome_list = [v_mapping.gene_chromosome_dict.get(x, "") for x in gene_list]
 
@@ -210,7 +214,8 @@ def handle_variant_drug_label_csv():
                 "property": {
                     "gene_name": gene_list[i],
                     "display": gene_list[i],
-                    "chromosome": chromosome_list[i]
+                    "chromosome": chromosome_list[i],
+                    "update_date": v_mapping.gene_update_date
                 }
             })
         node_list.extend(gene_node_list)
@@ -232,6 +237,7 @@ def handle_variant_drug_label_csv():
                 "protein_change_code": mapping_dict.get("protein", ""),
                 "nucleotide_change_code": mapping_dict.get("nucleotide", ""),
                 "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
+                "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
                 "functionality": str(mapping_dict.get("functionality", ""))
             }
@@ -307,7 +313,7 @@ def handle_gene_drug_label_csv():
     edge_list = []
 
     df = pd.read_csv(
-        "../processed/drug_gene_label.csv",
+        "processed/drug_gene_label.csv",
         encoding="utf-8",
         dtype=str
     ).fillna("")
@@ -369,7 +375,7 @@ def handle_guideline_csv():
     edge_list = []
 
     df = pd.read_csv(
-        "../processed/guideline_drug_variant_annotation.csv",
+        "processed/guideline_drug_variant_annotation.csv",
         encoding="utf-8",
         dtype=str
     ).fillna("")
@@ -379,6 +385,7 @@ def handle_guideline_csv():
         variant_type = check_type(row["haplotype"])
         if variant_type == "rsID":
             mapping_dict = v_mapping.rsID_mapping(row["haplotype"])
+            mapping_dict["update_date"] = v_mapping.rsID_update_date
             gene_list = v_mapping.variant_gene_dict.get(row["haplotype"], [])
             chromosome_list = [v_mapping.gene_chromosome_dict.get(x, "") for x in gene_list]
 
@@ -405,7 +412,8 @@ def handle_guideline_csv():
                 "property": {
                     "gene_name": gene_list[i],
                     "display": gene_list[i],
-                    "chromosome": chromosome_list[i]
+                    "chromosome": chromosome_list[i],
+                    "update_date": v_mapping.gene_update_date
                 }
             })
         node_list.extend(gene_node_list)
@@ -422,6 +430,7 @@ def handle_guideline_csv():
                 "protein_change_code": mapping_dict.get("protein", ""),
                 "nucleotide_change_code": mapping_dict.get("nucleotide", ""),
                 "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
+                "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
                 "functionality": str(mapping_dict.get("functionality", ""))
             }
@@ -483,6 +492,7 @@ def handle_guideline_csv():
                     "guideline_institute": row["guideline_institute"],
                     "guideline_name": row["guideline_name"],
                     "guideline_term": row["term"],
+                    "update_date": row["update_date"]
                 }
             }
         }
@@ -496,7 +506,7 @@ def handle_research_csv():
     edge_list = []
 
     df = pd.read_csv(
-        "../processed/research_drug_variant_annotation.csv",
+        "processed/research_drug_variant_annotation.csv",
         encoding="utf-8",
         dtype=str
     ).fillna("")
@@ -506,6 +516,7 @@ def handle_research_csv():
         variant_type = check_type(row["variant"])
         if variant_type == "rsID":
             mapping_dict = v_mapping.rsID_mapping(row["variant"])
+            mapping_dict["update_date"] = v_mapping.rsID_update_date
             gene_list = v_mapping.variant_gene_dict.get(row["variant"], [])
             # gene_list = list(set(v_mapping.genes).intersection(set(gene_list)))
             chromosome_list = [v_mapping.gene_chromosome_dict.get(x, "") for x in gene_list]
@@ -533,7 +544,8 @@ def handle_research_csv():
                 "property": {
                     "gene_name": gene_list[i],
                     "display": gene_list[i],
-                    "chromosome": chromosome_list[i]
+                    "chromosome": chromosome_list[i],
+                    "update_date": v_mapping.gene_update_date
                 }
             })
         node_list.extend(gene_node_list)
@@ -555,6 +567,7 @@ def handle_research_csv():
                 "protein_change_code": mapping_dict.get("protein", ""),
                 "nucleotide_change_code": mapping_dict.get("nucleotide", ""),
                 "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
+                "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
                 "functionality": str(mapping_dict.get("functionality", ""))
             }
@@ -618,14 +631,15 @@ def handle_research_csv():
                     "bio_geo_group": row["bio_geo_group"],
                     "PMID": row["PMID"],
                     "note": row["note"].replace("\"", "'"),
-                    "sentence": row["sentence"].replace("\"", "'")
+                    "sentence": row["sentence"].replace("\"", "'"),
+                    "update_date": row["update_date"]
                 }
             }
         }
         edge_list.append(relation_edge)
 
     df = pd.read_csv(
-        "../processed/research_drug_diplotype_annotation.csv",
+        "processed/research_drug_diplotype_annotation.csv",
         encoding="utf-8",
         dtype=str
     ).fillna("")
@@ -661,6 +675,7 @@ def handle_research_csv():
                 "ehr_notation": dip_mapping_dict.get("ehr_notation", ""),
                 "activity_score": dip_mapping_dict.get("activity_score", ""),
                 "consultation": dip_mapping_dict.get("consultation", ""),
+                "update_date": dip_mapping_dict.get("update_date", ""),
                 "frequency": str(dip_mapping_dict.get("frequency", ""))
             }
         }
@@ -678,6 +693,7 @@ def handle_research_csv():
                 "protein_change_code": hap1_mapping_dict.get("protein", ""),
                 "nucleotide_change_code": hap1_mapping_dict.get("nucleotide", ""),
                 "mapped_rsID": ",".join(hap1_mapping_dict.get("rsID", [])),
+                "update_date": hap1_mapping_dict.get("update_date", ""),
                 "frequency": str(hap1_mapping_dict.get("frequency", "")),
                 "functionality": str(hap1_mapping_dict.get("functionality", ""))
             }
@@ -691,11 +707,12 @@ def handle_research_csv():
                 "variant_name": variant_2,
                 "display": variant_2,
                 "type": "haplotype",
-                "NC_change_code": hap1_mapping_dict.get("NC", ""),
-                "NG_change_code": hap1_mapping_dict.get("NG", ""),
-                "protein_change_code": hap1_mapping_dict.get("protein", ""),
-                "nucleotide_change_code": hap1_mapping_dict.get("nucleotide", ""),
-                "mapped_rsID": ",".join(hap1_mapping_dict.get("rsID", [])),
+                "NC_change_code": hap2_mapping_dict.get("NC", ""),
+                "NG_change_code": hap2_mapping_dict.get("NG", ""),
+                "protein_change_code": hap2_mapping_dict.get("protein", ""),
+                "nucleotide_change_code": hap2_mapping_dict.get("nucleotide", ""),
+                "mapped_rsID": ",".join(hap2_mapping_dict.get("rsID", [])),
+                "update_date": hap2_mapping_dict.get("update_date", ""),
                 "frequency": str(hap2_mapping_dict.get("frequency", "")),
                 "functionality": str(hap2_mapping_dict.get("functionality", ""))
             }
@@ -773,7 +790,8 @@ def handle_research_csv():
                     "bio_geo_group": row["bio_geo_group"],
                     "PMID": row["PMID"],
                     "note": row["note"].replace("\"", "'"),
-                    "sentence": row["sentence"].replace("\"", "'")
+                    "sentence": row["sentence"].replace("\"", "'"),
+                    "update_date": row["update_date"]
                 }
             }
         }
@@ -803,6 +821,7 @@ if __name__ == "__main__":
     edge_list.extend(gene_label_edge_list)
     edge_list.extend(guideline_edge_list)
     edge_list.extend(research_edge_list)
+    edge_list.extend(research_edge_list)
     print(len(edge_list))
 
     # deduplicate variant->gene edge data, and add to edge list
@@ -813,8 +832,8 @@ if __name__ == "__main__":
             edge_list.append(x[2])
     print(len(edge_list))
 
-    with open("../json/nodes.json", "w") as f:
+    with open("json/nodes.json", "w") as f:
         json.dump(node_list, f)
 
-    with open("../json/edges.json", "w") as f:
+    with open("json/edges.json", "w") as f:
         json.dump(edge_list, f)
