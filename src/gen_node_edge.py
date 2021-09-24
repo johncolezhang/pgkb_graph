@@ -630,6 +630,7 @@ def handle_research_csv():
                     "phenotype_category": row["phenotype_category"],
                     "bio_geo_group": row["bio_geo_group"],
                     "PMID": row["PMID"],
+                    "PMID_link": row["PMID_link"],
                     "note": row["note"].replace("\"", "'"),
                     "sentence": row["sentence"].replace("\"", "'"),
                     "update_date": row["update_date"]
@@ -789,6 +790,7 @@ def handle_research_csv():
                     "phenotype_category": row["phenotype_category"],
                     "bio_geo_group": row["bio_geo_group"],
                     "PMID": row["PMID"],
+                    "PMID_link": row["PMID_link"],
                     "note": row["note"].replace("\"", "'"),
                     "sentence": row["sentence"].replace("\"", "'"),
                     "update_date": row["update_date"]
@@ -799,7 +801,8 @@ def handle_research_csv():
 
     return node_list, edge_list
 
-if __name__ == "__main__":
+
+def step3_gen_node_edge():
     node_list = []
     edge_list = []
 
@@ -837,3 +840,7 @@ if __name__ == "__main__":
 
     with open("json/edges.json", "w") as f:
         json.dump(edge_list, f)
+
+
+if __name__ == "__main__":
+    step3_gen_node_edge()

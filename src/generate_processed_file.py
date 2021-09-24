@@ -222,6 +222,7 @@ def generate_research_file():
         phenotype = row["Phenotype Category"]
         phenotype_list = set([x.replace("\"", "").strip() for x in phenotype.split(",")])
         PMID = row["PMID"]
+        PMID_link = "https://pubmed.ncbi.nlm.nih.gov/{}/".format(PMID)
         note = row["Notes"]
         sentence = row["Sentence"]
         biogeo_group = row["Biogeographical Groups"].replace("\"", "'")
@@ -234,34 +235,40 @@ def generate_research_file():
                         if "/" in dip:
                             diplotype = "{} {}".format(row["Gene"], dip)
                             diplotype_drug_research_list.append(
-                                (d, p, p_value, biogeo_group, PMID, note, sentence, diplotype))
+                                (d, p, p_value, biogeo_group, PMID, PMID_link, note, sentence, diplotype))
         else:
             for d in drug_list:
                 for v in variant_list:
                     for p in phenotype_list:
-                        variant_drug_research_list.append((d, p, p_value, biogeo_group, PMID, note, sentence, v))
+                        variant_drug_research_list.append((d, p, p_value, biogeo_group, PMID, PMID_link, note, sentence, v))
 
-    pd.DataFrame(variant_drug_research_list,
-                 columns=["drug", "phenotype_category", "p_value", "bio_geo_group", "PMID", "note", "sentence",
-                          "variant"]
-                 ).assign(
-                 data_source=["research"] * len(variant_drug_research_list)
-                          ).assign(
-                 update_date=[research_update_date] * len(variant_drug_research_list)
+    pd.DataFrame(
+        variant_drug_research_list,
+        columns=["drug", "phenotype_category", "p_value",
+                 "bio_geo_group", "PMID", "PMID_link", "note", "sentence", "variant"]
+    ).assign(
+        data_source=["research"] * len(variant_drug_research_list)
+    ).assign(
+        update_date=[research_update_date] * len(variant_drug_research_list)
     ).to_csv("processed/research_drug_variant_annotation.csv", index=False)
 
-    pd.DataFrame(diplotype_drug_research_list,
-                 columns=["drug", "phenotype_category", "p_value", "bio_geo_group", "PMID", "note", "sentence",
-                          "diplotype"]
-                 ).assign(
-                 data_source=["research"] * len(diplotype_drug_research_list)
-                          ).assign(
-                 update_date=[research_update_date] * len(diplotype_drug_research_list)
+    pd.DataFrame(
+        diplotype_drug_research_list,
+        columns=["drug", "phenotype_category", "p_value",
+                 "bio_geo_group", "PMID", "PMID_link", "note", "sentence",
+                 "diplotype"]
+    ).assign(
+        data_source=["research"] * len(diplotype_drug_research_list)
+    ).assign(
+        update_date=[research_update_date] * len(diplotype_drug_research_list)
     ).to_csv("processed/research_drug_diplotype_annotation.csv", index=False)
 
 
-if __name__ == "__main__":
+def step2_generate_file():
     generate_clinical_file()
     generate_drug_label_file()
     generate_guideline_file()
     generate_research_file()
+
+if __name__ == "__main__":
+    step2_generate_file()

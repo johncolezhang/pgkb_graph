@@ -6,7 +6,7 @@ import os
 import json
 from collections import defaultdict
 import re
-import fnmatch
+from datetime import datetime
 
 class variantMappingUtil:
     def __init__(self):
@@ -229,7 +229,7 @@ class variantMappingUtil:
 
                 for col in df_change.columns:
                     if "date" in col.lower():
-                        return list(df_change[col].values)[-1]
+                        return list(filter(lambda x: x != "", list(df_change[col].values)))[-1]
         return ""
 
 
@@ -452,15 +452,15 @@ class variantMappingUtil:
         gene, h_type = self.get_gene_h_type(haplotype)
 
         if gene not in self.genes:
-            return {}
+            return {"update_date": datetime.now().strftime("%Y-%m-%d")}
 
         # standard type
         if self.standard_haplotype_dict[gene] == h_type:
-            return {}
+            return {"update_date": datetime.now().strftime("%Y-%m-%d")}
 
         # check header
         if h_type not in self.gene_df_T_dict[gene].columns:
-            return {}
+            return {"update_date": datetime.now().strftime("%Y-%m-%d")}
 
         h_type_list = list(self.gene_df_T_dict[gene][h_type].values)
 
@@ -513,7 +513,7 @@ class variantMappingUtil:
             update_date = self.data_change_dict[gene]["allele_definition"]
         except:
             update_date = ""
-        mapping_dict["update_date"] = update_date
+        mapping_dict["update_date"] = update_date if update_date != "" else datetime.now().strftime("%Y-%m-%d")
 
         return mapping_dict
 
@@ -534,9 +534,9 @@ class variantMappingUtil:
         d_type = "".join(d_list[1:])
 
         if gene not in self.gene_diplotype_dict.keys():
-            return {}
+            return {"update_date": datetime.now().strftime("%Y-%m-%d")}
         if d_type not in self.gene_diplotype_dict[gene].keys():
-            return {}
+            return {"update_date": datetime.now().strftime("%Y-%m-%d")}
 
         try:
             update_date = self.data_change_dict[gene]["diplotype"]
@@ -550,7 +550,7 @@ class variantMappingUtil:
             "consultation": self.gene_phenotype_dict[gene].get(
                 self.gene_diplotype_dict[gene][d_type]["phenotype"].strip(),
                 {}).get("consultation", ""),
-            "update_date": update_date
+            "update_date": update_date if update_date != "" else datetime.now().strftime("%Y-%m-%d")
         }
 
     def generate_diplotype_relation(self, output_path):
@@ -615,7 +615,7 @@ class variantMappingUtil:
             update_date = self.data_change_dict[gene]["frequency"]
         except:
             update_date = ""
-        haplotype_freq_dict["update_date"] = update_date
+        haplotype_freq_dict["update_date"] = update_date if update_date != "" else datetime.now().strftime("%Y-%m-%d")
 
         return haplotype_freq_dict
 
@@ -643,7 +643,7 @@ class variantMappingUtil:
             update_date = self.data_change_dict[gene]["frequency"]
         except:
             update_date = ""
-        diplotype_freq_dict["update_date"] = update_date
+        diplotype_freq_dict["update_date"] = update_date if update_date != "" else datetime.now().strftime("%Y-%m-%d")
         return diplotype_freq_dict
 
 
@@ -678,7 +678,7 @@ class variantMappingUtil:
             return {}
         else:
             try:
-                update_date = self.data_change_dict[gene]["frequency"]
+                update_date = self.data_change_dict[gene]["functionality"]
             except:
                 update_date = ""
 
@@ -735,13 +735,15 @@ def test_diplotype():
     print(v_mapping.diplotype_frequency_mapping("CYP2B6 *1/*50"))
 
     print(v_mapping.gene_diplotype_dict["CYP2B6"]["*1/*4"])
-
+    print(v_mapping.diplotype_mapping("CYP2B6 *1/*4"))
+    print(v_mapping.diplotype_mapping("CYP2C9 *1/*2"))
+    print(v_mapping.diplotype_mapping("CYP2D6 *1/*10"))
+    print(v_mapping.diplotype_mapping("CYP3A4 *1G/*1G"))
 
 def generate_diplotype():
     v_mapping = variantMappingUtil()
     v_mapping.generate_diplotype_relation(output_path="processed/diplotype_annotation.csv")
 
 if __name__ == "__main__":
-    test_haplotype()
-    # generate_diplotype()
-    # test_diplotype()
+    # test_haplotype()
+    test_diplotype()

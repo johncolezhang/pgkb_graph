@@ -284,8 +284,7 @@ def download_variants():
 
     os.remove(os.path.join(folder, filename))
 
-
-if __name__ == "__main__":
+def step1_download():
     download_allele_definition()
     download_clinical_annotation()
     download_diplotype()
@@ -296,3 +295,6 @@ if __name__ == "__main__":
     download_guideline_annotation()
     download_variant_annotation()
     download_variants()
+
+if __name__ == "__main__":
+    step1_download()
