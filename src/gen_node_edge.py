@@ -39,7 +39,6 @@ gene_variant_edge_list = []
 
 
 def handle_clinical_csv():
-    # TODO file creation date is from clinical_annotation folder
     node_list = []
     edge_list = []
 
@@ -180,7 +179,6 @@ def handle_clinical_csv():
 
 
 def handle_variant_drug_label_csv():
-    # TODO file creation date is from drug_label folder
     node_list = []
     edge_list = []
 
@@ -430,8 +428,13 @@ def handle_guideline_csv():
             })
         node_list.extend(gene_node_list)
 
+        if variant_type == "rsID":
+            variant_label = ["variant", "rsID"]
+        else:
+            variant_label = ["variant", "haplotype"]
+
         variant_node = {
-            "label": ["variant"],
+            "label": variant_label,
             "node_ID": "variant_name",
             "property": {
                 "variant_name": row["haplotype"],
@@ -985,6 +988,52 @@ def handle_research_csv():
     return node_list, edge_list
 
 
+def handle_haplotype_rsID_edge(all_node_list):
+    haplotype_node_list = []
+    edge_list = []
+
+    for node in all_node_list:
+        if "haplotype" in node["label"]:
+            haplotype_node_list.append(node)
+
+    edge_set = []
+    for node in haplotype_node_list:
+        rsID_list = [x.strip() for x in node["property"]["mapped_rsID"].split(",")]
+        if len(list(filter(lambda x: x != "", rsID_list))) == 0:
+            continue
+
+        for rsID in rsID_list:
+            if "{}{}".format(node["property"]["variant_name"], rsID) in edge_set:
+                continue
+            else:
+                edge_set.append("{}{}".format(node["property"]["variant_name"], rsID))
+
+            relation_edge = {
+                "start_node": {
+                    "label": ["haplotype"],
+                    "node_ID": "variant_name",
+                    "property": {
+                        "variant_name": node["property"]["variant_name"],
+                        "type": "haplotype"
+                    }
+                },
+                "end_node": {
+                    "label": ["rsID"],
+                    "node_ID": "variant_name",
+                    "property": {
+                        "variant_name": rsID,
+                        "type": "rsID"
+                    }
+                },
+                "edge": {
+                    "label": "haplotype_rsID_related",
+                    "property": {}
+                }
+            }
+            edge_list.append(relation_edge)
+    return edge_list
+
+
 def step3_gen_node_edge():
     node_list = []
     edge_list = []
@@ -1018,6 +1067,10 @@ def step3_gen_node_edge():
         if x[0] + x[1] not in list(judge_set):
             judge_set.add(x[0] + x[1])
             edge_list.append(x[2])
+    print(len(edge_list))
+
+    # handle haplotype to rsID edge data.
+    edge_list.extend(handle_haplotype_rsID_edge(node_list))
     print(len(edge_list))
 
     # back up node and edge file with datetime string suffix
