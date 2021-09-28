@@ -284,6 +284,55 @@ def download_variants():
 
     os.remove(os.path.join(folder, filename))
 
+
+def download_chemical():
+    chemical_link = "https://api.pharmgkb.org/v1/download/file/data/chemicals.zip"
+    filename = chemical_link.split("/")[-1]
+
+    # move older folder to bak folder, and delete old one.
+    folder = "chemicals"
+    bak_folder = os.path.join("bak", folder)
+    if os.path.isdir(folder):
+        if os.path.isdir(bak_folder):
+            shutil.rmtree(bak_folder)
+        shutil.copytree(folder, bak_folder)
+        shutil.rmtree(folder)
+    os.mkdir(folder)
+
+    content = requests.get(chemical_link).content
+    with open(os.path.join(folder, filename), "wb") as f:
+        f.write(content)
+
+    with zipfile.ZipFile(os.path.join(folder, filename), "r") as zip_ref:
+        zip_ref.extractall(folder)
+
+    os.remove(os.path.join(folder, filename))
+
+
+def download_drug():
+    drug_link = "https://api.pharmgkb.org/v1/download/file/data/drugs.zip"
+    filename = drug_link.split("/")[-1]
+
+    # move older folder to bak folder, and delete old one.
+    folder = "drugs"
+    bak_folder = os.path.join("bak", folder)
+    if os.path.isdir(folder):
+        if os.path.isdir(bak_folder):
+            shutil.rmtree(bak_folder)
+        shutil.copytree(folder, bak_folder)
+        shutil.rmtree(folder)
+    os.mkdir(folder)
+
+    content = requests.get(drug_link).content
+    with open(os.path.join(folder, filename), "wb") as f:
+        f.write(content)
+
+    with zipfile.ZipFile(os.path.join(folder, filename), "r") as zip_ref:
+        zip_ref.extractall(folder)
+
+    os.remove(os.path.join(folder, filename))
+
+
 def step1_download():
     download_allele_definition()
     download_clinical_annotation()
@@ -295,6 +344,8 @@ def step1_download():
     download_guideline_annotation()
     download_variant_annotation()
     download_variants()
+    download_chemical()
+    download_drug()
 
 if __name__ == "__main__":
     step1_download()

@@ -5,6 +5,7 @@ import pandas as pd
 import os
 import json
 import re
+from bs4 import BeautifulSoup
 
 def generate_clinical_file():
     # parse clinical update date
@@ -35,18 +36,19 @@ def generate_clinical_file():
         phenotype_category = row["Phenotype Category"]
         phenotype = row["Phenotype(s)"]
         update_date = row["Latest History Date (YYYY-MM-DD)"]
+        link = "https://www.pharmgkb.org/clinicalAnnotation/{}".format(row["Clinical Annotation ID"])
 
         drug = row["Drug(s)"]
         drug_list = [x.strip() for x in re.split(r";|,|/", drug)]
 
         for v in variant_list:
             for d in drug_list:
-                variant_drug_list.append((v, level, phenotype_category, phenotype, update_date, d))
+                variant_drug_list.append((v, level, phenotype_category, phenotype, update_date, d, link))
 
     variant_drug_list = list(set(variant_drug_list))
     df_clinical_drug_variant_annotation = pd.DataFrame(
         variant_drug_list,
-        columns=["variant", "evidence_level", "phenotype_category", "phenotype", "update_date", "drug"])
+        columns=["variant", "evidence_level", "phenotype_category", "phenotype", "update_date", "drug", "link"])
 
     df_clinical_drug_variant_annotation = df_clinical_drug_variant_annotation.assign(
         data_source=["clinical_annotation"] * len(variant_drug_list)).assign(
@@ -80,30 +82,305 @@ def generate_drug_label_file():
         level = row["Testing Level"]
         name = row["Name"]
         update_date = row["Latest History Date (YYYY-MM-DD)"]
+        link = "https://www.pharmgkb.org/labelAnnotation/{}".format(row["PharmGKB ID"])
 
         for c in chemical_list:
             for g in gene_list:
-                drug_gene_label_list.append((c, level, source, name, update_date, g))
+                drug_gene_label_list.append((c, level, source, name, update_date, g, link))
 
             for v in variant_list:
-                drug_variant_label_list.append((c, level, source, name, update_date, v))
+                drug_variant_label_list.append((c, level, source, name, update_date, v, link))
 
     df_dl_gene = pd.DataFrame(
         drug_gene_label_list,
-        columns=["drug", "label", "organization", "name", "update_date", "gene"]).assign(
+        columns=["drug", "label", "organization", "name", "update_date", "gene", "link"]).assign(
         data_source=["drug_label"] * len(drug_gene_label_list)).assign(
         update_date=[drug_label_update_date] * len(drug_gene_label_list)
     )
 
     df_dl_variant = pd.DataFrame(
         drug_variant_label_list,
-        columns=["drug", "label", "organization", "name", "update_date", "variant"]).assign(
+        columns=["drug", "label", "organization", "name", "update_date", "variant", "link"]).assign(
         data_source=["drug_label"] * len(drug_variant_label_list)).assign(
         update_date=[drug_label_update_date] * len(drug_variant_label_list)
     )
 
     df_dl_gene.to_csv("processed/drug_gene_label.csv", index=False)
     df_dl_variant.to_csv("processed/drug_variant_label.csv", index=False)
+
+
+def parse_tables(html, gene, drug, organization, link):
+    # save columns which contain these pharses
+    column_template = ["phenotype", "diplotype", "genotype", "implication", "description", "recommendation"]
+    soup = BeautifulSoup(html, "html.parser")
+    tables = soup.find_all("table")
+    titles = soup.find_all("h3")
+    df_list = []
+    for i in range(len(tables)):
+        try:
+            table = tables[i]
+            title = titles[i].get_text()
+        except Exception as e:
+            print("missing title, gene {}, drug {}, organization {}".format(gene, drug, organization))
+            continue
+        list_header = []
+        header = table.find("tr")
+        for items in header:
+            try:
+                t = items.get_text()
+                if t == "\n":
+                    continue
+                list_header.append(t)
+            except:
+                continue
+
+        HTML_data = table.find_all("tr")[1:]
+        data = []
+        for element in HTML_data:
+            sub_data = []
+            for sub_element in element:
+                try:
+                    t = sub_element.get_text()
+                    if t == "\n":
+                        continue
+                    sub_data.append(t)
+                except:
+                    continue
+            data.append(sub_data)
+
+        try:
+            df_tmp = pd.DataFrame(data=data, columns=list_header)
+            save_column = []
+            for column in df_tmp.columns:
+                if any([True if x in column.lower() else False for x in column_template]):
+                    save_column.append(column)
+            df_tmp = df_tmp[save_column]
+
+            df_tmp = df_tmp.assign(
+                gene=[gene] * len(df_tmp)
+            ).assign(
+                drug=[drug] * len(df_tmp)
+            ).assign(
+                organization=[organization] * len(df_tmp)
+            ).assign(
+                title=[title] * len(df_tmp)
+            ).assign(
+                link=[link] * len(df_tmp)
+            )
+            df_list.append(df_tmp)
+        except Exception as e:
+            print("parsing html failed, gene {}, drug {}, organization {}".format(gene, drug, organization))
+            continue
+    return df_list
+
+
+def handle_pheno_drug_tables(table_list, guideline_update_date):
+    phenotype_category_list = []
+    phenotype_list = []
+    diplotype_list = []
+    genotype_list = []
+    implication_list = []
+    description_list = []
+    recommendation_list = []
+    dosing_list = []
+    gene_list = []
+    drug_list = []
+    organization_list = []
+    title_list = []
+    link_list = []
+    for table in table_list:
+        phenotype_column = ""
+        diplotype_column = ""
+        genotype_column = ""
+        implication_column = ""
+        description_column = ""
+        recommendation_column = ""
+        dosing_column = ""
+        for col in table.columns:
+            if "phenotype" in col.lower():
+                phenotype_column = col
+            if "diplotype" in col.lower():
+                diplotype_column = col
+            if "genotype" in col.lower():
+                genotype_column = col
+            if "implication" in col.lower():
+                implication_column = col
+            if "description" in col.lower():
+                description_column = col
+            if "recommendation" in col.lower() and "classification" not in col.lower():
+                recommendation_column = col
+            if "dosing" in col.lower():
+                dosing_column = col
+
+        for index, row in table.iterrows():
+            if phenotype_column != "":
+                phenotype = row[phenotype_column]
+            else:
+                continue
+
+            if diplotype_column != "":
+                diplotype = row[diplotype_column]
+            else:
+                diplotype = ""
+
+            if genotype_column != "":
+                genotype = row[genotype_column]
+            else:
+                genotype = ""
+
+            if implication_column != "":
+                implication = row[implication_column]
+            else:
+                implication = ""
+
+            if description_column != "":
+                description = row[description_column]
+            else:
+                description = ""
+
+            if recommendation_column != "":
+                recommendation = row[recommendation_column]
+            else:
+                recommendation = ""
+
+            if dosing_column != "":
+                dosing = row[dosing_column]
+            else:
+                dosing = ""
+
+            gene = row["gene"]
+            drug = row["drug"]
+            organization = row["organization"]
+            title = row["title"]
+
+            if any([True if x in phenotype.lower() and "meta" in phenotype.lower() else False \
+                    for x in ["intermediate", "normal", "poor", "rapid", "ultrarapid", "extensive"]]) or \
+                    any(True if x in phenotype else False \
+                        for x in ["IM", "PM", "UM", "NM", "RM", "EM"]):
+                pass
+            else:
+                continue
+
+            if genotype == "" and implication == "" and description == "" and recommendation == "" and dosing == "":
+                continue
+
+            if "_" in gene:
+                genes = gene.split("_")
+                filtered_gene = list(filter(lambda x: x in phenotype, genes))
+                if len(filtered_gene) > 0:
+                    gene = filtered_gene[0]
+
+            if "Drug" in table.columns and row["Drug"] != "":
+                drug = row["Drug"]
+            elif "_" in drug:
+                drugs = drug.split("_")
+                filtered_drug = list(filter(lambda x: x in phenotype or x in recommendation or x in implication, drugs))
+                if len(filtered_drug) > 0:
+                    drug = filtered_drug[0]
+
+            if type(drug) == list and len(drug) > 0:
+                drug = drug[0]
+
+            phenotype_category = ""
+            if "poor" in phenotype.lower() or "PM" in phenotype:
+                phenotype_category = "Poor Metabolizer"
+            elif "intermediate" in phenotype.lower() or "IM" in phenotype:
+                phenotype_category = "Intermediate Metabolizer"
+            elif "normal" in phenotype.lower() or "NM" in phenotype:
+                phenotype_category = "Normal Metabolizer"
+            elif ("rapid" in phenotype.lower() and "ultra" not in phenotype.lower()) or "RM" in phenotype:
+                phenotype_category = "Rapid Metabolizer"
+            elif ("rapid" in phenotype.lower() and "ultra" in phenotype.lower()) or "UM" in phenotype:
+                phenotype_category = "Ultrarapid Metabolizer"
+            elif "extensive" in phenotype.lower() or "EM" in phenotype:
+                phenotype_category = "Extensive Metabolizer"
+
+            phenotype_category_list.append(phenotype_category)
+            phenotype_list.append(phenotype)
+            diplotype_list.append(diplotype)
+            genotype_list.append(genotype)
+            implication_list.append(implication)
+            description_list.append(description)
+            recommendation_list.append(recommendation)
+            dosing_list.append(dosing)
+            gene_list.append(gene)
+            drug_list.append(drug)
+            organization_list.append(organization)
+            title_list.append(title)
+            link_list.append(row["link"])
+
+    df_pheno_drug = pd.DataFrame({
+        "phenotype_category": phenotype_category_list,
+        "phenotype": phenotype_list,
+        "diplotype": diplotype_list,
+        "genotype": genotype_list,
+        "implication": implication_list,
+        "description": description_list,
+        "recommendation": recommendation_list,
+        "dosing": dosing_list,
+        "gene": gene_list,
+        "drug": drug_list,
+        "organization": organization_list,
+        "title": title_list,
+        "link": link_list,
+        "data_source": ["guildeline"] * len(link_list),
+        "update_date": [guideline_update_date] * len(link_list)
+    })
+
+    phenotype_category_list = []
+    phenotype_list = []
+    diplotype_list = []
+    genotype_list = []
+    implication_list = []
+    description_list = []
+    recommendation_list = []
+    gene_list = []
+    drug_list = []
+    organization_list = []
+    title_list = []
+    link_list = []
+
+    for index, row in df_pheno_drug.iterrows():
+        diplotype = row["diplotype"]
+        diplotypes = re.split(",|;| ", diplotype)
+        diplotypes = list(filter(lambda x: x != "" and x.count("*") == 2, diplotypes))
+        if len(diplotypes) == 0:
+            continue
+
+        for dip in diplotypes:
+            dip_name = "{} {}".format(row["gene"], dip)
+            recommendation = row["dosing"] if row["dosing"] != "" else row["recommendation"]
+            phenotype_category_list.append(row["phenotype_category"])
+            phenotype_list.append(row["phenotype"])
+            diplotype_list.append(dip_name)
+            genotype_list.append(row["genotype"])
+            implication_list.append(row["implication"])
+            description_list.append(row["description"])
+            recommendation_list.append(row["recommendation"])
+            gene_list.append(row["gene"])
+            drug_list.append(row["drug"])
+            organization_list.append(row["organization"])
+            title_list.append(row["title"])
+            link_list.append(row["link"])
+
+    pd.DataFrame({
+        "phenotype_category": phenotype_category_list,
+        "phenotype": phenotype_list,
+        "diplotype": diplotype_list,
+        "genotype": genotype_list,
+        "implication": implication_list,
+        "description": description_list,
+        "recommendation": recommendation_list,
+        "gene": gene_list,
+        "drug": drug_list,
+        "organization": organization_list,
+        "title": title_list,
+        "link": link_list,
+        "data_source": ["guildeline"] * len(link_list),
+        "update_date": [guideline_update_date] * len(link_list)
+    }).to_csv("processed/diplotype_drug_relation.csv", index=False)
+
+    df_pheno_drug.to_csv("processed/phenotype_drug_relation.csv", index=False)
 
 
 def generate_guideline_file():
@@ -114,6 +391,11 @@ def generate_guideline_file():
     drug_list = []
     gene_list = []
     guideline_name_list = []
+    guideline_link_list = []
+    guideline_cancer_genome_list = []
+    guideline_literature_list = []
+    guideline_source_list = []
+    df_table_list = []
 
     # parse guideline update date
     guideline_update_date = ""
@@ -143,15 +425,40 @@ def generate_guideline_file():
                         tmp_term_list.append(allele["function"]["term"])
 
             guideline_name = guideline_dict["guideline"]["name"]
+            guideline_link = guideline_dict["guideline"]["@id"]
+            guideline_cancer_genome = str(guideline_dict["guideline"]["cancerGenome"])
+            literature_list = []
+            for liter in guideline_dict["guideline"]["literature"]:
+                literature_list.append({
+                    "title": liter["title"],
+                    "link": liter["@id"]
+                })
+            guideline_literature = str(literature_list)
+            guideline_source = guideline_dict["guideline"]["source"]
 
             guideline_name_list.extend([guideline_name] * len(tmp_haplotype_list) * len(drugs))
             guideline_list.extend([guideline] * len(tmp_haplotype_list) * len(drugs))
             gene_list.extend([genes] * len(tmp_haplotype_list) * len(drugs))
+            guideline_link_list.extend([guideline_link] * len(tmp_haplotype_list) * len(drugs))
+            guideline_cancer_genome_list.extend([guideline_cancer_genome] * len(tmp_haplotype_list) * len(drugs))
+            guideline_literature_list.extend([guideline_literature] * len(tmp_haplotype_list) * len(drugs))
+            guideline_source_list.extend([guideline_source] * len(tmp_haplotype_list) * len(drugs))
+
             # data alignment
             for drug in drugs:
                 drug_list.extend([drug] * len(tmp_haplotype_list))
                 haplotype_list.extend(tmp_haplotype_list)
                 term_list.extend(tmp_term_list)
+
+            df_table_list.extend(
+                parse_tables(
+                    guideline_dict["guideline"]["textMarkdown"]["html"],
+                    gene=genes,
+                    drug=drugs,
+                    organization=guideline,
+                    link=guideline_link
+                )
+            )
 
     df_guideline = pd.DataFrame({
         "guideline_institute": guideline_list,
@@ -159,13 +466,21 @@ def generate_guideline_file():
         "drug": drug_list,
         "gene": gene_list,
         "haplotype": haplotype_list,
-        "term": term_list
+        "term": term_list,
+        "guideline_link": guideline_link_list,
+        "cancer_genome": guideline_cancer_genome_list,
+        "literature": guideline_literature_list,
+        "source": guideline_source_list
     })
+
     df_guideline.assign(
         data_source=["guideline"] * len(df_guideline)
     ).assign(
         update_date=[guideline_update_date] * len(df_guideline)
     ).to_csv("processed/guideline_drug_variant_annotation.csv", index=False)
+
+    # generate (gene pheno <-> drug) relation data
+    handle_pheno_drug_tables(df_table_list, guideline_update_date)
 
 
 def generate_research_file():
@@ -226,6 +541,7 @@ def generate_research_file():
         note = row["Notes"]
         sentence = row["Sentence"]
         biogeo_group = row["Biogeographical Groups"].replace("\"", "'")
+        link = "https://www.pharmgkb.org/variantAnnotation/{}".format(row["Variant Annotation ID"])
 
         if row["Alleles"] != "" and "/" in row["Alleles"]:
             diplotype_list = [x.strip() for x in row["Alleles"].split("+")]
@@ -235,17 +551,19 @@ def generate_research_file():
                         if "/" in dip:
                             diplotype = "{} {}".format(row["Gene"], dip)
                             diplotype_drug_research_list.append(
-                                (d, p, p_value, biogeo_group, PMID, PMID_link, note, sentence, diplotype))
+                                (d, p, p_value, biogeo_group, PMID,
+                                 PMID_link, note, sentence, diplotype, link))
         else:
             for d in drug_list:
                 for v in variant_list:
                     for p in phenotype_list:
-                        variant_drug_research_list.append((d, p, p_value, biogeo_group, PMID, PMID_link, note, sentence, v))
+                        variant_drug_research_list.append((d, p, p_value, biogeo_group,
+                                                           PMID, PMID_link, note, sentence, v, link))
 
     pd.DataFrame(
         variant_drug_research_list,
         columns=["drug", "phenotype_category", "p_value",
-                 "bio_geo_group", "PMID", "PMID_link", "note", "sentence", "variant"]
+                 "bio_geo_group", "PMID", "PMID_link", "note", "sentence", "variant", "link"]
     ).assign(
         data_source=["research"] * len(variant_drug_research_list)
     ).assign(
@@ -256,7 +574,7 @@ def generate_research_file():
         diplotype_drug_research_list,
         columns=["drug", "phenotype_category", "p_value",
                  "bio_geo_group", "PMID", "PMID_link", "note", "sentence",
-                 "diplotype"]
+                 "diplotype", "link"]
     ).assign(
         data_source=["research"] * len(diplotype_drug_research_list)
     ).assign(

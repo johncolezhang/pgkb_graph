@@ -57,13 +57,13 @@ class neo4jUtil:
         cypher_statement = cypher_statement + ")\nWHERE"
         start_node_property = start_node['property']
         for key in start_node_property.keys():
-            value = start_node_property[key]
+            value = str(start_node_property[key])
             if value == "":
                 continue
             cypher_statement = cypher_statement + "\ns." + key + " = \"" + str(value) + "\" AND"
         end_node_property = end_node['property']
         for key in end_node_property.keys():
-            value = end_node_property[key]
+            value = str(end_node_property[key])
             if value == "":
                 continue
             cypher_statement = cypher_statement + "\ne." + key + " = \"" + str(value) + "\" AND"
@@ -76,7 +76,7 @@ class neo4jUtil:
             if len(edge_property) > 0:
                 cypher_statement = cypher_statement + " {"
                 for key in edge_property.keys():
-                    value = edge_property[key]
+                    value = str(edge_property[key])
                     # if value == "":
                     #     continue
                     cypher_statement = cypher_statement + key + ":\"" + value + "\","

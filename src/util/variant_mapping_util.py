@@ -10,14 +10,32 @@ from datetime import datetime
 
 class variantMappingUtil:
     def __init__(self):
+        ############################### handle chemical ####################################
+        df_chemical = pd.read_csv(
+            "chemicals/chemicals.tsv",
+            sep='\t',
+            error_bad_lines=False,
+            dtype=str
+        ).fillna("")[["PharmGKB Accession Id", "Name"]]
+
+        self.chemical_link_dict = dict(zip(list(
+            df_chemical["Name"].values),
+            ["https://www.pharmgkb.org/chemical/{}".format(x) for x in
+             list(df_chemical["PharmGKB Accession Id"].values)]))
+
         ############################### handle gene ####################################
         df_gene = pd.read_csv(
             "genes/genes.tsv",
             sep='\t',
-            error_bad_lines=False
-        ).fillna("")[["Symbol", "Chromosome"]]
+            error_bad_lines=False,
+            dtype=str
+        ).fillna("")[["Symbol", "Chromosome", "PharmGKB Accession Id"]]
         self.gene_chromosome_dict = dict(zip(list(df_gene["Symbol"].values),
                                              list(df_gene["Chromosome"].values)))
+
+        self.gene_link_dict = dict(zip(list(
+            df_gene["Symbol"].values),
+            ["https://www.pharmgkb.org/gene/{}".format(x) for x in list(df_gene["PharmGKB Accession Id"].values)]))
 
         # parse gene data update date
         self.gene_update_date = ""
@@ -30,7 +48,8 @@ class variantMappingUtil:
         df_variants = pd.read_csv(
             'variants/variants.tsv',
             sep='\t',
-            error_bad_lines=False
+            error_bad_lines=False,
+            dtype=str
         ).fillna("")
         df_variants = df_variants[["Variant ID", "Variant Name", "Gene Symbols",
                                    "Location", "Synonyms"]]
@@ -51,13 +70,18 @@ class variantMappingUtil:
         self.variant_NG_synonym_dict = defaultdict(list)
         self.variant_NC_synonym_dict = defaultdict(list)
         self.variant_rs_synonym_dict = defaultdict(list)
+        self.variant_link_dict = {}
         for index, row in df_variants.iterrows():
+            variant_link = "https://www.pharmgkb.org/variant/{}".format(row["Variant ID"])
             variant = row["Variant Name"]
             gene = row["Gene Symbols"]
             synonym = row["Synonyms"]
             location = row["Location"]
             if location != "" and variant != "":
                 self.variant_location_dict[variant] = location
+
+            if variant != "" and row["Variant ID"] != "":
+                self.variant_link_dict[variant] = variant_link
 
             if gene != "" and variant != "":
                 gene_list = [x.strip() for x in gene.split(",")]
@@ -80,59 +104,9 @@ class variantMappingUtil:
                         self.variant_rs_synonym_dict[variant].append(s)
 
         ############################### handle haplotype ###############################
-        # clinical_genes = [
-        #     'TPMT', 'NAT2', 'G6PD', 'CYP3A5', 'CYP2A6', 'CYP3A4', 'CYP2C19',
-        #     'UGT1A1', 'CYP2D6', 'NUDT15', 'CYP2B6', 'CYP2C9'
-        # ]  # and 'HLA-B', 'HLA-A'
-        #
-        # guideline_genes = [
-        #     'CACNA1S', 'CFTR', 'CYP2C9', 'CYP2B6', 'CYP2D6', 'SLCO1B1',
-        #     'UGT1A1', 'DPYD', 'NUDT15', 'MT-RNR1', 'CYP3A5', 'TPMT',
-        #     'RYR1', 'CYP2C19', 'G6PD', 'IFNL3'
-        # ]  # and 'HLA-B', 'HLA-A'
-        #
         self.genes = []
-        #
-        # haplotype_folder = 'D:\\pgkb_graph\\haplotype'
-        # haplotype_path_dict = {g: "" for g in self.genes}
-        # for path in os.listdir(haplotype_folder):
-        #     for gene in self.genes:
-        #         if "{}_haplotypes".format(gene) in path:
-        #             haplotype_path_dict[gene] = os.path.join(haplotype_folder, path)
-
         self.gene_df_T_dict = {}
         self.standard_haplotype_dict = {}
-        # for gene, path in haplotype_path_dict.items():
-        #     df_tmp = pd.read_excel(
-        #         path,
-        #         engine="openpyxl",
-        #         sheet_name="modified",
-        #         dtype=str
-        #     ).fillna("")
-        #     df_tmp_T = self.df_T_convert(df_tmp)
-        #     self.gene_df_T_dict[gene] = df_tmp_T
-
-        # self.standard_haplotype_dict = {
-        #     "CACNA1S": "Reference",
-        #     "CFTR": "standard",
-        #     "CYP2A6": "*1A",
-        #     "CYP2B6": "*1",
-        #     "CYP2C19": "*38",
-        #     "CYP2C9": "*1",
-        #     "CYP2D6": "*1",
-        #     "CYP3A4": "*1",
-        #     "CYP3A5": "*1",
-        #     "DPYD": "Reference",
-        #     "G6PD": "B (wildtype)",
-        #     "IFNL3": "",
-        #     "MT-RNR1": "Reference",
-        #     "NAT2": "*4",
-        #     "NUDT15": "*1",
-        #     "RYR1": "Reference",
-        #     "SLCO1B1": "*1A",
-        #     "TPMT": "*1",
-        #     "UGT1A1": "*1",
-        # }
 
         ############################# handle allele definition ##############
         allele_definition_folder = "allele_definition"

@@ -5,6 +5,10 @@ import pandas as pd
 import json
 from copy import deepcopy
 from util.variant_mapping_util import variantMappingUtil
+import shutil
+import os
+from datetime import datetime
+from collections import defaultdict
 
 v_mapping = variantMappingUtil()
 
@@ -77,7 +81,8 @@ def handle_clinical_csv():
                     "gene_name": gene_list[i],
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
-                    "update_date": v_mapping.gene_update_date
+                    "update_date": v_mapping.gene_update_date,
+                    "link": v_mapping.gene_link_dict.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -102,7 +107,8 @@ def handle_clinical_csv():
                 "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
                 "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
-                "functionality": str(mapping_dict.get("functionality", ""))
+                "functionality": str(mapping_dict.get("functionality", "")),
+                "link": v_mapping.variant_link_dict.get(row["variant"], "")
             }
         }
         node_list.append(variant_node)
@@ -114,7 +120,8 @@ def handle_clinical_csv():
                 "chemical_name": row["drug"],
                 "display": row["drug"],
                 # TODO map meshID
-                "meshID": ""
+                "meshID": "",
+                "link": v_mapping.chemical_link_dict.get(row["drug"], "")
             }
         }
         node_list.append(chemical_node)
@@ -163,7 +170,8 @@ def handle_clinical_csv():
                     "evidence_level": row["evidence_level"],
                     "phenotype_category": row["phenotype_category"],
                     "phenotype": row["phenotype"],
-                    "update_date": row["update_date"]
+                    "update_date": row["update_date"],
+                    "link": row["link"]
                 }
             }
         }
@@ -215,7 +223,8 @@ def handle_variant_drug_label_csv():
                     "gene_name": gene_list[i],
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
-                    "update_date": v_mapping.gene_update_date
+                    "update_date": v_mapping.gene_update_date,
+                    "link": v_mapping.gene_link_dict.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -239,7 +248,8 @@ def handle_variant_drug_label_csv():
                 "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
                 "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
-                "functionality": str(mapping_dict.get("functionality", ""))
+                "functionality": str(mapping_dict.get("functionality", "")),
+                "link": v_mapping.variant_link_dict.get(row["variant"], "")
             }
         }
         node_list.append(variant_node)
@@ -299,7 +309,8 @@ def handle_variant_drug_label_csv():
                     "organization": row["organization"],
                     "label_name": row["name"],
                     "testing_level": row["label"],
-                    "update_date": row["update_date"]
+                    "update_date": row["update_date"],
+                    "link": row["link"]
                 }
             }
         }
@@ -308,7 +319,6 @@ def handle_variant_drug_label_csv():
 
 
 def handle_gene_drug_label_csv():
-    # TODO file creation date is from drug_label folder
     node_list = []
     edge_list = []
 
@@ -325,7 +335,8 @@ def handle_gene_drug_label_csv():
             "node_ID": "gene_name",
             "property": {
                 "gene_name": row["gene"],
-                "display": row["gene"]
+                "display": row["gene"],
+                "link": v_mapping.gene_link_dict.get(row["gene"], "")
             }
         }
         node_list.append(gene_node)
@@ -361,7 +372,8 @@ def handle_gene_drug_label_csv():
                     "organization": row["organization"],
                     "label_name": row["name"],
                     "testing_level": row["label"],
-                    "update_date": row["update_date"]
+                    "update_date": row["update_date"],
+                    "link": row["link"]
                 }
             }
         }
@@ -370,7 +382,6 @@ def handle_gene_drug_label_csv():
 
 
 def handle_guideline_csv():
-    # TODO file creation date is from guideline_annotation folder
     node_list = []
     edge_list = []
 
@@ -413,7 +424,8 @@ def handle_guideline_csv():
                     "gene_name": gene_list[i],
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
-                    "update_date": v_mapping.gene_update_date
+                    "update_date": v_mapping.gene_update_date,
+                    "link": v_mapping.gene_link_dict.get(row["gene"], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -432,7 +444,8 @@ def handle_guideline_csv():
                 "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
                 "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
-                "functionality": str(mapping_dict.get("functionality", ""))
+                "functionality": str(mapping_dict.get("functionality", "")),
+                "link": v_mapping.variant_link_dict.get(row["haplotype"], "")
             }
         }
         node_list.append(variant_node)
@@ -492,6 +505,10 @@ def handle_guideline_csv():
                     "guideline_institute": row["guideline_institute"],
                     "guideline_name": row["guideline_name"],
                     "guideline_term": row["term"],
+                    "guideline_link": row["guideline_link"],
+                    "cancer_genome": row["cancer_genome"],
+                    "literature": row["literature"],
+                    "source": row["source"],
                     "update_date": row["update_date"]
                 }
             }
@@ -500,11 +517,119 @@ def handle_guideline_csv():
     return node_list, edge_list
 
 
-def handle_research_csv():
-    # TODO file creation date is from variant_annotation folder
+def handle_diplotype_drug_csv():
     node_list = []
     edge_list = []
+    df = pd.read_csv(
+        "processed/diplotype_drug_relation.csv",
+        encoding="utf-8",
+        dtype=str
+    )
 
+    check_set = []
+    for index, row in df.iterrows():
+        ########################### Add node ######################
+        diplotype = row["diplotype"].replace("\"", "'")
+        dip_mapping_dict = v_mapping.diplotype_mapping(diplotype)
+        dip_mapping_dict.update({"frequency": v_mapping.diplotype_frequency_mapping(diplotype)})
+
+        diplotype_node = {
+            "label": ["diplotype"],
+            "node_ID": "diplotype_name",
+            "property": {
+                "diplotype_name": diplotype.replace("\"", "'"),
+                "display": diplotype.replace("\"", "'"),
+                "phenotype": dip_mapping_dict.get("phenotype", ""),
+                "ehr_notation": dip_mapping_dict.get("ehr_notation", ""),
+                "activity_score": dip_mapping_dict.get("activity_score", ""),
+                "consultation": dip_mapping_dict.get("consultation", ""),
+                "update_date": dip_mapping_dict.get("update_date", ""),
+                "frequency": str(dip_mapping_dict.get("frequency", ""))
+            }
+        }
+        node_list.append(diplotype_node)
+
+        chemical_node = {
+            "label": ["chemical"],
+            "node_ID": "chemical_name",
+            "property": {
+                "chemical_name": row["drug"],
+                "display": row["drug"],
+                "meshID": ""
+            }
+        }
+        node_list.append(chemical_node)
+
+        ################################## add edge ##############################
+        if "{}{}{}".format(row["diplotype"], row["drug"], row["organization"]) in check_set:
+            continue
+        else:
+            check_set.append("{}{}{}".format(row["diplotype"], row["drug"], row["organization"]))
+            # diplotype to chemical.
+            relation_edge = {
+                "start_node": edge_node(
+                    diplotype_node,
+                    remain_label_list=["diplotype"],
+                    remain_property_list=["diplotype_name"]
+                ),
+                "end_node": edge_node(
+                    chemical_node,
+                    remain_label_list=["chemical"],
+                    remain_property_list=["chemical_name"]
+                ),
+                "edge": {
+                    "label": "guideline_annotation",
+                    "property": {
+                        "data_source": "guideline_annotation",
+                        "phenotype": row["phenotype"],
+                        "phenotype_category": row["phenotype_category"],
+                        "genotype": row["genotype"],
+                        "implication": str(row["implication"]).replace("\"", "'"),
+                        "description": str(row["description"]).replace("\"", "'"),
+                        "recommendation": str(row["recommendation"]).replace("\"", "'"),
+                        "organization": str(row["organization"]).replace("\"", "'"),
+                        "title": row["title"].replace("\"", "'"),
+                        "link": row["link"],
+                        "update_date": row["update_date"]
+                    }
+                }
+            }
+            edge_list.append(relation_edge)
+    return node_list, edge_list
+
+
+def handle_research_csv():
+    ################### parse metabolizer drug dict ###############
+    metabolizer_drug_dict = defaultdict(dict)
+    df = pd.read_csv(
+        "processed/phenotype_drug_relation.csv",
+        encoding="utf-8",
+        dtype=str
+    ).fillna("")
+    for pheno_gene, content in df.groupby(["phenotype_category", "gene"]):
+        drug_dict = defaultdict(list)
+        for drug, data in content.groupby("drug"):
+            for i, r in data.iterrows():
+                drug_dict[drug].append({
+                    "data_source": "guideline_annotation",
+                    "phenotype": r["phenotype"],
+                    "phenotype_category": r["phenotype_category"],
+                    "genotype": r["genotype"],
+                    "implication": str(r["implication"]).replace("\"", "'"),
+                    "description": str(r["description"]).replace("\"", "'"),
+                    "recommendation": str(r["recommendation"]).replace("\"", "'"),
+                    "organization": str(r["organization"]).replace("\"", "'"),
+                    "title": str(r["title"]).replace("\"", "'"),
+                    "link": r["link"],
+                    "update_date": r["update_date"]
+                })
+        metabolizer_drug_dict["{} {}".format(pheno_gene[1], pheno_gene[0])] = drug_dict
+
+    node_list = []
+    edge_list = []
+    meta_edge_set = []
+
+    #################### part 1: variant to drug research #########
     df = pd.read_csv(
         "processed/research_drug_variant_annotation.csv",
         encoding="utf-8",
@@ -545,7 +670,8 @@ def handle_research_csv():
                     "gene_name": gene_list[i],
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
-                    "update_date": v_mapping.gene_update_date
+                    "update_date": v_mapping.gene_update_date,
+                    "link": v_mapping.gene_link_dict.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -569,7 +695,8 @@ def handle_research_csv():
                 "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
                 "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
-                "functionality": str(mapping_dict.get("functionality", ""))
+                "functionality": str(mapping_dict.get("functionality", "")),
+                "link": v_mapping.variant_link_dict.get(row["variant"], "")
             }
         }
         node_list.append(variant_node)
@@ -633,12 +760,14 @@ def handle_research_csv():
                     "PMID_link": row["PMID_link"],
                     "note": row["note"].replace("\"", "'"),
                     "sentence": row["sentence"].replace("\"", "'"),
-                    "update_date": row["update_date"]
+                    "update_date": row["update_date"],
+                    "link": row["link"]
                 }
             }
         }
         edge_list.append(relation_edge)
 
+    #################### part 2: diplotype to drug research #########
     df = pd.read_csv(
         "processed/research_drug_diplotype_annotation.csv",
         encoding="utf-8",
@@ -793,11 +922,65 @@ def handle_research_csv():
                     "PMID_link": row["PMID_link"],
                     "note": row["note"].replace("\"", "'"),
                     "sentence": row["sentence"].replace("\"", "'"),
-                    "update_date": row["update_date"]
+                    "update_date": row["update_date"],
+                    "link": row["link"]
                 }
             }
         }
         edge_list.append(dip_edge)
+
+        ############### Add diplotype<->drug metabolize relation ###############
+        # to control duplicate in relations
+        if "phenotype" in dip_mapping_dict.keys() and dip_mapping_dict["phenotype"] in metabolizer_drug_dict.keys():
+            for drug in metabolizer_drug_dict[dip_mapping_dict["phenotype"]].keys():
+                chemical_node = {
+                    "label": ["chemical"],
+                    "node_ID": "chemical_name",
+                    "property": {
+                        "chemical_name": drug,
+                        "display": drug,
+                        "meshID": ""
+                    }
+                }
+                node_list.append(chemical_node)
+
+                if "{}{}{}".format(diplotype, dip_mapping_dict["phenotype"], drug) in meta_edge_set:
+                    continue
+                else:
+                    meta_edge_set.append("{}{}{}".format(diplotype, dip_mapping_dict["phenotype"], drug))
+
+                a = metabolizer_drug_dict[dip_mapping_dict["phenotype"]][drug]
+                for data in metabolizer_drug_dict[dip_mapping_dict["phenotype"]][drug]:
+                    # diplotype to chemical
+                    meta_edge = {
+                        "start_node": edge_node(
+                            diplotype_node,
+                            remain_label_list=["diplotype"],
+                            remain_property_list=["diplotype_name"]
+                        ),
+                        "end_node": edge_node(
+                            chemical_node,
+                            remain_label_list=["chemical"],
+                            remain_property_list=["chemical_name"]
+                        ),
+                        "edge": {
+                            "label": "diplotype_metabolizer",
+                            "property": {
+                                "data_source": data["data_source"],
+                                "phenotype": data["phenotype"],
+                                "phenotype_category": data["phenotype_category"],
+                                "genotype": data["genotype"].replace("\"", "'"),
+                                "implication": data["implication"].replace("\"", "'"),
+                                "description": data["description"].replace("\"", "'"),
+                                "recommendation": data["recommendation"].replace("\"", "'"),
+                                "organization": data["organization"].replace("\"", "'"),
+                                "title": data["title"].replace("\"", "'"),
+                                "link": data["link"],
+                                "update_date": data["update_date"]
+                            }
+                        }
+                    }
+                    edge_list.append(meta_edge)
 
     return node_list, edge_list
 
@@ -810,12 +993,14 @@ def step3_gen_node_edge():
     variant_label_node_list, variant_label_edge_list = handle_variant_drug_label_csv()
     gene_label_node_list, gene_label_edge_list = handle_gene_drug_label_csv()
     guideline_node_list, guideline_edge_list = handle_guideline_csv()
+    diplo_drug_node_list, diplo_drug_edge_list = handle_diplotype_drug_csv()
     research_node_list, research_edge_list = handle_research_csv()
 
     node_list.extend(clinical_node_list)
     node_list.extend(variant_label_node_list)
     node_list.extend(gene_label_node_list)
     node_list.extend(guideline_node_list)
+    node_list.extend(diplo_drug_node_list)
     node_list.extend(research_node_list)
     print(len(node_list))
 
@@ -823,7 +1008,7 @@ def step3_gen_node_edge():
     edge_list.extend(variant_label_edge_list)
     edge_list.extend(gene_label_edge_list)
     edge_list.extend(guideline_edge_list)
-    edge_list.extend(research_edge_list)
+    edge_list.extend(diplo_drug_edge_list)
     edge_list.extend(research_edge_list)
     print(len(edge_list))
 
@@ -834,6 +1019,20 @@ def step3_gen_node_edge():
             judge_set.add(x[0] + x[1])
             edge_list.append(x[2])
     print(len(edge_list))
+
+    # back up node and edge file with datetime string suffix
+    folder = "json"
+    bak_folder = os.path.join("bak", folder)
+    if not os.path.isdir(folder):
+        os.mkdir(folder)
+
+    if not os.path.isdir(bak_folder):
+        os.mkdir(bak_folder)
+
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    for file in os.listdir(folder):
+        new_file = "{}_{}.json".format(file.split(".")[0], date_str)
+        shutil.move(os.path.join(folder, file), os.path.join(bak_folder, new_file))
 
     with open("json/nodes.json", "w") as f:
         json.dump(node_list, f)
