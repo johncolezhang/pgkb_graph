@@ -448,7 +448,8 @@ def handle_guideline_csv():
                 "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
                 "functionality": str(mapping_dict.get("functionality", "")),
-                "link": v_mapping.variant_link_dict.get(row["haplotype"], "")
+                "link": v_mapping.variant_link_dict.get(row["haplotype"], ""),
+                "is_reference": str(mapping_dict.get("is_reference", ""))
             }
         }
         node_list.append(variant_node)
@@ -699,7 +700,8 @@ def handle_research_csv():
                 "update_date": mapping_dict.get("update_date", ""),
                 "frequency": str(mapping_dict.get("frequency", "")),
                 "functionality": str(mapping_dict.get("functionality", "")),
-                "link": v_mapping.variant_link_dict.get(row["variant"], "")
+                "link": v_mapping.variant_link_dict.get(row["variant"], ""),
+                "is_reference": str(mapping_dict.get("is_reference", ""))
             }
         }
         node_list.append(variant_node)
@@ -828,7 +830,8 @@ def handle_research_csv():
                 "mapped_rsID": ",".join(hap1_mapping_dict.get("rsID", [])),
                 "update_date": hap1_mapping_dict.get("update_date", ""),
                 "frequency": str(hap1_mapping_dict.get("frequency", "")),
-                "functionality": str(hap1_mapping_dict.get("functionality", ""))
+                "functionality": str(hap1_mapping_dict.get("functionality", "")),
+                "is_reference": str(hap1_mapping_dict.get("is_reference", ""))
             }
         }
         node_list.append(variant_1_node)
@@ -847,7 +850,8 @@ def handle_research_csv():
                 "mapped_rsID": ",".join(hap2_mapping_dict.get("rsID", [])),
                 "update_date": hap2_mapping_dict.get("update_date", ""),
                 "frequency": str(hap2_mapping_dict.get("frequency", "")),
-                "functionality": str(hap2_mapping_dict.get("functionality", ""))
+                "functionality": str(hap2_mapping_dict.get("functionality", "")),
+                "is_reference": str(hap2_mapping_dict.get("is_reference", ""))
             }
         }
         node_list.append(variant_2_node)
@@ -1034,6 +1038,438 @@ def handle_haplotype_rsID_edge(all_node_list):
     return edge_list
 
 
+def handle_all_haplotype_node_edge():
+    node_list = []
+    edge_list = []
+
+    edge_set = []
+    for gene, hap_list in v_mapping.gene_hap_list_dict.items():
+        for hap in hap_list:
+            hap_name = "{} {}".format(gene, hap)
+            if hap == "":
+                continue
+
+            hap_mapping_dict = v_mapping.haplotype_mapping(hap_name)
+            hap_frequency_dict = v_mapping.haplotype_frequency_mapping(hap_name)
+            hap_function_dict = v_mapping.haplotype_functionality_mapping(hap_name)
+            hap_mapping_dict.update({"frequency": hap_frequency_dict})
+            hap_mapping_dict.update({"functionality": hap_function_dict})
+            gene_list = [gene]
+            chromosome_list = [v_mapping.gene_chromosome_dict.get(x, "") for x in gene_list]
+
+            hap_node = {
+                "label": ["variant", "haplotype"],
+                "node_ID": "variant_name",
+                "property": {
+                    "variant_name": hap_name,
+                    "display": hap_name,
+                    "type": "haplotype",
+                    "NC_change_code": hap_mapping_dict.get("NC", ""),
+                    "NG_change_code": hap_mapping_dict.get("NG", ""),
+                    "protein_change_code": hap_mapping_dict.get("protein", ""),
+                    "nucleotide_change_code": hap_mapping_dict.get("nucleotide", ""),
+                    "mapped_rsID": ",".join(hap_mapping_dict.get("rsID", [])),
+                    "update_date": hap_mapping_dict.get("update_date", ""),
+                    "frequency": str(hap_mapping_dict.get("frequency", "")),
+                    "functionality": str(hap_mapping_dict.get("functionality", "")),
+                    "is_reference": str(hap_mapping_dict.get("is_reference", ""))
+                }
+            }
+            node_list.append(hap_node)
+
+            gene_node_list = []
+            for i in range(len(gene_list)):
+                gene_node_list.append({
+                    "label": ["gene"],
+                    "node_ID": "gene_name",
+                    "property": {
+                        "gene_name": gene_list[i],
+                        "display": gene_list[i],
+                        "chromosome": chromosome_list[i],
+                        "update_date": v_mapping.gene_update_date,
+                        "link": v_mapping.gene_link_dict.get(gene_list[i], "")
+                    }
+                })
+            node_list.extend(gene_node_list)
+
+            # variant to gene.
+            for gene_node in gene_node_list:
+                relation_edge = {
+                    "start_node": edge_node(
+                        hap_node,
+                        remain_label_list=["variant"],
+                        remain_property_list=["variant_name", "type"]
+                    ),
+                    "end_node": edge_node(
+                        gene_node,
+                        remain_label_list=["gene"],
+                        remain_property_list=["gene_name"]
+                    ),
+                    "edge": {
+                        "label": "mutation_at",
+                        "property": {}
+                    }
+                }
+                gene_variant_edge_list.append([
+                    hap_node["property"]["display"],
+                    gene_node["property"]["display"],
+                    relation_edge
+                ])
+
+            for rsID in filter(lambda x: x != "", hap_mapping_dict.get("rsID", [])):
+                if "{}{}".format(hap_name, rsID) in edge_set:
+                    continue
+                else:
+                    edge_set.append("{}{}".format(hap_name, rsID))
+
+                relation_edge = {
+                    "start_node": {
+                        "label": ["haplotype"],
+                        "node_ID": "variant_name",
+                        "property": {
+                            "variant_name": hap_name,
+                            "type": "haplotype"
+                        }
+                    },
+                    "end_node": {
+                        "label": ["rsID"],
+                        "node_ID": "variant_name",
+                        "property": {
+                            "variant_name": rsID,
+                            "type": "rsID"
+                        }
+                    },
+                    "edge": {
+                        "label": "haplotype_rsID_related",
+                        "property": {}
+                    }
+                }
+                edge_list.append(relation_edge)
+    return node_list, edge_list
+
+def handle_all_rsID_node():
+    node_list = []
+    for rsID in v_mapping.variant_link_dict.keys():
+        mapping_dict = v_mapping.rsID_mapping(rsID)
+        mapping_dict["update_date"] = v_mapping.rsID_update_date
+        gene_list = v_mapping.variant_gene_dict.get(rsID, [])
+        chromosome_list = [v_mapping.gene_chromosome_dict.get(x, "") for x in gene_list]
+
+        variant_node = {
+            "label": ["variant", "rsID"],
+            "node_ID": "variant_name",
+            "property": {
+                "variant_name": rsID,
+                "display": rsID,
+                "type": "rsID",
+                "NC_change_code": mapping_dict.get("NC", ""),
+                "NG_change_code": mapping_dict.get("NG", ""),
+                "protein_change_code": mapping_dict.get("protein", ""),
+                "nucleotide_change_code": mapping_dict.get("nucleotide", ""),
+                "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
+                "update_date": mapping_dict.get("update_date", ""),
+                "frequency": str(mapping_dict.get("frequency", "")),
+                "functionality": str(mapping_dict.get("functionality", "")),
+                "link": v_mapping.variant_link_dict.get(rsID, "")
+            }
+        }
+        node_list.append(variant_node)
+
+        gene_node_list = []
+        for i in range(len(gene_list)):
+            gene_node_list.append({
+                "label": ["gene"],
+                "node_ID": "gene_name",
+                "property": {
+                    "gene_name": gene_list[i],
+                    "display": gene_list[i],
+                    "chromosome": chromosome_list[i],
+                    "update_date": v_mapping.gene_update_date,
+                    "link": v_mapping.gene_link_dict.get(gene_list[i], "")
+                }
+            })
+        node_list.extend(gene_node_list)
+
+        # variant to gene.
+        for gene_node in gene_node_list:
+            relation_edge = {
+                "start_node": edge_node(
+                    variant_node,
+                    remain_label_list=["variant"],
+                    remain_property_list=["variant_name", "type"]
+                ),
+                "end_node": edge_node(
+                    gene_node,
+                    remain_label_list=["gene"],
+                    remain_property_list=["gene_name"]
+                ),
+                "edge": {
+                    "label": "mutation_at",
+                    "property": {}
+                }
+            }
+            gene_variant_edge_list.append([
+                variant_node["property"]["display"],
+                gene_node["property"]["display"],
+                relation_edge
+            ])
+    return node_list
+
+
+def handle_all_diplotype_drug_edge():
+    node_list = []
+    edge_list = []
+
+    ################### parse metabolizer drug dict ###############
+    metabolizer_drug_dict = defaultdict(dict)
+    df = pd.read_csv(
+        "processed/phenotype_drug_relation.csv",
+        encoding="utf-8",
+        dtype=str
+    ).fillna("")
+    for pheno_gene, content in df.groupby(["phenotype_category", "gene"]):
+        drug_dict = defaultdict(list)
+        for drug, data in content.groupby("drug"):
+            for i, r in data.iterrows():
+                drug_dict[drug].append({
+                    "data_source": "guideline_annotation",
+                    "phenotype": r["phenotype"],
+                    "phenotype_category": r["phenotype_category"],
+                    "genotype": r["genotype"],
+                    "implication": str(r["implication"]).replace("\"", "'"),
+                    "description": str(r["description"]).replace("\"", "'"),
+                    "recommendation": str(r["recommendation"]).replace("\"", "'"),
+                    "organization": str(r["organization"]).replace("\"", "'"),
+                    "title": str(r["title"]).replace("\"", "'"),
+                    "link": r["link"],
+                    "update_date": r["update_date"]
+                })
+        metabolizer_drug_dict["{} {}".format(pheno_gene[1], pheno_gene[0])] = drug_dict
+
+    meta_edge_set = []
+    for gene, diplotype_dict in v_mapping.gene_diplotype_dict.items():
+        for dip, detail in diplotype_dict.items():
+            hap1_name = "{}{}".format(gene, dip.split("/")[0])
+            hap2_name = "{}{}".format(gene, dip.split("/")[1])
+            dip_name = "{} {}".format(gene, dip)
+            metabolizer = detail["phenotype"]
+            dip_mapping_dict = v_mapping.diplotype_mapping(dip_name)
+            dip_mapping_dict.update({"frequency": v_mapping.diplotype_frequency_mapping(dip_name)})
+
+            diplotype_node = {
+                "label": ["diplotype"],
+                "node_ID": "diplotype_name",
+                "property": {
+                    "diplotype_name": dip_name.replace("\"", "'"),
+                    "display": dip_name.replace("\"", "'"),
+                    "phenotype": dip_mapping_dict.get("phenotype", ""),
+                    "ehr_notation": dip_mapping_dict.get("ehr_notation", ""),
+                    "activity_score": dip_mapping_dict.get("activity_score", ""),
+                    "consultation": dip_mapping_dict.get("consultation", ""),
+                    "update_date": dip_mapping_dict.get("update_date", ""),
+                    "frequency": str(dip_mapping_dict.get("frequency", ""))
+                }
+            }
+            node_list.append(diplotype_node)
+
+            hap1_mapping_dict = v_mapping.haplotype_mapping(hap1_name)
+            hap1_frequency_dict = v_mapping.haplotype_frequency_mapping(hap1_name)
+            hap1_function_dict = v_mapping.haplotype_functionality_mapping(hap1_name)
+            hap1_mapping_dict.update({"frequency": hap1_frequency_dict})
+            hap1_mapping_dict.update({"functionality": hap1_function_dict})
+
+            hap2_mapping_dict = v_mapping.haplotype_mapping(hap2_name)
+            hap2_frequency_dict = v_mapping.haplotype_frequency_mapping(hap2_name)
+            hap2_function_dict = v_mapping.haplotype_functionality_mapping(hap2_name)
+            hap2_mapping_dict.update({"frequency": hap2_frequency_dict})
+            hap2_mapping_dict.update({"functionality": hap2_function_dict})
+
+            hap1_node = {
+                "label": ["variant", "haplotype"],
+                "node_ID": "variant_name",
+                "property": {
+                    "variant_name": hap1_name,
+                    "display": hap1_name,
+                    "type": "haplotype",
+                    "NC_change_code": hap1_mapping_dict.get("NC", ""),
+                    "NG_change_code": hap1_mapping_dict.get("NG", ""),
+                    "protein_change_code": hap1_mapping_dict.get("protein", ""),
+                    "nucleotide_change_code": hap1_mapping_dict.get("nucleotide", ""),
+                    "mapped_rsID": ",".join(hap1_mapping_dict.get("rsID", [])),
+                    "update_date": hap1_mapping_dict.get("update_date", ""),
+                    "frequency": str(hap1_mapping_dict.get("frequency", "")),
+                    "functionality": str(hap1_mapping_dict.get("functionality", "")),
+                    "is_reference": str(hap1_mapping_dict.get("is_reference", ""))
+                }
+            }
+            node_list.append(hap1_node)
+
+            hap2_node = {
+                "label": ["variant", "haplotype"],
+                "node_ID": "variant_name",
+                "property": {
+                    "variant_name": hap2_name,
+                    "display": hap2_name,
+                    "type": "haplotype",
+                    "NC_change_code": hap2_mapping_dict.get("NC", ""),
+                    "NG_change_code": hap2_mapping_dict.get("NG", ""),
+                    "protein_change_code": hap2_mapping_dict.get("protein", ""),
+                    "nucleotide_change_code": hap2_mapping_dict.get("nucleotide", ""),
+                    "mapped_rsID": ",".join(hap2_mapping_dict.get("rsID", [])),
+                    "update_date": hap2_mapping_dict.get("update_date", ""),
+                    "frequency": str(hap2_mapping_dict.get("frequency", "")),
+                    "functionality": str(hap2_mapping_dict.get("functionality", "")),
+                    "is_reference": str(hap2_mapping_dict.get("is_reference", ""))
+                }
+            }
+            node_list.append(hap2_node)
+
+            # diplotype to haplotype.
+            hap1_edge = {
+                "start_node": edge_node(
+                    diplotype_node,
+                    remain_label_list=["diplotype"],
+                    remain_property_list=["diplotype_name"]
+                ),
+                "end_node": edge_node(
+                    hap1_node,
+                    remain_label_list=["haplotype"],
+                    remain_property_list=["variant_name"]
+                ),
+                "edge": {
+                    "label": "diplotype_consist_of",
+                    "property": {}
+                }
+            }
+            edge_list.append(hap1_edge)
+
+            # diplotype to haplotype.
+            hap2_edge = {
+                "start_node": edge_node(
+                    diplotype_node,
+                    remain_label_list=["diplotype"],
+                    remain_property_list=["diplotype_name"]
+                ),
+                "end_node": edge_node(
+                    hap2_node,
+                    remain_label_list=["haplotype"],
+                    remain_property_list=["variant_name"]
+                ),
+                "edge": {
+                    "label": "diplotype_consist_of",
+                    "property": {}
+                }
+            }
+            edge_list.append(hap2_edge)
+
+            if metabolizer in metabolizer_drug_dict.keys():
+                # Add diplotype to drug relation
+                for drug in metabolizer_drug_dict[metabolizer].keys():
+                    if "{}{}{}".format(dip_name, metabolizer, drug) in meta_edge_set:
+                        continue
+                    else:
+                        meta_edge_set.append("{}{}{}".format(dip_name, metabolizer, drug))
+
+                    chemical_node = {
+                        "label": ["chemical"],
+                        "node_ID": "chemical_name",
+                        "property": {
+                            "chemical_name": drug,
+                            "display": drug,
+                            "meshID": ""
+                        }
+                    }
+                    node_list.append(chemical_node)
+
+                    for data in metabolizer_drug_dict[metabolizer][drug]:
+                        # diplotype to chemical
+                        meta_edge = {
+                            "start_node": edge_node(
+                                diplotype_node,
+                                remain_label_list=["diplotype"],
+                                remain_property_list=["diplotype_name"]
+                            ),
+                            "end_node": edge_node(
+                                chemical_node,
+                                remain_label_list=["chemical"],
+                                remain_property_list=["chemical_name"]
+                            ),
+                            "edge": {
+                                "label": "diplotype_metabolizer",
+                                "property": {
+                                    "data_source": data["data_source"],
+                                    "phenotype": data["phenotype"],
+                                    "phenotype_category": data["phenotype_category"],
+                                    "genotype": data["genotype"].replace("\"", "'"),
+                                    "implication": data["implication"].replace("\"", "'"),
+                                    "description": data["description"].replace("\"", "'"),
+                                    "recommendation": data["recommendation"].replace("\"", "'"),
+                                    "organization": data["organization"].replace("\"", "'"),
+                                    "title": data["title"].replace("\"", "'"),
+                                    "link": data["link"],
+                                    "update_date": data["update_date"]
+                                }
+                            }
+                        }
+                        edge_list.append(meta_edge)
+    return node_list, edge_list
+
+
+def node_deduplicate(node_list):
+    """
+    chemical, diplotype, gene, haplotype, rsID
+    """
+    new_node_list = []
+    set_dict = defaultdict(list)
+
+    for node in node_list:
+        if "chemical" in node["label"] and node["property"]["chemical_name"] not in set_dict["chemical"]:
+            new_node_list.append(node)
+            set_dict["chemical"].append(node["property"]["chemical_name"])
+
+        if "diplotype" in node["label"] and node["property"]["diplotype_name"] not in set_dict["diplotype"]:
+            new_node_list.append(node)
+            set_dict["diplotype"].append(node["property"]["diplotype_name"])
+
+        if "gene" in node["label"] and node["property"]["gene_name"] not in set_dict["gene"]:
+            new_node_list.append(node)
+            set_dict["gene"].append(node["property"]["gene_name"])
+
+        if "haplotype" in node["label"] and node["property"]["variant_name"] not in set_dict["haplotype"]:
+            new_node_list.append(node)
+            set_dict["haplotype"].append(node["property"]["variant_name"])
+
+        if "rsID" in node["label"] and node["property"]["variant_name"] not in set_dict["rsID"]:
+            new_node_list.append(node)
+            set_dict["rsID"].append(node["property"]["variant_name"])
+    return new_node_list
+
+
+def edge_deduplicate(edge_list):
+    new_edge_list = []
+    edge_set = []
+    for edge in edge_list:
+        if edge["edge"]["label"] in ["clinical_annotation", "guideline_annotation", "drug_label", "research_annotation"]:
+            new_edge_list.append(edge)
+
+        else:
+            edge_label = edge["edge"]["label"]
+
+            start_node_name = "{}{}".format(edge["start_node"]["node_ID"],
+                                            edge["start_node"]["property"][edge["start_node"]["node_ID"]])
+
+            end_node_name = "{}{}".format(edge["end_node"]["node_ID"],
+                                          edge["end_node"]["property"][edge["end_node"]["node_ID"]])
+
+            if "{}{}{}".format(edge_label, start_node_name, end_node_name) not in edge_set:
+                new_edge_list.append(edge)
+                edge_set.append("{}{}{}".format(edge_label, start_node_name, end_node_name))
+            else:
+                continue
+
+    return new_edge_list
+
+
 def step3_gen_node_edge():
     node_list = []
     edge_list = []
@@ -1051,7 +1487,6 @@ def step3_gen_node_edge():
     node_list.extend(guideline_node_list)
     node_list.extend(diplo_drug_node_list)
     node_list.extend(research_node_list)
-    print(len(node_list))
 
     edge_list.extend(clinical_edge_list)
     edge_list.extend(variant_label_edge_list)
@@ -1059,7 +1494,24 @@ def step3_gen_node_edge():
     edge_list.extend(guideline_edge_list)
     edge_list.extend(diplo_drug_edge_list)
     edge_list.extend(research_edge_list)
-    print(len(edge_list))
+
+    # handle all diplotype node
+    all_dip_node_list, all_dip_edge_list = handle_all_diplotype_drug_edge()
+
+    # handle all haplotype node
+    all_hap_node_list, all_hap_edge_list = handle_all_haplotype_node_edge()
+
+    # handle all rsID node
+    all_rsID_node_list = handle_all_rsID_node()
+
+    node_list.extend(all_dip_node_list)
+    node_list.extend(all_hap_node_list)
+    node_list.extend(all_rsID_node_list)
+    edge_list.extend(all_dip_edge_list)
+    edge_list.extend(all_hap_edge_list)
+
+    # handle haplotype to rsID edge data.
+    edge_list.extend(handle_haplotype_rsID_edge(node_list))
 
     # deduplicate variant->gene edge data, and add to edge list
     judge_set = set()
@@ -1067,10 +1519,14 @@ def step3_gen_node_edge():
         if x[0] + x[1] not in list(judge_set):
             judge_set.add(x[0] + x[1])
             edge_list.append(x[2])
+
+    print(len(node_list))
     print(len(edge_list))
 
-    # handle haplotype to rsID edge data.
-    edge_list.extend(handle_haplotype_rsID_edge(node_list))
+    # deduplicate node and edge
+    node_list = node_deduplicate(node_list)
+    edge_list = edge_deduplicate(edge_list)
+    print(len(node_list))
     print(len(edge_list))
 
     # back up node and edge file with datetime string suffix

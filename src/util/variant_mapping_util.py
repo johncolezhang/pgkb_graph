@@ -107,6 +107,7 @@ class variantMappingUtil:
         self.genes = []
         self.gene_df_T_dict = {}
         self.standard_haplotype_dict = {}
+        self.gene_hap_list_dict = defaultdict(list)
 
         ############################# handle allele definition ##############
         allele_definition_folder = "allele_definition"
@@ -115,7 +116,6 @@ class variantMappingUtil:
             gene = path.split("_")[0]
             allele_definition_path_dict[gene] = os.path.join(allele_definition_folder, path)
 
-        self.allele_definition_dict = {}
         for key, value in sorted(allele_definition_path_dict.items(), key=lambda x: x[0]):
             # generate gene_T dict and standard type dict
             self.parse_allele_definition(key, value)
@@ -223,16 +223,18 @@ class variantMappingUtil:
                 # find reference type
                 reference_flag = False
                 meet_rsid_flag = False
-                for col in df_T.columns:
-                    if col != "rsID" and not meet_rsid_flag:
+                t_columns = list(df_T.columns)
+                for i in range(len(t_columns)):
+                    if t_columns[i] != "rsID" and not meet_rsid_flag:
                         continue
                     else:
                         meet_rsid_flag = True
 
                     if reference_flag and meet_rsid_flag:
-                        self.standard_haplotype_dict[gene] = col
+                        self.standard_haplotype_dict[gene] = t_columns[i]
+                        self.gene_hap_list_dict[gene] = t_columns[i:]
                         break
-                    if "".join(list(df_T[col].values)) == "" and meet_rsid_flag:
+                    if "".join(list(df_T[t_columns[i]].values)) == "" and meet_rsid_flag:
                         reference_flag = True
 
 
@@ -337,7 +339,7 @@ class variantMappingUtil:
         diplotype_dict = {}
         phenotype_dict = {}
         for sheet in xl.sheet_names:
-            if "diplotype" in sheet.lower():
+            if "diplotype" in sheet.lower() or "genotype" in sheet.lower():
                 ### read and handle diplotype
                 df_diplotype = pd.read_excel(xl, sheet_name=sheet, dtype=str).fillna("")
                 diplotype_column = ""
@@ -425,12 +427,16 @@ class variantMappingUtil:
     def haplotype_mapping(self, haplotype):
         gene, h_type = self.get_gene_h_type(haplotype)
 
+        mapping_dict = {}
+
         if gene not in self.genes:
             return {"update_date": datetime.now().strftime("%Y-%m-%d")}
 
         # standard type
         if self.standard_haplotype_dict[gene] == h_type:
-            return {"update_date": datetime.now().strftime("%Y-%m-%d")}
+            return {"update_date": datetime.now().strftime("%Y-%m-%d"), "is_reference": True}
+        else:
+            mapping_dict["is_reference"] = False
 
         # check header
         if h_type not in self.gene_df_T_dict[gene].columns:
@@ -438,9 +444,8 @@ class variantMappingUtil:
 
         h_type_list = list(self.gene_df_T_dict[gene][h_type].values)
 
-        mapping_dict = {}
-
         rsID_list = list(self.gene_df_T_dict[gene]["rsID"].values)
+
 
         filter_rs_ID_list = list(filter(lambda x: x[1] != "" and "rs" in x[0], zip(rsID_list, h_type_list)))
         if len(filter_rs_ID_list) != 0:
@@ -664,7 +669,7 @@ class variantMappingUtil:
     def get_gene_h_type(haplotype):
         if "*" in haplotype:
             gene = haplotype.split("*")[0]
-            h_type = "*" + haplotype.split("*")[1]
+            h_type = "*" + haplotype.split("*")[1].strip()
         else:
             gene = haplotype.split(" ")[0]
             h_type = " ".join(haplotype.split(" ")[1:])

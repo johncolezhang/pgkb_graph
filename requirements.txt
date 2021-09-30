@@ -6,3 +6,4 @@ cmake==3.18.4
 openpyxl==3.0.7
 neo4j==4.3.1 # need to fix packstream folder manually
 requests==2.26.0
+Beautifulsoup4==4.10.0
