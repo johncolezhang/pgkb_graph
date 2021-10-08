@@ -1470,6 +1470,66 @@ def edge_deduplicate(edge_list):
     return new_edge_list
 
 
+def gen_drug_chemical_node_edge(node_list):
+    df_drug_chemical = pd.read_csv("processed/nmpa_drug_chemical.csv", encoding="utf-8")
+    drug_node_list = []
+    drug_edge_list = []
+    drug_set = []
+
+    for node in node_list:
+        if "chemical" in node["label"]:
+            chemical_name = node["property"]["chemical_name"]
+            df_filter = df_drug_chemical[df_drug_chemical["chemical"] == chemical_name]
+
+            for index, row in df_filter.iterrows():
+                if row["license"] in drug_set:
+                    continue
+                else:
+                    drug_set.append(row["license"])
+
+                drug_node = {
+                    "label": ["nmpa_drug"],
+                    "node_ID": "license",
+                    "property": {
+                        "license": row["license"],
+                        "drug_name_chn": row["chn_name"],
+                        "drug_name_eng": row["eng_name"],
+                        "drug_code": row["code"],
+                        "source": row["source"],
+                        "country": row["country"],
+                        "company": row["company"],
+                        "type": row["drug_type"],
+                        "dose": row["dose"],
+                        "display": row["chn_name"]
+                    }
+                }
+                drug_node_list.append(drug_node)
+
+                drug_edge = {
+                    "start_node": {
+                        "label": ["nmpa_drug"],
+                        "node_ID": "license",
+                        "property": {
+                            "license": row["license"],
+                        }
+                    },
+                    "end_node": {
+                        "label": ["chemical"],
+                        "node_ID": "chemical_name",
+                        "property": {
+                            "chemical_name": row["chemical"],
+                        }
+                    },
+                    "edge": {
+                        "label": "drug_consist_of",
+                        "property": {}
+                    }
+                }
+                drug_edge_list.append(drug_edge)
+
+    return drug_node_list, drug_edge_list
+
+
 def step3_gen_node_edge():
     node_list = []
     edge_list = []
@@ -1526,6 +1586,12 @@ def step3_gen_node_edge():
     # deduplicate node and edge
     node_list = node_deduplicate(node_list)
     edge_list = edge_deduplicate(edge_list)
+
+    # add drug node and edge
+    drug_node_list, drug_edge_list = gen_drug_chemical_node_edge(node_list)
+    node_list.extend(drug_node_list)
+    edge_list.extend(drug_edge_list)
+
     print(len(node_list))
     print(len(edge_list))
 
