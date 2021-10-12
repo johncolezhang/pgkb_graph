@@ -67,6 +67,8 @@ def parsing_drug_file():
     company_list = []
     dose_list = []
     type_list = []
+    chn_business_name_list = []
+    eng_business_name_list = []
     for relation in drug_chemical_relation_list:
         pa_list.append(relation[0])
         chemical_list.append(relation[1])
@@ -80,6 +82,8 @@ def parsing_drug_file():
             company_list.append(relation[2]["生产单位"])
             dose_list.append(relation[2]["规格"])
             type_list.append(relation[2]["剂型"])
+            chn_business_name_list.append(relation[2]["商品名"])
+            eng_business_name_list.append("")
         else:
             primary_key_list.append(relation[2]["注册证号"])
             chn_name_list.append(relation[2]["产品名称（中文）"])
@@ -92,6 +96,8 @@ def parsing_drug_file():
             company_list.append(company if company != "" else relation[2]["生产厂商（英文）"])
             dose_list.append(relation[2]["规格（中文）"])
             type_list.append(relation[2]["剂型（中文）"])
+            chn_business_name_list.append(relation[2]["商品名（中文）"])
+            eng_business_name_list.append(relation[2]["商品名（英文）"])
 
     pd.DataFrame({
         "PAID": pa_list,
@@ -104,7 +110,9 @@ def parsing_drug_file():
         "country": country_list,
         "company": company_list,
         "drug_type": type_list,
-        "dose": dose_list
+        "dose": dose_list,
+        "chn_business_name": chn_business_name_list,
+        "eng_business_name": eng_business_name_list
     }).to_csv("processed/nmpa_drug_chemical.csv", index=False)
 
 if __name__ == "__main__":
