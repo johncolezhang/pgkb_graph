@@ -332,6 +332,25 @@ def download_drug():
 
     os.remove(os.path.join(folder, filename))
 
+def download_cpic_file():
+    guideline_link = "https://files.cpicpgx.org/data/report/current/pair/cpic_gene-drug_pairs.xlsx"
+
+    # move older folder to bak folder, and delete old one.
+    folder = "cpic"
+    bak_folder = os.path.join("bak", folder)
+    if os.path.isdir(folder):
+        if os.path.isdir(bak_folder):
+            shutil.rmtree(bak_folder)
+        shutil.copytree(folder, bak_folder)
+        shutil.rmtree(folder)
+    os.mkdir(folder)
+
+    filename = guideline_link.split("/")[-1]
+    content = requests.get(guideline_link).content
+
+    with open(os.path.join(folder, filename), "wb") as f:
+        f.write(content)
+
 
 def step1_download():
     download_allele_definition()
@@ -346,6 +365,7 @@ def step1_download():
     download_variants()
     download_chemical()
     download_drug()
+    download_cpic_file()
 
 if __name__ == "__main__":
     step1_download()

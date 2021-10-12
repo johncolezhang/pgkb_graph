@@ -15,6 +15,8 @@ v_mapping = variantMappingUtil()
 def check_type(variant_name):
     if "rs" in variant_name:
         return "rsID"
+    elif "/" in variant_name:
+        return "diplotype"
     else:
         return "haplotype"
 
@@ -57,7 +59,7 @@ def handle_clinical_csv():
             gene_list = v_mapping.variant_gene_dict.get(row["variant"], [])
             chromosome_list = [v_mapping.gene_chromosome_dict.get(x, "") for x in gene_list]
 
-        else:
+        elif variant_type == "haplotype":
             mapping_dict = v_mapping.haplotype_mapping(row["variant"])
             frequency_dict = v_mapping.haplotype_frequency_mapping(row["variant"])
             function_dict = v_mapping.haplotype_functionality_mapping(row["variant"])
@@ -71,6 +73,69 @@ def handle_clinical_csv():
                 gene_list = [row["variant"].split(" ")[0].strip()]
             chromosome_list = [v_mapping.gene_chromosome_dict.get(x, "") for x in gene_list]
 
+        else:
+            # handle diplotype <-> drug clinical annotation
+            mapping_dict = v_mapping.diplotype_mapping(row["variant"])
+            mapping_dict.update({"frequency": v_mapping.diplotype_frequency_mapping(row["variant"])})
+
+            diplotype_node = {
+                "label": ["diplotype"],
+                "node_ID": "diplotype_name",
+                "property": {
+                    "diplotype_name": row["variant"],
+                    "display": row["variant"],
+                    "phenotype": mapping_dict.get("phenotype", ""),
+                    "ehr_notation": mapping_dict.get("ehr_notation", ""),
+                    "activity_score": mapping_dict.get("activity_score", ""),
+                    "consultation": mapping_dict.get("consultation", ""),
+                    "update_date": mapping_dict.get("update_date", ""),
+                    "frequency": str(mapping_dict.get("frequency", ""))
+                }
+            }
+            node_list.append(diplotype_node)
+
+            chemical_node = {
+                "label": ["chemical"],
+                "node_ID": "chemical_name",
+                "property": {
+                    "chemical_name": row["drug"],
+                    "display": row["drug"],
+                    # TODO map meshID
+                    "meshID": "",
+                    "link": v_mapping.chemical_link_dict.get(row["drug"], "")
+                }
+            }
+            node_list.append(chemical_node)
+
+            # diplotype to chemical.
+            relation_edge = {
+                "start_node": edge_node(
+                    diplotype_node,
+                    remain_label_list=["diplotype"],
+                    remain_property_list=["diplotype_name", "type"]
+                ),
+                "end_node": edge_node(
+                    chemical_node,
+                    remain_label_list=["chemical"],
+                    remain_property_list=["chemical_name"]
+                ),
+                "edge": {
+                    "label": "clinical_annotation",
+                    "property": {
+                        "data_source": "clinical_annotation",
+                        "evidence_level": row["evidence_level"],
+                        "phenotype_category": row["phenotype_category"],
+                        "phenotype": row["phenotype"],
+                        "level_modifier": row["level_modifier"],
+                        "score": row["score"],
+                        "update_date": row["update_date"],
+                        "link": row["link"]
+                    }
+                }
+            }
+            edge_list.append(relation_edge)
+            continue
+
         gene_node_list = []
         for i in range(len(gene_list)):
             gene_node_list.append({
@@ -81,53 +146,81 @@ def handle_clinical_csv():
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
                     "update_date": v_mapping.gene_update_date,
-                    "link": v_mapping.gene_link_dict.get(gene_list[i], "")
+                    "link": v_mapping.gene_link_dict.get(gene_list[i], ""),
+                    "is_VIP": v_mapping.gene_is_vip.get(gene_list[i], ""),
+                    "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
+                    "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
+                    "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
 
-        
-        if variant_type == "rsID":
-            variant_label = ["variant", "rsID"]
-        else:
-            variant_label = ["variant", "haplotype"]
-            
-        variant_node = {
-            "label": variant_label,
-            "node_ID": "variant_name",
-            "property": {
-                "variant_name": row["variant"],
-                "display": row["variant"],
-                "type": variant_type,
-                "NC_change_code": mapping_dict.get("NC", ""),
-                "NG_change_code": mapping_dict.get("NG", ""),
-                "protein_change_code": mapping_dict.get("protein", ""),
-                "nucleotide_change_code": mapping_dict.get("nucleotide", ""),
-                "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
-                "update_date": mapping_dict.get("update_date", ""),
-                "frequency": str(mapping_dict.get("frequency", "")),
-                "functionality": str(mapping_dict.get("functionality", "")),
-                "link": v_mapping.variant_link_dict.get(row["variant"], "")
-            }
-        }
-        node_list.append(variant_node)
+        if variant_type in ["rsID", "haplotype"]:
+            if variant_type == "rsID":
+                variant_label = ["variant", "rsID"]
+            else:
+                variant_label = ["variant", "haplotype"]
 
-        chemical_node = {
-            "label": ["chemical"],
-            "node_ID": "chemical_name",
-            "property": {
-                "chemical_name": row["drug"],
-                "display": row["drug"],
-                # TODO map meshID
-                "meshID": "",
-                "link": v_mapping.chemical_link_dict.get(row["drug"], "")
+            variant_node = {
+                "label": variant_label,
+                "node_ID": "variant_name",
+                "property": {
+                    "variant_name": row["variant"],
+                    "display": row["variant"],
+                    "type": variant_type,
+                    "NC_change_code": mapping_dict.get("NC", ""),
+                    "NG_change_code": mapping_dict.get("NG", ""),
+                    "protein_change_code": mapping_dict.get("protein", ""),
+                    "nucleotide_change_code": mapping_dict.get("nucleotide", ""),
+                    "mapped_rsID": ",".join(mapping_dict.get("rsID", [])),
+                    "update_date": mapping_dict.get("update_date", ""),
+                    "frequency": str(mapping_dict.get("frequency", "")),
+                    "functionality": str(mapping_dict.get("functionality", "")),
+                    "link": v_mapping.variant_link_dict.get(row["variant"], "")
+                }
             }
-        }
-        node_list.append(chemical_node)
+            node_list.append(variant_node)
 
-        ######################## Add edge #######################
-        # variant to gene.
-        for gene_node in gene_node_list:
+            chemical_node = {
+                "label": ["chemical"],
+                "node_ID": "chemical_name",
+                "property": {
+                    "chemical_name": row["drug"],
+                    "display": row["drug"],
+                    # TODO map meshID
+                    "meshID": "",
+                    "link": v_mapping.chemical_link_dict.get(row["drug"], "")
+                }
+            }
+            node_list.append(chemical_node)
+
+            ######################## Add edge #######################
+            # variant to gene.
+            for gene_node in gene_node_list:
+                relation_edge = {
+                    "start_node": edge_node(
+                        variant_node,
+                        remain_label_list=["variant"],
+                        remain_property_list=["variant_name", "type"]
+                    ),
+                    "end_node": edge_node(
+                        gene_node,
+                        remain_label_list=["gene"],
+                        remain_property_list=["gene_name"]
+                    ),
+                    "edge": {
+                        "label": "mutation_at",
+                        "property": {}
+                    }
+                }
+                gene_variant_edge_list.append([
+                    variant_node["property"]["display"],
+                    gene_node["property"]["display"],
+                    relation_edge
+                ])
+
+            # variant to chemical.
             relation_edge = {
                 "start_node": edge_node(
                     variant_node,
@@ -135,46 +228,25 @@ def handle_clinical_csv():
                     remain_property_list=["variant_name", "type"]
                 ),
                 "end_node": edge_node(
-                    gene_node,
-                    remain_label_list=["gene"],
-                    remain_property_list=["gene_name"]
+                    chemical_node,
+                    remain_label_list=["chemical"],
+                    remain_property_list=["chemical_name"]
                 ),
                 "edge": {
-                    "label": "mutation_at",
-                    "property": {}
+                    "label": "clinical_annotation",
+                    "property": {
+                        "data_source": "clinical_annotation",
+                        "evidence_level": row["evidence_level"],
+                        "phenotype_category": row["phenotype_category"],
+                        "phenotype": row["phenotype"].replace("\"", "'"),
+                        "level_modifier": row["level_modifier"],
+                        "score": row["score"],
+                        "update_date": row["update_date"],
+                        "link": row["link"]
+                    }
                 }
             }
-            gene_variant_edge_list.append([
-                variant_node["property"]["display"],
-                gene_node["property"]["display"],
-                relation_edge
-            ])
-
-        # variant to chemical.
-        relation_edge = {
-            "start_node": edge_node(
-                variant_node,
-                remain_label_list=["variant"],
-                remain_property_list=["variant_name", "type"]
-            ),
-            "end_node": edge_node(
-                chemical_node,
-                remain_label_list=["chemical"],
-                remain_property_list=["chemical_name"]
-            ),
-            "edge": {
-                "label": "clinical_annotation",
-                "property": {
-                    "data_source": "clinical_annotation",
-                    "evidence_level": row["evidence_level"],
-                    "phenotype_category": row["phenotype_category"],
-                    "phenotype": row["phenotype"],
-                    "update_date": row["update_date"],
-                    "link": row["link"]
-                }
-            }
-        }
-        edge_list.append(relation_edge)
+            edge_list.append(relation_edge)
     return node_list, edge_list
 
 
@@ -222,7 +294,12 @@ def handle_variant_drug_label_csv():
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
                     "update_date": v_mapping.gene_update_date,
-                    "link": v_mapping.gene_link_dict.get(gene_list[i], "")
+                    "link": v_mapping.gene_link_dict.get(gene_list[i], ""),
+                    "is_VIP": v_mapping.gene_is_vip.get(gene_list[i], ""),
+                    "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
+                    "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
+                    "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -334,7 +411,13 @@ def handle_gene_drug_label_csv():
             "property": {
                 "gene_name": row["gene"],
                 "display": row["gene"],
-                "link": v_mapping.gene_link_dict.get(row["gene"], "")
+                "chromosome": v_mapping.gene_chromosome_dict.get(row["gene"], ""),
+                "link": v_mapping.gene_link_dict.get(row["gene"], ""),
+                "is_VIP": v_mapping.gene_is_vip.get(row["gene"], ""),
+                "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(row["gene"], ""),
+                "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(row["gene"], ""),
+                "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(row["gene"], ""),
+                "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(row["gene"], "")
             }
         }
         node_list.append(gene_node)
@@ -423,7 +506,12 @@ def handle_guideline_csv():
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
                     "update_date": v_mapping.gene_update_date,
-                    "link": v_mapping.gene_link_dict.get(row["gene"], "")
+                    "link": v_mapping.gene_link_dict.get(row["gene"], ""),
+                    "is_VIP": v_mapping.gene_is_vip.get(gene_list[i], ""),
+                    "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
+                    "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
+                    "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -675,7 +763,12 @@ def handle_research_csv():
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
                     "update_date": v_mapping.gene_update_date,
-                    "link": v_mapping.gene_link_dict.get(gene_list[i], "")
+                    "link": v_mapping.gene_link_dict.get(gene_list[i], ""),
+                    "is_VIP": v_mapping.gene_is_vip.get(gene_list[i], ""),
+                    "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
+                    "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
+                    "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -1087,7 +1180,12 @@ def handle_all_haplotype_node_edge():
                         "display": gene_list[i],
                         "chromosome": chromosome_list[i],
                         "update_date": v_mapping.gene_update_date,
-                        "link": v_mapping.gene_link_dict.get(gene_list[i], "")
+                        "link": v_mapping.gene_link_dict.get(gene_list[i], ""),
+                        "is_VIP": v_mapping.gene_is_vip.get(gene_list[i], ""),
+                        "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
+                        "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
+                        "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
+                        "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
                     }
                 })
             node_list.extend(gene_node_list)
@@ -1185,7 +1283,12 @@ def handle_all_rsID_node():
                     "display": gene_list[i],
                     "chromosome": chromosome_list[i],
                     "update_date": v_mapping.gene_update_date,
-                    "link": v_mapping.gene_link_dict.get(gene_list[i], "")
+                    "link": v_mapping.gene_link_dict.get(gene_list[i], ""),
+                    "is_VIP": v_mapping.gene_is_vip.get(gene_list[i], ""),
+                    "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
+                    "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
+                    "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -1415,6 +1518,91 @@ def handle_all_diplotype_drug_edge():
     return node_list, edge_list
 
 
+def handle_cpic_guideline():
+    df = pd.read_csv(
+        "processed/cpic_gene_drug.csv",
+        encoding="utf-8",
+        dtype=str
+    ).fillna("")
+    node_list = []
+    edge_list = []
+
+    for index, row in df.iterrows():
+        gene = row["Gene"]
+        drug = row["Drug"]
+        guideline_link = row["Guideline"]
+        cpic_level = row["CPIC Level"]
+        cpic_level_status = row["CPIC Level Status"]
+        pharmGKB_evidence_level = row["PharmGKB Level of Evidence"]
+        fda_PGx_label = row["PGx on FDA Label"]
+        pmid = row["CPIC Publications (PMID)"]
+        update_date = row["update_date"]
+        pmid_link = row["PMID_link"]
+
+        ################################ add node ###########################
+        gene_node = {
+            "label": ["gene"],
+            "node_ID": "gene_name",
+            "property": {
+                "gene_name": gene,
+                "display": gene,
+                "chromosome": v_mapping.gene_chromosome_dict.get(gene, ""),
+                "update_date": v_mapping.gene_update_date,
+                "link": v_mapping.gene_link_dict.get(gene, ""),
+                "is_VIP": v_mapping.gene_is_vip.get(gene, ""),
+                "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene, ""),
+                "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene, ""),
+                "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene, ""),
+                "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene, "")
+            }
+        }
+        node_list.append(gene_node)
+
+        chemical_node = {
+            "label": ["chemical"],
+            "node_ID": "chemical_name",
+            "property": {
+                "chemical_name": drug,
+                "display": drug,
+                # TODO map meshID
+                "meshID": "",
+                "link": v_mapping.chemical_link_dict.get(drug, "")
+            }
+        }
+        node_list.append(chemical_node)
+
+        ################################## add edge ###################################
+        # variant to chemical.
+        relation_edge = {
+            "start_node": edge_node(
+                gene_node,
+                remain_label_list=["gene"],
+                remain_property_list=["gene_name"]
+            ),
+            "end_node": edge_node(
+                chemical_node,
+                remain_label_list=["chemical"],
+                remain_property_list=["chemical_name"]
+            ),
+            "edge": {
+                "label": "cpic_guideline",
+                "property": {
+                    "data_source": "cpic_guideline",
+                    "guideline_link": guideline_link,
+                    "CPIC_level": cpic_level,
+                    "CPIC_level_status": cpic_level_status,
+                    "PGKB_evidence_level": pharmGKB_evidence_level,
+                    "FDA_PGx_label": fda_PGx_label,
+                    "update_date": update_date,
+                    "PMID": pmid,
+                    "PMID_link": pmid_link
+                }
+            }
+        }
+        edge_list.append(relation_edge)
+    return node_list, edge_list
+
+
 def node_deduplicate(node_list):
     """
     chemical, diplotype, gene, haplotype, rsID
@@ -1449,7 +1637,8 @@ def edge_deduplicate(edge_list):
     new_edge_list = []
     edge_set = []
     for edge in edge_list:
-        if edge["edge"]["label"] in ["clinical_annotation", "guideline_annotation", "drug_label", "research_annotation"]:
+        if edge["edge"]["label"] in ["clinical_annotation", "guideline_annotation",
+                                     "drug_label", "research_annotation", "cpic_guideline"]:
             new_edge_list.append(edge)
 
         else:
@@ -1500,7 +1689,9 @@ def gen_drug_chemical_node_edge(node_list):
                         "company": row["company"],
                         "type": row["drug_type"],
                         "dose": row["dose"],
-                        "display": row["chn_name"]
+                        "display": row["chn_name"],
+                        "chn_business_name": row["chn_business_name"],
+                        "eng_business_name": row["eng_business_name"]
                     }
                 }
                 drug_node_list.append(drug_node)
@@ -1579,6 +1770,10 @@ def step3_gen_node_edge():
         if x[0] + x[1] not in list(judge_set):
             judge_set.add(x[0] + x[1])
             edge_list.append(x[2])
+
+    cpic_node_list, cpic_edge_list = handle_cpic_guideline()
+    node_list.extend(cpic_node_list)
+    edge_list.extend(cpic_edge_list)
 
     print(len(node_list))
     print(len(edge_list))

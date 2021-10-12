@@ -14,41 +14,49 @@ def generate_clinical_file():
         if "CREATED" in x:
             clinical_update_date = x.split("_")[1].split(".")[0]
 
-    df_clinical_annotation = pd.read_csv('clinical_annotation/clinical_annotations.tsv', sep='\t').fillna("")
+    df_clinical_annotation = pd.read_csv('clinical_annotation/clinical_annotations.tsv', sep='\t', dtype=str).fillna("")
     df_clinical_annotation.index = range(len(df_clinical_annotation))
     # use to fix wrong comma split
     special_haplotype_name_list = ["G6PD Mediterranean, Dallas, Panama, Sassari, Cagliari, Birmingham"]
     variant_drug_list = []
-    all_variant_list = []
+
+    df_clinical_phenotype = pd.read_csv("clinical_annotation/clinical_ann_alleles.tsv", sep="\t", dtype=str).fillna("")
+    clinical_pheno_dict = {}
+    for index, row in df_clinical_phenotype.iterrows():
+        clinical_pheno_dict["{}|{}".format(row["Clinical Annotation ID"],
+                                           row["Genotype/Allele"])] = row["Annotation Text"]
+
+    df_clinical_annotation = pd.merge(df_clinical_phenotype, df_clinical_annotation, on=["Clinical Annotation ID"], how="left")
 
     for index, row in df_clinical_annotation.iterrows():
-        variant = row["Variant/Haplotypes"]
-        variant_list = []
-        for shn in special_haplotype_name_list:
-            if shn in variant:
-                variant_list.append(shn)
-                variant = variant.replace(shn, "")
-        variant_list.extend([x.strip() for x in variant.split(",")])
-        variant_list = list(filter(lambda x: x != "", variant_list))
-        all_variant_list.extend(variant_list)
+        if "rs" in row["Variant/Haplotypes"]:
+            variant = row["Variant/Haplotypes"]
+        else:
+            if row["Genotype/Allele"] in special_haplotype_name_list or "/" in row["Genotype/Allele"]:
+                variant = "{} {}".format(row["Gene"], row["Genotype/Allele"])
+            else:
+                variant = "{}{}".format(row["Gene"], row["Genotype/Allele"])
 
         level = row["Level of Evidence"]
         phenotype_category = row["Phenotype Category"]
-        phenotype = row["Phenotype(s)"]
+        phenotype = "{}; {}".format(row["Annotation Text"], row["Phenotype(s)"])
         update_date = row["Latest History Date (YYYY-MM-DD)"]
-        link = "https://www.pharmgkb.org/clinicalAnnotation/{}".format(row["Clinical Annotation ID"])
-
+        link = row["URL"]
+        level_modifier = row["Level Modifiers"]
+        score = row["Score"]
         drug = row["Drug(s)"]
         drug_list = [x.strip() for x in re.split(r";|,|/", drug)]
 
-        for v in variant_list:
-            for d in drug_list:
-                variant_drug_list.append((v, level, phenotype_category, phenotype, update_date, d, link))
+        for d in drug_list:
+            variant_drug_list.append((variant, level, phenotype_category,
+                                      phenotype, update_date, d, link,
+                                      level_modifier, score))
 
     variant_drug_list = list(set(variant_drug_list))
     df_clinical_drug_variant_annotation = pd.DataFrame(
         variant_drug_list,
-        columns=["variant", "evidence_level", "phenotype_category", "phenotype", "update_date", "drug", "link"])
+        columns=["variant", "evidence_level", "phenotype_category", "phenotype",
+                 "update_date", "drug", "link", "level_modifier", "score"])
 
     df_clinical_drug_variant_annotation = df_clinical_drug_variant_annotation.assign(
         data_source=["clinical_annotation"] * len(variant_drug_list)).assign(
@@ -582,11 +590,34 @@ def generate_research_file():
     ).to_csv("processed/research_drug_diplotype_annotation.csv", index=False)
 
 
+def generate_cpic_guideline_file():
+    xl = pd.ExcelFile("cpic/cpic_gene-drug_pairs.xlsx")
+    df_cpic_guideline = pd.read_excel(xl, sheet_name="CPIC Gene-Drug Pairs", dtype=str).fillna("")
+    df_change = pd.read_excel(xl, sheet_name="Change log", dtype=str).fillna("")
+    update_date = list(df_change["Date"].values)[-1]
+    df_cpic_guideline = df_cpic_guideline.assign(update_date=[update_date] * len(df_cpic_guideline))
+    pmid_list = list(df_cpic_guideline["CPIC Publications (PMID)"].values)
+    pmid_link_list = []
+    PMID_link_template = "https://pubmed.ncbi.nlm.nih.gov/{}/"
+    for pmid in pmid_list:
+        if ";" not in pmid:
+            if pmid.strip() != "":
+                pmid_link_list.append(PMID_link_template.format(pmid.strip()))
+            else:
+                pmid_link_list.append("")
+        else:
+            pmid_link_list.append(" ; ".join([PMID_link_template.format(x.strip()) for x in pmid.split(";")]))
+
+    df_cpic_guideline = df_cpic_guideline.assign(PMID_link=pmid_link_list)
+    df_cpic_guideline.to_csv("processed/cpic_gene_drug.csv", index=False)
+
+
 def step2_generate_file():
     generate_clinical_file()
     generate_drug_label_file()
     generate_guideline_file()
     generate_research_file()
+    generate_cpic_guideline_file()
 
 if __name__ == "__main__":
     step2_generate_file()

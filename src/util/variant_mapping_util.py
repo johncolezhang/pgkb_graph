@@ -29,13 +29,41 @@ class variantMappingUtil:
             sep='\t',
             error_bad_lines=False,
             dtype=str
-        ).fillna("")[["Symbol", "Chromosome", "PharmGKB Accession Id"]]
+        ).fillna("")[["Symbol", "Chromosome", "PharmGKB Accession Id",
+                      "Is VIP", "Has Variant Annotation", "Cross-references",
+                      "Has CPIC Dosing Guideline", "Chromosomal Start - GRCh38",
+                      "Chromosomal Stop - GRCh38"]]
         self.gene_chromosome_dict = dict(zip(list(df_gene["Symbol"].values),
                                              list(df_gene["Chromosome"].values)))
 
         self.gene_link_dict = dict(zip(list(
             df_gene["Symbol"].values),
             ["https://www.pharmgkb.org/gene/{}".format(x) for x in list(df_gene["PharmGKB Accession Id"].values)]))
+
+        self.gene_is_vip = dict(zip(list(df_gene["Symbol"].values),
+                                    list(df_gene["Is VIP"].values)))
+
+        self.gene_has_variant_annotation = dict(zip(list(df_gene["Symbol"].values),
+                                                    list(df_gene["Has Variant Annotation"].values)))
+
+        self.gene_has_cpic_dosing_guideline = dict(zip(list(df_gene["Symbol"].values),
+                                                       list(df_gene["Has CPIC Dosing Guideline"].values)))
+
+        self.gene_chromosomal_start_GRCh38 = dict(zip(list(df_gene["Symbol"].values),
+                                                      list(df_gene["Chromosomal Start - GRCh38"].values)))
+
+        self.gene_chromosomal_stop_GRCh38 = dict(zip(list(df_gene["Symbol"].values),
+                                                     list(df_gene["Chromosomal Stop - GRCh38"].values)))
+
+        refseq_rna_regex = re.compile(r"RefSeq RNA:NM_\d+")
+        self.gene_refseq_rna = dict(zip(list(df_gene["Symbol"].values),
+                                        [self.parse_info(x, refseq_rna_regex) for x in
+                                         list(df_gene["Cross-references"].values)]))
+
+        omim_regex = re.compile(r"OMIM:\d+")
+        self.gene_omim = dict(zip(list(df_gene["Symbol"].values),
+                                  [self.parse_info(x, omim_regex)for x in
+                                   list(df_gene["Cross-references"].values)]))
 
         # parse gene data update date
         self.gene_update_date = ""
@@ -179,6 +207,11 @@ class variantMappingUtil:
             func_dict = self.parse_functionality(value)
             self.gene_functionality_dict[key] = func_dict
             self.data_change_dict[key]["functionality"] = self.parse_latest_update_date(value)
+
+    @staticmethod
+    def parse_info(content, regex):
+        return "|".join(regex.findall(content))
+
 
     @staticmethod
     def check_first_row(xl_object, sheet_name):
