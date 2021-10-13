@@ -23,6 +23,50 @@ class variantMappingUtil:
             ["https://www.pharmgkb.org/chemical/{}".format(x) for x in
              list(df_chemical["PharmGKB Accession Id"].values)]))
 
+        df_atc_l1 = pd.read_csv("processed/ATC_L1.csv", dtype=str).fillna("")
+        atc_l1_dict = dict(zip(list(df_atc_l1["href"].values),
+                               list(df_atc_l1["text"].values)))
+
+        df_atc_l2 = pd.read_csv("processed/ATC_L2.csv", dtype=str).fillna("")
+        atc_l2_dict = dict(zip(list(df_atc_l2["href"].values),
+                               list(df_atc_l2["text"].values)))
+
+        df_atc_l3 = pd.read_csv("processed/ATC_L3.csv", dtype=str).fillna("")
+        atc_l3_dict = dict(zip(list(df_atc_l3["href"].values),
+                               list(df_atc_l3["text"].values)))
+
+        df_atc_l4 = pd.read_csv("processed/ATC_L4.csv", dtype=str).fillna("")
+        atc_l4_dict = dict(zip(list(df_atc_l4["href"].values),
+                               list(df_atc_l4["text"].values)))
+
+        self.ATC_dict = {}
+        df_atc_l5 = pd.read_csv("processed/ATC_L5.csv", dtype=str).fillna("")
+        for atc_code, content in df_atc_l5[df_atc_l5["Name"] != ""].groupby(["ATC code"]):
+            atc_l1_info = "{}: {}".format(atc_code[0], atc_l1_dict.get(atc_code[0], ""))
+            atc_l2_info = "{}: {}".format(atc_code[:3], atc_l2_dict.get(atc_code[:3], ""))
+            atc_l3_info = "{}: {}".format(atc_code[:4], atc_l3_dict.get(atc_code[:4], ""))
+            atc_l4_info = "{}: {}".format(atc_code[:5], atc_l4_dict.get(atc_code[:5], ""))
+            name = list(content["Name"].values)[0].lower().strip()
+            DDD_list = []
+            for index, row in content.iterrows():
+                DDD_list.append({
+                    "DDD": row["DDD"],
+                    "U": row["U"],
+                    "Adm.R": row["Adm.R"],
+                    "Note": row["Note"]
+                })
+            DDD_str = json.dumps(DDD_list).replace("\"", "'")
+
+            self.ATC_dict[name] = {
+                "atc_code": atc_code,
+                "name": name,
+                "L1_info": atc_l1_info,
+                "L2_info": atc_l2_info,
+                "L3_info": atc_l3_info,
+                "L4_info": atc_l4_info,
+                "DDD": DDD_str
+            }
+
         ############################### handle gene ####################################
         df_gene = pd.read_csv(
             "genes/genes.tsv",

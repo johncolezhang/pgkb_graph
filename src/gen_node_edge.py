@@ -105,6 +105,11 @@ def handle_clinical_csv():
                     "link": v_mapping.chemical_link_dict.get(row["drug"], "")
                 }
             }
+            # add ATC node
+            if row["drug"] in v_mapping.ATC_dict.keys():
+                for key in v_mapping.ATC_dict[row["drug"]].keys():
+                    chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
             node_list.append(chemical_node)
 
             # diplotype to chemical.
@@ -193,6 +198,11 @@ def handle_clinical_csv():
                     "link": v_mapping.chemical_link_dict.get(row["drug"], "")
                 }
             }
+            # add ATC node
+            if row["drug"] in v_mapping.ATC_dict.keys():
+                for key in v_mapping.ATC_dict[row["drug"]].keys():
+                    chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
             node_list.append(chemical_node)
 
             ######################## Add edge #######################
@@ -338,6 +348,11 @@ def handle_variant_drug_label_csv():
                 "meshID": ""
             }
         }
+        # add ATC node
+        if row["drug"] in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[row["drug"]].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
         node_list.append(chemical_node)
 
         ######################## Add edge #######################
@@ -431,6 +446,12 @@ def handle_gene_drug_label_csv():
                 "meshID": ""
             }
         }
+
+        # add ATC node
+        if row["drug"] in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[row["drug"]].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
         node_list.append(chemical_node)
 
         ######################## Add edge #######################
@@ -551,6 +572,11 @@ def handle_guideline_csv():
                 "meshID": ""
             }
         }
+        # add ATC node
+        if row["drug"] in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[row["drug"]].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
         node_list.append(chemical_node)
 
         ######################## Add edge #######################
@@ -650,6 +676,12 @@ def handle_diplotype_drug_csv():
                 "meshID": ""
             }
         }
+
+        # add ATC node
+        if row["drug"] in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[row["drug"]].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
         node_list.append(chemical_node)
 
         ################################## add edge ##############################
@@ -808,6 +840,12 @@ def handle_research_csv():
                 "meshID": ""
             }
         }
+
+        # add ATC node
+        if row["drug"] in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[row["drug"]].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
         node_list.append(chemical_node)
 
         ######################## Add edge #######################
@@ -958,6 +996,12 @@ def handle_research_csv():
                 "meshID": ""
             }
         }
+
+        # add ATC node
+        if row["drug"] in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[row["drug"]].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
         node_list.append(chemical_node)
 
         ########################### Add edge #######################
@@ -1042,6 +1086,12 @@ def handle_research_csv():
                         "meshID": ""
                     }
                 }
+
+                # add ATC node
+                if drug in v_mapping.ATC_dict.keys():
+                    for key in v_mapping.ATC_dict[drug].keys():
+                        chemical_node["property"][key] = v_mapping.ATC_dict[drug][key]
+
                 node_list.append(chemical_node)
 
                 if "{}{}{}".format(diplotype, dip_mapping_dict["phenotype"], drug) in meta_edge_set:
@@ -1482,6 +1532,12 @@ def handle_all_diplotype_drug_edge():
                             "meshID": ""
                         }
                     }
+
+                    # add ATC node
+                    if drug in v_mapping.ATC_dict.keys():
+                        for key in v_mapping.ATC_dict[drug].keys():
+                            chemical_node["property"][key] = v_mapping.ATC_dict[drug][key]
+
                     node_list.append(chemical_node)
 
                     for data in metabolizer_drug_dict[metabolizer][drug]:
@@ -1569,6 +1625,12 @@ def handle_cpic_guideline():
                 "link": v_mapping.chemical_link_dict.get(drug, "")
             }
         }
+
+        # add ATC node
+        if drug in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[drug].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[drug][key]
+
         node_list.append(chemical_node)
 
         ################################## add edge ###################################
@@ -1660,7 +1722,8 @@ def edge_deduplicate(edge_list):
 
 
 def gen_drug_chemical_node_edge(node_list):
-    df_drug_chemical = pd.read_csv("processed/nmpa_drug_chemical.csv", encoding="utf-8")
+    df_drug_chemical = pd.read_csv("processed/nmpa_drug_chemical.csv",
+                                   encoding="utf-8", dtype=str).fillna("")
     drug_node_list = []
     drug_edge_list = []
     drug_set = []
@@ -1671,7 +1734,7 @@ def gen_drug_chemical_node_edge(node_list):
             df_filter = df_drug_chemical[df_drug_chemical["chemical"] == chemical_name]
 
             for index, row in df_filter.iterrows():
-                if row["license"] in drug_set:
+                if row["license"] in drug_set or row["license"] == "":
                     continue
                 else:
                     drug_set.append(row["license"])
