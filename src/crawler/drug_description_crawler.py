@@ -5,24 +5,24 @@ import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict
 
-# list_url_template = "https://www.yaopinnet.com/huayao1/{}.htm"
-#
-# menu_list = []
-# for alphabet in tqdm(string.ascii_lowercase):
-#     for num in range(1, 50):
-#         req = requests.get(list_url_template.format("{}{}".format(alphabet, num)))
-#         if req.status_code != 200:
-#             break
-#
-#         content = req.content
-#         soup = BeautifulSoup(content, 'html.parser')
-#         row_list = [i.find('a') for i in soup.findAll('li')]
-#         if row_list:
-#             for i in row_list:
-#                 menu_list.append((i['href'], i.text))
-#
-# df_menu = pd.DataFrame(menu_list, columns=["url", "drug_name"])
-# df_menu.to_csv("processed/drug_description_list.csv", index=False)
+list_url_template = "https://www.yaopinnet.com/huayao1/{}.htm"
+
+menu_list = []
+for alphabet in tqdm(string.ascii_lowercase):
+    for num in range(1, 50):
+        req = requests.get(list_url_template.format("{}{}".format(alphabet, num)))
+        if req.status_code != 200:
+            break
+
+        content = req.content
+        soup = BeautifulSoup(content, 'html.parser')
+        row_list = [i.find('a') for i in soup.findAll('li')]
+        if row_list:
+            for i in row_list:
+                menu_list.append((i['href'], i.text))
+
+df_menu = pd.DataFrame(menu_list, columns=["url", "drug_name"])
+df_menu.to_csv("processed/drug_description_list.csv", index=False)
 
 df_menu = pd.read_csv("processed/drug_description_list.csv", dtype=str).fillna("")
 
