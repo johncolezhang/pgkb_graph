@@ -1754,7 +1754,8 @@ def gen_drug_chemical_node_edge(node_list):
                         "dose": row["dose"],
                         "display": row["chn_name"],
                         "chn_business_name": row["chn_business_name"],
-                        "eng_business_name": row["eng_business_name"]
+                        "eng_business_name": row["eng_business_name"],
+                        "description": row["description"]
                     }
                 }
                 drug_node_list.append(drug_node)

@@ -1,6 +1,8 @@
 import json
 import os
 import pandas as pd
+from fnmatch import fnmatch
+
 
 def parsing_drug_file():
     # imported
@@ -38,6 +40,30 @@ def parsing_drug_file():
     chemical_dict = dict(zip(df_chemical["PharmGKB Accession Id"].values, df_chemical["Name"].values))
     drug_chemical_relation_list = []
 
+    dd_columns = ["药品名称", "成份", "性状", "适应症", "用法用量", "不良反应", "禁忌", "注意事项",
+                  "孕妇及哺乳期妇女用药", "儿童用药", "老年用药", "贮藏", "规格", "药物相互作用",
+                  "药理毒理", "药代动力学", "药物过量", "有效期", "包装", "执行标准"]
+    df_drug_description = pd.DataFrame(
+        columns=dd_columns)
+
+    for fn in os.listdir("processed"):
+        if fnmatch(fn, "drug_description_detail_*.csv"):
+            df_drug_description = pd.concat(
+                [df_drug_description,
+                 pd.read_csv(os.path.join("processed", fn), dtype=str).fillna("")],
+                ignore_index=True,
+                axis=0
+            )
+
+    drug_description_dict = {}
+    for index, row in df_drug_description.iterrows():
+        drug_description_dict[row["药品名称"]] = {}
+        for col in dd_columns:
+            if col != "药品名称":
+                drug_description_dict[row["药品名称"]][col] = row[col]
+    for key in drug_description_dict.keys():
+        drug_description_dict[key] = str(drug_description_dict[key]).replace("\"", "'")
+
     for drug in demostic_drug_list:
         d_split = drug["英文名称"].lower().split(" ")
         for key, value in chemical_dict.items():
@@ -69,6 +95,7 @@ def parsing_drug_file():
     type_list = []
     chn_business_name_list = []
     eng_business_name_list = []
+    description_list = []
     for relation in drug_chemical_relation_list:
         pa_list.append(relation[0])
         chemical_list.append(relation[1])
@@ -84,6 +111,11 @@ def parsing_drug_file():
             type_list.append(relation[2]["剂型"])
             chn_business_name_list.append(relation[2]["商品名"])
             eng_business_name_list.append("")
+            if relation[2]["产品名称"] in drug_description_dict.keys():
+                description_list.append(drug_description_dict[relation[2]["产品名称"]])
+            else:
+                description_list.append("")
+
         else:
             primary_key_list.append(relation[2]["注册证号"])
             chn_name_list.append(relation[2]["产品名称（中文）"])
@@ -98,6 +130,10 @@ def parsing_drug_file():
             type_list.append(relation[2]["剂型（中文）"])
             chn_business_name_list.append(relation[2]["商品名（中文）"])
             eng_business_name_list.append(relation[2]["商品名（英文）"])
+            if relation[2]["产品名称（中文）"] in drug_description_dict.keys():
+                description_list.append(drug_description_dict[relation[2]["产品名称（中文）"]])
+            else:
+                description_list.append("")
 
     pd.DataFrame({
         "PAID": pa_list,
@@ -112,7 +148,8 @@ def parsing_drug_file():
         "drug_type": type_list,
         "dose": dose_list,
         "chn_business_name": chn_business_name_list,
-        "eng_business_name": eng_business_name_list
+        "eng_business_name": eng_business_name_list,
+        "description": description_list
     }).to_csv("processed/nmpa_drug_chemical.csv", index=False)
 
 if __name__ == "__main__":
