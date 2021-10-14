@@ -21,17 +21,17 @@ def getATC_DDD_Data(targetList, level):
                 tempList.append((i['href'].split('&')[0].split('=')[1], i.text, ))
     return pd.DataFrame(tempList, columns=['href', 'text'])
 
-# ATC_L1 = getATC_DDD_Data(string.ascii_uppercase, 1)
-# ATC_L1.to_csv("processed/ATC_L1.csv", index=False)
-#
-# ATC_L2 = getATC_DDD_Data(string.ascii_uppercase, 2)
-# ATC_L2.to_csv("processed/ATC_L2.csv", index=False)
-#
-# ATC_L3 = getATC_DDD_Data(list(ATC_L2['href']), 3)
-# ATC_L3.to_csv("processed/ATC_L3.csv", index=False)
-#
-# ATC_L4 = getATC_DDD_Data(list(ATC_L3['href']), 4)
-# ATC_L4.to_csv("processed/ATC_L4.csv", index=False)
+ATC_L1 = getATC_DDD_Data(string.ascii_uppercase, 1)
+ATC_L1.to_csv("processed/ATC_L1.csv", index=False)
+
+ATC_L2 = getATC_DDD_Data(string.ascii_uppercase, 2)
+ATC_L2.to_csv("processed/ATC_L2.csv", index=False)
+
+ATC_L3 = getATC_DDD_Data(list(ATC_L2['href']), 3)
+ATC_L3.to_csv("processed/ATC_L3.csv", index=False)
+
+ATC_L4 = getATC_DDD_Data(list(ATC_L3['href']), 4)
+ATC_L4.to_csv("processed/ATC_L4.csv", index=False)
 
 ATC_L4 = pd.read_csv("processed/ATC_L4.csv", dtype=str).fillna("")
 
