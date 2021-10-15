@@ -156,7 +156,9 @@ def handle_clinical_csv():
                     "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
                     "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
                     "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
-                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], ""),
+                    "refseq": v_mapping.gene_refseq_rna.get(gene_list[i], ""),
+                    "OMIM": v_mapping.gene_omim.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -309,7 +311,9 @@ def handle_variant_drug_label_csv():
                     "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
                     "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
                     "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
-                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], ""),
+                    "refseq": v_mapping.gene_refseq_rna.get(gene_list[i], ""),
+                    "OMIM": v_mapping.gene_omim.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -432,7 +436,9 @@ def handle_gene_drug_label_csv():
                 "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(row["gene"], ""),
                 "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(row["gene"], ""),
                 "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(row["gene"], ""),
-                "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(row["gene"], "")
+                "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(row["gene"], ""),
+                "refseq": v_mapping.gene_refseq_rna.get(row["gene"], ""),
+                "OMIM": v_mapping.gene_omim.get(row["gene"], "")
             }
         }
         node_list.append(gene_node)
@@ -532,7 +538,9 @@ def handle_guideline_csv():
                     "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
                     "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
                     "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
-                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], ""),
+                    "refseq": v_mapping.gene_refseq_rna.get(gene_list[i], ""),
+                    "OMIM": v_mapping.gene_omim.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -800,7 +808,9 @@ def handle_research_csv():
                     "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
                     "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
                     "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
-                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], ""),
+                    "refseq": v_mapping.gene_refseq_rna.get(gene_list[i], ""),
+                    "OMIM": v_mapping.gene_omim.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -1099,7 +1109,6 @@ def handle_research_csv():
                 else:
                     meta_edge_set.append("{}{}{}".format(diplotype, dip_mapping_dict["phenotype"], drug))
 
-                a = metabolizer_drug_dict[dip_mapping_dict["phenotype"]][drug]
                 for data in metabolizer_drug_dict[dip_mapping_dict["phenotype"]][drug]:
                     # diplotype to chemical
                     meta_edge = {
@@ -1235,7 +1244,9 @@ def handle_all_haplotype_node_edge():
                         "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
                         "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
                         "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
-                        "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
+                        "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], ""),
+                        "refseq": v_mapping.gene_refseq_rna.get(gene_list[i], ""),
+                        "OMIM": v_mapping.gene_omim.get(gene_list[i], "")
                     }
                 })
             node_list.extend(gene_node_list)
@@ -1338,7 +1349,9 @@ def handle_all_rsID_node():
                     "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene_list[i], ""),
                     "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene_list[i], ""),
                     "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene_list[i], ""),
-                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], "")
+                    "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene_list[i], ""),
+                    "refseq": v_mapping.gene_refseq_rna.get(gene_list[i], ""),
+                    "OMIM": v_mapping.gene_omim.get(gene_list[i], "")
                 }
             })
         node_list.extend(gene_node_list)
@@ -1609,7 +1622,9 @@ def handle_cpic_guideline():
                 "has_variant_annotation": v_mapping.gene_has_variant_annotation.get(gene, ""),
                 "has_cpic_dosing_guideline": v_mapping.gene_has_cpic_dosing_guideline.get(gene, ""),
                 "chromosomal_start_GRCh38": v_mapping.gene_chromosomal_start_GRCh38.get(gene, ""),
-                "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene, "")
+                "chromosomal_stop_GRCh38": v_mapping.gene_chromosomal_stop_GRCh38.get(gene, ""),
+                "refseq": v_mapping.gene_refseq_rna.get(gene, ""),
+                "OMIM": v_mapping.gene_omim.get(gene, "")
             }
         }
         node_list.append(gene_node)

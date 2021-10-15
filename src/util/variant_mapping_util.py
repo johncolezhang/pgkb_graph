@@ -142,6 +142,7 @@ class variantMappingUtil:
         self.variant_NG_synonym_dict = defaultdict(list)
         self.variant_NC_synonym_dict = defaultdict(list)
         self.variant_rs_synonym_dict = defaultdict(list)
+        self.variant_NP_synonym_dict = defaultdict(list)
         self.variant_link_dict = {}
         for index, row in df_variants.iterrows():
             variant_link = "https://www.pharmgkb.org/variant/{}".format(row["Variant ID"])
@@ -174,6 +175,8 @@ class variantMappingUtil:
                         self.variant_NC_synonym_dict[variant].append(s)
                     if "rs" in s:
                         self.variant_rs_synonym_dict[variant].append(s)
+                    if "NP" in s:
+                        self.variant_NP_synonym_dict[variant].append(s)
 
         ############################### handle haplotype ###############################
         self.genes = []
@@ -581,6 +584,8 @@ class variantMappingUtil:
             mapping_dict["NG"] = self.variant_NG_synonym_dict[rsID]
         if rsID in self.variant_rs_synonym_dict.keys():
             mapping_dict["rsID"] = self.variant_rs_synonym_dict[rsID]
+        if rsID in self.variant_NP_synonym_dict.keys():
+            mapping_dict["protein"] = self.variant_NP_synonym_dict[rsID]
 
         return mapping_dict
 
