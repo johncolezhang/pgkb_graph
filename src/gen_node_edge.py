@@ -1587,6 +1587,261 @@ def handle_all_diplotype_drug_edge():
     return node_list, edge_list
 
 
+def handle_no_metabolizer_guideline():
+    node_list = []
+    edge_list = []
+    df = pd.read_csv(
+        "processed/diplotype_record_guideline.csv",
+        encoding="utf-8",
+        dtype=str
+    ).fillna("")
+
+    for index, row in df.iterrows():
+        dip_name = row["diplotype"]
+        gene, dip = dip_name.split(" ")
+        hap1_name = "{}{}".format(gene, dip.split("/")[0])
+        hap2_name = "{}{}".format(gene, dip.split("/")[1])
+        dip_mapping_dict = v_mapping.diplotype_mapping(dip_name)
+        dip_mapping_dict.update({"frequency": v_mapping.diplotype_frequency_mapping(dip_name)})
+
+        diplotype_node = {
+            "label": ["diplotype"],
+            "node_ID": "diplotype_name",
+            "property": {
+                "diplotype_name": dip_name.replace("\"", "'"),
+                "display": dip_name.replace("\"", "'"),
+                "phenotype": dip_mapping_dict.get("phenotype", ""),
+                "ehr_notation": dip_mapping_dict.get("ehr_notation", ""),
+                "activity_score": dip_mapping_dict.get("activity_score", ""),
+                "consultation": dip_mapping_dict.get("consultation", ""),
+                "update_date": dip_mapping_dict.get("update_date", ""),
+                "frequency": str(dip_mapping_dict.get("frequency", ""))
+            }
+        }
+        node_list.append(diplotype_node)
+
+        hap1_mapping_dict = v_mapping.haplotype_mapping(hap1_name)
+        hap1_frequency_dict = v_mapping.haplotype_frequency_mapping(hap1_name)
+        hap1_function_dict = v_mapping.haplotype_functionality_mapping(hap1_name)
+        hap1_mapping_dict.update({"frequency": hap1_frequency_dict})
+        hap1_mapping_dict.update({"functionality": hap1_function_dict})
+
+        hap2_mapping_dict = v_mapping.haplotype_mapping(hap2_name)
+        hap2_frequency_dict = v_mapping.haplotype_frequency_mapping(hap2_name)
+        hap2_function_dict = v_mapping.haplotype_functionality_mapping(hap2_name)
+        hap2_mapping_dict.update({"frequency": hap2_frequency_dict})
+        hap2_mapping_dict.update({"functionality": hap2_function_dict})
+
+        hap1_node = {
+            "label": ["variant", "haplotype"],
+            "node_ID": "variant_name",
+            "property": {
+                "variant_name": hap1_name,
+                "display": hap1_name,
+                "type": "haplotype",
+                "NC_change_code": hap1_mapping_dict.get("NC", ""),
+                "NG_change_code": hap1_mapping_dict.get("NG", ""),
+                "protein_change_code": hap1_mapping_dict.get("protein", ""),
+                "nucleotide_change_code": hap1_mapping_dict.get("nucleotide", ""),
+                "mapped_rsID": ",".join(hap1_mapping_dict.get("rsID", [])),
+                "update_date": hap1_mapping_dict.get("update_date", ""),
+                "frequency": str(hap1_mapping_dict.get("frequency", "")),
+                "functionality": str(hap1_mapping_dict.get("functionality", "")),
+                "is_reference": str(hap1_mapping_dict.get("is_reference", ""))
+            }
+        }
+        node_list.append(hap1_node)
+
+        hap2_node = {
+            "label": ["variant", "haplotype"],
+            "node_ID": "variant_name",
+            "property": {
+                "variant_name": hap2_name,
+                "display": hap2_name,
+                "type": "haplotype",
+                "NC_change_code": hap2_mapping_dict.get("NC", ""),
+                "NG_change_code": hap2_mapping_dict.get("NG", ""),
+                "protein_change_code": hap2_mapping_dict.get("protein", ""),
+                "nucleotide_change_code": hap2_mapping_dict.get("nucleotide", ""),
+                "mapped_rsID": ",".join(hap2_mapping_dict.get("rsID", [])),
+                "update_date": hap2_mapping_dict.get("update_date", ""),
+                "frequency": str(hap2_mapping_dict.get("frequency", "")),
+                "functionality": str(hap2_mapping_dict.get("functionality", "")),
+                "is_reference": str(hap2_mapping_dict.get("is_reference", ""))
+            }
+        }
+        node_list.append(hap2_node)
+
+        # diplotype to haplotype.
+        hap1_edge = {
+            "start_node": edge_node(
+                diplotype_node,
+                remain_label_list=["diplotype"],
+                remain_property_list=["diplotype_name"]
+            ),
+            "end_node": edge_node(
+                hap1_node,
+                remain_label_list=["haplotype"],
+                remain_property_list=["variant_name"]
+            ),
+            "edge": {
+                "label": "diplotype_consist_of",
+                "property": {}
+            }
+        }
+        edge_list.append(hap1_edge)
+
+        # diplotype to haplotype.
+        hap2_edge = {
+            "start_node": edge_node(
+                diplotype_node,
+                remain_label_list=["diplotype"],
+                remain_property_list=["diplotype_name"]
+            ),
+            "end_node": edge_node(
+                hap2_node,
+                remain_label_list=["haplotype"],
+                remain_property_list=["variant_name"]
+            ),
+            "edge": {
+                "label": "diplotype_consist_of",
+                "property": {}
+            }
+        }
+        edge_list.append(hap2_edge)
+
+        chemical_node = {
+            "label": ["chemical"],
+            "node_ID": "chemical_name",
+            "property": {
+                "chemical_name": row["drug"],
+                "display": row["drug"],
+                "meshID": ""
+            }
+        }
+
+        # add ATC node
+        if row["drug"] in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[row["drug"]].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
+        node_list.append(chemical_node)
+
+        # diplotype to chemical
+        meta_edge = {
+            "start_node": edge_node(
+                diplotype_node,
+                remain_label_list=["diplotype"],
+                remain_property_list=["diplotype_name"]
+            ),
+            "end_node": edge_node(
+                chemical_node,
+                remain_label_list=["chemical"],
+                remain_property_list=["chemical_name"]
+            ),
+            "edge": {
+                "label": "variant_guideline",
+                "property": {
+                    "data_source": row["data_source"],
+                    "phenotype": row["phenotype"],
+                    "genotype": row["genotype"].replace("\"", "'"),
+                    "implication": row["implication"].replace("\"", "'"),
+                    "description": row["description"].replace("\"", "'"),
+                    "recommendation": row["recommendation"].replace("\"", "'"),
+                    "organization": row["organization"].replace("\"", "'"),
+                    "title": row["title"].replace("\"", "'"),
+                    "link": row["link"],
+                    "update_date": row["update_date"]
+                }
+            }
+        }
+        edge_list.append(meta_edge)
+
+    df = pd.read_csv(
+        "processed/haplotype_record_guideline.csv",
+        encoding="utf-8",
+        dtype=str
+    ).fillna("")
+
+    for index, row in df.iterrows():
+        hap_name = row["haplotype"]
+        hap_mapping_dict = v_mapping.haplotype_mapping(hap_name)
+        hap_frequency_dict = v_mapping.haplotype_frequency_mapping(hap_name)
+        hap_function_dict = v_mapping.haplotype_functionality_mapping(hap_name)
+        hap_mapping_dict.update({"frequency": hap_frequency_dict})
+        hap_mapping_dict.update({"functionality": hap_function_dict})
+
+        hap_node = {
+            "label": ["variant", "haplotype"],
+            "node_ID": "variant_name",
+            "property": {
+                "variant_name": hap_name,
+                "display": hap_name,
+                "type": "haplotype",
+                "NC_change_code": hap_mapping_dict.get("NC", ""),
+                "NG_change_code": hap_mapping_dict.get("NG", ""),
+                "protein_change_code": hap_mapping_dict.get("protein", ""),
+                "nucleotide_change_code": hap_mapping_dict.get("nucleotide", ""),
+                "mapped_rsID": ",".join(hap_mapping_dict.get("rsID", [])),
+                "update_date": hap_mapping_dict.get("update_date", ""),
+                "frequency": str(hap_mapping_dict.get("frequency", "")),
+                "functionality": str(hap_mapping_dict.get("functionality", "")),
+                "is_reference": str(hap_mapping_dict.get("is_reference", ""))
+            }
+        }
+        node_list.append(hap_node)
+
+        chemical_node = {
+            "label": ["chemical"],
+            "node_ID": "chemical_name",
+            "property": {
+                "chemical_name": row["drug"],
+                "display": row["drug"],
+                "meshID": ""
+            }
+        }
+
+        # add ATC node
+        if row["drug"] in v_mapping.ATC_dict.keys():
+            for key in v_mapping.ATC_dict[row["drug"]].keys():
+                chemical_node["property"][key] = v_mapping.ATC_dict[row["drug"]][key]
+
+        node_list.append(chemical_node)
+
+        # haplotype to chemical
+        meta_edge = {
+            "start_node": edge_node(
+                hap_node,
+                remain_label_list=["variant"],
+                remain_property_list=["variant_name"]
+            ),
+            "end_node": edge_node(
+                chemical_node,
+                remain_label_list=["chemical"],
+                remain_property_list=["chemical_name"]
+            ),
+            "edge": {
+                "label": "variant_guideline",
+                "property": {
+                    "data_source": row["data_source"],
+                    "phenotype": row["phenotype"],
+                    "genotype": row["genotype"].replace("\"", "'"),
+                    "implication": row["implication"].replace("\"", "'"),
+                    "description": row["description"].replace("\"", "'"),
+                    "recommendation": row["recommendation"].replace("\"", "'"),
+                    "organization": row["organization"].replace("\"", "'"),
+                    "title": row["title"].replace("\"", "'"),
+                    "link": row["link"],
+                    "update_date": row["update_date"]
+                }
+            }
+        }
+        edge_list.append(meta_edge)
+
+
+    return node_list, edge_list
+
+
 def handle_cpic_guideline():
     df = pd.read_csv(
         "processed/cpic_gene_drug.csv",
@@ -1854,6 +2109,10 @@ def step3_gen_node_edge():
     node_list.extend(cpic_node_list)
     edge_list.extend(cpic_edge_list)
 
+    no_meta_node_list, no_meta_edge_list = handle_no_metabolizer_guideline()
+    node_list.extend(no_meta_node_list)
+    edge_list.extend(no_meta_edge_list)
+
     print(len(node_list))
     print(len(edge_list))
 
@@ -1890,5 +2149,15 @@ def step3_gen_node_edge():
         json.dump(edge_list, f)
 
 
+def add_extra_data():
+    no_meta_node_list, no_meta_edge_list = handle_no_metabolizer_guideline()
+    with open("json/nodes_extra.json", "w") as f:
+        json.dump(no_meta_node_list, f)
+
+    with open("json/edges_extra.json", "w") as f:
+        json.dump(no_meta_edge_list, f)
+
+
 if __name__ == "__main__":
+    # add_extra_data()
     step3_gen_node_edge()
