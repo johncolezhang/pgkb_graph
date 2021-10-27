@@ -12,6 +12,12 @@ from collections import defaultdict
 
 v_mapping = variantMappingUtil()
 
+df_translate = pd.read_csv("processed/translate.csv", dtype=str, encoding="utf-8").fillna("")
+translate_dict = dict(zip(
+    list(df_translate["en_str"].values),
+    list(df_translate["cn_str"].values)
+))
+
 def check_type(variant_name):
     if "rs" in variant_name:
         return "rsID"
@@ -131,6 +137,7 @@ def handle_clinical_csv():
                         "evidence_level": row["evidence_level"],
                         "phenotype_category": row["phenotype_category"],
                         "phenotype": row["phenotype"],
+                        "phenotype_chn": translate_dict.get(row["phenotype"], ""),
                         "level_modifier": row["level_modifier"],
                         "score": row["score"],
                         "update_date": row["update_date"],
@@ -251,6 +258,7 @@ def handle_clinical_csv():
                         "evidence_level": row["evidence_level"],
                         "phenotype_category": row["phenotype_category"],
                         "phenotype": row["phenotype"].replace("\"", "'"),
+                        "phenotype_chn": translate_dict.get(row["phenotype"], "").replace("\"", "'"),
                         "level_modifier": row["level_modifier"],
                         "score": row["score"],
                         "update_date": row["update_date"],
@@ -630,6 +638,7 @@ def handle_guideline_csv():
                     "data_source": "guideline_annotation",
                     "guideline_institute": row["guideline_institute"],
                     "guideline_name": row["guideline_name"],
+                    "guideline_name_chn": translate_dict.get(row["guideline_name"], ""),
                     "guideline_term": row["term"],
                     "guideline_link": row["guideline_link"],
                     "cancer_genome": row["cancer_genome"],
@@ -716,9 +725,12 @@ def handle_diplotype_drug_csv():
                         "phenotype": row["phenotype"],
                         "phenotype_category": row["phenotype_category"],
                         "genotype": row["genotype"],
+                        "genotype_chn": translate_dict.get(row["genotype"], ""),
                         "implication": str(row["implication"]).replace("\"", "'"),
+                        "implication_chn": translate_dict.get(row["implication"], "").replace("\"", "'"),
                         "description": str(row["description"]).replace("\"", "'"),
                         "recommendation": str(row["recommendation"]).replace("\"", "'"),
+                        "recommendation_chn": translate_dict.get(row["recommendation"], "").replace("\"", "'"),
                         "organization": str(row["organization"]).replace("\"", "'"),
                         "title": row["title"].replace("\"", "'"),
                         "link": row["link"],
@@ -748,8 +760,11 @@ def handle_research_csv():
                     "phenotype_category": r["phenotype_category"],
                     "genotype": r["genotype"],
                     "implication": str(r["implication"]).replace("\"", "'"),
+                    "implication_chn": translate_dict.get(r["implication"], "").replace("\"", "'"),
                     "description": str(r["description"]).replace("\"", "'"),
+                    "description_chn": translate_dict.get(r["description"], "").replace("\"", "'"),
                     "recommendation": str(r["recommendation"]).replace("\"", "'"),
+                    "recommendation_chn": translate_dict.get(r["recommendation"], "").replace("\"", "'"),
                     "organization": str(r["organization"]).replace("\"", "'"),
                     "title": str(r["title"]).replace("\"", "'"),
                     "link": r["link"],
@@ -905,7 +920,9 @@ def handle_research_csv():
                     "PMID": row["PMID"],
                     "PMID_link": row["PMID_link"],
                     "note": row["note"].replace("\"", "'"),
+                    "note_chn": translate_dict.get(row["note"], "").replace("\"", "'"),
                     "sentence": row["sentence"].replace("\"", "'"),
+                    "sentence_chn": translate_dict.get(row["sentence"], "").replace("\"", "'"),
                     "update_date": row["update_date"],
                     "link": row["link"]
                 }
@@ -1075,7 +1092,9 @@ def handle_research_csv():
                     "PMID": row["PMID"],
                     "PMID_link": row["PMID_link"],
                     "note": row["note"].replace("\"", "'"),
+                    "note_chn": translate_dict.get(row["note"], "").replace("\"", "'"),
                     "sentence": row["sentence"].replace("\"", "'"),
+                    "sentence_chn": translate_dict.get(row["sentence"], "").replace("\"", "'"),
                     "update_date": row["update_date"],
                     "link": row["link"]
                 }
@@ -1130,8 +1149,11 @@ def handle_research_csv():
                                 "phenotype_category": data["phenotype_category"],
                                 "genotype": data["genotype"].replace("\"", "'"),
                                 "implication": data["implication"].replace("\"", "'"),
+                                "implication_chn": data["implication_chn"].replace("\"", "'"),
                                 "description": data["description"].replace("\"", "'"),
+                                "description_chn": data["description_chn"].replace("\"", "'"),
                                 "recommendation": data["recommendation"].replace("\"", "'"),
+                                "recommendation_chn": data["recommendation_chn"].replace("\"", "'"),
                                 "organization": data["organization"].replace("\"", "'"),
                                 "title": data["title"].replace("\"", "'"),
                                 "link": data["link"],
@@ -1403,8 +1425,11 @@ def handle_all_diplotype_drug_edge():
                     "phenotype_category": r["phenotype_category"],
                     "genotype": r["genotype"],
                     "implication": str(r["implication"]).replace("\"", "'"),
+                    "implication_chn": translate_dict.get(r["implication"], "").replace("\"", "'"),
                     "description": str(r["description"]).replace("\"", "'"),
+                    "description_chn": translate_dict.get(r["description"], "").replace("\"", "'"),
                     "recommendation": str(r["recommendation"]).replace("\"", "'"),
+                    "recommendation_chn": translate_dict.get(r["recommendation"], "").replace("\"", "'"),
                     "organization": str(r["organization"]).replace("\"", "'"),
                     "title": str(r["title"]).replace("\"", "'"),
                     "link": r["link"],
@@ -1574,8 +1599,11 @@ def handle_all_diplotype_drug_edge():
                                     "phenotype_category": data["phenotype_category"],
                                     "genotype": data["genotype"].replace("\"", "'"),
                                     "implication": data["implication"].replace("\"", "'"),
+                                    "implication_chn": data["implication_chn"].replace("\"", "'"),
                                     "description": data["description"].replace("\"", "'"),
+                                    "description_chn": data["description_chn"].replace("\"", "'"),
                                     "recommendation": data["recommendation"].replace("\"", "'"),
+                                    "recommendation_chn": data["recommendation_chn"].replace("\"", "'"),
                                     "organization": data["organization"].replace("\"", "'"),
                                     "title": data["title"].replace("\"", "'"),
                                     "link": data["link"],
@@ -1745,9 +1773,12 @@ def handle_no_metabolizer_guideline():
                     "data_source": row["data_source"],
                     "phenotype": row["phenotype"],
                     "genotype": row["genotype"].replace("\"", "'"),
+                    "genotype_chn": translate_dict.get(row["genotype"], "").replace("\"", "'"),
                     "implication": row["implication"].replace("\"", "'"),
+                    "implication_chn": translate_dict.get(row["implication"], "").replace("\"", "'"),
                     "description": row["description"].replace("\"", "'"),
                     "recommendation": row["recommendation"].replace("\"", "'"),
+                    "recommendation_chn": translate_dict.get(row["recommendation"], "").replace("\"", "'"),
                     "organization": row["organization"].replace("\"", "'"),
                     "title": row["title"].replace("\"", "'"),
                     "link": row["link"],
@@ -1826,9 +1857,12 @@ def handle_no_metabolizer_guideline():
                     "data_source": row["data_source"],
                     "phenotype": row["phenotype"],
                     "genotype": row["genotype"].replace("\"", "'"),
+                    "genotype_chn": translate_dict.get(row["genotype"], "").replace("\"", "'"),
                     "implication": row["implication"].replace("\"", "'"),
+                    "implication_chn": translate_dict.get(row["implication"], "").replace("\"", "'"),
                     "description": row["description"].replace("\"", "'"),
                     "recommendation": row["recommendation"].replace("\"", "'"),
+                    "recommendation_chn": translate_dict.get(row["recommendation"], "").replace("\"", "'"),
                     "organization": row["organization"].replace("\"", "'"),
                     "title": row["title"].replace("\"", "'"),
                     "link": row["link"],
