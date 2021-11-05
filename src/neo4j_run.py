@@ -15,18 +15,19 @@ def step4_upload_neo4j():
     node_filepath = "json/nodes.json"
     edge_filepath = "json/edges.json"
 
-    print("Delete all nodes and relationships")
-    neo_util.delete_all_neo4j(neo4j_database)
+    # print("Delete all nodes and relationships")
+    # neo_util.delete_all_neo4j(neo4j_database)
 
     print("Add nodes")
     with open(node_filepath) as f:
         node_list = json.load(f)
+    # node_list = list(filter(lambda x: x["label"][0] == "chemical", node_list))
     neo_util.add_node_to_neo4j(node_list, neo4j_database)
 
-    print("Add edges")
-    with open(edge_filepath) as f:
-        edge_list = json.load(f)
-    neo_util.add_edge_to_neo4j(edge_list, neo4j_database)
+    # print("Add edges")
+    # with open(edge_filepath) as f:
+    #     edge_list = json.load(f)
+    # neo_util.add_edge_to_neo4j(edge_list, neo4j_database)
 
 
 if __name__ == "__main__":

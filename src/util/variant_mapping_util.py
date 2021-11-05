@@ -41,6 +41,10 @@ class variantMappingUtil:
 
         self.ATC_dict = {}
         df_atc_l5 = pd.read_csv("processed/ATC_L5.csv", dtype=str).fillna("")
+        df_atc_translate = pd.read_csv("processed/translate_atc.csv", dtype=str).fillna("")
+        atc_translate_dict = dict(zip(list(df_atc_translate["en_str"].values),
+                                      list(df_atc_translate["cn_str"].values)))
+
         for atc_code, content in df_atc_l5[df_atc_l5["Name"] != ""].groupby(["ATC code"]):
             atc_l1_info = "{}: {}".format(atc_code[0], atc_l1_dict.get(atc_code[0], ""))
             atc_l2_info = "{}: {}".format(atc_code[:3], atc_l2_dict.get(atc_code[:3], ""))
@@ -61,9 +65,13 @@ class variantMappingUtil:
                 "atc_code": atc_code,
                 "name": name,
                 "L1_info": atc_l1_info,
+                "L1_info_chn": atc_translate_dict.get(atc_l1_info, "").upper(),
                 "L2_info": atc_l2_info,
+                "L2_info_chn": atc_translate_dict.get(atc_l2_info, "").upper(),
                 "L3_info": atc_l3_info,
+                "L3_info_chn": atc_translate_dict.get(atc_l3_info, "").upper(),
                 "L4_info": atc_l4_info,
+                "L4_info_chn": atc_translate_dict.get(atc_l4_info, "").upper(),
                 "DDD": DDD_str
             }
 

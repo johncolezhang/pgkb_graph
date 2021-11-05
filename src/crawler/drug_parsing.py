@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from fnmatch import fnmatch
 
-
+# 化合物及药品名的映射
 def parsing_drug_file():
     # imported
     with open("nmpa_data/imported_drugs.json", "r", encoding="utf-8") as f:
@@ -66,6 +66,9 @@ def parsing_drug_file():
 
     for drug in demostic_drug_list:
         d_split = drug["英文名称"].lower().split(" ")
+        d_split = list(filter(lambda x: x not in ["", "tablets", "injection", "compound", "enteric-coated"
+                                                  "for", "and", "capsules", "c", "granules", "sodium",
+                                                  "glucose", "acid"], d_split))
         for key, value in chemical_dict.items():
             name = value.lower()
             for d in d_split:
@@ -75,6 +78,10 @@ def parsing_drug_file():
 
     for drug in imported_drug_list:
         d_split = drug["产品名称（英文）"].lower().split(" ")
+        d_split = list(filter(lambda x: x not in ["", "tablets", "injection", "compound", "enteric-coated"
+                                                  "for", "and", "capsules", "c",
+                                                  "granules", "sodium",
+                                                  "glucose", "acid"], d_split))
         for key, value in chemical_dict.items():
             name = value.lower()
             for d in d_split:
