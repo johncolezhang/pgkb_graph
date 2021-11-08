@@ -12,20 +12,22 @@ def step4_upload_neo4j():
 
     neo_util = neo4jUtil(host=neo4j_host, user=neo4j_user, password=neo4j_pwd)
 
-    node_filepath = "json/nodes.json"
-    edge_filepath = "json/edges.json"
 
     # print("Delete all nodes and relationships")
     # neo_util.delete_all_neo4j(neo4j_database)
 
-    print("Add nodes")
-    with open(node_filepath) as f:
+    # print("Add nodes")
+    # with open("json/nodes.json") as f:
+    #     node_list = json.load(f)
+    # # node_list = list(filter(lambda x: x["label"][0] == "chemical", node_list))
+    # neo_util.add_node_to_neo4j(node_list, neo4j_database)
+
+    with open("json/nodes_extra.json") as f:
         node_list = json.load(f)
-    # node_list = list(filter(lambda x: x["label"][0] == "chemical", node_list))
     neo_util.add_node_to_neo4j(node_list, neo4j_database)
 
     # print("Add edges")
-    # with open(edge_filepath) as f:
+    # with open("json/edges.json") as f:
     #     edge_list = json.load(f)
     # neo_util.add_edge_to_neo4j(edge_list, neo4j_database)
 

@@ -1219,7 +1219,10 @@ def handle_all_haplotype_node_edge():
     edge_set = []
     for gene, hap_list in v_mapping.gene_hap_list_dict.items():
         for hap in hap_list:
-            hap_name = "{} {}".format(gene, hap)
+            if "*" in hap:
+                hap_name = "{}{}".format(gene, hap)
+            else:
+                hap_name = "{} {}".format(gene, hap)
             if hap == "":
                 continue
 
@@ -2184,14 +2187,16 @@ def step3_gen_node_edge():
 
 
 def add_extra_data():
-    no_meta_node_list, no_meta_edge_list = handle_no_metabolizer_guideline()
+    # no_meta_node_list, no_meta_edge_list = handle_no_metabolizer_guideline()
+    hap_node_list, hap_edge_list = handle_all_haplotype_node_edge()
     with open("json/nodes_extra.json", "w") as f:
-        json.dump(no_meta_node_list, f)
+        json.dump(hap_node_list, f)
 
-    with open("json/edges_extra.json", "w") as f:
-        json.dump(no_meta_edge_list, f)
+    # with open("json/edges_extra.json", "w") as f:
+    #     json.dump(no_meta_edge_list, f)
 
 
 if __name__ == "__main__":
-    # add_extra_data()
-    step3_gen_node_edge()
+    add_extra_data()
+    # step3_gen_node_edge()
+    # handle_all_haplotype_node_edge()
