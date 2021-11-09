@@ -6,6 +6,7 @@ import os
 import json
 import re
 from bs4 import BeautifulSoup
+from collections import defaultdict
 
 def generate_clinical_file():
     # parse clinical update date
@@ -676,6 +677,45 @@ def generate_cpic_guideline_file():
     df_cpic_guideline.to_csv("processed/cpic_gene_drug.csv", index=False)
 
 
+def position_map_util(NC_change_code):
+        pos = "chr" + NC_change_code.replace("g.", "").replace("m.", "").split(".")[-1]
+        chr_name, pos = pos.split(":")
+        position = "".join(
+                ["{}:{}".format(pos.replace(y, ""), y)
+                 for y in re.findall(r"[\D]+", pos)]
+            ) if "del" not in pos else pos
+
+        return "{}:{}".format(chr_name, position)
+
+
+def generate_rsID_position():
+    df_variants = pd.read_csv(
+        'variants/variants.tsv',
+        sep='\t',
+        error_bad_lines=False,
+        dtype=str
+    ).fillna("")
+
+    variant_location_matched_synonym_dict = defaultdict(list)
+    for index, row in df_variants.iterrows():
+        location = row["Location"]
+        variant = row["Variant Name"]
+        synonym = row["Synonyms"]
+        if variant != "" and synonym != "":
+            synonym_list = [x.strip() for x in synonym.split(",")]
+            for s in synonym_list:
+                if location != "" and location.split(":")[1] in s and "=" not in s:
+                    s = position_map_util(s)
+                    variant_location_matched_synonym_dict[variant].append(s)
+
+    rsID_location_dict = {key: ",".join(value) for key, value in variant_location_matched_synonym_dict.items()}
+
+    pd.DataFrame({
+        "rsID": list(rsID_location_dict.keys()),
+        "position": list(rsID_location_dict.values())
+    }).to_csv("processed/rsID_position.csv", index=False)
+
+
 def step2_generate_file():
     generate_clinical_file()
     generate_drug_label_file()
@@ -684,4 +724,5 @@ def step2_generate_file():
     generate_cpic_guideline_file()
 
 if __name__ == "__main__":
-    step2_generate_file()
+    # step2_generate_file()
+    generate_rsID_position()

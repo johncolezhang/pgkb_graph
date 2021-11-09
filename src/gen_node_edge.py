@@ -9,6 +9,7 @@ import shutil
 import os
 from datetime import datetime
 from collections import defaultdict
+import re
 
 v_mapping = variantMappingUtil()
 
@@ -2196,7 +2197,27 @@ def add_extra_data():
     #     json.dump(no_meta_edge_list, f)
 
 
+def generate_rsID_position_node():
+    node_list = []
+    for index, row in pd.read_csv("processed/rsID_position.csv", dtype=str).fillna("").iterrows():
+        rsID_node = {
+            "label": ["variant", "rsID"],
+            "node_ID": "variant_name",
+            "property": {
+                "variant_name": row["rsID"],
+                "display": row["rsID"],
+                "type": "rsID",
+                "position": row["position"]
+            }
+        }
+        node_list.append(rsID_node)
+
+    with open("json/nodes_extra.json", "w") as f:
+        json.dump(node_list, f)
+
+
 if __name__ == "__main__":
-    add_extra_data()
+    # add_extra_data()
     # step3_gen_node_edge()
     # handle_all_haplotype_node_edge()
+    generate_rsID_position_node()
