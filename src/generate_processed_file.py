@@ -678,8 +678,8 @@ def generate_cpic_guideline_file():
 
 
 def position_map_util(NC_change_code):
-        pos = "chr" + NC_change_code.replace("g.", "").replace("m.", "").split(".")[-1]
-        chr_name, pos = pos.split(":")
+        chr_name, pos = NC_change_code.replace("g.", "").replace("m.", "").split(":")
+        chr_name = "chr" + str(int("".join(re.findall(r"[\d]+.[\d]+", chr_name)).split(".")[0]))
         position = "".join(
                 ["{}:{}".format(pos.replace(y, ""), y)
                  for y in re.findall(r"[\D]+", pos)]
