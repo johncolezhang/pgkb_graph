@@ -432,6 +432,8 @@ def handle_gene_drug_label_csv():
     ).fillna("")
 
     for index, row in df.iterrows():
+        if row["gene"] == "" or row["drug"] == "":
+            continue
         ########################### Add node ######################
         gene_node = {
             "label": ["gene"],
