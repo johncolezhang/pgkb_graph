@@ -2189,16 +2189,6 @@ def step3_gen_node_edge():
         json.dump(edge_list, f)
 
 
-def add_extra_data():
-    # no_meta_node_list, no_meta_edge_list = handle_no_metabolizer_guideline()
-    hap_node_list, hap_edge_list = handle_all_haplotype_node_edge()
-    with open("json/nodes_extra.json", "w") as f:
-        json.dump(hap_node_list, f)
-
-    # with open("json/edges_extra.json", "w") as f:
-    #     json.dump(no_meta_edge_list, f)
-
-
 def generate_rsID_position_node():
     node_list = []
     for index, row in pd.read_csv("processed/rsID_position.csv", dtype=str).fillna("").iterrows():
@@ -2214,12 +2204,10 @@ def generate_rsID_position_node():
         }
         node_list.append(rsID_node)
 
-    with open("json/nodes_extra.json", "w") as f:
+    with open("json/rs_position_nodes.json", "w") as f:
         json.dump(node_list, f)
 
 
 if __name__ == "__main__":
-    # add_extra_data()
-    # step3_gen_node_edge()
-    # handle_all_haplotype_node_edge()
+    step3_gen_node_edge()
     generate_rsID_position_node()

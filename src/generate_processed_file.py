@@ -724,5 +724,5 @@ def step2_generate_file():
     generate_cpic_guideline_file()
 
 if __name__ == "__main__":
-    # step2_generate_file()
+    step2_generate_file()
     generate_rsID_position()
