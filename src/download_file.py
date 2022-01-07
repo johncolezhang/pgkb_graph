@@ -214,7 +214,7 @@ def download_genes():
 
 
 def download_guideline_annotation():
-    genes_link = "https://api.pharmgkb.org/v1/download/file/data/dosingGuidelines.json.zip"
+    genes_link = "https://api.pharmgkb.org/v1/download/file/data/guidelineAnnotations.json.zip"
     filename = genes_link.split("/")[-1]
 
     # move older folder to bak folder, and delete old one.
