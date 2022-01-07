@@ -7,6 +7,7 @@ import json
 import re
 from bs4 import BeautifulSoup
 from collections import defaultdict
+from fnmatch import fnmatch
 
 def generate_clinical_file():
     # parse clinical update date
@@ -276,7 +277,7 @@ def handle_pheno_drug_tables(table_list, guideline_update_date):
                     any(True if x in phenotype else False \
                         for x in ["IM", "PM", "UM", "NM", "RM", "EM"]) or \
                     any(True if x in phenotype.lower() else False \
-                        for x in ["suscept", "hypersensitivity", "scar",
+                        for x in ["suscept", "hypersensitivity", "scar", "heterozygous", "*",
                                   "homozygous", "hla-b", "hla-a"]): # special phenotype for HLA-A, HLA-B and RYR1
                 pass
             else:
@@ -316,6 +317,8 @@ def handle_pheno_drug_tables(table_list, guideline_update_date):
                 phenotype_category = "Ultrarapid Metabolizer"
             elif "extensive" in phenotype.lower() or "EM" in phenotype:
                 phenotype_category = "Extensive Metabolizer"
+            elif "low" in phenotype.lower():
+                phenotype_category = "Low Function"
 
             phenotype_category_list.append(phenotype_category)
             phenotype_list.append(phenotype)
@@ -705,7 +708,7 @@ def generate_rsID_position():
             synonym_list = [x.strip() for x in synonym.split(",")]
             for s in synonym_list:
                 if location != "" and location.split(":")[1] in s and "=" not in s:
-                    s = position_map_util(s)
+                    # s = position_map_util(s)
                     variant_location_matched_synonym_dict[variant].append(s)
 
     rsID_location_dict = {key: ",".join(value) for key, value in variant_location_matched_synonym_dict.items()}

@@ -352,6 +352,31 @@ def download_cpic_file():
         f.write(content)
 
 
+def download_pharmvar_file():
+    pharmvar_link = "https://www.pharmvar.org/get-download-file?name=ALL&refSeq=ALL&fileType=zip&version=current"
+
+    # move older folder to bak folder, and delete old one.
+    folder = "pharmvar"
+    bak_folder = os.path.join("bak", folder)
+    if os.path.isdir(folder):
+        if os.path.isdir(bak_folder):
+            shutil.rmtree(bak_folder)
+        shutil.copytree(folder, bak_folder)
+        shutil.rmtree(folder)
+    os.mkdir(folder)
+
+    filename = "pharmvar.zip"
+    content = requests.get(pharmvar_link).content
+
+    with open(os.path.join(folder, filename), "wb") as f:
+        f.write(content)
+
+    with zipfile.ZipFile(os.path.join(folder, filename), "r") as zip_ref:
+        zip_ref.extractall(folder)
+
+    os.remove(os.path.join(folder, filename))
+
+
 def step1_download():
     download_allele_definition()
     download_clinical_annotation()
@@ -366,6 +391,7 @@ def step1_download():
     download_chemical()
     download_drug()
     download_cpic_file()
+    download_pharmvar_file()
 
 if __name__ == "__main__":
     step1_download()

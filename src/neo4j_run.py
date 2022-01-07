@@ -5,7 +5,7 @@ from util.neo4j_util import neo4jUtil
 import json
 
 def step4_upload_neo4j():
-    neo4j_host = "neo4j://172.16.227.27:17687"
+    neo4j_host = "neo4j://172.16.231.80:17687"
     neo4j_user = "neo4j"
     neo4j_pwd = "123456"
     neo4j_database = "neo4j"
