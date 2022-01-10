@@ -134,9 +134,10 @@ def pgkb_guideline():
     df["drug_chn"] = drug_chn_list
     df[["metabolizer"]] = df[["phenotype_category"]]
     df[["pgkb_update_date"]] = df[["update_date"]]
+    df[["remark"]] = df[["title"]]
 
-    df = df[["drug", "drug_chn", "metabolizer", "phenotype", "gene", "recommendation",
-             "dosing", "implication", "description", "organization", "link", "pgkb_update_date"]]
+    df = df[["drug", "drug_chn", "metabolizer", "phenotype", "genotype", "gene", "recommendation",
+             "dosing", "implication", "description", "organization", "link", "remark", "pgkb_update_date"]]
 
     df.to_csv("d:/knowledge-base/static/pgkb_guideline.csv", index=False)
 
@@ -151,9 +152,10 @@ def pgkb_guideline():
     df["drug_chn"] = drug_chn_list
     df[["metabolizer"]] = df[["phenotype_category"]]
     df[["pgkb_update_date"]] = df[["update_date"]]
+    df[["remark"]] = df[["title"]]
 
-    df = df[["drug", "drug_chn", "metabolizer", "phenotype", "gene", "recommendation",
-             "dosing", "implication", "description", "organization", "link", "pgkb_update_date"]]
+    df = df[["drug", "drug_chn", "metabolizer", "phenotype", "genotype", "gene", "recommendation",
+             "dosing", "implication", "description", "organization", "link", "remark", "pgkb_update_date"]]
 
     df.to_csv("d:/knowledge-base/static/pgkb_guideline_no_pheno.csv", index=False)
 
