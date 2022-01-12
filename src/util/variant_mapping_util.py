@@ -515,7 +515,7 @@ class variantMappingUtil:
     def haplotype_mapping(self, haplotype):
         gene, h_type = self.get_gene_h_type(haplotype)
 
-        mapping_dict = {}
+        mapping_dict = {"match": {}}
 
         if gene not in self.genes:
             return {"update_date": datetime.now().strftime("%Y-%m-%d")}
@@ -531,50 +531,71 @@ class variantMappingUtil:
             return {"update_date": datetime.now().strftime("%Y-%m-%d")}
 
         h_type_list = list(self.gene_df_T_dict[gene][h_type].values)
+        mapping_dict["match"]["h_type"] = h_type_list
 
         rsID_list = list(self.gene_df_T_dict[gene]["rsID"].values)
+        mapping_dict["match"]["rsID"] = rsID_list
 
-
-        filter_rs_ID_list = list(filter(lambda x: x[1] != "" and "rs" in x[0], zip(rsID_list, h_type_list)))
+        # filter_rs_ID_list = list(filter(lambda x: x[1] != "" and "rs" in x[0], zip(rsID_list, h_type_list)))
+        filter_rs_ID_list = list(filter(lambda x: x[1] != "", zip(rsID_list, h_type_list)))
         if len(filter_rs_ID_list) != 0:
             rsID_mapping_list = [x[0].strip() for x in filter_rs_ID_list]
             mapping_dict["rsID"] = rsID_mapping_list
 
         for column in self.gene_df_T_dict[gene].columns:
             if "nucleotide" in column.lower() or "NM_" in column:
-                nucleotide_list = self.gene_df_T_dict[gene][column]
+                nucleotide_list = list(self.gene_df_T_dict[gene][column].values)
+                mapping_dict["match"]["nucleotide"] = nucleotide_list
+                # filter_nucleotide_list = list(
+                #     filter(lambda x: x[1] != "" and x[0] != "", zip(nucleotide_list, h_type_list)))
                 filter_nucleotide_list = list(
-                    filter(lambda x: x[1] != "" and x[0] != "", zip(nucleotide_list, h_type_list)))
+                    filter(lambda x: x[1] != "", zip(nucleotide_list, h_type_list)))
                 if len(filter_nucleotide_list) != 0:
                     nucleotide_mapping_list = [x[0].strip() for x in filter_nucleotide_list]
                     mapping_dict["nucleotide"] = "{}; {}".format(column, nucleotide_mapping_list)
+                    mapping_dict["nucleotide_column"] = column
+                    mapping_dict["nucleotide_list"] = nucleotide_mapping_list
                     continue
 
             if "NG" in column and "position" in column.lower():
-                NG_position_list = self.gene_df_T_dict[gene][column]
+                NG_position_list = list(self.gene_df_T_dict[gene][column].values)
+                mapping_dict["match"]["NG"] = NG_position_list
+                # filter_NG_position_list = list(
+                #     filter(lambda x: x[1] != "" and x[0] != "", zip(NG_position_list, h_type_list)))
                 filter_NG_position_list = list(
-                    filter(lambda x: x[1] != "" and x[0] != "", zip(NG_position_list, h_type_list)))
+                    filter(lambda x: x[1] != "", zip(NG_position_list, h_type_list)))
                 if len(filter_NG_position_list) != 0:
                     # one type may contain multi position, so list to store
                     NG_position_mapping_list = [x[0].strip() for x in filter_NG_position_list]
                     mapping_dict["NG"] = "{}; {}".format(column, NG_position_mapping_list)
+                    mapping_dict["NG_column"] = column
+                    mapping_dict["NG_list"] = NG_position_mapping_list
                     continue
 
             if "NC" in column and "position" in column.lower():
-                NC_position_list = self.gene_df_T_dict[gene][column]
+                NC_position_list = list(self.gene_df_T_dict[gene][column].values)
+                mapping_dict["match"]["NC"] = NC_position_list
+                # filter_NC_position_list = list(
+                #     filter(lambda x: x[1] != "" and x[0] != "", zip(NC_position_list, h_type_list)))
                 filter_NC_position_list = list(
-                    filter(lambda x: x[1] != "" and x[0] != "", zip(NC_position_list, h_type_list)))
+                    filter(lambda x: x[1] != "", zip(NC_position_list, h_type_list)))
                 if len(filter_NC_position_list) != 0:
                     NC_position_mapping_list = [x[0].strip() for x in filter_NC_position_list]
                     mapping_dict["NC"] = "{}; {}".format(column, NC_position_mapping_list)
+                    mapping_dict["NC_column"] = column
+                    mapping_dict["NC_list"] = NC_position_mapping_list
                     continue
 
             if "protein" in column.lower():
-                protein_list = self.gene_df_T_dict[gene][column]
-                filter_protein_list = list(filter(lambda x: x[1] != "" and x[0] != "", zip(protein_list, h_type_list)))
+                protein_list = list(self.gene_df_T_dict[gene][column].values)
+                mapping_dict["match"]["protein"] = protein_list
+                # filter_protein_list = list(filter(lambda x: x[1] != "" and x[0] != "", zip(protein_list, h_type_list)))
+                filter_protein_list = list(filter(lambda x: x[1] != "", zip(protein_list, h_type_list)))
                 if len(filter_protein_list) != 0:
                     protein_mapping_list = [x[0].strip() for x in filter_protein_list]
                     mapping_dict["protein"] = "{}; {}".format(column, protein_mapping_list)
+                    mapping_dict["protein_column"] = column
+                    mapping_dict["protein_list"] = protein_mapping_list
                     continue
         try:
             update_date = self.data_change_dict[gene]["allele_definition"]

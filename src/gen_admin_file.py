@@ -8,6 +8,7 @@ from collections import defaultdict
 import os
 from fnmatch import fnmatch
 from datetime import datetime
+import re
 
 df_translate = pd.read_csv("d:/disease-kb/processed/chemical_translation.csv",
                            dtype=str).fillna("")
@@ -245,43 +246,171 @@ def generate_pharmvar_file():
     df_RefSeq_all.to_csv("d:/knowledge-base/static/pharmvar_RefSeq_all.csv", index=False)
 
 
-def generate_pgkb_variant_file():
-    df_convert = pd.read_csv("processed/convert_position.csv", dtype=str).fillna("")
-    df_position_map = pd.read_csv("processed/position_map.csv", dtype=str).fillna("")
+def get_NC_position(NC_column, NC_list):
+    chr_name = "".join(re.findall(r"NC_[\d]+.[\d]+", NC_column))
+    position_list = ["{}:{}".format(chr_name, x.strip()) if x != "" else "" for x in NC_list]
+    return position_list
 
-    position_map_dict = {}
-    for index, row in df_position_map.iterrows():
-        position_map_dict[row["variant_name"]] = {}
-        positions = row["position"].split(",")
-        rsIDs = row["rsID"].split(",")
-        for i in range(len(positions)):
-            try:
-                position_map_dict[row["variant_name"]][positions[i]] = rsIDs[i]
-            except:
-                pass
 
-    rs_list = []
-    gene_list = []
-    for index, row in df_convert.iterrows():
-        rsID = position_map_dict.get(row["haplotype_name"], {}).get(row["position"], "")
-        rs_list.append(rsID)
-        if "*" in row["haplotype_name"]:
-            gene = row["haplotype_name"].split("*")[0]
+def get_NM_code(nucleotide_column):
+    return "".join(re.findall(r"NM_[\d]+.[\d]+", nucleotide_column))
+
+
+def align_variant_list(protein_list, nucleotide_list, rsID_list, NC_list):
+    max_size = max(len(protein_list), len(nucleotide_list), len(rsID_list), len(NC_list))
+    if len(protein_list) != max_size:
+        protein_list = [""] * max_size
+    if len(nucleotide_list) != max_size:
+        nucleotide_list = [""] * max_size
+    if len(rsID_list) != max_size:
+        rsID_list = [""] * max_size
+    if len(NC_list) != max_size:
+        NC_list = [""] * max_size
+
+    new_protein_list = []
+    new_nucleotide_list = []
+    new_rsID_list = []
+    new_NC_list = []
+
+    for i in range(max_size):
+        npro_list = [x.strip() for x in protein_list[i].split(";")]
+        nnuc_list = [x.strip() for x in nucleotide_list[i].split(";")]
+        nrs_list = [x.strip() for x in rsID_list[i].split(";")]
+        nnc_list = [x.strip() for x in NC_list[i].split(";")]
+        m_size = max(len(npro_list), len(nnuc_list), len(nrs_list), len(nnc_list))
+        if len(npro_list) == m_size:
+            new_protein_list.extend(npro_list)
         else:
-            gene = row["haplotype_name"].split(" ")[0]
-        gene_list.append(gene)
+            new_protein_list.extend(npro_list * m_size)
 
-    df_convert["rsID"] = rs_list
-    df_convert["gene"] = gene_list
-    df_convert["update_time"] = [datetime.now().strftime("%Y-%m-%d")] * len(df_convert)
-    df_convert.to_csv("d:/knowledge-base/static/pgkb_variant_all.csv", index=False)
+        if len(nnuc_list) == m_size:
+            new_nucleotide_list.extend(nnuc_list)
+        else:
+            new_nucleotide_list.extend(nnuc_list * m_size)
+
+        if len(nrs_list) == m_size:
+            new_rsID_list.extend(nrs_list)
+        else:
+            new_rsID_list.extend(nrs_list * m_size)
+
+        if len(nnc_list) == m_size:
+            new_NC_list.extend(nnc_list)
+        else:
+            new_NC_list.extend(nnc_list * m_size)
+
+    return new_protein_list, new_nucleotide_list, new_rsID_list, new_NC_list
+
+
+def generate_pgkb_variant_file():
+    brac_regex = re.compile(r"\[[^)]*\]")
+    position_map_dict = defaultdict(list)
+    # generate all haplotype rsID position mapping
+    for gene, hap_list in v_mapping.gene_hap_list_dict.items():
+        for hap in hap_list:
+            if "*" in hap:
+                hap_name = "{}{}".format(gene, hap)
+            else:
+                hap_name = "{} {}".format(gene, hap)
+            if hap == "":
+                continue
+            hap_mapping_dict = v_mapping.haplotype_mapping(hap_name)
+            protein_list = hap_mapping_dict.get("protein_list", [])
+            nucleotide_column = hap_mapping_dict.get("nucleotide_column", "")
+            mRNA = get_NM_code(nucleotide_column)
+            nucleotide_list = hap_mapping_dict.get("nucleotide_list", [])
+            rsID_list = hap_mapping_dict.get("rsID", [])
+            NC_column = hap_mapping_dict.get("NC_column", "")
+            NC_list = hap_mapping_dict.get("NC_list", [])
+            NC_list = [re.sub(brac_regex, "", x) for x in NC_list]
+            is_reference = str(hap_mapping_dict.get("is_reference", ""))
+
+            protein_list, nucleotide_list, rsID_list, NC_list = align_variant_list(protein_list, nucleotide_list, rsID_list, NC_list)
+            position_list = get_NC_position(NC_column, NC_list)
+
+            if is_reference == "True":
+                position_map_dict["is_reference"].append(is_reference)
+                position_map_dict["variant_name"].append(hap_name)
+                position_map_dict["mRNA"].append("")
+                position_map_dict["rsID"].append("")
+                position_map_dict["position"].append("")
+                position_map_dict["nucleotide"].append("")
+                position_map_dict["protein"].append("")
+            else:
+                for i in range(len(protein_list)):
+                    position_map_dict["is_reference"].append(is_reference)
+                    position_map_dict["variant_name"].append(hap_name)
+                    position_map_dict["mRNA"].append(mRNA)
+                    position_map_dict["rsID"].append(rsID_list[i])
+                    position_map_dict["position"].append(position_list[i])
+                    position_map_dict["nucleotide"].append(nucleotide_list[i])
+                    position_map_dict["protein"].append(protein_list[i])
+
+    df_position_map = pd.DataFrame(position_map_dict)
+    df_position_map.to_csv("processed/new_position_map.csv", index=False)
+
+    df_convert = pd.read_csv("processed/convert_position.csv", dtype=str).fillna("")
+    position_dict = dict(zip(
+        list(df_convert["position"].values),
+        list(df_convert["convert_position"].values)
+    ))
+
+    convert_position_list = [position_dict.get(x, "") for x in df_position_map["position"].values]
+
+    df_position_map["convert_position"] = convert_position_list
+    df_position_map["update_time"] = [datetime.now().strftime("%Y-%m-%d")] * len(df_position_map)
+    df_position_map.to_csv("d:/knowledge-base/static/pgkb_variant_all.csv", index=False)
+
+
+def generate_fda_guideline():
+    df= pd.read_csv("processed/fda_guideline_table.csv", dtype=str).fillna("")
+
+    drug_chn_list = [translate_dict.get(x, "")
+                     for x in df["drug"].str.lower().str.strip().values]
+
+    df["drug_chn"] = drug_chn_list
+    df[["metabolizer"]] = df[["subgroup"]]
+    df[["recommendation"]] = df[["interaction"]]
+    df[["description"]] = df[["title"]]
+    df[["pgkb_update_date"]] = df[["update_date"]]
+    df[["remark"]] = df[["update_date"]]
+    df["phenotype"] = [""] * len(df)
+    df["dosing"] = [""] * len(df)
+    df["implication"] = [""] * len(df)
+    df["organization"] = ["FDA_Guideline"] * len(df)
+    df[["genotype"]] = df[["subgroup"]]
+
+    df = df[["drug", "drug_chn", "metabolizer", "phenotype", "genotype", "gene", "recommendation",
+             "dosing", "implication", "description", "organization", "link", "remark", "pgkb_update_date"]]
+
+    df.to_csv("d:/knowledge-base/static/fda_guideline.csv", index=False)
+
+
+def generate_fda_label():
+    df = pd.read_csv("processed/fda_label_table.csv", dtype=str).fillna("")
+    drug_chn_list = [translate_dict.get(x, "")
+                     for x in df["drug"].str.lower().str.strip().values]
+    df["drug_chn"] = drug_chn_list
+    df[["variant"]] = df[["gene"]]
+    df["organization"] = ["FDA"] * len(df)
+    df["pgkb_update_date"] = ["2021-01-01"] * len(df)
+    df[["title"]] = df[["therapeutic"]]
+    df[["link"]] = df[["url"]]
+
+    df = df[["drug", "drug_chn", "variant", "label",
+             "title", "organization", "link",
+             "pgkb_update_date"]]
+
+    df.to_csv("d:/knowledge-base/static/fda_label.csv", index=False)
+
 
 
 if __name__ == "__main__":
-    clinical_evidence()
-    drug_label()
-    cpic_evidence()
-    pgkb_guideline()
-    metabolizer_variant()
-    generate_pharmvar_file()
+    # clinical_evidence()
+    # drug_label()
+    # cpic_evidence()
+    # pgkb_guideline()
+    # metabolizer_variant()
+    # generate_pharmvar_file()
     generate_pgkb_variant_file()
+    # generate_fda_guideline()
+    # generate_fda_label()
