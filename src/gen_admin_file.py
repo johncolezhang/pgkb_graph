@@ -162,6 +162,7 @@ def pgkb_guideline():
 
 
 def metabolizer_variant():
+    # data from v_mapping, updated.
     gene_list = []
     metabolizer_list = []
     variant_list = []
@@ -184,6 +185,7 @@ def metabolizer_variant():
 
 
 def generate_pharmvar_file():
+    # data from pharmvar downloading, updated.
     folders = os.listdir("pharmvar")
     folder = [x[1] for x in list(filter(lambda x: x[0],
                                          [[fnmatch(x, "pharmvar-*") and
@@ -302,6 +304,7 @@ def align_variant_list(protein_list, nucleotide_list, rsID_list, NC_list):
 
 
 def generate_pgkb_variant_file():
+    # data from v_mapping, updated.
     brac_regex = re.compile(r"\[[^)]*\]")
     position_map_dict = defaultdict(list)
     # generate all haplotype rsID position mapping
@@ -328,8 +331,9 @@ def generate_pgkb_variant_file():
             position_list = get_NC_position(NC_column, NC_list)
 
             if is_reference == "True":
+                position_map_dict["gene"].append(gene)
                 position_map_dict["is_reference"].append(is_reference)
-                position_map_dict["variant_name"].append(hap_name)
+                position_map_dict["haplotype_name"].append(hap_name)
                 position_map_dict["mRNA"].append("")
                 position_map_dict["rsID"].append("")
                 position_map_dict["position"].append("")
@@ -337,8 +341,9 @@ def generate_pgkb_variant_file():
                 position_map_dict["protein"].append("")
             else:
                 for i in range(len(protein_list)):
+                    position_map_dict["gene"].append(gene)
                     position_map_dict["is_reference"].append(is_reference)
-                    position_map_dict["variant_name"].append(hap_name)
+                    position_map_dict["haplotype_name"].append(hap_name)
                     position_map_dict["mRNA"].append(mRNA)
                     position_map_dict["rsID"].append(rsID_list[i])
                     position_map_dict["position"].append(position_list[i])
@@ -362,6 +367,7 @@ def generate_pgkb_variant_file():
 
 
 def generate_fda_guideline():
+    # data from fda crawling, updated.
     df= pd.read_csv("processed/fda_guideline_table.csv", dtype=str).fillna("")
 
     drug_chn_list = [translate_dict.get(x, "")
@@ -386,6 +392,7 @@ def generate_fda_guideline():
 
 
 def generate_fda_label():
+    # data from fda label crawling, updated.
     df = pd.read_csv("processed/fda_label_table.csv", dtype=str).fillna("")
     drug_chn_list = [translate_dict.get(x, "")
                      for x in df["drug"].str.lower().str.strip().values]
@@ -405,12 +412,12 @@ def generate_fda_label():
 
 
 if __name__ == "__main__":
-    # clinical_evidence()
-    # drug_label()
-    # cpic_evidence()
-    # pgkb_guideline()
-    # metabolizer_variant()
-    # generate_pharmvar_file()
+    clinical_evidence()
+    drug_label()
+    cpic_evidence()
+    pgkb_guideline()
+    metabolizer_variant()
+    generate_pharmvar_file()
     generate_pgkb_variant_file()
-    # generate_fda_guideline()
-    # generate_fda_label()
+    generate_fda_guideline()
+    generate_fda_label()
