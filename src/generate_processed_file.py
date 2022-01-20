@@ -86,8 +86,15 @@ def generate_drug_label_file():
         gene_list = [x.strip() for x in genes.split(";")]
         variant = row["Variants/Haplotypes"]
         variant_list = filter(lambda x: x != "", [x.strip() for x in variant.split(";")])
-        chemicals = row["Chemicals"]
-        chemical_list = filter(lambda x: x != "", [x.strip() for x in re.split(r"and|/", chemicals)])
+        chemicals = row["Chemicals"].lower()
+        # if " / " in chemicals:
+        #     chemical_list = list(filter(lambda x: x != "", chemicals.split(" / ")))
+        # elif " and " in chemicals:
+        #     chemical_list = list(filter(lambda x: x != "", chemicals.split(" and ")))
+        # else:
+        #     chemical_list = [chemicals]
+        chemical_list = list(filter(lambda x: x != "",
+                                    [x.strip() for x in re.split(r" and |/", chemicals)]))
         source = row["Source"]
         level = row["Testing Level"]
         name = row["Name"]
@@ -287,14 +294,29 @@ def handle_pheno_drug_tables(table_list, guideline_update_date):
                recommendation == "" and dosing == "" and variant == "":
                 continue
 
-            if "_" in gene:
+            if "_" in gene and "HLA" not in gene:
                 genes = gene.split("_")
-                filtered_gene = list(filter(lambda x: x in phenotype, genes))
+                filtered_gene = list(filter(lambda x: x in phenotype or
+                                                      x in genotype or
+                                                      x in ",".join(table.columns),
+                                            genes))
                 if len(filtered_gene) > 0:
-                    gene = filtered_gene[0]
+                    gene = filtered_gene
+                else:
+                    gene = [gene]
+            elif "HLA" in gene:
+                n_gene = []
+                if "HLA_A" in gene:
+                    n_gene.append("HLA_A")
+                if "HLA_B" in gene:
+                    n_gene.append("HLA_B")
+                gene = n_gene
+            else:
+                gene = [gene]
 
             if "Drug" in table.columns and row["Drug"] != "":
                 drug = row["Drug"]
+
             elif "_" in drug:
                 drugs = drug.split("_")
                 filtered_drug = list(filter(lambda x: x in phenotype or x in recommendation or x in implication, drugs))
@@ -320,20 +342,21 @@ def handle_pheno_drug_tables(table_list, guideline_update_date):
             elif "low" in phenotype.lower():
                 phenotype_category = "Low Function"
 
-            phenotype_category_list.append(phenotype_category)
-            phenotype_list.append(phenotype)
-            diplotype_list.append(diplotype)
-            genotype_list.append(genotype)
-            implication_list.append(implication)
-            description_list.append(description)
-            recommendation_list.append(recommendation)
-            dosing_list.append(dosing)
-            gene_list.append(gene)
-            drug_list.append(drug)
-            organization_list.append(organization)
-            title_list.append(title)
-            link_list.append(row["link"])
-            variant_list.append(variant)
+            for ge in gene:
+                phenotype_category_list.append(phenotype_category)
+                phenotype_list.append(phenotype)
+                diplotype_list.append(diplotype)
+                genotype_list.append(genotype)
+                implication_list.append(implication)
+                description_list.append(description)
+                recommendation_list.append(recommendation)
+                dosing_list.append(dosing)
+                gene_list.append(ge)
+                drug_list.append(drug)
+                organization_list.append(organization)
+                title_list.append(title)
+                link_list.append(row["link"])
+                variant_list.append(variant)
 
     df_pheno_drug = pd.DataFrame({
         "phenotype_category": phenotype_category_list,
@@ -720,12 +743,12 @@ def generate_rsID_position():
 
 
 def step2_generate_file():
-    generate_clinical_file()
-    generate_drug_label_file()
+    # generate_clinical_file()
+    # generate_drug_label_file()
     generate_guideline_file()
-    generate_research_file()
-    generate_cpic_guideline_file()
+    # generate_research_file()
+    # generate_cpic_guideline_file()
 
 if __name__ == "__main__":
     step2_generate_file()
-    generate_rsID_position()
+    # generate_rsID_position()

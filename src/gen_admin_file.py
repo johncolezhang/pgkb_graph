@@ -87,7 +87,7 @@ def drug_label():
     df[["drug"]] = df[["en_drug"]]
     df[["variant"]] = df[["gene"]]
     df["title"] = ["药物代谢酶和药物作用靶点基因检测技术指南(试行)"] * len(df)
-    df[["label"]] = df[["remark"]]
+    df["label"] = [""] * len(df)
     df["organization"] = ["NMPA"] * len(df)
     df["link"] = ["http://www.nhc.gov.cn/yzygj/s3594/201507/d7df42ae50b14d01b2eda7f1610bd295.shtml"] * len(df)
     df["pgkb_update_date"] = ["2015-07-31"] * len(df)
@@ -171,8 +171,8 @@ def metabolizer_variant():
         for dip, pheno in value.items():
             dip = "{} {}".format(gene, dip)
             pheno = pheno["phenotype"]
-            if gene not in pheno:
-                pheno = "{} {}".format(gene, pheno)
+            if gene in pheno:
+                pheno = pheno.replace(gene, "").strip()
             gene_list.append(gene)
             metabolizer_list.append(pheno)
             variant_list.append(dip)
@@ -408,7 +408,6 @@ def generate_fda_label():
              "pgkb_update_date"]]
 
     df.to_csv("d:/knowledge-base/static/fda_label.csv", index=False)
-
 
 
 if __name__ == "__main__":
