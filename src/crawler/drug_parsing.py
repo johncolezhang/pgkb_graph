@@ -2,6 +2,7 @@ import json
 import os
 import pandas as pd
 from fnmatch import fnmatch
+from collections import defaultdict
 
 # 化合物及药品名的映射
 def parsing_drug_file():
@@ -15,6 +16,25 @@ def parsing_drug_file():
             if "注" in d.keys():
                 del [d["注"]]
             d["数据源"] = "进口"
+
+    imp_drug_dict = defaultdict(list)
+
+    for imp_drug in imported_drug_list:
+        drug_name = imp_drug["产品名称（中文）"]
+        business_name = imp_drug["商品名（中文）"]
+        license_no = imp_drug["注册证号"]
+        drug_no = imp_drug["药品本位码"]
+        company = imp_drug["生产厂商（英文）"]
+
+        imp_drug_dict["drug_name"].append(drug_name)
+        imp_drug_dict["business_name"].append(business_name)
+        imp_drug_dict["license_no"].append(license_no)
+        imp_drug_dict["drug_no"].append(drug_no)
+        imp_drug_dict["company"].append(company)
+
+    print(len(set(imp_drug_dict["drug_name"])))
+
+    pd.DataFrame(imp_drug_dict).to_csv("processed/imported_drug.csv", index=False)
 
     demostic_path = "nmpa_data/demostic_drugs"
     demostic_drug_list = []
